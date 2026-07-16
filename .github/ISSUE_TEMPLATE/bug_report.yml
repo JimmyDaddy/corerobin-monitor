@@ -1,0 +1,75 @@
+name: Bug report / 问题反馈
+description: Report a reproducible CoreRobin problem / 反馈可以复现的 CoreRobin 问题
+title: "[Bug]: "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve CoreRobin. Please redact usernames, file paths, IP addresses, and other private information before submitting.
+
+        感谢你帮助改进 CoreRobin。提交前请隐藏用户名、文件路径、IP 地址及其他隐私信息。安全漏洞请不要提交公开 Issue，请使用私密安全报告入口。
+  - type: input
+    id: version
+    attributes:
+      label: CoreRobin version / CoreRobin 版本
+      placeholder: e.g. 0.0.2
+    validations:
+      required: true
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system / 操作系统
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: system-version
+    attributes:
+      label: System version and architecture / 系统版本与架构
+      placeholder: e.g. macOS 15.5, Apple Silicon
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened? / 发生了什么？
+      description: Describe the visible problem and when it occurs. / 请描述看到的问题以及出现时机。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior / 预期行为
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context / 补充信息
+      description: Screenshots are welcome after private information has been redacted. / 可以附上已隐藏隐私信息的截图。
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting / 提交前确认
+      options:
+        - label: I searched existing issues for duplicates. / 我已经搜索过现有 Issue，没有发现重复问题。
+          required: true
+        - label: I removed private information from the report and attachments. / 我已从描述和附件中移除隐私信息。
+          required: true

@@ -1,0 +1,43 @@
+name: Feature request / 功能建议
+description: Suggest an improvement to CoreRobin / 提议 CoreRobin 的改进方向
+title: "[Feature]: "
+labels:
+  - enhancement
+  - needs-triage
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or need / 遇到的问题或需求
+      description: Tell us what you are trying to accomplish before describing a solution. / 请先说明你想完成什么，而不是只描述一种实现。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested experience / 期望的使用体验
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered / 考虑过的替代方案
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: Relevant platform / 相关平台
+      options:
+        - All platforms
+        - macOS
+        - Windows
+        - Linux
+        - Website or documentation
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting / 提交前确认
+      options:
+        - label: I searched existing issues for a similar request. / 我已经搜索过类似建议。
+          required: true
