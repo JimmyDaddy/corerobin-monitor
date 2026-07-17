@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "site/**"
+      - "site-locales/**"
       - "docs/**"
       - "scripts/**"
       - "package.json"

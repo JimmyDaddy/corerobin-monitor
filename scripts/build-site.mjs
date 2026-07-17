@@ -2,19 +2,23 @@ import { createHash } from "node:crypto";
 import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { dirname, extname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { parse } from "parse5";
+import { parse, parseFragment, serialize } from "parse5";
+
+import {
+  DEFAULT_SITE_LOCALE,
+  SITE_LOCALES,
+  SITE_ORIGIN,
+  SITE_ROUTES,
+  localizedRoute,
+  localizedUrl,
+  normalizeLocalizedText,
+  outputPathForRoute,
+} from "./site-locales.mjs";
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourceRoot = join(repositoryRoot, "site");
 const outputRoot = join(repositoryRoot, "site-dist");
-const siteOrigin = "https://monitor-app.corerobin.com";
-const routes = [
-  { source: "index.html", zh: "/", en: "/en/" },
-  { source: "guide/index.html", zh: "/guide/", en: "/en/guide/" },
-  { source: "download/index.html", zh: "/download/", en: "/en/download/" },
-  { source: "privacy/index.html", zh: "/privacy/", en: "/en/privacy/" },
-  { source: "releases/index.html", zh: "/releases/", en: "/en/releases/" },
-];
+const localeRoot = join(repositoryRoot, "site-locales");
 const forbiddenPublicReferences = [
   ["CoreRobin", "Internal"].join("-"),
   ["github.com/JimmyDaddy", "StatusOrbit"].join("/"),
@@ -22,10 +26,15 @@ const forbiddenPublicReferences = [
 ];
 
 await verifySynchronizedDocs();
-await verifyReleaseManifest();
+const releaseManifest = await verifyReleaseManifest();
+const sourcePages = await loadSourcePages();
+const requiredTranslations = collectRequiredTranslations(sourcePages);
+const catalogs = await loadTranslationCatalogs(requiredTranslations);
+
 await rm(outputRoot, { recursive: true, force: true });
 await cp(sourceRoot, outputRoot, { recursive: true });
-await generateEnglishPages();
+await generateLocalizedPages(sourcePages, catalogs, releaseManifest);
+await generateSitemap();
 await verifyPublicReferences();
 
 const files = await walk(outputRoot);
@@ -37,72 +46,219 @@ await verifyLocalReferences(htmlFiles);
 await verifySiteMetadata();
 await verifySitemap();
 
-console.log(`Built CoreRobin site: ${files.length} files, ${htmlFiles.length} HTML pages.`);
+console.log(
+  `Built CoreRobin site: ${files.length} files, ${htmlFiles.length} HTML pages, ${SITE_LOCALES.length} languages.`,
+);
 
-async function generateEnglishPages() {
-  for (const route of routes) {
-    const sourcePath = join(outputRoot, route.source);
-    const outputPath = join(outputRoot, route.en.slice(1), "index.html");
-    const source = await readFile(sourcePath, "utf8");
-    await mkdir(dirname(outputPath), { recursive: true });
-    await writeFile(outputPath, localizeHtml(source, route), "utf8");
+async function loadSourcePages() {
+  return new Map(await Promise.all(SITE_ROUTES.map(async (route) => [
+    route.source,
+    await readFile(join(sourceRoot, route.source), "utf8"),
+  ])));
+}
+
+function collectRequiredTranslations(sourcePages) {
+  const required = new Set();
+  for (const html of sourcePages.values()) {
+    for (const node of collectNodes(parse(html))) {
+      for (const name of ["data-en", "data-content-en", "data-aria-en"]) {
+        const value = attribute(node, name);
+        if (value) required.add(value);
+      }
+    }
+  }
+  return [...required].sort((left, right) => left.localeCompare(right, "en"));
+}
+
+async function loadTranslationCatalogs(requiredTranslations) {
+  const catalogs = new Map();
+  for (const locale of SITE_LOCALES.filter(({ code }) => !["zh-CN", "en"].includes(code))) {
+    const path = join(localeRoot, `${locale.code}.json`);
+    let catalog;
+    try {
+      catalog = JSON.parse(await readFile(path, "utf8"));
+    } catch (error) {
+      throw new Error(`Missing or invalid site translation catalog: site-locales/${locale.code}.json`, { cause: error });
+    }
+    if (catalog.schemaVersion !== 1 || catalog.locale !== locale.code || typeof catalog.translations !== "object") {
+      throw new Error(`Invalid site translation catalog header: site-locales/${locale.code}.json`);
+    }
+    const missing = requiredTranslations.filter((source) => !String(catalog.translations[source] ?? "").trim());
+    const stale = Object.keys(catalog.translations).filter((source) => !requiredTranslations.includes(source));
+    if (missing.length > 0 || stale.length > 0) {
+      throw new Error(
+        `Translation catalog ${locale.code} is out of sync: ${missing.length} missing, ${stale.length} stale.`,
+      );
+    }
+    for (const source of requiredTranslations) verifyMarkupContract(source, catalog.translations[source], locale.code);
+    catalogs.set(locale.code, catalog.translations);
+  }
+  return catalogs;
+}
+
+function verifyMarkupContract(source, translation, locale) {
+  const tags = (value) => [...String(value).matchAll(/<\/?([a-z][\w-]*)\b[^>]*>/gi)]
+    .map((match) => match[1].toLowerCase())
+    .sort()
+    .join(",");
+  if (tags(source) !== tags(translation)) {
+    throw new Error(`Translation ${locale} changed required HTML tags for: ${source}`);
   }
 }
 
-function localizeHtml(html, route) {
-  let translated = html.replace(/<html\b[^>]*>/i, (tag) => {
-    let result = setAttribute(tag, "lang", "en");
-    result = setAttribute(result, "data-language", "en");
-    return setAttribute(result, "data-alternate-url", route.zh);
-  });
+async function generateLocalizedPages(sourcePages, catalogs, releaseManifest) {
+  for (const route of SITE_ROUTES) {
+    const source = sourcePages.get(route.source);
+    for (const locale of SITE_LOCALES) {
+      const outputPath = join(outputRoot, outputPathForRoute(route, locale));
+      await mkdir(dirname(outputPath), { recursive: true });
+      await writeFile(
+        outputPath,
+        localizeHtml(source, route, locale, catalogs.get(locale.code), releaseManifest),
+        "utf8",
+      );
+    }
+  }
+}
 
-  translated = translated.replace(/<[^>]+>/g, (tag) => {
-    let result = tag;
-    const englishContent = getAttribute(result, "data-content-en");
-    const englishAria = getAttribute(result, "data-aria-en");
-    if (englishContent !== null) result = setAttribute(result, "content", englishContent);
-    if (englishAria !== null) result = setAttribute(result, "aria-label", englishAria);
-    return result;
-  });
+function localizeHtml(html, route, locale, catalog, releaseManifest) {
+  const document = parse(html);
+  const nodes = collectNodes(document);
+  const htmlNode = nodes.find((node) => node.tagName === "html");
+  const head = nodes.find((node) => node.tagName === "head");
+  setAttribute(htmlNode, "lang", locale.code);
+  setAttribute(htmlNode, "data-language", locale.code);
+  removeAttribute(htmlNode, "data-alternate-url");
 
-  translated = translated.replace(
-    /<([a-z][\w:-]*)([^>]*\bdata-en=(['"])(.*?)\3[^>]*)>([^<]*)<\/\1>/gi,
-    (match, tagName, attributes, quote, english) => `<${tagName}${attributes}>${english}</${tagName}>`,
+  for (const node of nodes) {
+    if (!node.tagName) continue;
+    localizeNodeText(node, locale, catalog);
+    localizeNodeAttribute(node, "content", "data-content-zh", "data-content-en", locale, catalog);
+    localizeNodeAttribute(node, "aria-label", "data-aria-zh", "data-aria-en", locale, catalog);
+
+    if (node.tagName === "a") {
+      const href = attribute(node, "href");
+      const localizedHref = localizeInternalHref(href, locale);
+      if (localizedHref !== href) setAttribute(node, "href", localizedHref);
+    }
+    if (hasAttribute(node, "data-language-picker")) {
+      const label = translate("Choose language", "选择语言", locale, catalog);
+      replaceChildren(node, languagePickerMarkup(route, locale, label));
+    }
+    removeLocalizationAttributes(node);
+  }
+
+  const canonical = nodes.find((node) => node.tagName === "link" && hasToken(attribute(node, "rel"), "canonical"));
+  const ogUrl = nodes.find((node) => node.tagName === "meta" && attribute(node, "property") === "og:url");
+  if (canonical) setAttribute(canonical, "href", localizedUrl(route, locale));
+  if (ogUrl) setAttribute(ogUrl, "content", localizedUrl(route, locale));
+  replaceAlternateLinks(head, route);
+  replaceOpenGraphLocales(head, locale);
+  updateStructuredData(nodes, route, locale, releaseManifest);
+
+  return serialize(document);
+}
+
+function localizeNodeText(node, locale, catalog) {
+  const english = attribute(node, "data-en");
+  const chinese = attribute(node, "data-zh");
+  if (!english && !chinese) return;
+  replaceChildren(node, translate(english, chinese, locale, catalog));
+}
+
+function localizeNodeAttribute(node, target, chineseName, englishName, locale, catalog) {
+  const english = attribute(node, englishName);
+  const chinese = attribute(node, chineseName);
+  if (!english && !chinese) return;
+  setAttribute(node, target, translate(english, chinese, locale, catalog));
+}
+
+function translate(english, chinese, locale, catalog) {
+  if (locale.code === "zh-CN") return chinese || english;
+  if (locale.code === "en") return english || chinese;
+  const translated = catalog?.[english];
+  if (!translated) throw new Error(`Missing ${locale.code} translation for: ${english}`);
+  return normalizeLocalizedText(locale.code, translated);
+}
+
+function replaceChildren(node, html) {
+  const fragment = parseFragment(String(html));
+  node.childNodes = fragment.childNodes;
+  for (const child of node.childNodes) child.parentNode = node;
+}
+
+function languagePickerMarkup(route, locale, label) {
+  const options = SITE_LOCALES.map((option) => {
+    const selected = option.code === locale.code ? " selected" : "";
+    return `<option value="${escapeHtml(localizedRoute(route, option))}"${selected}>${escapeHtml(option.nativeName)}</option>`;
+  }).join("");
+  return `<span class="language-picker__icon" aria-hidden="true">文</span><select data-language-select aria-label="${escapeHtml(label)}" title="${escapeHtml(label)}">${options}</select>`;
+}
+
+function localizeInternalHref(href, locale) {
+  if (!href?.startsWith("/")) return href;
+  const match = href.match(/^([^?#]*)([?#].*)?$/);
+  const route = SITE_ROUTES.find(({ path }) => path === match?.[1]);
+  return route ? `${localizedRoute(route, locale)}${match?.[2] ?? ""}` : href;
+}
+
+function replaceAlternateLinks(head, route) {
+  head.childNodes = head.childNodes.filter((node) => !(
+    node.tagName === "link" && hasToken(attribute(node, "rel"), "alternate") && attribute(node, "hreflang")
+  ));
+  const links = [
+    ...SITE_LOCALES.map((locale) => `<link rel="alternate" hreflang="${locale.code}" href="${localizedUrl(route, locale)}">`),
+    `<link rel="alternate" hreflang="x-default" href="${localizedUrl(route, DEFAULT_SITE_LOCALE)}">`,
+  ].join("");
+  appendFragment(head, links);
+}
+
+function replaceOpenGraphLocales(head, locale) {
+  head.childNodes = head.childNodes.filter((node) => !(
+    node.tagName === "meta" && ["og:locale", "og:locale:alternate"].includes(attribute(node, "property"))
+  ));
+  appendFragment(head, [
+    `<meta property="og:locale" content="${locale.ogLocale}">`,
+    ...SITE_LOCALES.filter(({ code }) => code !== locale.code)
+      .map((item) => `<meta property="og:locale:alternate" content="${item.ogLocale}">`),
+  ].join(""));
+}
+
+function appendFragment(parent, html) {
+  const fragment = parseFragment(html);
+  for (const child of fragment.childNodes) child.parentNode = parent;
+  parent.childNodes.push(...fragment.childNodes);
+}
+
+function updateStructuredData(nodes, route, locale, releaseManifest) {
+  for (const node of nodes.filter((item) => item.tagName === "script" && attribute(item, "type") === "application/ld+json")) {
+    const raw = node.childNodes?.map((child) => child.value ?? "").join("") ?? "";
+    const data = JSON.parse(raw);
+    data.url = localizedUrl(route, locale);
+    data.inLanguage = locale.code;
+    data.softwareVersion = releaseManifest.tagName.slice(1);
+    if (data.offers) data.offers.url = localizedUrl(SITE_ROUTES.find(({ path }) => path === "/download/"), locale);
+    replaceChildren(node, JSON.stringify(data).replaceAll("<", "\\u003c"));
+  }
+}
+
+async function generateSitemap() {
+  const alternatesFor = (route) => [
+    ...SITE_LOCALES.map((locale) => `    <xhtml:link rel="alternate" hreflang="${locale.code}" href="${escapeXml(localizedUrl(route, locale))}" />`),
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(localizedUrl(route, DEFAULT_SITE_LOCALE))}" />`,
+  ].join("\n");
+  const entries = SITE_ROUTES.flatMap((route) => SITE_LOCALES.map((locale) => [
+    "  <url>",
+    `    <loc>${escapeXml(localizedUrl(route, locale))}</loc>`,
+    alternatesFor(route),
+    `    <changefreq>${route.changeFrequency}</changefreq>`,
+    "  </url>",
+  ].join("\n"))).join("\n");
+  await writeFile(
+    join(outputRoot, "sitemap.xml"),
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries}\n</urlset>\n`,
+    "utf8",
   );
-
-  translated = translated.replace(/<a\b[^>]*>/gi, (tag) => localizeAnchor(tag));
-  translated = translated.replace(/<(?:link|meta)\b[^>]*>/gi, (tag) => {
-    const rel = getAttribute(tag, "rel");
-    const property = getAttribute(tag, "property");
-    if (hasToken(rel, "canonical")) return localizeUrlAttribute(tag, "href");
-    if (property === "og:url") return localizeUrlAttribute(tag, "content");
-    return tag;
-  });
-  return translated;
-}
-
-function localizeAnchor(tag) {
-  const href = getAttribute(tag, "href");
-  const target = routes.find((route) => route.zh === href);
-  return target ? setAttribute(tag, "href", target.en) : tag;
-}
-
-function localizeUrlAttribute(tag, name) {
-  const value = getAttribute(tag, name);
-  const target = routes.find((route) => `${siteOrigin}${route.zh}` === value);
-  return target ? setAttribute(tag, name, `${siteOrigin}${target.en}`) : tag;
-}
-
-function getAttribute(tag, name) {
-  const match = tag.match(new RegExp(`\\s${escapeRegex(name)}=(["'])([\\s\\S]*?)\\1`, "i"));
-  return match?.[2] ?? null;
-}
-
-function setAttribute(tag, name, value) {
-  const expression = new RegExp(`\\s${escapeRegex(name)}=(["'])([\\s\\S]*?)\\1`, "i");
-  const escapedValue = String(value).replaceAll("&", "&amp;").replaceAll('"', "&quot;");
-  if (expression.test(tag)) return tag.replace(expression, ` ${name}="${escapedValue}"`);
-  return tag.replace(/\s*\/?>(?=$)/, ` ${name}="${escapedValue}"$&`);
 }
 
 async function verifySynchronizedDocs() {
@@ -142,6 +298,7 @@ async function verifyReleaseManifest() {
       throw new Error(`Invalid release verification entry: ${asset.name}`);
     }
   }
+  return manifest;
 }
 
 function isReleaseAssetUrl(value, tag) {
@@ -149,7 +306,7 @@ function isReleaseAssetUrl(value, tag) {
 }
 
 async function verifyPublicReferences() {
-  const files = await walk(repositoryRoot, new Set([".git", "node_modules", "site-dist"]));
+  const files = await walk(repositoryRoot, new Set([".git", "node_modules", "site-dist", "test-results", "playwright-report"]));
   const textFiles = files.filter((path) => [".html", ".js", ".mjs", ".css", ".xml", ".txt", ".md", ".json", ".yml", ".yaml"].includes(extname(path)));
   for (const path of textFiles) {
     const content = await readFile(path, "utf8");
@@ -194,51 +351,66 @@ async function verifyLocalReferences(htmlFiles) {
 }
 
 async function verifySiteMetadata() {
-  for (const route of routes) {
-    await verifyStaticPage(join(outputRoot, route.source), route.zh, "zh-CN", false);
-    await verifyStaticPage(join(outputRoot, route.en.slice(1), "index.html"), route.en, "en", true);
+  for (const route of SITE_ROUTES) {
+    for (const locale of SITE_LOCALES) {
+      await verifyStaticPage(join(outputRoot, outputPathForRoute(route, locale)), route, locale);
+    }
   }
 }
 
-async function verifyStaticPage(path, route, language, expectsEnglish) {
+async function verifyStaticPage(path, route, locale) {
   const html = await readFile(path, "utf8");
   const document = parse(html);
   const nodes = collectNodes(document);
   const htmlNode = nodes.find((node) => node.tagName === "html");
-  const title = nodes.find((node) => node.tagName === "title")?.childNodes?.map((node) => node.value ?? "").join("").trim() ?? "";
+  const title = textContent(nodes.find((node) => node.tagName === "title")).trim();
   const canonical = nodes.find((node) => node.tagName === "link" && hasToken(attribute(node, "rel"), "canonical"));
   const alternates = nodes.filter((node) => node.tagName === "link" && hasToken(attribute(node, "rel"), "alternate"));
   const ogTitle = nodes.find((node) => node.tagName === "meta" && attribute(node, "property") === "og:title");
   const ogDescription = nodes.find((node) => node.tagName === "meta" && attribute(node, "property") === "og:description");
   const ogImage = nodes.find((node) => node.tagName === "meta" && attribute(node, "property") === "og:image");
+  const ogLocale = nodes.find((node) => node.tagName === "meta" && attribute(node, "property") === "og:locale");
   const twitter = nodes.find((node) => node.tagName === "meta" && attribute(node, "name") === "twitter:card");
   const h1Count = nodes.filter((node) => node.tagName === "h1").length;
-  if (attribute(htmlNode, "lang") !== language || h1Count !== 1 || !title || !canonical || attribute(canonical, "href") !== `${siteOrigin}${route}` || !ogTitle || !ogDescription || !ogImage || !twitter) {
+  if (attribute(htmlNode, "lang") !== locale.code || attribute(htmlNode, "data-language") !== locale.code || h1Count !== 1 || !title || attribute(canonical, "href") !== localizedUrl(route, locale) || !ogTitle || !ogDescription || !ogImage || attribute(ogLocale, "content") !== locale.ogLocale || !twitter) {
     throw new Error(`Incomplete accessibility or SEO metadata in ${relative(outputRoot, path)}.`);
   }
   const alternateValues = new Map(alternates.map((node) => [attribute(node, "hreflang"), attribute(node, "href")]));
-  if (alternateValues.get("zh-CN") !== `${siteOrigin}${routes.find((item) => item.zh === route || item.en === route).zh}` || alternateValues.get("en") !== `${siteOrigin}${routes.find((item) => item.zh === route || item.en === route).en}`) {
-    throw new Error(`Missing bidirectional hreflang links in ${relative(outputRoot, path)}.`);
+  for (const alternateLocale of SITE_LOCALES) {
+    if (alternateValues.get(alternateLocale.code) !== localizedUrl(route, alternateLocale)) {
+      throw new Error(`Missing ${alternateLocale.code} hreflang in ${relative(outputRoot, path)}.`);
+    }
   }
-  if (expectsEnglish && /[\u4e00-\u9fff]/.test(title + attribute(ogTitle, "content") + attribute(ogDescription, "content"))) {
-    throw new Error(`English static metadata still contains Chinese in ${relative(outputRoot, path)}.`);
+  if (alternateValues.get("x-default") !== localizedUrl(route, DEFAULT_SITE_LOCALE)) {
+    throw new Error(`Missing x-default hreflang in ${relative(outputRoot, path)}.`);
+  }
+  if (/data-(?:content-|aria-)?(?:zh|en)=/.test(html)) {
+    throw new Error(`Generated page still exposes source localization attributes: ${relative(outputRoot, path)}.`);
   }
   const globalNav = nodes.find((node) => node.tagName === "nav" && attribute(node, "id") === "site-navigation");
-  const navLinks = (globalNav?.childNodes ?? [])
-    .filter((node) => node.tagName === "a")
-    .map((node) => attribute(node, "href"));
-  const expectedNavLinks = expectsEnglish
-    ? ["/en/", "/en/download/", "/en/guide/", "/en/privacy/", "/en/releases/"]
-    : ["/", "/download/", "/guide/", "/privacy/", "/releases/"];
+  const navLinks = collectNodes(globalNav).filter((node) => node.tagName === "a").map((node) => attribute(node, "href"));
+  const expectedNavLinks = SITE_ROUTES.map((item) => localizedRoute(item, locale));
   if (navLinks.join(",") !== expectedNavLinks.join(",")) {
     throw new Error(`Inconsistent global navigation in ${relative(outputRoot, path)}.`);
+  }
+  const languageSelect = nodes.find((node) => node.tagName === "select" && hasAttribute(node, "data-language-select"));
+  const options = collectNodes(languageSelect).filter((node) => node.tagName === "option");
+  if (options.length !== SITE_LOCALES.length || options.filter((node) => hasAttribute(node, "selected")).length !== 1) {
+    throw new Error(`Incomplete language picker in ${relative(outputRoot, path)}.`);
   }
 }
 
 async function verifySitemap() {
   const sitemap = await readFile(join(outputRoot, "sitemap.xml"), "utf8");
-  for (const route of routes.flatMap((item) => [item.zh, item.en])) {
-    if (!sitemap.includes(`${siteOrigin}${route}`)) throw new Error(`Sitemap is missing ${route}`);
+  for (const route of SITE_ROUTES) {
+    for (const locale of SITE_LOCALES) {
+      if (!sitemap.includes(`<loc>${localizedUrl(route, locale)}</loc>`)) {
+        throw new Error(`Sitemap is missing ${localizedRoute(route, locale)}`);
+      }
+      if (!sitemap.includes(`hreflang="${locale.code}" href="${localizedUrl(route, locale)}"`)) {
+        throw new Error(`Sitemap is missing ${locale.code} alternate for ${route.path}`);
+      }
+    }
   }
 }
 
@@ -267,17 +439,46 @@ async function walk(directory, ignored = new Set()) {
 }
 
 function collectNodes(node) {
+  if (!node) return [];
   return [node, ...(node.childNodes ?? []).flatMap(collectNodes)];
+}
+
+function textContent(node) {
+  return node ? (node.value ?? "") + (node.childNodes ?? []).map(textContent).join("") : "";
 }
 
 function attribute(node, name) {
   return node?.attrs?.find((item) => item.name === name)?.value ?? "";
 }
 
+function hasAttribute(node, name) {
+  return node?.attrs?.some((item) => item.name === name) ?? false;
+}
+
+function setAttribute(node, name, value) {
+  const existing = node.attrs?.find((item) => item.name === name);
+  if (existing) existing.value = String(value);
+  else (node.attrs ??= []).push({ name, value: String(value) });
+}
+
+function removeAttribute(node, name) {
+  if (node?.attrs) node.attrs = node.attrs.filter((item) => item.name !== name);
+}
+
+function removeLocalizationAttributes(node) {
+  if (node?.attrs) {
+    node.attrs = node.attrs.filter(({ name }) => !/^data-(?:content-|aria-)?(?:zh|en)$/.test(name));
+  }
+}
+
 function hasToken(value, token) {
   return typeof value === "string" && value.split(/\s+/).includes(token);
 }
 
-function escapeRegex(value) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+function escapeHtml(value) {
+  return String(value).replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+}
+
+function escapeXml(value) {
+  return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }

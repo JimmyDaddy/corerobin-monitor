@@ -11,6 +11,7 @@ on:
       - "SUPPORT.md"
       - "docs/**"
       - "site/**"
+      - "site-locales/**"
       - "scripts/**"
       - "tests/site/**"
       - "playwright.config.mjs"
@@ -22,6 +23,7 @@ on:
     paths:
       - "docs/**"
       - "site/**"
+      - "site-locales/**"
       - "scripts/**"
       - "tests/site/**"
       - "playwright.config.mjs"

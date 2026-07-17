@@ -2,8 +2,9 @@ import { readFile } from "node:fs/promises";
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-const routes = ["/", "/download/", "/guide/", "/privacy/", "/releases/"];
-const localizedRoutes = routes.flatMap((route) => [route, route === "/" ? "/en/" : `/en${route}`]);
+import { SITE_LOCALES, SITE_ROUTES, localizedRoute } from "../../scripts/site-locales.mjs";
+
+const localizedRoutes = SITE_ROUTES.flatMap((route) => SITE_LOCALES.map((locale) => localizedRoute(route, locale)));
 const viewports = [
   { name: "mobile", width: 390, height: 844 },
   { name: "tablet", width: 768, height: 1024 },
@@ -24,6 +25,7 @@ for (const viewport of viewports) {
       await page.goto(route, { waitUntil: "networkidle" });
       await expect(page.locator("h1")).toBeVisible();
       await expect(page.locator("#site-navigation > a")).toHaveCount(5);
+      await expect(page.locator("[data-language-select] > option")).toHaveCount(SITE_LOCALES.length);
       await page.evaluate(() => document.fonts?.ready);
       await page.locator("[data-reveal]").evaluateAll((elements) => {
         for (const element of elements) {
@@ -79,12 +81,13 @@ test("mobile navigation manages focus and closes with Escape", async ({ page }) 
   await expect(toggle).toBeFocused();
 });
 
-test("language toggle uses the static localized route", async ({ page }) => {
+test("language picker uses the matching static localized route", async ({ page }) => {
   await page.goto("/guide/", { waitUntil: "networkidle" });
-  await page.locator("[data-language-toggle]").click();
-  await page.waitForURL("**/en/guide/");
-  await expect(page.locator("html")).toHaveAttribute("lang", "en");
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://monitor-app.corerobin.com/en/guide/");
+  await page.locator("[data-language-select]").selectOption("/ja/guide/");
+  await page.waitForURL("**/ja/guide/");
+  await expect(page.locator("html")).toHaveAttribute("lang", "ja");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://monitor-app.corerobin.com/ja/guide/");
+  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(SITE_LOCALES.length + 1);
 });
 
 for (const sample of [

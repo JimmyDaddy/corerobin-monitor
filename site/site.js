@@ -1,12 +1,25 @@
 document.documentElement.classList.add("js");
 
 const root = document.documentElement;
-const languageButton = document.querySelector("[data-language-toggle]");
-const languageLabel = document.querySelector("[data-language-label]");
+const languageSelect = document.querySelector("[data-language-select]");
 const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const guideSelect = document.querySelector("[data-guide-jump]");
+const pageLocale = root.lang || "zh-CN";
+const localizedUi = {
+  "zh-CN": { copied: "已复制", copiedStatus: "命令已复制。", copy: "复制命令", copyFailed: "复制失败", copyError: "无法复制命令。", releaseUnavailable: "暂时无法读取 Release 信息。", releaseEvidence: "验证材料", detectedOs: "检测到的系统" },
+  en: { copied: "Copied", copiedStatus: "Command copied.", copy: "Copy command", copyFailed: "Copy failed", copyError: "Could not copy the command.", releaseUnavailable: "Release information is temporarily unavailable.", releaseEvidence: "verification materials", detectedOs: "Detected OS" },
+  "zh-Hant": { copied: "已複製", copiedStatus: "指令已複製。", copy: "複製指令", copyFailed: "複製失敗", copyError: "無法複製指令。", releaseUnavailable: "暫時無法讀取 Release 資訊。", releaseEvidence: "驗證資料", detectedOs: "偵測到的系統" },
+  ja: { copied: "コピーしました", copiedStatus: "コマンドをコピーしました。", copy: "コマンドをコピー", copyFailed: "コピーできませんでした", copyError: "コマンドをコピーできませんでした。", releaseUnavailable: "リリース情報を一時的に取得できません。", releaseEvidence: "検証資料", detectedOs: "検出されたOS" },
+  de: { copied: "Kopiert", copiedStatus: "Befehl kopiert.", copy: "Befehl kopieren", copyFailed: "Kopieren fehlgeschlagen", copyError: "Der Befehl konnte nicht kopiert werden.", releaseUnavailable: "Release-Informationen sind vorübergehend nicht verfügbar.", releaseEvidence: "Prüfmaterialien", detectedOs: "Erkanntes System" },
+  fr: { copied: "Copié", copiedStatus: "Commande copiée.", copy: "Copier la commande", copyFailed: "Échec de la copie", copyError: "Impossible de copier la commande.", releaseUnavailable: "Les informations de version sont temporairement indisponibles.", releaseEvidence: "éléments de vérification", detectedOs: "Système détecté" },
+  es: { copied: "Copiado", copiedStatus: "Comando copiado.", copy: "Copiar comando", copyFailed: "Error al copiar", copyError: "No se pudo copiar el comando.", releaseUnavailable: "La información de la versión no está disponible temporalmente.", releaseEvidence: "materiales de verificación", detectedOs: "Sistema detectado" },
+  "pt-BR": { copied: "Copiado", copiedStatus: "Comando copiado.", copy: "Copiar comando", copyFailed: "Falha ao copiar", copyError: "Não foi possível copiar o comando.", releaseUnavailable: "As informações da versão estão temporariamente indisponíveis.", releaseEvidence: "materiais de verificação", detectedOs: "Sistema detectado" },
+  ko: { copied: "복사됨", copiedStatus: "명령어를 복사했습니다.", copy: "명령어 복사", copyFailed: "복사 실패", copyError: "명령어를 복사하지 못했습니다.", releaseUnavailable: "현재 릴리스 정보를 불러올 수 없습니다.", releaseEvidence: "검증 자료", detectedOs: "감지된 시스템" },
+  ru: { copied: "Скопировано", copiedStatus: "Команда скопирована.", copy: "Копировать команду", copyFailed: "Не удалось скопировать", copyError: "Не удалось скопировать команду.", releaseUnavailable: "Информация о выпуске временно недоступна.", releaseEvidence: "материалы проверки", detectedOs: "Обнаруженная система" },
+};
+const ui = localizedUi[pageLocale] ?? localizedUi.en;
 
 const robinSvg = `
   <svg viewBox="0 0 220 220" focusable="false">
@@ -76,12 +89,9 @@ function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
-languageButton?.addEventListener("click", () => {
-  const alternateUrl = root.dataset.alternateUrl;
-  if (alternateUrl) window.location.assign(alternateUrl);
+languageSelect?.addEventListener("change", () => {
+  if (languageSelect.value) window.location.assign(languageSelect.value);
 });
-
-if (languageLabel) languageLabel.textContent = root.dataset.language === "en" ? "中文" : "EN";
 
 function closeNavigation({ restoreFocus = false } = {}) {
   nav?.classList.remove("is-open");
@@ -214,19 +224,18 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
   button.addEventListener("click", async () => {
     const code = button.parentElement?.querySelector("code")?.textContent ?? "";
     if (!code) return;
-    const isEnglish = root.dataset.language === "en";
     const status = button.parentElement?.querySelector("[data-copy-status]");
     try {
       await navigator.clipboard.writeText(code);
-      button.textContent = isEnglish ? "Copied" : "已复制";
-      if (status) status.textContent = isEnglish ? "Command copied." : "命令已复制。";
+      button.textContent = ui.copied;
+      if (status) status.textContent = ui.copiedStatus;
       window.setTimeout(() => {
-        button.textContent = isEnglish ? "Copy command" : "复制命令";
+        button.textContent = ui.copy;
         if (status) status.textContent = "";
       }, 1400);
     } catch {
-      button.textContent = isEnglish ? "Copy failed" : "复制失败";
-      if (status) status.textContent = isEnglish ? "Could not copy the command." : "无法复制命令。";
+      button.textContent = ui.copyFailed;
+      if (status) status.textContent = ui.copyError;
     }
   });
 });
@@ -247,15 +256,12 @@ async function loadReleaseManifest() {
   } catch (error) {
     console.warn("Could not load the CoreRobin release manifest.", error);
     document.querySelectorAll("[data-release-version]").forEach((element) => {
-      element.textContent = root.dataset.language === "en"
-        ? "Release information is temporarily unavailable."
-        : "暂时无法读取 Release 信息。";
+      element.textContent = ui.releaseUnavailable;
     });
   }
 }
 
 function applyReleaseManifest(manifest) {
-  const isEnglish = root.dataset.language === "en";
   const installerList = manifest.installers ?? manifest.assets ?? [];
   const assets = new Map(installerList.map((asset) => [asset.id, asset]));
   const evidence = new Map((manifest.evidence ?? []).map((asset) => [
@@ -265,7 +271,7 @@ function applyReleaseManifest(manifest) {
   let selectedAsset = assets.get("macos-arm64-dmg") ?? installerList[0];
 
   document.querySelectorAll("[data-release-version]").forEach((element) => {
-    const published = manifest.publishedAt ? new Intl.DateTimeFormat(isEnglish ? "en" : "zh-CN", {
+    const published = manifest.publishedAt ? new Intl.DateTimeFormat(pageLocale, {
       year: "numeric", month: "short", day: "numeric",
     }).format(new Date(manifest.publishedAt)) : "";
     element.textContent = `${manifest.tagName ?? manifest.tag}${published ? ` · ${published}` : ""}`;
@@ -281,11 +287,11 @@ function applyReleaseManifest(manifest) {
     link.href = asset.url;
     link.setAttribute("download", asset.name);
     const meta = link.querySelector("[data-asset-meta]");
-    if (meta) meta.textContent = `${asset.format} · ${formatFileSize(asset.size ?? asset.sizeBytes, isEnglish)}`;
+    if (meta) meta.textContent = `${asset.format} · ${formatFileSize(asset.size ?? asset.sizeBytes)}`;
     const choose = () => {
       selectedAsset = asset;
       if (verificationSelect instanceof HTMLSelectElement) verificationSelect.value = asset.id;
-      updateVerificationCommands(selectedAsset, evidence, manifest, isEnglish);
+      updateVerificationCommands(selectedAsset, evidence, manifest);
     };
     link.addEventListener("mouseenter", choose);
     link.addEventListener("focus", choose);
@@ -301,14 +307,14 @@ function applyReleaseManifest(manifest) {
     verificationSelect.value = selectedAsset?.id ?? "";
     verificationSelect.addEventListener("change", () => {
       selectedAsset = assets.get(verificationSelect.value) ?? selectedAsset;
-      updateVerificationCommands(selectedAsset, evidence, manifest, isEnglish);
+      updateVerificationCommands(selectedAsset, evidence, manifest);
     });
   }
 
-  updateVerificationCommands(selectedAsset, evidence, manifest, isEnglish);
+  updateVerificationCommands(selectedAsset, evidence, manifest);
 }
 
-function updateVerificationCommands(asset, evidence, manifest, isEnglish) {
+function updateVerificationCommands(asset, evidence, manifest) {
   if (!asset) return;
   const sums = evidence.get("sha256sums");
   const sigstore = evidence.get("sigstore-bundle");
@@ -323,14 +329,12 @@ function updateVerificationCommands(asset, evidence, manifest, isEnglish) {
   document.querySelectorAll('[data-release-command="sigstore"]').forEach((element) => { element.textContent = provenanceCommand; });
   document.querySelectorAll("[data-release-evidence]").forEach((element) => {
     const links = [sums, sbom, sigstore].filter(Boolean).map((item) => `<a href="${item.url}">${item.name}</a>`).join(" · ");
-    element.innerHTML = isEnglish
-      ? `Release ${manifest.tagName ?? manifest.tag}: ${links}`
-      : `Release ${manifest.tagName ?? manifest.tag} 验证材料：${links}`;
+    element.innerHTML = `Release ${manifest.tagName ?? manifest.tag} · ${ui.releaseEvidence}: ${links}`;
   });
 }
 
-function formatFileSize(bytes, isEnglish) {
-  return new Intl.NumberFormat(isEnglish ? "en" : "zh-CN", {
+function formatFileSize(bytes) {
+  return new Intl.NumberFormat(pageLocale, {
     maximumFractionDigits: bytes >= 10_000_000 ? 1 : 0,
   }).format(bytes / 1_000_000) + " MB";
 }
@@ -353,7 +357,9 @@ function recommendPlatform() {
         ? "linux"
         : null;
   if (!target) return;
-  document.querySelector(`[data-download-platform="${target}"]`)?.classList.add("is-recommended");
+  const platformCard = document.querySelector(`[data-download-platform="${target}"]`);
+  platformCard?.classList.add("is-recommended");
+  if (platformCard instanceof HTMLElement) platformCard.dataset.recommendationLabel = ui.detectedOs;
   const recommendation = document.querySelector(`[data-platform-recommendation="${target}"]`);
   if (recommendation instanceof HTMLElement) recommendation.hidden = false;
 }
