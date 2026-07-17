@@ -26,10 +26,23 @@ const forbiddenPublicReferences = [
   ["github.com/JimmyDaddy", "StatusOrbit"].join("/"),
   ["jimmydaddy.github.io", "StatusOrbit"].join("/"),
 ];
+const discouragedChineseCopy = [
+  "看见你的电脑，不带走你的数据",
+  "一级页面",
+  "权威重扫",
+  "不会让你误关",
+  "形成有用证据",
+  "按稳定、可复核的顺序",
+  "只整理证据和下一步",
+  "保留为明确的空白",
+  "一屏深入",
+  "文件声称有多大",
+];
 
 await verifySynchronizedDocs();
 const releaseManifest = await verifyReleaseManifest();
 const sourcePages = await loadSourcePages();
+verifyChineseCopy(sourcePages);
 const requiredTranslations = collectRequiredTranslations(sourcePages);
 const catalogs = await loadTranslationCatalogs(requiredTranslations);
 
@@ -57,6 +70,16 @@ async function loadSourcePages() {
     route.source,
     await readFile(join(sourceRoot, route.source), "utf8"),
   ])));
+}
+
+function verifyChineseCopy(sourcePages) {
+  for (const [source, html] of sourcePages) {
+    for (const phrase of discouragedChineseCopy) {
+      if (html.includes(phrase)) {
+        throw new Error(`Unnatural Chinese copy in ${source}: ${phrase}`);
+      }
+    }
+  }
 }
 
 function collectRequiredTranslations(sourcePages) {

@@ -158,12 +158,12 @@
             完整磁盘访问列表里没有 CoreRobin 怎么办
           </h1>
           <p
-            data-zh="这通常不是权限申请失败。macOS 的列表不一定自动出现应用；把正式应用安装到“应用程序”，然后通过列表下方的 + 选择它即可。你也始终可以暂不授权，只扫描当前可访问区域。"
+            data-zh="这通常不是权限申请失败，因为 macOS 不一定会自动把应用加入列表。先把 CoreRobin 安装到“应用程序”，再点击列表下方的 + 手动选择它即可。不想授权时，也可以只扫描当前能够访问的位置。"
             data-en="This usually does not mean the permission request failed. macOS does not always add an app to the list automatically. Install the real app in Applications, then choose it with the + button. You can always decline and scan currently accessible areas."
           >
-            这通常不是权限申请失败。macOS
-            的列表不一定自动出现应用；把正式应用安装到“应用程序”，然后通过列表下方的
-            + 选择它即可。你也始终可以暂不授权，只扫描当前可访问区域。
+            这通常不是权限申请失败，因为 macOS 不一定会自动把应用加入列表。先把
+            CoreRobin 安装到“应用程序”，再点击列表下方的 +
+            手动选择它即可。不想授权时，也可以只扫描当前能够访问的位置。
           </p>
         </header>
         <div class="article-layout section-shell">
@@ -194,10 +194,10 @@
               <div class="article-answer">
                 <span data-zh="直接答案" data-en="QUICK ANSWER">直接答案</span>
                 <p
-                  data-zh="退出 DMG 中的临时应用，把 CoreRobin.app 拖到“应用程序”并从那里启动。进入系统设置 → 隐私与安全性 → 完整磁盘访问，点击列表下方的 +，选择“应用程序”里的 CoreRobin.app，打开开关并按系统提示重新打开应用。"
+                  data-zh="先退出从 DMG 打开的 CoreRobin，把 CoreRobin.app 拖到“应用程序”并从那里启动。进入系统设置 → 隐私与安全性 → 完整磁盘访问，点击列表下方的 +，选择“应用程序”里的 CoreRobin.app，打开开关并按系统提示重新打开应用。"
                   data-en="Quit the temporary copy in the DMG, drag CoreRobin.app to Applications, and launch it there. Open System Settings → Privacy & Security → Full Disk Access, click + below the list, choose CoreRobin.app in Applications, enable it, and reopen the app when macOS asks."
                 >
-                  退出 DMG 中的临时应用，把 CoreRobin.app
+                  先退出从 DMG 打开的 CoreRobin，把 CoreRobin.app
                   拖到“应用程序”并从那里启动。进入系统设置 → 隐私与安全性 →
                   完整磁盘访问，点击列表下方的 +，选择“应用程序”里的
                   CoreRobin.app，打开开关并按系统提示重新打开应用。
@@ -219,12 +219,12 @@
                       确认使用的是已安装应用
                     </h3>
                     <p
-                      data-zh="不要直接从下载的 DMG 里长期运行。将 CoreRobin.app 拖到“应用程序”，推出 DMG，再从“应用程序”启动。这样权限会绑定到稳定的应用位置。"
+                      data-zh="不要一直从下载的 DMG 里运行。将 CoreRobin.app 拖到“应用程序”，推出 DMG，再从“应用程序”启动。这样 macOS 才能持续识别同一份应用。"
                       data-en="Do not keep running from the downloaded DMG. Drag CoreRobin.app to Applications, eject the DMG, and launch from Applications so the permission is associated with a stable app location."
                     >
-                      不要直接从下载的 DMG 里长期运行。将 CoreRobin.app
+                      不要一直从下载的 DMG 里运行。将 CoreRobin.app
                       拖到“应用程序”，推出
-                      DMG，再从“应用程序”启动。这样权限会绑定到稳定的应用位置。
+                      DMG，再从“应用程序”启动。这样 macOS 才能持续识别同一份应用。
                     </p>
                   </div>
                 </li>
@@ -274,11 +274,12 @@
                       打开开关并完成系统验证
                     </h3>
                     <p
-                      data-zh="macOS 可能要求 Touch ID 或管理员密码。若提示退出并重新打开应用，请接受；权限变化通常需要新进程才能完整生效。"
+                      data-zh="macOS 可能要求 Touch ID 或管理员密码。如果系统提示退出并重新打开应用，请按提示操作；这项权限通常要在 CoreRobin 重新启动后才会生效。"
                       data-en="macOS may require Touch ID or an administrator password. If it asks to quit and reopen the app, accept; the new permission generally needs a new process to take full effect."
                     >
                       macOS 可能要求 Touch ID
-                      或管理员密码。若提示退出并重新打开应用，请接受；权限变化通常需要新进程才能完整生效。
+                      或管理员密码。如果系统提示退出并重新打开应用，请按提示操作；这项权限通常要在
+                      CoreRobin 重新启动后才会生效。
                     </p>
                   </div>
                 </li>
@@ -363,11 +364,11 @@
                 暂不授权也能扫描
               </h2>
               <p
-                data-zh="选择“扫描可访问区域”即可继续。CoreRobin 会扫描当前进程能够读取的位置，并把受保护或无法读取的位置保留为明确的空白，而不是猜测大小。你可以之后再授权并重新扫描。"
+                data-zh="选择“扫描可访问区域”即可继续。CoreRobin 会扫描当前能够读取的位置，并把受保护或无法读取的位置标记为无法访问，不会猜测这些位置的大小。之后如果需要，可以再授权并重新扫描。"
                 data-en="Choose Scan accessible areas to continue. CoreRobin scans locations the current process can read and leaves protected or unreadable locations as explicit gaps instead of guessing their size. You can grant access and scan again later."
               >
                 选择“扫描可访问区域”即可继续。CoreRobin
-                会扫描当前进程能够读取的位置，并把受保护或无法读取的位置保留为明确的空白，而不是猜测大小。你可以之后再授权并重新扫描。
+                会扫描当前能够读取的位置，并把受保护或无法读取的位置标记为无法访问，不会猜测这些位置的大小。之后如果需要，可以再授权并重新扫描。
               </p>
             </section>
             <section id="privacy" data-reveal>
@@ -410,9 +411,9 @@
       <p>
         © <span data-year></span> CoreRobin.
         <span
-          data-zh="权限可选，用途透明，随时可以撤销。"
+          data-zh="是否授权由你决定，也可以随时撤销。"
           data-en="Optional permission, clear purpose, reversible at any time."
-          >权限可选，用途透明，随时可以撤销。</span
+          >是否授权由你决定，也可以随时撤销。</span
         >
       </p>
       <div>

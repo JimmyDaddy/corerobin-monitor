@@ -158,10 +158,10 @@
             Mac 磁盘空间不足怎么清理
           </h1>
           <p
-            data-zh="安全清理不是先按“全部删除”，而是先确认哪个位置真的占空间，再从可以解释、可以恢复、与你无关的内容开始。系统目录和不认识的缓存不应该成为第一目标。"
+            data-zh="清理空间不是先按“全部删除”，而是先确认哪些位置真的占空间，再从用途明确、必要时能够恢复，而且确定不再需要的内容开始。不要先动系统目录或不认识的缓存。"
             data-en="Safe cleanup does not begin with Delete all. First find which locations truly use space, then start with items you understand, can recover, and no longer need. System folders and unfamiliar caches should not be your first targets."
           >
-            安全清理不是先按“全部删除”，而是先确认哪个位置真的占空间，再从可以解释、可以恢复、与你无关的内容开始。系统目录和不认识的缓存不应该成为第一目标。
+            清理空间不是先按“全部删除”，而是先确认哪些位置真的占空间，再从用途明确、必要时能够恢复，而且确定不再需要的内容开始。不要先动系统目录或不认识的缓存。
           </p>
         </header>
         <div class="article-layout section-shell">
@@ -210,11 +210,11 @@
                     >磁盘还剩多少空间</strong
                   >
                   <p
-                    data-zh="以 macOS 系统设置中的磁盘可用空间为准。这里回答“还能不能写入更多数据”，也会包含系统可清理空间的动态影响。"
+                    data-zh="以 macOS 系统设置中的“可用”空间为准。这个数字表示磁盘还能写入多少数据，也会随着系统可清理内容的变化而更新。"
                     data-en="Use macOS Storage settings for available disk space. This answers whether more data can be written and reflects the system's dynamic reclaimable space."
                   >
                     以 macOS
-                    系统设置中的磁盘可用空间为准。这里回答“还能不能写入更多数据”，也会包含系统可清理空间的动态影响。
+                    系统设置中的“可用”空间为准。这个数字表示磁盘还能写入多少数据，也会随着系统可清理内容的变化而更新。
                   </p>
                 </article>
                 <article>
@@ -224,11 +224,11 @@
                     >哪些路径占用了空间</strong
                   >
                   <p
-                    data-zh="路径扫描回答“内容在哪里”。CoreRobin 按文件实际占用聚合目录，方便定位，但它不会等同于系统设置的类别统计。"
+                    data-zh="CoreRobin 的路径扫描用来找出内容具体存在哪个文件夹，并按文件实际占用的空间汇总。它和系统设置里的类别统计用途不同，数字不必完全相同。"
                     data-en="A path scan answers where content lives. CoreRobin aggregates directories by allocated file space for investigation; it is not the same as macOS category totals."
                   >
-                    路径扫描回答“内容在哪里”。CoreRobin
-                    按文件实际占用聚合目录，方便定位，但它不会等同于系统设置的类别统计。
+                    CoreRobin
+                    的路径扫描用来找出内容具体存在哪个文件夹，并按文件实际占用的空间汇总。它和系统设置里的类别统计用途不同，数字不必完全相同。
                   </p>
                 </article>
               </div>
@@ -267,11 +267,11 @@
                       清理明确可重新下载的文件
                     </h3>
                     <p
-                      data-zh="旧安装包、重复压缩包、已经完成用途的导出文件通常最容易判断。先打开或在 Finder 中定位，确认不是唯一副本。"
+                      data-zh="旧安装包、重复压缩包和已经用完的导出文件通常最容易判断。先打开或在 Finder 中定位，确认它不是唯一副本。"
                       data-en="Old installers, duplicate archives, and completed exports are usually easiest to judge. Reveal them in Finder and confirm they are not the only copy."
                     >
-                      旧安装包、重复压缩包、已经完成用途的导出文件通常最容易判断。先打开或在
-                      Finder 中定位，确认不是唯一副本。
+                      旧安装包、重复压缩包和已经用完的导出文件通常最容易判断。先打开或在
+                      Finder 中定位，确认它不是唯一副本。
                     </p>
                   </div>
                 </li>
@@ -357,26 +357,26 @@
                   快照、交换文件或系统数据来追求类别数字归零。
                 </li>
                 <li
-                  data-zh="不要在扫描仍进行时根据未完成的局部数字做大规模删除决定。"
+                  data-zh="扫描完成前，不要根据暂时显示的结果批量删除文件。"
                   data-en="Do not make a large deletion decision from partial numbers while a scan is still running."
                 >
-                  不要在扫描仍进行时根据未完成的局部数字做大规模删除决定。
+                  扫描完成前，不要根据暂时显示的结果批量删除文件。
                 </li>
               </ul>
             </section>
             <section id="verify" data-reveal>
               <h2
-                data-zh="用 CoreRobin 安全复核"
+                data-zh="用 CoreRobin 再检查一遍"
                 data-en="Review safely with CoreRobin"
               >
-                用 CoreRobin 安全复核
+                用 CoreRobin 再检查一遍
               </h2>
               <p
-                data-zh="空间地图首先扫描当前可访问区域。完整磁盘访问可以减少受保护位置的空白，但不是继续扫描的前提。扫描只读取名称、大小、位置和时间等元数据；删除前会重新核对目标并再次要求确认。清理后重新扫描，并用 macOS 的可用空间确认实际效果。"
+                data-zh="空间地图会先扫描当前能够访问的位置。完整磁盘访问可以减少无法统计的受保护位置，但不授权也能继续。扫描只读取名称、大小、位置和时间等元数据；删除前会重新核对目标并再次要求确认。清理后重新扫描，再查看 macOS 的可用空间是否增加。"
                 data-en="The space map starts with locations currently accessible. Full Disk Access can reduce gaps in protected locations, but it is not required to continue. Scans read metadata such as names, sizes, locations, and dates; CoreRobin rechecks the target and asks again before deletion. After cleanup, scan again and confirm the result with macOS available space."
               >
-                空间地图首先扫描当前可访问区域。完整磁盘访问可以减少受保护位置的空白，但不是继续扫描的前提。扫描只读取名称、大小、位置和时间等元数据；删除前会重新核对目标并再次要求确认。清理后重新扫描，并用
-                macOS 的可用空间确认实际效果。
+                空间地图会先扫描当前能够访问的位置。完整磁盘访问可以减少无法统计的受保护位置，但不授权也能继续。扫描只读取名称、大小、位置和时间等元数据；删除前会重新核对目标并再次要求确认。清理后重新扫描，再查看
+                macOS 的可用空间是否增加。
               </p>
               <div class="article-next">
                 <span data-zh="继续了解" data-en="KEEP READING">继续了解</span

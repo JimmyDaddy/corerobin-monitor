@@ -18,9 +18,9 @@
     />
     <meta
       property="og:description"
-      data-content-zh="指标要结合持续时间、趋势和实际感受，单个数字不是诊断。"
+      data-content-zh="判断是否异常，要结合持续时间、变化趋势和实际感受，不能只看一个数字。"
       data-content-en="Combine metrics with duration, trends, and symptoms; one number is not a diagnosis."
-      content="指标要结合持续时间、趋势和实际感受，单个数字不是诊断。"
+      content="判断是否异常，要结合持续时间、变化趋势和实际感受，不能只看一个数字。"
     />
     <meta property="og:type" content="article" />
     <meta
@@ -158,11 +158,11 @@
             Mac CPU、内存和温度如何监控
           </h1>
           <p
-            data-zh="先看趋势和持续时间，再看哪个应用或任务与它同步。CPU 高、内存使用多或机身发热都可能是正常工作；只有稳定信号、实际影响和可复核来源同时出现，才值得采取动作。"
+            data-zh="先看趋势持续了多久，再确认哪个应用或任务在同一时间发生变化。CPU 高、内存使用多或机身发热都可能是正常现象；只有高占用持续存在，并且确实带来卡顿、耗电或其他影响时，才需要处理。"
             data-en="Start with trends and duration, then identify the app or task moving with them. High CPU, used memory, or a warm enclosure can all be normal work. Act when a sustained signal, real impact, and a verifiable source appear together."
           >
-            先看趋势和持续时间，再看哪个应用或任务与它同步。CPU
-            高、内存使用多或机身发热都可能是正常工作；只有稳定信号、实际影响和可复核来源同时出现，才值得采取动作。
+            先看趋势持续了多久，再确认哪个应用或任务在同一时间发生变化。CPU
+            高、内存使用多或机身发热都可能是正常现象；只有高占用持续存在，并且确实带来卡顿、耗电或其他影响时，才需要处理。
           </p>
         </header>
         <div class="article-layout section-shell">
@@ -212,10 +212,10 @@
                 <div>
                   <strong data-zh="看什么" data-en="Watch">看什么</strong>
                   <p
-                    data-zh="持续时间、趋势、前列进程、任务是否符合预期。"
+                    data-zh="持续时间、变化趋势、占用最高的进程，以及任务是否符合预期。"
                     data-en="Duration, trend, top process, and whether the task is expected."
                   >
-                    持续时间、趋势、前列进程、任务是否符合预期。
+                    持续时间、变化趋势、占用最高的进程，以及任务是否符合预期。
                   </p>
                 </div>
                 <div>
@@ -223,10 +223,10 @@
                     >不要做什么</strong
                   >
                   <p
-                    data-zh="因为一次 100% 或名称陌生就结束系统进程。"
+                    data-zh="不要因为一次 100% 的读数或不认识进程名称，就结束系统进程。"
                     data-en="Do not stop a system process because of one high reading or an unfamiliar name."
                   >
-                    因为一次 100% 或名称陌生就结束系统进程。
+                    不要因为一次 100% 的读数或不认识进程名称，就结束系统进程。
                   </p>
                 </div>
               </div>
@@ -306,11 +306,12 @@
                 温度：辅助判断，不是单独结论
               </h2>
               <p
-                data-zh="CoreRobin 在 macOS 上读取硬件提供的传感器数据。Apple Silicon 不同代际的传感器键、运行架构和系统版本可能不同，因此温度可能显示“等待首个样本”“此设备不支持”或“读取失败”。不可用只表示当前无法得到可信读数，不应补一个估算值。"
+                data-zh="CoreRobin 会在 macOS 上读取硬件传感器。芯片代际、系统版本和应用运行架构不同，能够读取到的传感器也可能不同，因此温度有时会显示“等待首个样本”“此设备不支持”或“读取失败”。这些状态只表示当前没有可信读数，CoreRobin 不会用估算值代替。"
                 data-en="On macOS, CoreRobin reads sensor data exposed by the hardware. Sensor keys, runtime architecture, and system versions differ across Apple silicon generations, so temperature may show waiting for first sample, unsupported, or read failed. Unavailable only means there is no trustworthy reading now; CoreRobin does not invent an estimate."
               >
-                CoreRobin 在 macOS 上读取硬件提供的传感器数据。Apple Silicon
-                不同代际的传感器键、运行架构和系统版本可能不同，因此温度可能显示“等待首个样本”“此设备不支持”或“读取失败”。不可用只表示当前无法得到可信读数，不应补一个估算值。
+                CoreRobin 会在 macOS
+                上读取硬件传感器。芯片代际、系统版本和应用运行架构不同，能够读取到的传感器也可能不同，因此温度有时会显示“等待首个样本”“此设备不支持”或“读取失败”。这些状态只表示当前没有可信读数，CoreRobin
+                不会用估算值代替。
               </p>
               <ul class="article-checklist">
                 <li
@@ -321,11 +322,11 @@
                   Rosetta 运行时，部分传感器可能不可用。
                 </li>
                 <li
-                  data-zh="结合 CPU 趋势、风扇、耗电、性能下降和最后成功采样时间判断，不用单个温度值制造警报。"
+                  data-zh="结合 CPU 趋势、风扇、耗电、性能下降和最后一次成功采样时间判断，不要只凭一次温度读数下结论。"
                   data-en="Combine temperature with CPU trends, fan behavior, battery use, performance impact, and the last successful sample instead of creating an alert from one value."
                 >
                   结合 CPU
-                  趋势、风扇、耗电、性能下降和最后成功采样时间判断，不用单个温度值制造警报。
+                  趋势、风扇、耗电、性能下降和最后一次成功采样时间判断，不要只凭一次温度读数下结论。
                 </li>
                 <li
                   data-zh="如果机身异常烫、频繁关机或有电池鼓包迹象，应停止高负载工作并联系 Apple 或授权服务商。"
@@ -347,19 +348,19 @@
                 <article>
                   <strong data-zh="低功耗" data-en="Low power">低功耗</strong>
                   <p
-                    data-zh="适合长时间后台观察，变化更平缓，不用于捕捉极短尖峰。"
+                      data-zh="适合长时间在后台观察，但可能错过持续时间很短的尖峰。"
                     data-en="For long background observation with smoother changes, not very short spikes."
                   >
-                    适合长时间后台观察，变化更平缓，不用于捕捉极短尖峰。
+                      适合长时间在后台观察，但可能错过持续时间很短的尖峰。
                   </p>
                 </article>
                 <article>
                   <strong data-zh="平衡" data-en="Balanced">平衡</strong>
                   <p
-                    data-zh="日常推荐，在响应速度与后台开销之间取平衡。"
+                      data-zh="适合日常使用，兼顾更新速度和后台开销。"
                     data-en="Recommended for everyday use, balancing responsiveness and background cost."
                   >
-                    日常推荐，在响应速度与后台开销之间取平衡。
+                      适合日常使用，兼顾更新速度和后台开销。
                   </p>
                 </article>
                 <article>

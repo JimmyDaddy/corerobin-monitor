@@ -158,10 +158,10 @@
             Finder 与磁盘扫描结果为什么不同
           </h1>
           <p
-            data-zh="多数情况下不是谁算错了，而是数字在回答不同问题：文件声称有多大、实际分配了多少磁盘块、整个磁盘还能写入多少数据，并不是同一个量。"
+            data-zh="多数情况下不是谁算错了，而是这些数字表示的含义不同：文件内容有多大、实际占用了多少磁盘空间，以及整个磁盘还能写入多少数据，并不是一回事。"
             data-en="Usually neither tool is simply wrong. The numbers answer different questions: how much data a file represents, how many disk blocks are allocated, and how much more the volume can store are different measurements."
           >
-            多数情况下不是谁算错了，而是数字在回答不同问题：文件声称有多大、实际分配了多少磁盘块、整个磁盘还能写入多少数据，并不是同一个量。
+            多数情况下不是谁算错了，而是这些数字表示的含义不同：文件内容有多大、实际占用了多少磁盘空间，以及整个磁盘还能写入多少数据，并不是一回事。
           </p>
         </header>
         <div class="article-layout section-shell">
@@ -282,10 +282,10 @@
                       硬链接和共享内容
                     </h3>
                     <p
-                      data-zh="多个路径可以指向同一份底层数据。把每条路径都完整相加会重复计算，因此扫描器需要识别文件身份。"
+                      data-zh="多个路径可能指向磁盘上的同一份数据。如果把每条路径都相加，就会重复计算，因此扫描时需要识别并去重。"
                       data-en="Multiple paths can point to the same underlying data. Adding every path in full double-counts storage, so a scanner must identify the file object."
                     >
-                      多个路径可以指向同一份底层数据。把每条路径都完整相加会重复计算，因此扫描器需要识别文件身份。
+                      多个路径可能指向磁盘上的同一份数据。如果把每条路径都相加，就会重复计算，因此扫描时需要识别并去重。
                     </p>
                   </div>
                 </li>
@@ -299,10 +299,11 @@
                       APFS 克隆、快照和可清理空间
                     </h3>
                     <p
-                      data-zh="共享磁盘块很难完全归属于某一个路径；快照和系统可回收内容也会影响卷级可用空间，却不一定出现在普通目录遍历里。"
+                      data-zh="APFS 快照、可清理的系统数据和多个文件共用的存储空间，都会影响 macOS 显示的可用空间，但它们不一定会作为普通文件出现在扫描结果中。"
                       data-en="Shared blocks cannot always be assigned to one path. Snapshots and system-reclaimable content affect volume availability without necessarily appearing in an ordinary directory walk."
                     >
-                      共享磁盘块很难完全归属于某一个路径；快照和系统可回收内容也会影响卷级可用空间，却不一定出现在普通目录遍历里。
+                      APFS 快照、可清理的系统数据和多个文件共用的存储空间，都会影响 macOS
+                      显示的可用空间，但它们不一定会作为普通文件出现在扫描结果中。
                     </p>
                   </div>
                 </li>
@@ -316,12 +317,12 @@
                       iCloud 和其他云端占位文件
                     </h3>
                     <p
-                      data-zh="Finder 可以显示云端项目的逻辑大小，但内容可能没有完整下载。CoreRobin 会跳过云文件提供商根目录，避免为了测量而触发大规模下载。"
+                      data-zh="Finder 可以显示云端项目的逻辑大小，但文件内容可能没有完整下载。CoreRobin 会跳过由云盘应用管理的根目录，避免扫描时触发大量下载。"
                       data-en="Finder can show a cloud item's logical size even when the content is not fully downloaded. CoreRobin skips cloud file-provider roots to avoid triggering large downloads merely to measure them."
                     >
                       Finder
-                      可以显示云端项目的逻辑大小，但内容可能没有完整下载。CoreRobin
-                      会跳过云文件提供商根目录，避免为了测量而触发大规模下载。
+                      可以显示云端项目的逻辑大小，但文件内容可能没有完整下载。CoreRobin
+                      会跳过由云盘应用管理的根目录，避免扫描时触发大量下载。
                     </p>
                   </div>
                 </li>
@@ -335,11 +336,11 @@
                       权限和不可访问位置
                     </h3>
                     <p
-                      data-zh="未授予完整磁盘访问时，邮件、信息和其他应用数据可能无法遍历。CoreRobin 会保留缺口，不把未知内容估算成确定数字。"
+                      data-zh="未授予完整磁盘访问时，邮件、信息和其他应用数据可能无法扫描。CoreRobin 会把这些位置标记为无法访问，不会用估算值填补。"
                       data-en="Without Full Disk Access, Mail, Messages, and other app data may be unreadable. CoreRobin preserves the gap instead of turning unknown content into an estimated total."
                     >
-                      未授予完整磁盘访问时，邮件、信息和其他应用数据可能无法遍历。CoreRobin
-                      会保留缺口，不把未知内容估算成确定数字。
+                      未授予完整磁盘访问时，邮件、信息和其他应用数据可能无法扫描。CoreRobin
+                      会把这些位置标记为无法访问，不会用估算值填补。
                     </p>
                   </div>
                 </li>
@@ -379,10 +380,10 @@
                   上按文件系统报告的已分配块计算实际占用，而不是只用文件长度。
                 </li>
                 <li
-                  data-zh="在同一扫描根内按设备号和文件身份识别硬链接，避免重复计算同一份存储。"
+                  data-zh="同一次扫描中会识别指向同一份文件的硬链接，避免重复计算。"
                   data-en="Within a scan root, it identifies hard links by device and file identity so the same storage is not counted twice."
                 >
-                  在同一扫描根内按设备号和文件身份识别硬链接，避免重复计算同一份存储。
+                  同一次扫描中会识别指向同一份文件的硬链接，避免重复计算。
                 </li>
                 <li
                   data-zh="不跟随符号链接，不跨到其他磁盘，避免循环、越界和把外置盘计入系统盘。"
@@ -391,10 +392,10 @@
                   不跟随符号链接，不跨到其他磁盘，避免循环、越界和把外置盘计入系统盘。
                 </li>
                 <li
-                  data-zh="扫描结果是完成时的一张快照；删除前会重新检查路径、文件身份和变化，发现不一致就停止。"
+                  data-zh="扫描结果只代表完成时的状态。删除前会重新检查路径和文件是否发生变化，发现不一致就会取消操作。"
                   data-en="The result is a snapshot at completion. Before deletion, CoreRobin rechecks the path, file identity, and changes, and stops if they no longer match."
                 >
-                  扫描结果是完成时的一张快照；删除前会重新检查路径、文件身份和变化，发现不一致就停止。
+                  扫描结果只代表完成时的状态。删除前会重新检查路径和文件是否发生变化，发现不一致就会取消操作。
                 </li>
               </ul>
             </section>
@@ -445,17 +446,18 @@
                     data-en="Why do totals differ?"
                     >想解释总数差异</strong
                   ><span
-                    data-zh="对齐路径、权限和时间，再检查共享或云端内容"
+                    data-zh="确认路径、扫描时间和权限一致，再检查共享或云端内容"
                     data-en="Align path, access, and time, then inspect shared or cloud content"
-                    >对齐路径、权限和时间，再检查共享或云端内容</span
+                    >确认路径、扫描时间和权限一致，再检查共享或云端内容</span
                   >
                 </div>
               </div>
               <p
-                data-zh="不要为了让两个界面的总数完全相等而删除不认识的文件。清理的目标是找到你理解且确实不需要的内容，并用卷级可用空间验证结果。"
+                data-zh="不要为了让两个界面的总数完全相同，就去删除不认识的文件。只清理你知道用途、并且确定不再需要的内容；完成后查看 macOS 显示的可用空间是否增加。"
                 data-en="Do not delete unfamiliar files merely to make two totals match. The goal is to find content you understand and no longer need, then verify the outcome using volume-level available space."
               >
-                不要为了让两个界面的总数完全相等而删除不认识的文件。清理的目标是找到你理解且确实不需要的内容，并用卷级可用空间验证结果。
+                不要为了让两个界面的总数完全相同，就去删除不认识的文件。只清理你知道用途、并且确定不再需要的内容；完成后查看
+                macOS 显示的可用空间是否增加。
               </p>
               <div class="article-next">
                 <span data-zh="继续处理" data-en="KEEP READING">继续处理</span
@@ -481,9 +483,9 @@
       <p>
         © <span data-year></span> CoreRobin.
         <span
-          data-zh="先分清数字在回答什么。"
+          data-zh="先弄清每个数字代表什么。"
           data-en="First ask what the number measures."
-          >先分清数字在回答什么。</span
+          >先弄清每个数字代表什么。</span
         >
       </p>
       <div>

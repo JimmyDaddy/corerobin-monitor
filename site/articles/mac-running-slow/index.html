@@ -158,11 +158,11 @@
             Mac 变慢应该怎么排查
           </h1>
           <p
-            data-zh="先判断变慢是否持续，再依次检查 CPU、内存压力、磁盘空间和后台活动。单个瞬时高值不等于故障，稳定出现并且能和你的感受对应，才值得处理。"
+            data-zh="先判断卡顿是否持续，再依次检查 CPU、内存压力、磁盘空间和后台活动。一次短暂的高占用不代表故障；只有同一现象持续出现，并且确实伴随卡顿或其他影响时，才需要处理。"
             data-en="First confirm that the slowdown persists, then check CPU, memory pressure, storage, and background activity. A momentary high reading is not a fault; act when the pattern is sustained and matches what you experience."
           >
-            先判断变慢是否持续，再依次检查
-            CPU、内存压力、磁盘空间和后台活动。单个瞬时高值不等于故障，稳定出现并且能和你的感受对应，才值得处理。
+            先判断卡顿是否持续，再依次检查
+            CPU、内存压力、磁盘空间和后台活动。一次短暂的高占用不代表故障；只有同一现象持续出现，并且确实伴随卡顿或其他影响时，才需要处理。
           </p>
         </header>
         <div class="article-layout section-shell">
@@ -196,12 +196,12 @@
               <div class="article-answer">
                 <span data-zh="直接答案" data-en="QUICK ANSWER">直接答案</span>
                 <p
-                  data-zh="让 Mac 保持在出现卡顿的场景中观察 5 到 10 分钟。如果同一个应用持续占用 CPU、内存压力持续变黄或变红、启动磁盘空间很少，或磁盘读写长期繁忙，再进入对应处理；如果数值很快恢复，先记录而不是立刻结束进程。"
+                  data-zh="在卡顿发生时连续观察 5 到 10 分钟。如果同一个应用一直占用大量 CPU、内存压力持续变黄或变红、启动磁盘空间很少，或磁盘读写长时间繁忙，再处理对应问题；如果数值很快恢复，先记下这次情况，不要立刻结束进程。"
                   data-en="Observe the Mac for 5 to 10 minutes while the slowdown is happening. Investigate when the same app keeps using CPU, memory pressure stays yellow or red, startup-disk space is low, or disk activity remains busy. If the numbers recover quickly, record the event instead of immediately quitting a process."
                 >
-                  让 Mac 保持在出现卡顿的场景中观察 5 到 10
-                  分钟。如果同一个应用持续占用
-                  CPU、内存压力持续变黄或变红、启动磁盘空间很少，或磁盘读写长期繁忙，再进入对应处理；如果数值很快恢复，先记录而不是立刻结束进程。
+                  在卡顿发生时连续观察 5 到 10
+                  分钟。如果同一个应用一直占用大量
+                  CPU、内存压力持续变黄或变红、启动磁盘空间很少，或磁盘读写长时间繁忙，再处理对应问题；如果数值很快恢复，先记下这次情况，不要立刻结束进程。
                 </p>
               </div>
             </section>
@@ -214,10 +214,10 @@
                   <span>1</span>
                   <div>
                     <h3
-                      data-zh="确认问题真的在发生"
+                      data-zh="先确认卡顿是否持续"
                       data-en="Confirm the slowdown is happening"
                     >
-                      确认问题真的在发生
+                      先确认卡顿是否持续
                     </h3>
                     <p
                       data-zh="记下开始时间、正在使用的应用和具体表现：输入延迟、切换窗口卡顿、彩球、风扇持续加速，还是某个任务本来就在做大量计算。完成索引、照片分析、系统更新后自动恢复的短期变慢，不应和持续故障混在一起。"
@@ -237,10 +237,10 @@
                       看 CPU 是否持续被同一来源占用
                     </h3>
                     <p
-                      data-zh="一次尖峰可能只是打开应用或渲染页面。连续几分钟位于前列、并且卡顿同步出现，才形成有用证据。先保存工作，再优先从应用自己的退出方式结束；不要因为名称陌生就结束系统进程。"
+                      data-zh="一次高占用可能只是正在打开应用或渲染页面。如果同一个进程连续几分钟都排在前列，而且卡顿也同时出现，它才更可能是原因。先保存工作，再从应用自己的菜单正常退出；不要因为名称陌生就结束系统进程。"
                       data-en="A spike may only be an app launch or page render. A process that remains near the top for several minutes while the slowdown continues is useful evidence. Save your work and quit through the app first; do not stop a system process merely because its name is unfamiliar."
                     >
-                      一次尖峰可能只是打开应用或渲染页面。连续几分钟位于前列、并且卡顿同步出现，才形成有用证据。先保存工作，再优先从应用自己的退出方式结束；不要因为名称陌生就结束系统进程。
+                      一次高占用可能只是正在打开应用或渲染页面。如果同一个进程连续几分钟都排在前列，而且卡顿也同时出现，它才更可能是原因。先保存工作，再从应用自己的菜单正常退出；不要因为名称陌生就结束系统进程。
                     </p>
                   </div>
                 </li>
@@ -285,10 +285,10 @@
                   <span>5</span>
                   <div>
                     <h3
-                      data-zh="重启后复现，再检查登录项和更新"
+                      data-zh="重启后再次确认，并检查登录项和最近更新"
                       data-en="Reproduce after restart, then check login items and updates"
                     >
-                      重启后复现，再检查登录项和更新
+                      重启后再次确认，并检查登录项和最近更新
                     </h3>
                     <p
                       data-zh="重启能结束遗留任务，但不是诊断结论。若问题重启后仍出现，记录复现步骤，检查最近新增的登录项、扩展和应用更新，再逐个验证。"
@@ -310,10 +310,10 @@
                     >日常模式</strong
                   >
                   <p
-                    data-zh="先运行“检查一下”。结论只有在信号持续并达到稳定条件时才出现，不会把每秒变化的指标直接变成待办。"
+                    data-zh="先运行“检查一下”。只有问题持续一段时间，CoreRobin 才会给出提醒，不会把每秒变化的指标直接变成待办。"
                     data-en="Run Check now first. A finding appears only after the signal persists and meets stable conditions, rather than turning every changing metric into a task."
                   >
-                    先运行“检查一下”。结论只有在信号持续并达到稳定条件时才出现，不会把每秒变化的指标直接变成待办。
+                    先运行“检查一下”。只有问题持续一段时间，CoreRobin 才会给出提醒，不会把每秒变化的指标直接变成待办。
                   </p>
                 </article>
                 <article>
@@ -321,10 +321,10 @@
                     >专业模式</strong
                   >
                   <p
-                    data-zh="需要证据时再查看进程树、CPU、内存、磁盘读写和趋势。用搜索和稳定排序确认是不是同一来源持续出现。"
+                    data-zh="需要进一步确认时，再查看进程树、CPU、内存、磁盘读写和趋势。可以用搜索和固定排序，确认是否一直是同一个进程占用较高。"
                     data-en="Open process trees, CPU, memory, disk activity, and trends when you need evidence. Search and stable sorting help confirm whether the same source persists."
                   >
-                    需要证据时再查看进程树、CPU、内存、磁盘读写和趋势。用搜索和稳定排序确认是不是同一来源持续出现。
+                    需要进一步确认时，再查看进程树、CPU、内存、磁盘读写和趋势。可以用搜索和固定排序，确认是否一直是同一个进程占用较高。
                   </p>
                 </article>
               </div>
