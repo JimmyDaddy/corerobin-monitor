@@ -53,7 +53,7 @@
 
 ## 下载与验证
 
-前往[下载页](https://monitor-app.corerobin.com/download/)选择当前系统与芯片对应的安装包。macOS 提供 Apple Silicon 与 Intel DMG；Windows x64 和 Linux x64 目前是早期预览版本。当前安装包尚未配置平台发布签名或 Apple 公证。
+前往[下载页](https://monitor-app.corerobin.com/download/)选择当前系统与芯片对应的安装包。M1、M2、M3、M4 等 M 系列 Mac 使用 Apple Silicon DMG，只有 Intel Mac 才使用 Intel DMG；Windows x64 和 Linux x64 目前是早期预览版本。macOS 应用包已进行完整性签名，但尚未配置 Developer ID 签名或 Apple 公证；Windows 安装包尚未配置平台签名。
 
 每个 Release 同时提供 SHA-256 校验表、SPDX SBOM 和校验表的 Sigstore 签名包。下载页提供可复制的校验命令；这些来源完整性记录不能替代平台签名。
 
