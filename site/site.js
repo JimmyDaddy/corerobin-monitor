@@ -314,7 +314,7 @@ function updateVerificationCommands(asset, evidence, manifest, isEnglish) {
   const sigstore = evidence.get("sigstore-bundle");
   const sbom = evidence.get("sbom");
   const baseCommand = sums
-    ? `curl -LO "${asset.url}"\ncurl -LO "${sums.url}"\ngrep ' ${asset.name}$' ${sums.name} | shasum -a 256 -c -`
+    ? `curl -LO "${asset.url}"\ncurl -LO "${sums.url}"\ngrep ' ${asset.name}$' ${sums.name} | sed 's#  .*/#  #' | shasum -a 256 -c -`
     : "";
   const provenanceCommand = sigstore && sums
     ? `curl -LO "${sums.url}"\ncurl -LO "${sigstore.url}"\ncosign verify-blob --bundle ${sigstore.name} --certificate-identity-regexp '^https://github\\.com/.+/.github/workflows/release\\.yml@refs/tags/.+$' --certificate-oidc-issuer https://token.actions.githubusercontent.com ${sums.name}`

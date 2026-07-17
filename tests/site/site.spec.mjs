@@ -115,6 +115,13 @@ test("mobile browsers do not receive a desktop installer recommendation", async 
   await expect(page.locator("[data-platform-recommendation]:visible")).toHaveCount(0);
 });
 
+test("checksum command accepts both legacy nested and current flat asset names", async ({ page }) => {
+  await page.goto("/download/", { waitUntil: "networkidle" });
+  const command = page.locator('[data-release-command="checksum"]').first();
+  await expect(command).toContainText("sed 's#  .*/#  #'");
+  await expect(command).toContainText("shasum -a 256 -c -");
+});
+
 test("every installer in the release manifest resolves at GitHub", async ({ request }) => {
   const manifest = JSON.parse(await readFile(new URL("../../site/release-manifest.json", import.meta.url), "utf8"));
   for (const asset of [...manifest.installers, ...manifest.evidence]) {
