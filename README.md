@@ -14,7 +14,7 @@
   <p>
     <a href="https://monitor-app.corerobin.com/download/"><strong>下载 CoreRobin</strong></a>
     · <a href="https://monitor-app.corerobin.com/">产品网站</a>
-    · <a href="https://monitor-app.corerobin.com/articles/">Mac 排查文章</a>
+    · <a href="https://monitor-app.corerobin.com/articles/">电脑排障知识库</a>
     · <a href="docs/user-guide.zh-CN.md">中文指南</a>
     · <a href="https://monitor-app.corerobin.com/releases/">Release Notes</a>
     · <a href="README.en.md">English</a>
@@ -62,7 +62,7 @@
 ## 隐私、支持与安全
 
 - [隐私说明](PRIVACY.md)：本机数据、保留时间、完全磁盘访问权限和清除方式
-- [Mac 排障知识库](https://monitor-app.corerobin.com/articles/)：变慢、空间不足、完整磁盘访问和指标理解
+- [电脑排障知识库](https://monitor-app.corerobin.com/articles/)：macOS、Windows 和 Linux 的性能、空间、权限与监控指南
 - [中文使用指南](docs/user-guide.zh-CN.md) · [English user guide](docs/user-guide.md)
 - [支持](SUPPORT.md)：一般问题与功能建议
 - [Release Notes](https://monitor-app.corerobin.com/releases/)：当前版本变化、平台覆盖与已知限制

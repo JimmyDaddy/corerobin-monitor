@@ -27,7 +27,7 @@ for (const viewport of viewports) {
       });
       await page.goto(path, { waitUntil: "networkidle" });
       await expect(page.locator("h1")).toBeVisible();
-      await expect(page.locator("#site-navigation > a")).toHaveCount(5);
+      await expect(page.locator("#site-navigation > a")).toHaveCount(6);
       await expect(page.locator("[data-language-select] > option")).toHaveCount(localesForRoute(route).length);
       await page.evaluate(() => document.fonts?.ready);
       await page.locator("[data-reveal]").evaluateAll((elements) => {
@@ -84,6 +84,16 @@ test("mobile navigation manages focus and closes with Escape", async ({ page }) 
   await expect(toggle).toBeFocused();
 });
 
+test("global navigation opens the cross-platform knowledge base", async ({ page }) => {
+  await page.goto("/", { waitUntil: "networkidle" });
+  await page.locator('#site-navigation a[href="/articles/"]').click();
+  await page.waitForURL("**/articles/");
+  await expect(page.locator('#site-navigation a[href="/articles/"]')).toHaveAttribute("aria-current", "page");
+  await expect(page.locator("#macos")).toBeVisible();
+  await expect(page.locator("#windows")).toBeVisible();
+  await expect(page.locator("#linux")).toBeVisible();
+});
+
 test("language picker uses the matching static localized route", async ({ page }) => {
   await page.goto("/guide/", { waitUntil: "networkidle" });
   await page.locator("[data-language-select]").selectOption("/ja/guide/");
@@ -118,6 +128,16 @@ test("knowledge pages expose page-specific structured data", async ({ page }) =>
   expect(articleData['@type']).toBe("TechArticle");
   expect(articleData.headline).toBe("Mac 磁盘空间不足怎么清理");
   expect(articleData.mainEntityOfPage).toBe("https://monitor-app.corerobin.com/articles/mac-storage-full/");
+
+  await page.goto("/articles/windows-troubleshooting/", { waitUntil: "networkidle" });
+  const windowsArticle = JSON.parse(await page.locator('script[type="application/ld+json"]').first().textContent());
+  expect(windowsArticle['@type']).toBe("TechArticle");
+  expect(windowsArticle.headline).toBe("Windows 电脑变慢与磁盘空间怎么排查");
+
+  await page.goto("/articles/linux-troubleshooting/", { waitUntil: "networkidle" });
+  const linuxArticle = JSON.parse(await page.locator('script[type="application/ld+json"]').first().textContent());
+  expect(linuxArticle['@type']).toBe("TechArticle");
+  expect(linuxArticle.headline).toBe("Linux 电脑变慢与磁盘空间怎么排查");
 });
 
 for (const sample of [

@@ -6,15 +6,15 @@
     <meta name="theme-color" content="#080d12" />
     <meta
       name="description"
-      data-content-zh="CoreRobin Mac 排障知识库：从电脑变慢、磁盘空间不足、完整磁盘访问、CPU 内存温度和 Finder 容量差异开始，按可靠顺序找到原因。"
-      data-content-en="CoreRobin's practical Mac troubleshooting library covers slow Macs, low storage, Full Disk Access, CPU and memory monitoring, temperature, and Finder size differences."
-      content="CoreRobin Mac 排障知识库：从电脑变慢、磁盘空间不足、完整磁盘访问、CPU 内存温度和 Finder 容量差异开始，按可靠顺序找到原因。"
+      data-content-zh="CoreRobin 电脑排障知识库：提供 macOS、Windows 和 Linux 的性能、磁盘空间、权限与监控指南。"
+      data-content-en="CoreRobin's troubleshooting library covers performance, storage, permissions, and monitoring on macOS, Windows, and Linux."
+      content="CoreRobin 电脑排障知识库：提供 macOS、Windows 和 Linux 的性能、磁盘空间、权限与监控指南。"
     />
     <meta
       property="og:title"
-      data-content-zh="Mac 排障知识库 — CoreRobin"
-      data-content-en="Mac troubleshooting library — CoreRobin"
-      content="Mac 排障知识库 — CoreRobin"
+      data-content-zh="电脑排障知识库 — CoreRobin"
+      data-content-en="Computer troubleshooting library — CoreRobin"
+      content="电脑排障知识库 — CoreRobin"
     />
     <meta
       property="og:description"
@@ -35,9 +35,9 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      data-content-zh="CoreRobin Mac 排障知识库"
-      data-content-en="CoreRobin Mac troubleshooting library"
-      content="CoreRobin Mac 排障知识库"
+      data-content-zh="CoreRobin 电脑排障知识库"
+      data-content-en="CoreRobin computer troubleshooting library"
+      content="CoreRobin 电脑排障知识库"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://monitor-app.corerobin.com/articles/" />
@@ -48,8 +48,8 @@
       {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Mac 排障知识库",
-        "description": "CoreRobin Mac 排障知识库",
+        "name": "电脑排障知识库",
+        "description": "CoreRobin 的 macOS、Windows 和 Linux 电脑排障知识库",
         "url": "https://monitor-app.corerobin.com/articles/",
         "inLanguage": "zh-CN",
         "isPartOf": {
@@ -60,10 +60,10 @@
       }
     </script>
     <title
-      data-zh="Mac 排障知识库 — CoreRobin"
-      data-en="Mac troubleshooting library — CoreRobin"
+      data-zh="电脑排障知识库 — CoreRobin"
+      data-en="Computer troubleshooting library — CoreRobin"
     >
-      Mac 排障知识库 — CoreRobin
+      电脑排障知识库 — CoreRobin
     </title>
   </head>
   <body>
@@ -111,6 +111,7 @@
         <a href="/" data-zh="产品" data-en="Product">产品</a
         ><a href="/download/" data-zh="下载" data-en="Download">下载</a
         ><a href="/guide/" data-zh="指南" data-en="Guide">指南</a
+        ><a href="/articles/" aria-current="page" data-zh="知识库" data-en="Knowledge base">知识库</a
         ><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a
         ><a href="/releases/" data-zh="版本" data-en="Releases">版本</a>
       </nav>
@@ -129,8 +130,8 @@
         <div>
           <div class="eyebrow">
             <i></i
-            ><span data-zh="MAC 排障知识库" data-en="MAC TROUBLESHOOTING"
-              >MAC 排障知识库</span
+            ><span data-zh="电脑排障知识库" data-en="TROUBLESHOOTING LIBRARY"
+              >电脑排障知识库</span
             >
           </div>
           <h1
@@ -140,11 +141,11 @@
             先确认发生了什么，再去找原因。
           </h1>
           <p
-            data-zh="电脑变慢、空间不足或温度升高时，不必先猜是 CPU、内存还是磁盘。选择你遇到的问题，按清晰的顺序逐项排查。"
-            data-en="When your Mac slows down, runs low on space, or feels hot, you do not need to guess whether CPU, memory, or storage is responsible. Pick the symptom you see and follow a stable, verifiable path."
+            data-zh="CoreRobin 支持 macOS、Windows 和 Linux。先选择你正在使用的系统，再从电脑变慢、磁盘空间不足或温度异常等具体问题开始排查。"
+            data-en="CoreRobin supports macOS, Windows, and Linux. Choose your operating system, then start with the slowdown, low storage, or temperature issue you can actually observe."
           >
-            电脑变慢、空间不足或温度升高时，不必先猜是
-            CPU、内存还是磁盘。选择你遇到的问题，按清晰的顺序逐项排查。
+            CoreRobin 支持 macOS、Windows 和
+            Linux。先选择你正在使用的系统，再从电脑变慢、磁盘空间不足或温度异常等具体问题开始排查。
           </p>
         </div>
         <div class="article-library-hero__robin">
@@ -161,17 +162,33 @@
         class="article-library section-shell"
         aria-labelledby="article-library-heading"
       >
+        <nav
+          class="article-platform-nav"
+          data-aria-zh="选择操作系统"
+          data-aria-en="Choose an operating system"
+          aria-label="选择操作系统"
+          data-reveal
+        >
+          <a href="#macos"><strong>macOS</strong><span data-zh="5 篇指南" data-en="5 guides">5 篇指南</span></a>
+          <a href="#windows"><strong>Windows</strong><span data-zh="排障总览" data-en="Troubleshooting overview">排障总览</span></a>
+          <a href="#linux"><strong>Linux</strong><span data-zh="排障总览" data-en="Troubleshooting overview">排障总览</span></a>
+        </nav>
         <div class="article-library__intro" data-reveal>
-          <span>5 GUIDES</span>
+          <span>7 GUIDES</span>
           <h2
             id="article-library-heading"
-            data-zh="从你现在最想解决的事开始。"
-            data-en="Start with what you want to fix now."
+            data-zh="先选系统，再选你遇到的问题。"
+            data-en="Choose your system, then choose the problem."
           >
-            从你现在最想解决的事开始。
+            先选系统，再选你遇到的问题。
           </h2>
         </div>
-        <div class="article-grid">
+        <section class="article-platform-section" id="macos" aria-labelledby="macos-guides-heading">
+          <div class="article-platform-section__heading" data-reveal>
+            <span>macOS · 5</span>
+            <div><h2 id="macos-guides-heading" data-zh="macOS 排障指南" data-en="macOS troubleshooting guides">macOS 排障指南</h2><p data-zh="覆盖性能、磁盘空间、完整磁盘访问、温度和 Finder 容量差异。" data-en="Performance, storage, Full Disk Access, temperature, and Finder size differences.">覆盖性能、磁盘空间、完整磁盘访问、温度和 Finder 容量差异。</p></div>
+          </div>
+          <div class="article-grid">
           <a
             class="article-card article-card--featured"
             href="/articles/mac-running-slow/"
@@ -295,7 +312,36 @@
             </div>
             <span aria-hidden="true">→</span></a
           >
-        </div>
+          </div>
+        </section>
+
+        <section class="article-platform-section" id="windows" aria-labelledby="windows-guides-heading">
+          <div class="article-platform-section__heading" data-reveal>
+            <span>Windows</span>
+            <div><h2 id="windows-guides-heading" data-zh="Windows 排障指南" data-en="Windows troubleshooting guide">Windows 排障指南</h2><p data-zh="从任务管理器、启动应用、内存、磁盘活动和存储设置开始。" data-en="Start with Task Manager, startup apps, memory, disk activity, and Storage settings.">从任务管理器、启动应用、内存、磁盘活动和存储设置开始。</p></div>
+          </div>
+          <div class="article-grid article-grid--single">
+            <a class="article-card article-card--platform" href="/articles/windows-troubleshooting/" data-reveal>
+              <span class="article-card__platform" aria-hidden="true">⊞</span>
+              <div><small data-zh="性能与存储 · 约 8 分钟" data-en="Performance & storage · 8 min">性能与存储 · 约 8 分钟</small><h3 data-zh="Windows 电脑变慢与磁盘空间怎么排查" data-en="Troubleshoot Windows performance and storage">Windows 电脑变慢与磁盘空间怎么排查</h3><p data-zh="确认问题是否持续，再检查占用最高的进程、启动应用、磁盘活动和系统盘空间。" data-en="Confirm that the issue persists, then check the busiest processes, startup apps, disk activity, and system-drive space.">确认问题是否持续，再检查占用最高的进程、启动应用、磁盘活动和系统盘空间。</p></div>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="article-platform-section" id="linux" aria-labelledby="linux-guides-heading">
+          <div class="article-platform-section__heading" data-reveal>
+            <span>Linux</span>
+            <div><h2 id="linux-guides-heading" data-zh="Linux 排障指南" data-en="Linux troubleshooting guide">Linux 排障指南</h2><p data-zh="结合进程、系统负载、可用内存、交换空间、挂载点和温度传感器排查。" data-en="Use processes, system load, available memory, swap, mount points, and exposed temperature sensors.">结合进程、系统负载、可用内存、交换空间、挂载点和温度传感器排查。</p></div>
+          </div>
+          <div class="article-grid article-grid--single">
+            <a class="article-card article-card--platform" href="/articles/linux-troubleshooting/" data-reveal>
+              <span class="article-card__platform" aria-hidden="true">◉</span>
+              <div><small data-zh="性能与存储 · 约 8 分钟" data-en="Performance & storage · 8 min">性能与存储 · 约 8 分钟</small><h3 data-zh="Linux 电脑变慢与磁盘空间怎么排查" data-en="Troubleshoot Linux performance and storage">Linux 电脑变慢与磁盘空间怎么排查</h3><p data-zh="不要只看 load average 或“已用内存”；需要同时确认进程、可用内存、交换空间和真正变满的挂载点。" data-en="Do not rely on load average or used memory alone; check processes, available memory, swap, and the mount point that is actually full.">不要只看 load average 或“已用内存”；需要同时确认进程、可用内存、交换空间和真正变满的挂载点。</p></div>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </section>
       </section>
 
       <section class="article-library-note section-shell" data-reveal>
@@ -337,7 +383,7 @@
         © <span data-year></span> CoreRobin.
         <span
           data-zh="看清电脑状态，找到可靠的下一步。"
-          data-en="Understand your Mac and choose a reliable next step."
+          data-en="Understand your computer and choose a reliable next step."
           >看清电脑状态，找到可靠的下一步。</span
         >
       </p>

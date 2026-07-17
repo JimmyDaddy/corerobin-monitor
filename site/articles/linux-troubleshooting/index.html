@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN" data-language="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d12" />
+    <meta name="description" data-content-zh="Linux 电脑变慢或磁盘空间不足时，结合进程、系统负载、可用内存、交换空间、挂载点和温度传感器逐项排查。" data-content-en="When Linux feels slow or runs low on storage, check processes, system load, available memory, swap, mount points, and exposed temperature sensors in context." content="Linux 电脑变慢或磁盘空间不足时，结合进程、系统负载、可用内存、交换空间、挂载点和温度传感器逐项排查。" />
+    <meta property="og:title" data-content-zh="Linux 电脑变慢与磁盘空间怎么排查 — CoreRobin" data-content-en="Troubleshoot Linux performance and storage — CoreRobin" content="Linux 电脑变慢与磁盘空间怎么排查 — CoreRobin" />
+    <meta property="og:description" data-content-zh="不要只看 load average 或“已用内存”，要同时确认进程、交换空间和真正变满的挂载点。" data-content-en="Do not rely on load average or used memory alone; confirm processes, swap, and the mount point that is actually full." content="不要只看 load average 或“已用内存”，要同时确认进程、交换空间和真正变满的挂载点。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://monitor-app.corerobin.com/articles/linux-troubleshooting/" />
+    <meta property="og:image" content="https://monitor-app.corerobin.com/assets/social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" data-content-zh="Linux 性能与磁盘空间排查指南" data-content-en="Linux performance and storage troubleshooting guide" content="Linux 性能与磁盘空间排查指南" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://monitor-app.corerobin.com/articles/linux-troubleshooting/" />
+    <link rel="icon" href="/assets/app-icon.png" />
+    <link rel="stylesheet" href="/animated-robin.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Linux 电脑变慢与磁盘空间怎么排查",
+        "description": "Linux 性能与磁盘空间排查指南",
+        "datePublished": "2026-07-18",
+        "dateModified": "2026-07-18",
+        "author": { "@type": "Organization", "name": "CoreRobin" },
+        "publisher": { "@type": "Organization", "name": "CoreRobin" },
+        "mainEntityOfPage": "https://monitor-app.corerobin.com/articles/linux-troubleshooting/",
+        "url": "https://monitor-app.corerobin.com/articles/linux-troubleshooting/",
+        "inLanguage": "zh-CN"
+      }
+    </script>
+    <title data-zh="Linux 电脑变慢与磁盘空间怎么排查 — CoreRobin" data-en="Troubleshoot Linux performance and storage — CoreRobin">Linux 电脑变慢与磁盘空间怎么排查 — CoreRobin</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content" data-zh="跳到主要内容" data-en="Skip to main content">跳到主要内容</a>
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="CoreRobin home"><span class="brand__mark"><img src="/assets/brand-mark.png" alt="" /></span><span><strong aria-label="CoreRobin"><span aria-hidden="true">Core<span class="brand-wordmark__r">R<i></i></span>obin</span></strong><small>KNOWLEDGE BASE</small></span></a>
+      <button class="nav-toggle" type="button" data-aria-zh="打开导航" data-aria-en="Open navigation" aria-label="打开导航" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle><span></span><span></span></button>
+      <nav class="main-nav" id="site-navigation" data-nav data-aria-zh="主导航" data-aria-en="Main navigation" aria-label="主导航">
+        <a href="/" data-zh="产品" data-en="Product">产品</a><a href="/download/" data-zh="下载" data-en="Download">下载</a><a href="/guide/" data-zh="指南" data-en="Guide">指南</a><a href="/articles/" aria-current="page" data-zh="知识库" data-en="Knowledge base">知识库</a><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a><a href="/releases/" data-zh="版本" data-en="Releases">版本</a>
+      </nav>
+      <div class="header-actions"><div class="language-picker" data-language-picker data-aria-zh="选择语言" data-aria-en="Choose language"></div></div>
+    </header>
+    <main id="main-content" class="article-page">
+      <article>
+        <header class="article-hero section-shell" data-reveal>
+          <nav class="article-breadcrumb" data-aria-zh="面包屑" data-aria-en="Breadcrumb" aria-label="面包屑"><a href="/articles/" data-zh="电脑排障知识库" data-en="Troubleshooting library">电脑排障知识库</a><span>/</span><span>Linux</span></nav>
+          <div class="article-hero__meta"><span>LINUX TROUBLESHOOTING</span><time datetime="2026-07-18" data-zh="更新于 2026 年 7 月 18 日" data-en="Updated July 18, 2026">更新于 2026 年 7 月 18 日</time><span data-zh="约 8 分钟" data-en="8 min read">约 8 分钟</span></div>
+          <h1 data-zh="Linux 电脑变慢与磁盘空间怎么排查" data-en="Troubleshoot Linux performance and storage">Linux 电脑变慢与磁盘空间怎么排查</h1>
+          <p data-zh="Linux 发行版和桌面环境很多，单个数字也容易被误读。先确认问题持续存在，再把进程占用、系统负载、可用内存、交换空间、磁盘活动和挂载点放在一起判断。" data-en="Linux distributions and desktop environments vary, and isolated readings are easy to misread. First confirm the issue persists, then interpret process usage, system load, available memory, swap, disk activity, and mount points together.">Linux 发行版和桌面环境很多，单个数字也容易被误读。先确认问题持续存在，再把进程占用、系统负载、可用内存、交换空间、磁盘活动和挂载点放在一起判断。</p>
+        </header>
+        <div class="article-layout section-shell">
+          <aside class="article-toc" data-reveal><strong data-zh="这篇文章" data-en="In this guide">这篇文章</strong><nav><a href="#quick-answer" data-zh="先说结论" data-en="Quick answer">先说结论</a><a href="#check-order" data-zh="排查顺序" data-en="Check order">排查顺序</a><a href="#signals" data-zh="怎么看指标" data-en="Read the signals">怎么看指标</a><a href="#storage" data-zh="清理空间" data-en="Free storage">清理空间</a><a href="#limits" data-zh="平台说明" data-en="Platform notes">平台说明</a></nav></aside>
+          <div class="article-content">
+            <section id="quick-answer" data-reveal>
+              <div class="article-answer"><span data-zh="直接答案" data-en="QUICK ANSWER">直接答案</span><p data-zh="在问题出现时连续观察 5 到 10 分钟。确认同一个进程是否持续占用 CPU 或内存、交换空间是否持续增加、磁盘是否长时间繁忙，以及哪个挂载点真正接近用满。load average、已用内存或一次温度读数都不能单独说明原因。" data-en="Observe the system for 5 to 10 minutes while the issue is happening. Check whether one process keeps using CPU or memory, swap keeps growing, disk activity remains busy, and which mount point is actually filling up. Load average, used memory, or one temperature reading cannot identify the cause by themselves.">在问题出现时连续观察 5 到 10 分钟。确认同一个进程是否持续占用 CPU 或内存、交换空间是否持续增加、磁盘是否长时间繁忙，以及哪个挂载点真正接近用满。load average、已用内存或一次温度读数都不能单独说明原因。</p></div>
+            </section>
+            <section id="check-order" data-reveal>
+              <h2 data-zh="按这个顺序排查" data-en="Check in this order">按这个顺序排查</h2>
+              <ol class="article-steps">
+                <li><span>1</span><div><h3 data-zh="先确认问题和触发条件" data-en="Confirm the symptom and trigger">先确认问题和触发条件</h3><p data-zh="记下问题发生在登录后、打开某个应用后、系统更新、软件包升级、编译、虚拟机或同步任务期间，还是在空闲状态也会出现。短时后台任务结束后自动恢复，不应直接当成故障。" data-en="Note whether the issue follows login, one app, a system or package update, a build, a virtual machine, or sync work, or also happens while idle. A temporary background task that finishes normally is not automatically a fault.">记下问题发生在登录后、打开某个应用后、系统更新、软件包升级、编译、虚拟机或同步任务期间，还是在空闲状态也会出现。短时后台任务结束后自动恢复，不应直接当成故障。</p></div></li>
+                <li><span>2</span><div><h3 data-zh="找出持续占用的进程" data-en="Find the process with sustained usage">找出持续占用的进程</h3><p data-zh="在 CoreRobin、系统监视器或 top 中查看进程。如果同一进程连续几分钟占用较高，并且卡顿同时存在，它才更值得关注。优先从应用自身正常退出；不要因为进程名称陌生就结束守护进程或桌面会话组件。" data-en="Use CoreRobin, System Monitor, or top to inspect processes. A process matters more when it stays busy for several minutes while the slowdown continues. Quit through the app first, and do not stop a daemon or desktop-session component merely because its name is unfamiliar.">在 CoreRobin、系统监视器或 top 中查看进程。如果同一进程连续几分钟占用较高，并且卡顿同时存在，它才更值得关注。优先从应用自身正常退出；不要因为进程名称陌生就结束守护进程或桌面会话组件。</p></div></li>
+                <li><span>3</span><div><h3 data-zh="看可用内存和交换空间" data-en="Check available memory and swap">看可用内存和交换空间</h3><p data-zh="Linux 会利用空闲内存做文件缓存，所以“已用内存很多”通常不等于内存不足。更应关注可用内存是否持续很少、交换空间是否不断增加，以及某个进程的占用是否持续增长。" data-en="Linux uses otherwise idle memory for file cache, so high used memory does not usually mean memory pressure. Focus on whether available memory remains low, swap keeps growing, and one process continuously expands.">Linux 会利用空闲内存做文件缓存，所以“已用内存很多”通常不等于内存不足。更应关注可用内存是否持续很少、交换空间是否不断增加，以及某个进程的占用是否持续增长。</p></div></li>
+                <li><span>4</span><div><h3 data-zh="确认真正变满的挂载点" data-en="Identify the mount point that is full">确认真正变满的挂载点</h3><p data-zh="根目录、/home、容器数据和外置磁盘可能位于不同文件系统。先查看每个挂载点的可用空间，再扫描对应路径；不要把其他磁盘的空间或目录大小混进系统盘结论。" data-en="The root filesystem, /home, container data, and external disks may live on different filesystems. Check free space for each mount point, then scan the matching path. Do not mix another disk's capacity or directory totals into the system-disk result.">根目录、/home、容器数据和外置磁盘可能位于不同文件系统。先查看每个挂载点的可用空间，再扫描对应路径；不要把其他磁盘的空间或目录大小混进系统盘结论。</p></div></li>
+                <li><span>5</span><div><h3 data-zh="重启后复现，再检查最近变化" data-en="Reproduce after restart, then review recent changes">重启后复现，再检查最近变化</h3><p data-zh="如果问题重启后回来，检查最近更新的软件包、内核、显卡驱动、桌面扩展、登录启动项和常驻服务。一次只回退或停用一项，并保留恢复方法。" data-en="If the problem returns after restart, review recently updated packages, kernels, graphics drivers, desktop extensions, startup entries, and resident services. Disable or roll back one item at a time and keep a recovery path.">如果问题重启后回来，检查最近更新的软件包、内核、显卡驱动、桌面扩展、登录启动项和常驻服务。一次只回退或停用一项，并保留恢复方法。</p></div></li>
+              </ol>
+            </section>
+            <section id="signals" data-reveal>
+              <h2 data-zh="这些数字要放在一起看" data-en="Interpret these readings together">这些数字要放在一起看</h2>
+              <div class="article-signal-grid"><article><strong data-zh="load average 不是 CPU 百分比" data-en="Load average is not CPU percent">load average 不是 CPU 百分比</strong><p data-zh="它反映一段时间内可运行或等待的任务数量，还要结合 CPU 核心数、进程状态和实际卡顿判断。短时升高可能只是系统正在完成工作。" data-en="It reflects runnable or waiting tasks over time and must be interpreted with CPU count, process states, and the slowdown you experience. A short rise can simply mean the system is finishing work.">它反映一段时间内可运行或等待的任务数量，还要结合 CPU 核心数、进程状态和实际卡顿判断。短时升高可能只是系统正在完成工作。</p></article><article><strong data-zh="温度取决于驱动是否提供传感器" data-en="Temperature depends on exposed sensors">温度取决于驱动是否提供传感器</strong><p data-zh="不同内核、主板和硬件驱动公开的温度来源不同，有些设备不会提供可读传感器。CoreRobin 读取不到可靠数据时会显示“不可用”，不会用估算值替代。" data-en="Kernels, boards, and hardware drivers expose different thermal sources, and some devices expose none. CoreRobin shows unavailable when it has no trustworthy sensor instead of estimating a value.">不同内核、主板和硬件驱动公开的温度来源不同，有些设备不会提供可读传感器。CoreRobin 读取不到可靠数据时会显示“不可用”，不会用估算值替代。</p></article></div>
+              <p class="article-source"><span data-zh="Linux 内核文档说明 /proc/loadavg 提供 1、5、15 分钟负载，/proc/meminfo 中的 MemAvailable 用于估计在不发生交换的情况下还能启动多少应用。" data-en="The Linux kernel documents 1, 5, and 15 minute load averages in /proc/loadavg and defines MemAvailable as an estimate of memory available for starting applications without swapping.">Linux 内核文档说明 /proc/loadavg 提供 1、5、15 分钟负载，/proc/meminfo 中的 MemAvailable 用于估计在不发生交换的情况下还能启动多少应用。</span> <a href="https://docs.kernel.org/6.13/filesystems/proc.html" rel="noreferrer" data-zh="查看 Linux 内核文档" data-en="Linux kernel documentation">查看 Linux 内核文档</a></p>
+              <p class="article-source"><span data-zh="GNOME 系统监视器同样建议按 CPU 或内存排序进程，并结合资源趋势判断。" data-en="GNOME System Monitor likewise supports sorting processes by CPU or memory and interpreting them alongside resource trends.">GNOME 系统监视器同样建议按 CPU 或内存排序进程，并结合资源趋势判断。</span> <a href="https://help.gnome.org/gnome-system-monitor/" rel="noreferrer" data-zh="查看 GNOME 系统监视器指南" data-en="GNOME System Monitor guide">查看 GNOME 系统监视器指南</a></p>
+            </section>
+            <section id="storage" data-reveal>
+              <h2 data-zh="按挂载点和路径清理" data-en="Clean by mount point and path">按挂载点和路径清理</h2>
+              <ul class="article-checklist"><li data-zh="先确认是 /、/home、容器目录还是其他挂载点接近用满。" data-en="First identify whether /, /home, container data, or another mount point is filling up.">先确认是 /、/home、容器目录还是其他挂载点接近用满。</li><li data-zh="优先检查下载目录、旧安装包、日志、浏览器缓存、虚拟机、容器镜像和回收站，但先确认它们是否仍在使用。" data-en="Review Downloads, old packages, logs, browser caches, virtual machines, container images, and Trash, but confirm they are no longer needed.">优先检查下载目录、旧安装包、日志、浏览器缓存、虚拟机、容器镜像和回收站，但先确认它们是否仍在使用。</li><li data-zh="卸载软件包应使用发行版的软件管理器；不要手动删除 /usr、/var/lib 或不认识的系统目录。" data-en="Remove packages through the distribution's package manager; do not manually delete /usr, /var/lib, or unfamiliar system directories.">卸载软件包应使用发行版的软件管理器；不要手动删除 /usr、/var/lib 或不认识的系统目录。</li><li data-zh="使用 CoreRobin 时先扫描对应路径并查看权限缺口。放入清理篮不会立即删除，永久删除前仍会重新扫描并要求确认。" data-en="In CoreRobin, scan the matching path and review permission gaps. Adding an item to the cleanup basket does not delete it; the app rescans and asks again before permanent deletion.">使用 CoreRobin 时先扫描对应路径并查看权限缺口。放入清理篮不会立即删除，永久删除前仍会重新扫描并要求确认。</li></ul>
+              <p class="article-source"><span data-zh="GNOME 建议先查看文件系统的可用空间，再用磁盘使用分析器定位具体目录；删除后还要清空回收站，空间才会真正释放。" data-en="GNOME recommends checking free space by filesystem, then using Disk Usage Analyzer to locate directories; space is not fully released until Trash is emptied.">GNOME 建议先查看文件系统的可用空间，再用磁盘使用分析器定位具体目录；删除后还要清空回收站，空间才会真正释放。</span> <a href="https://help.gnome.org/gnome-help/disk-capacity.html" rel="noreferrer" data-zh="查看 GNOME 存储指南" data-en="GNOME storage guide">查看 GNOME 存储指南</a></p>
+            </section>
+            <section id="limits" data-reveal>
+              <h2 data-zh="Linux 版目前是早期预览" data-en="Linux is currently an early preview">Linux 版目前是早期预览</h2>
+              <p data-zh="Linux 安装包已经通过自动构建和启动检查，但发行版、桌面环境、权限模型和传感器驱动组合很多，实机覆盖仍有限。AppImage 适合直接试用，Deb 包适合 Debian、Ubuntu 及相关发行版；遇到缺失指标时，请连同发行版、内核版本和硬件信息一起反馈。" data-en="The Linux packages pass automated build and launch checks, but combinations of distributions, desktop environments, permissions, and sensor drivers are broad, so hardware coverage remains limited. AppImage is the easiest trial path, while Deb targets Debian, Ubuntu, and related distributions. Include the distribution, kernel version, and hardware when reporting missing readings.">Linux 安装包已经通过自动构建和启动检查，但发行版、桌面环境、权限模型和传感器驱动组合很多，实机覆盖仍有限。AppImage 适合直接试用，Deb 包适合 Debian、Ubuntu 及相关发行版；遇到缺失指标时，请连同发行版、内核版本和硬件信息一起反馈。</p>
+              <div class="article-next"><span data-zh="选择其他系统" data-en="OTHER PLATFORMS">选择其他系统</span><a href="/articles/#windows"><strong data-zh="查看 Windows 排障指南" data-en="Read the Windows troubleshooting guide">查看 Windows 排障指南</strong><span aria-hidden="true">→</span></a></div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer section-shell"><a class="brand brand--footer" href="/"><span class="brand__mark"><img src="/assets/brand-mark.png" alt="" /></span><span><strong>CoreRobin</strong><small>KNOWLEDGE BASE</small></span></a><p>© <span data-year></span> CoreRobin. <span data-zh="先确认问题持续存在，再处理真正的原因。" data-en="Confirm the issue persists before acting on the cause.">先确认问题持续存在，再处理真正的原因。</span></p><div><a href="/articles/" data-zh="知识库" data-en="Knowledge base">知识库</a><a href="/download/" data-zh="下载" data-en="Download">下载</a><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a><a href="https://github.com/JimmyDaddy/corerobin-monitor">GitHub</a></div></footer>
+    <script src="/site.js" defer></script>
+  </body>
+</html>

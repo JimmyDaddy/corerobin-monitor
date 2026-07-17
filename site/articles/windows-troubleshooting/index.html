@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN" data-language="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d12" />
+    <meta name="description" data-content-zh="Windows 电脑变慢或磁盘空间不足时，依次检查持续时间、任务管理器、启动应用、内存、磁盘活动和系统盘空间。" data-content-en="When Windows feels slow or runs low on storage, check duration, Task Manager, startup apps, memory, disk activity, and system-drive space in order." content="Windows 电脑变慢或磁盘空间不足时，依次检查持续时间、任务管理器、启动应用、内存、磁盘活动和系统盘空间。" />
+    <meta property="og:title" data-content-zh="Windows 电脑变慢与磁盘空间怎么排查 — CoreRobin" data-content-en="Troubleshoot Windows performance and storage — CoreRobin" content="Windows 电脑变慢与磁盘空间怎么排查 — CoreRobin" />
+    <meta property="og:description" data-content-zh="先确认问题是否持续，再找出真正占用资源的进程或空间。" data-content-en="Confirm that the issue persists, then identify the process or data actually using resources." content="先确认问题是否持续，再找出真正占用资源的进程或空间。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://monitor-app.corerobin.com/articles/windows-troubleshooting/" />
+    <meta property="og:image" content="https://monitor-app.corerobin.com/assets/social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" data-content-zh="Windows 性能与磁盘空间排查指南" data-content-en="Windows performance and storage troubleshooting guide" content="Windows 性能与磁盘空间排查指南" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://monitor-app.corerobin.com/articles/windows-troubleshooting/" />
+    <link rel="icon" href="/assets/app-icon.png" />
+    <link rel="stylesheet" href="/animated-robin.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Windows 电脑变慢与磁盘空间怎么排查",
+        "description": "Windows 性能与磁盘空间排查指南",
+        "datePublished": "2026-07-18",
+        "dateModified": "2026-07-18",
+        "author": { "@type": "Organization", "name": "CoreRobin" },
+        "publisher": { "@type": "Organization", "name": "CoreRobin" },
+        "mainEntityOfPage": "https://monitor-app.corerobin.com/articles/windows-troubleshooting/",
+        "url": "https://monitor-app.corerobin.com/articles/windows-troubleshooting/",
+        "inLanguage": "zh-CN"
+      }
+    </script>
+    <title data-zh="Windows 电脑变慢与磁盘空间怎么排查 — CoreRobin" data-en="Troubleshoot Windows performance and storage — CoreRobin">Windows 电脑变慢与磁盘空间怎么排查 — CoreRobin</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content" data-zh="跳到主要内容" data-en="Skip to main content">跳到主要内容</a>
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="CoreRobin home"><span class="brand__mark"><img src="/assets/brand-mark.png" alt="" /></span><span><strong aria-label="CoreRobin"><span aria-hidden="true">Core<span class="brand-wordmark__r">R<i></i></span>obin</span></strong><small>KNOWLEDGE BASE</small></span></a>
+      <button class="nav-toggle" type="button" data-aria-zh="打开导航" data-aria-en="Open navigation" aria-label="打开导航" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle><span></span><span></span></button>
+      <nav class="main-nav" id="site-navigation" data-nav data-aria-zh="主导航" data-aria-en="Main navigation" aria-label="主导航">
+        <a href="/" data-zh="产品" data-en="Product">产品</a><a href="/download/" data-zh="下载" data-en="Download">下载</a><a href="/guide/" data-zh="指南" data-en="Guide">指南</a><a href="/articles/" aria-current="page" data-zh="知识库" data-en="Knowledge base">知识库</a><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a><a href="/releases/" data-zh="版本" data-en="Releases">版本</a>
+      </nav>
+      <div class="header-actions"><div class="language-picker" data-language-picker data-aria-zh="选择语言" data-aria-en="Choose language"></div></div>
+    </header>
+    <main id="main-content" class="article-page">
+      <article>
+        <header class="article-hero section-shell" data-reveal>
+          <nav class="article-breadcrumb" data-aria-zh="面包屑" data-aria-en="Breadcrumb" aria-label="面包屑"><a href="/articles/" data-zh="电脑排障知识库" data-en="Troubleshooting library">电脑排障知识库</a><span>/</span><span>Windows</span></nav>
+          <div class="article-hero__meta"><span>WINDOWS TROUBLESHOOTING</span><time datetime="2026-07-18" data-zh="更新于 2026 年 7 月 18 日" data-en="Updated July 18, 2026">更新于 2026 年 7 月 18 日</time><span data-zh="约 8 分钟" data-en="8 min read">约 8 分钟</span></div>
+          <h1 data-zh="Windows 电脑变慢与磁盘空间怎么排查" data-en="Troubleshoot Windows performance and storage">Windows 电脑变慢与磁盘空间怎么排查</h1>
+          <p data-zh="先确认卡顿或空间不足是否持续，再查看任务管理器中的进程、内存和磁盘活动，以及系统盘的可用空间。不要因为一次瞬时高占用就结束进程，也不要在没看清内容前批量清理文件。" data-en="First confirm that the slowdown or low-storage condition persists. Then review processes, memory, disk activity, and free space on the system drive. Do not stop a process because of one spike or remove files in bulk before reviewing them.">先确认卡顿或空间不足是否持续，再查看任务管理器中的进程、内存和磁盘活动，以及系统盘的可用空间。不要因为一次瞬时高占用就结束进程，也不要在没看清内容前批量清理文件。</p>
+        </header>
+        <div class="article-layout section-shell">
+          <aside class="article-toc" data-reveal><strong data-zh="这篇文章" data-en="In this guide">这篇文章</strong><nav><a href="#quick-answer" data-zh="先说结论" data-en="Quick answer">先说结论</a><a href="#check-order" data-zh="排查顺序" data-en="Check order">排查顺序</a><a href="#signals" data-zh="怎么看指标" data-en="Read the signals">怎么看指标</a><a href="#storage" data-zh="清理空间" data-en="Free storage">清理空间</a><a href="#limits" data-zh="平台说明" data-en="Platform notes">平台说明</a></nav></aside>
+          <div class="article-content">
+            <section id="quick-answer" data-reveal>
+              <div class="article-answer"><span data-zh="直接答案" data-en="QUICK ANSWER">直接答案</span><p data-zh="在问题出现时连续观察 5 到 10 分钟。按 Ctrl + Shift + Esc 打开任务管理器，确认是否一直是同一个应用占用 CPU、内存或磁盘；再进入“设置 → 系统 → 存储”查看系统盘。如果数值很快恢复，先记录这次情况，不要立刻结束进程或删除文件。" data-en="Observe the PC for 5 to 10 minutes while the issue is happening. Press Ctrl + Shift + Esc to open Task Manager and see whether the same app keeps using CPU, memory, or disk. Then open Settings → System → Storage. If readings recover quickly, record the event instead of immediately stopping a process or deleting files.">在问题出现时连续观察 5 到 10 分钟。按 Ctrl + Shift + Esc 打开任务管理器，确认是否一直是同一个应用占用 CPU、内存或磁盘；再进入“设置 → 系统 → 存储”查看系统盘。如果数值很快恢复，先记录这次情况，不要立刻结束进程或删除文件。</p></div>
+            </section>
+            <section id="check-order" data-reveal>
+              <h2 data-zh="按这个顺序排查" data-en="Check in this order">按这个顺序排查</h2>
+              <ol class="article-steps">
+                <li><span>1</span><div><h3 data-zh="记下问题何时出现" data-en="Record when it happens">记下问题何时出现</h3><p data-zh="区分开机后一直很慢、打开某个应用后才慢、游戏或编译时变慢，以及 Windows Update、病毒扫描或云盘同步期间的短时繁忙。只有可以重复出现的现象，才适合继续定位。" data-en="Separate an always-slow startup from slowdowns after opening one app, heavy games or builds, and temporary work from Windows Update, antivirus scans, or cloud sync. Continue only with a pattern you can reproduce.">区分开机后一直很慢、打开某个应用后才慢、游戏或编译时变慢，以及 Windows Update、病毒扫描或云盘同步期间的短时繁忙。只有可以重复出现的现象，才适合继续定位。</p></div></li>
+                <li><span>2</span><div><h3 data-zh="在任务管理器中查看持续占用" data-en="Look for sustained usage in Task Manager">在任务管理器中查看持续占用</h3><p data-zh="在“进程”页按 CPU、内存或磁盘排序。如果同一进程连续几分钟排在前面，并且卡顿同时存在，它才更可能相关。先保存工作并从应用自身正常退出；不要因为进程名称陌生就强制结束。" data-en="Sort the Processes page by CPU, memory, or disk. A process is more relevant when it remains near the top for several minutes while the slowdown continues. Save your work and quit through the app first; do not force-stop an unfamiliar process by name alone.">在“进程”页按 CPU、内存或磁盘排序。如果同一进程连续几分钟排在前面，并且卡顿同时存在，它才更可能相关。先保存工作并从应用自身正常退出；不要因为进程名称陌生就强制结束。</p></div></li>
+                <li><span>3</span><div><h3 data-zh="检查内存、磁盘活动和启动应用" data-en="Check memory, disk activity, and startup apps">检查内存、磁盘活动和启动应用</h3><p data-zh="内存接近用满并伴随明显换页、磁盘活动长时间接近满负载，都会让响应变慢。“启动应用”页可以帮助确认是否有不需要的软件随登录启动，但请逐项关闭并观察，不要一次禁用全部。" data-en="Near-full memory with paging, or sustained heavy disk activity, can hurt responsiveness. Use Startup apps to review software that launches at sign-in, but disable items one at a time and observe the result.">内存接近用满并伴随明显换页、磁盘活动长时间接近满负载，都会让响应变慢。“启动应用”页可以帮助确认是否有不需要的软件随登录启动，但请逐项关闭并观察，不要一次禁用全部。</p></div></li>
+                <li><span>4</span><div><h3 data-zh="确认 C: 盘还有可用空间" data-en="Check free space on C:">确认 C: 盘还有可用空间</h3><p data-zh="系统更新、临时文件、分页文件和应用缓存都需要系统盘空间。打开“设置 → 系统 → 存储”，先看临时文件、已安装的应用和个人文件分别占了多少，再决定清理对象。" data-en="Updates, temporary files, the page file, and app caches all need room on the system drive. Open Settings → System → Storage and review temporary files, installed apps, and personal files before choosing what to remove.">系统更新、临时文件、分页文件和应用缓存都需要系统盘空间。打开“设置 → 系统 → 存储”，先看临时文件、已安装的应用和个人文件分别占了多少，再决定清理对象。</p></div></li>
+                <li><span>5</span><div><h3 data-zh="重启后复现，再检查更新和驱动" data-en="Reproduce after restart, then review updates and drivers">重启后复现，再检查更新和驱动</h3><p data-zh="重启可以结束遗留任务，但不能说明根因。如果问题回来，记录复现步骤，再检查最近安装的 Windows 更新、驱动、杀毒软件或常驻工具；一次只改变一项。" data-en="A restart clears stale work but does not identify the cause. If the problem returns, record the steps and review recent Windows updates, drivers, antivirus software, or resident utilities one change at a time.">重启可以结束遗留任务，但不能说明根因。如果问题回来，记录复现步骤，再检查最近安装的 Windows 更新、驱动、杀毒软件或常驻工具；一次只改变一项。</p></div></li>
+              </ol>
+            </section>
+            <section id="signals" data-reveal>
+              <h2 data-zh="用 CoreRobin 怎么看" data-en="How to use CoreRobin">用 CoreRobin 怎么看</h2>
+              <div class="article-signal-grid"><article><strong data-zh="日常模式" data-en="Everyday mode">日常模式</strong><p data-zh="先运行“检查一下”，看问题是否持续，以及 CoreRobin 给出的原因和下一步。短时尖峰不会立即变成待处理事项。" data-en="Run Check now to see whether the issue persists and review CoreRobin's cause and next step. A short spike does not immediately become an action item.">先运行“检查一下”，看问题是否持续，以及 CoreRobin 给出的原因和下一步。短时尖峰不会立即变成待处理事项。</p></article><article><strong data-zh="专业模式" data-en="Professional mode">专业模式</strong><p data-zh="需要进一步确认时，再查看进程、CPU、内存、磁盘读写和趋势，并与任务管理器中同一时段的结果互相核对。" data-en="When you need more detail, review processes, CPU, memory, disk activity, and trends, then compare the same time window with Task Manager.">需要进一步确认时，再查看进程、CPU、内存、磁盘读写和趋势，并与任务管理器中同一时段的结果互相核对。</p></article></div>
+              <p class="article-source"><span data-zh="Microsoft 也建议使用任务管理器查看 CPU、内存和磁盘使用情况，并检查“性能”和“启动应用”页面。" data-en="Microsoft also recommends using Task Manager to review CPU, memory, and disk usage, including the Performance and Startup apps pages.">Microsoft 也建议使用任务管理器查看 CPU、内存和磁盘使用情况，并检查“性能”和“启动应用”页面。</span> <a href="https://support.microsoft.com/en-us/windows/tips-to-improve-pc-performance-in-windows-b3b3ef5b-5953-fb6a-2528-4bbed82fba96" rel="noreferrer" data-zh="查看 Microsoft 性能指南" data-en="Microsoft performance guide">查看 Microsoft 性能指南</a></p>
+            </section>
+            <section id="storage" data-reveal>
+              <h2 data-zh="先预览，再清理空间" data-en="Review before freeing storage">先预览，再清理空间</h2>
+              <ul class="article-checklist"><li data-zh="优先检查下载目录、旧安装包、很久不用的应用、大型视频、虚拟机和回收站。" data-en="Start with Downloads, old installers, unused apps, large videos, virtual machines, and Recycle Bin.">优先检查下载目录、旧安装包、很久不用的应用、大型视频、虚拟机和回收站。</li><li data-zh="“存储感知”默认主要管理系统盘；启用前先查看临时文件、回收站和下载目录的保留规则。" data-en="Storage Sense primarily manages the system drive; review its temporary-file, Recycle Bin, and Downloads retention rules before enabling it.">“存储感知”默认主要管理系统盘；启用前先查看临时文件、回收站和下载目录的保留规则。</li><li data-zh="不要手动删除 Windows、Program Files 或不认识的 AppData 内容。卸载应用应使用“设置 → 应用”。" data-en="Do not manually delete Windows, Program Files, or unfamiliar AppData content. Uninstall software through Settings → Apps.">不要手动删除 Windows、Program Files 或不认识的 AppData 内容。卸载应用应使用“设置 → 应用”。</li><li data-zh="使用 CoreRobin 清理时，先查看路径和大小；放入清理篮不会立即删除，永久删除前还会重新扫描并要求确认。" data-en="In CoreRobin, review the path and size first. Adding an item to the cleanup basket does not delete it; the app rescans and asks again before permanent deletion.">使用 CoreRobin 清理时，先查看路径和大小；放入清理篮不会立即删除，永久删除前还会重新扫描并要求确认。</li></ul>
+              <p class="article-source"><span data-zh="Microsoft 说明“存储感知”可以清理临时文件和回收站内容，但下载目录和云端文件是否处理取决于你的设置。" data-en="Microsoft explains that Storage Sense can clean temporary files and Recycle Bin content, while Downloads and cloud content depend on your configuration.">Microsoft 说明“存储感知”可以清理临时文件和回收站内容，但下载目录和云端文件是否处理取决于你的设置。</span> <a href="https://support.microsoft.com/en-au/windows/manage-drive-space-with-storage-sense-654f6ada-7bfc-45e5-966b-e24aded96ad5" rel="noreferrer" data-zh="查看 Microsoft 存储指南" data-en="Microsoft Storage Sense guide">查看 Microsoft 存储指南</a></p>
+            </section>
+            <section id="limits" data-reveal>
+              <h2 data-zh="Windows 版目前是早期预览" data-en="Windows is currently an early preview">Windows 版目前是早期预览</h2>
+              <p data-zh="Windows 安装包已经通过自动构建和启动检查，但实机覆盖仍少于 macOS。温度、电池健康度、进程归属和部分启动项信息会受到硬件、驱动和系统接口影响；没有可靠数据时，CoreRobin 会显示“不可用”，不会用估算值替代。" data-en="The Windows package passes automated build and launch checks, but hardware coverage is still smaller than on macOS. Temperature, battery health, process ownership, and some startup information depend on hardware, drivers, and OS interfaces. CoreRobin shows unavailable when it has no trustworthy reading instead of estimating one.">Windows 安装包已经通过自动构建和启动检查，但实机覆盖仍少于 macOS。温度、电池健康度、进程归属和部分启动项信息会受到硬件、驱动和系统接口影响；没有可靠数据时，CoreRobin 会显示“不可用”，不会用估算值替代。</p>
+              <div class="article-next"><span data-zh="选择其他系统" data-en="OTHER PLATFORMS">选择其他系统</span><a href="/articles/#linux"><strong data-zh="查看 Linux 排障指南" data-en="Read the Linux troubleshooting guide">查看 Linux 排障指南</strong><span aria-hidden="true">→</span></a></div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer section-shell"><a class="brand brand--footer" href="/"><span class="brand__mark"><img src="/assets/brand-mark.png" alt="" /></span><span><strong>CoreRobin</strong><small>KNOWLEDGE BASE</small></span></a><p>© <span data-year></span> CoreRobin. <span data-zh="先确认问题持续存在，再处理真正的原因。" data-en="Confirm the issue persists before acting on the cause.">先确认问题持续存在，再处理真正的原因。</span></p><div><a href="/articles/" data-zh="知识库" data-en="Knowledge base">知识库</a><a href="/download/" data-zh="下载" data-en="Download">下载</a><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a><a href="https://github.com/JimmyDaddy/corerobin-monitor">GitHub</a></div></footer>
+    <script src="/site.js" defer></script>
+  </body>
+</html>

@@ -19,17 +19,19 @@ export const SITE_NAV_ROUTES = [
   { source: "index.html", path: "/", changeFrequency: "weekly" },
   { source: "download/index.html", path: "/download/", changeFrequency: "weekly" },
   { source: "guide/index.html", path: "/guide/", changeFrequency: "weekly" },
+  { source: "articles/index.html", path: "/articles/", changeFrequency: "weekly", locales: ["zh-CN", "en"] },
   { source: "privacy/index.html", path: "/privacy/", changeFrequency: "monthly" },
   { source: "releases/index.html", path: "/releases/", changeFrequency: "weekly" },
 ];
 
 export const SITE_ARTICLE_ROUTES = [
-  { source: "articles/index.html", path: "/articles/", changeFrequency: "weekly", locales: ["zh-CN", "en"] },
   { source: "articles/mac-running-slow/index.html", path: "/articles/mac-running-slow/", changeFrequency: "monthly", locales: ["zh-CN", "en"] },
   { source: "articles/mac-storage-full/index.html", path: "/articles/mac-storage-full/", changeFrequency: "monthly", locales: ["zh-CN", "en"] },
   { source: "articles/full-disk-access-missing/index.html", path: "/articles/full-disk-access-missing/", changeFrequency: "monthly", locales: ["zh-CN", "en"] },
   { source: "articles/mac-cpu-memory-temperature/index.html", path: "/articles/mac-cpu-memory-temperature/", changeFrequency: "monthly", locales: ["zh-CN", "en"] },
   { source: "articles/finder-disk-size-difference/index.html", path: "/articles/finder-disk-size-difference/", changeFrequency: "monthly", locales: ["zh-CN", "en"] },
+  { source: "articles/windows-troubleshooting/index.html", path: "/articles/windows-troubleshooting/", changeFrequency: "monthly", locales: ["zh-CN", "en"] },
+  { source: "articles/linux-troubleshooting/index.html", path: "/articles/linux-troubleshooting/", changeFrequency: "monthly", locales: ["zh-CN", "en"] },
 ];
 
 export const SITE_ROUTES = [...SITE_NAV_ROUTES, ...SITE_ARTICLE_ROUTES];
