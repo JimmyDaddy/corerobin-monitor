@@ -222,6 +222,16 @@ async function verifyStaticPage(path, route, language, expectsEnglish) {
   if (expectsEnglish && /[\u4e00-\u9fff]/.test(title + attribute(ogTitle, "content") + attribute(ogDescription, "content"))) {
     throw new Error(`English static metadata still contains Chinese in ${relative(outputRoot, path)}.`);
   }
+  const globalNav = nodes.find((node) => node.tagName === "nav" && attribute(node, "id") === "site-navigation");
+  const navLinks = (globalNav?.childNodes ?? [])
+    .filter((node) => node.tagName === "a")
+    .map((node) => attribute(node, "href"));
+  const expectedNavLinks = expectsEnglish
+    ? ["/en/", "/en/download/", "/en/guide/", "/en/privacy/"]
+    : ["/", "/download/", "/guide/", "/privacy/"];
+  if (navLinks.join(",") !== expectedNavLinks.join(",")) {
+    throw new Error(`Inconsistent global navigation in ${relative(outputRoot, path)}.`);
+  }
 }
 
 async function verifySitemap() {

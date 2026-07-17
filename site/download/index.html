@@ -28,6 +28,7 @@
       <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle data-aria-zh="打开导航" data-aria-en="Open navigation"><span></span><span></span></button>
       <nav class="main-nav" id="site-navigation" data-nav aria-label="主要导航" data-aria-zh="主要导航" data-aria-en="Main navigation">
         <a href="/" data-zh="产品首页" data-en="Product">产品首页</a>
+        <a href="/download/" aria-current="page" data-zh="下载" data-en="Download">下载</a>
         <a href="/guide/" data-zh="使用指南" data-en="Guide">使用指南</a>
         <a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a>
       </nav>
@@ -51,7 +52,6 @@
             <a class="download-asset" data-asset-id="macos-arm64-dmg" href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest"><span><strong data-zh="Apple Silicon" data-en="Apple Silicon">Apple Silicon</strong><small data-asset-meta>DMG</small></span><i aria-hidden="true">↓</i></a>
             <a class="download-asset" data-asset-id="macos-x64-dmg" href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest"><span><strong data-zh="Intel Mac" data-en="Intel Mac">Intel Mac</strong><small data-asset-meta>DMG</small></span><i aria-hidden="true">↓</i></a>
           </div>
-          <p class="download-platform__hint" data-zh="不确定芯片？点左上角  → 关于本机；“芯片”显示 Apple 或 M 系列即选择 Apple Silicon。" data-en="Not sure? Choose Apple menu → About This Mac. Select Apple Silicon when Chip says Apple or an M-series chip.">不确定芯片？点左上角  → 关于本机；“芯片”显示 Apple 或 M 系列即选择 Apple Silicon。</p>
         </article>
 
         <article class="download-platform" data-download-platform="windows" data-reveal data-delay="80">
@@ -74,7 +74,7 @@
       </section>
 
       <section class="download-verify" data-reveal>
-        <div><span class="section-index">02</span><span class="eyebrow-text" data-zh="验证下载" data-en="VERIFY THE DOWNLOAD">验证下载</span></div>
+        <div class="eyebrow"><i></i><span data-zh="验证下载" data-en="VERIFY THE DOWNLOAD">验证下载</span></div>
         <h2 data-zh="先验证文件，再第一次打开。" data-en="Verify the file before its first launch.">先验证文件，再第一次打开。</h2>
         <p data-zh="Release 提供 SHA-256 校验表、SPDX SBOM 和 Sigstore 签名包。校验表能确认下载文件是否匹配发布内容；Sigstore 可验证校验表来自受信 GitHub Actions。它们不能替代平台签名。" data-en="Each release includes SHA-256 checksums, an SPDX SBOM, and a Sigstore bundle. Checksums confirm a downloaded file matches the release, while Sigstore verifies that the checksum manifest came from trusted GitHub Actions. Neither replaces platform signing.">Release 提供 SHA-256 校验表、SPDX SBOM 和 Sigstore 签名包。校验表能确认下载文件是否匹配发布内容；Sigstore 可验证校验表来自受信 GitHub Actions。它们不能替代平台签名。</p>
         <label class="verification-select"><span data-zh="要验证哪个安装包？" data-en="Which installer do you want to verify?">要验证哪个安装包？</span><select data-verification-select aria-label="选择要验证的安装包" data-aria-zh="选择要验证的安装包" data-aria-en="Choose an installer to verify"><option data-zh="正在读取安装包…" data-en="Reading installers…">正在读取安装包…</option></select></label>
