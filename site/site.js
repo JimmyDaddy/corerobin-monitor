@@ -234,6 +234,7 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
 const downloadRoot = document.querySelector("[data-download-root]");
 
 if (downloadRoot) {
+  recommendPlatform();
   loadReleaseManifest();
 }
 
@@ -273,8 +274,8 @@ function applyReleaseManifest(manifest) {
   });
   const verificationSelect = document.querySelector("[data-verification-select]");
 
-  document.querySelectorAll("[data-asset-id]").forEach((link) => {
-    const asset = assets.get(link.dataset.assetId);
+  document.querySelectorAll("[data-asset-id], [data-recommended-asset]").forEach((link) => {
+    const asset = assets.get(link.dataset.assetId ?? link.dataset.recommendedAsset);
     if (!asset) return;
     link.href = asset.url;
     link.setAttribute("download", asset.name);
@@ -304,7 +305,6 @@ function applyReleaseManifest(manifest) {
   }
 
   updateVerificationCommands(selectedAsset, evidence, manifest, isEnglish);
-  recommendPlatform();
 }
 
 function updateVerificationCommands(asset, evidence, manifest, isEnglish) {
@@ -335,8 +335,24 @@ function formatFileSize(bytes, isEnglish) {
 }
 
 function recommendPlatform() {
-  const platform = navigator.userAgent.toLowerCase();
-  const target = platform.includes("mac") ? "macos" : platform.includes("win") ? "windows" : platform.includes("linux") ? "linux" : null;
+  const userAgent = navigator.userAgent.toLowerCase();
+  const isMobile = navigator.userAgentData?.mobile === true
+    || /android|iphone|ipad|ipod/.test(userAgent)
+    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  if (isMobile) return;
+  const platform = [navigator.userAgentData?.platform, navigator.platform, navigator.userAgent]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  const target = platform.includes("mac")
+    ? "macos"
+    : platform.includes("win")
+      ? "windows"
+      : platform.includes("linux")
+        ? "linux"
+        : null;
   if (!target) return;
   document.querySelector(`[data-download-platform="${target}"]`)?.classList.add("is-recommended");
+  const recommendation = document.querySelector(`[data-platform-recommendation="${target}"]`);
+  if (recommendation instanceof HTMLElement) recommendation.hidden = false;
 }

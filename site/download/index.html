@@ -40,21 +40,45 @@
         <span class="site-robin" data-robin data-robin-mood="normal" aria-hidden="true"></span>
         <div class="eyebrow"><i></i><span data-zh="官方下载" data-en="OFFICIAL DOWNLOADS">官方下载</span></div>
         <h1 data-zh="选择适合这台电脑的安装包。" data-en="Choose the installer for this computer.">选择适合这台电脑的安装包。</h1>
-        <p data-zh="CoreRobin 只会识别操作系统，不会替你判断 Mac 芯片或自动下载。请按系统与芯片选择，再查看签名状态和验证说明。" data-en="CoreRobin only detects the operating system. It does not choose your Mac chip or download automatically. Select by system and chip, then review signing and verification details.">CoreRobin 只会识别操作系统，不会替你判断 Mac 芯片或自动下载。请按系统与芯片选择，再查看签名状态和验证说明。</p>
+        <p data-zh="下载页只会识别操作系统，不会替你判断 Mac 芯片或自动下载。请按系统与芯片选择，再查看签名状态和验证说明。" data-en="This page detects only the operating system. It does not choose your Mac chip or download automatically. Select by system and chip, then review signing and verification details.">下载页只会识别操作系统，不会替你判断 Mac 芯片或自动下载。请按系统与芯片选择，再查看签名状态和验证说明。</p>
         <div class="download-release-meta"><span data-release-version data-zh="正在读取最新版本…" data-en="Reading the latest release…">正在读取最新版本…</span><a href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest" data-release-url data-zh="查看完整 Release" data-en="View full release">查看完整 Release</a></div>
       </header>
 
+      <section class="download-recommendation" data-platform-recommendation="macos" aria-live="polite" hidden>
+        <div class="download-recommendation__copy">
+          <span class="download-recommendation__icon" aria-hidden="true">⌘</span>
+          <div><span class="download-recommendation__label" data-zh="检测到 macOS" data-en="macOS detected">检测到 macOS</span><h2 data-zh="M 系列 Mac，下载 Apple Silicon 版。" data-en="For an M-series Mac, download Apple Silicon.">M 系列 Mac，下载 Apple Silicon 版。</h2><p data-zh="网站无法可靠判断 Mac 芯片。打开“ → 关于本机”：显示“芯片 Apple M…”就选 Apple Silicon；只有显示 Intel 处理器才选 Intel。" data-en="A website cannot reliably identify your Mac chip. Open Apple menu → About This Mac: choose Apple Silicon if it shows an Apple M-series chip, and choose Intel only if it shows an Intel processor.">网站无法可靠判断 Mac 芯片。打开“ → 关于本机”：显示“芯片 Apple M…”就选 Apple Silicon；只有显示 Intel 处理器才选 Intel。</p></div>
+        </div>
+        <div class="download-recommendation__actions"><a class="button button--primary" data-recommended-asset="macos-arm64-dmg" href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest" data-zh="M 系列：下载 Apple Silicon" data-en="M-series: Download Apple Silicon">M 系列：下载 Apple Silicon</a><a href="#macos-downloads" data-zh="我的 Mac 是 Intel" data-en="My Mac uses Intel">我的 Mac 是 Intel</a></div>
+      </section>
+
+      <section class="download-recommendation" data-platform-recommendation="windows" aria-live="polite" hidden>
+        <div class="download-recommendation__copy">
+          <span class="download-recommendation__icon" aria-hidden="true">⊞</span>
+          <div><span class="download-recommendation__label" data-zh="检测到 Windows" data-en="Windows detected">检测到 Windows</span><h2 data-zh="推荐标准安装程序。" data-en="The standard installer is recommended.">推荐标准安装程序。</h2><p data-zh="适用于大多数 x64 Windows 电脑；需要集中部署或熟悉 MSI 时，也可以选择 MSI 安装包。" data-en="This is the simplest choice for most x64 Windows PCs. Choose MSI instead if you need managed deployment or already prefer MSI.">适用于大多数 x64 Windows 电脑；需要集中部署或熟悉 MSI 时，也可以选择 MSI 安装包。</p></div>
+        </div>
+        <div class="download-recommendation__actions"><a class="button button--primary" data-recommended-asset="windows-x64-exe" href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest" data-zh="下载 Windows 安装程序" data-en="Download Windows installer">下载 Windows 安装程序</a><a href="#windows-downloads" data-zh="查看 MSI 安装包" data-en="View the MSI package">查看 MSI 安装包</a></div>
+      </section>
+
+      <section class="download-recommendation" data-platform-recommendation="linux" aria-live="polite" hidden>
+        <div class="download-recommendation__copy">
+          <span class="download-recommendation__icon" aria-hidden="true">◒</span>
+          <div><span class="download-recommendation__label" data-zh="检测到 Linux" data-en="Linux detected">检测到 Linux</span><h2 data-zh="不确定发行版时，先选 AppImage。" data-en="If you are unsure about your distro, start with AppImage.">不确定发行版时，先选 AppImage。</h2><p data-zh="AppImage 适合直接试用；Debian、Ubuntu 及其衍生系统也可以选择 Deb 安装包。" data-en="AppImage is the easiest way to try CoreRobin. Debian, Ubuntu, and related distributions can use the Deb package instead.">AppImage 适合直接试用；Debian、Ubuntu 及其衍生系统也可以选择 Deb 安装包。</p></div>
+        </div>
+        <div class="download-recommendation__actions"><a class="button button--primary" data-recommended-asset="linux-x64-appimage" href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest" data-zh="下载 AppImage" data-en="Download AppImage">下载 AppImage</a><a href="#linux-downloads" data-zh="查看 Deb 安装包" data-en="View the Deb package">查看 Deb 安装包</a></div>
+      </section>
+
       <section class="download-platforms" aria-label="安装包" data-aria-zh="安装包" data-aria-en="Installers">
-        <article class="download-platform" data-download-platform="macos" data-reveal>
+        <article class="download-platform" id="macos-downloads" data-download-platform="macos" data-reveal>
           <div class="download-platform__head"><div><span class="download-platform__icon">⌘</span><h2>macOS</h2></div><span class="download-status download-status--tested" data-zh="已在真实设备验证" data-en="Tested on real hardware">已在真实设备验证</span></div>
-          <p data-zh="M1、M2、M3、M4 等 M 系列 Mac 请选择 Apple Silicon，只有 Intel Mac 才选择 Intel。应用包已做完整性签名，但尚无 Developer ID 签名或 Apple 公证。" data-en="Choose Apple Silicon for every M-series Mac, including M1, M2, M3, and M4; choose Intel only for an Intel Mac. The app bundle has an integrity signature but no Developer ID signature or Apple notarization yet.">M1、M2、M3、M4 等 M 系列 Mac 请选择 Apple Silicon，只有 Intel Mac 才选择 Intel。应用包已做完整性签名，但尚无 Developer ID 签名或 Apple 公证。</p>
+          <p data-zh="M 系列 Mac 选择 Apple Silicon，只有 Intel Mac 才选择 Intel。应用包已做完整性签名，但尚无 Developer ID 签名或 Apple 公证。" data-en="Choose Apple Silicon for an M-series Mac, and choose Intel only for an Intel Mac. The app bundle has an integrity signature but no Developer ID signature or Apple notarization yet.">M 系列 Mac 选择 Apple Silicon，只有 Intel Mac 才选择 Intel。应用包已做完整性签名，但尚无 Developer ID 签名或 Apple 公证。</p>
           <div class="download-assets">
             <a class="download-asset" data-asset-id="macos-arm64-dmg" href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest"><span><strong data-zh="Apple Silicon（M 系列）" data-en="Apple Silicon (M-series)">Apple Silicon（M 系列）</strong><small data-asset-meta>DMG</small></span><i aria-hidden="true">↓</i></a>
             <a class="download-asset" data-asset-id="macos-x64-dmg" href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest"><span><strong data-zh="Intel Mac" data-en="Intel Mac">Intel Mac</strong><small data-asset-meta>DMG</small></span><i aria-hidden="true">↓</i></a>
           </div>
         </article>
 
-        <article class="download-platform" data-download-platform="windows" data-reveal data-delay="80">
+        <article class="download-platform" id="windows-downloads" data-download-platform="windows" data-reveal data-delay="80">
           <div class="download-platform__head"><div><span class="download-platform__icon">⊞</span><h2>Windows</h2></div><span class="download-status download-status--preview" data-zh="早期预览" data-en="Early preview">早期预览</span></div>
           <p data-zh="适用于 x64 Windows。可选择常规安装程序或 MSI；当前安装包未配置 Windows 平台签名。" data-en="For x64 Windows. Choose the standard installer or MSI; current installers do not have Windows platform signing.">适用于 x64 Windows。可选择常规安装程序或 MSI；当前安装包未配置 Windows 平台签名。</p>
           <div class="download-assets">
@@ -63,7 +87,7 @@
           </div>
         </article>
 
-        <article class="download-platform" data-download-platform="linux" data-reveal data-delay="160">
+        <article class="download-platform" id="linux-downloads" data-download-platform="linux" data-reveal data-delay="160">
           <div class="download-platform__head"><div><span class="download-platform__icon">◒</span><h2>Linux</h2></div><span class="download-status download-status--preview" data-zh="早期预览" data-en="Early preview">早期预览</span></div>
           <p data-zh="适用于 x64 Linux。AppImage 适合便携运行，Deb 适合 Debian/Ubuntu 系系统；请先在测试环境确认兼容性。" data-en="For x64 Linux. AppImage is portable; Deb targets Debian/Ubuntu-based systems. Confirm compatibility in a test environment first.">适用于 x64 Linux。AppImage 适合便携运行，Deb 适合 Debian/Ubuntu 系系统；请先在测试环境确认兼容性。</p>
           <div class="download-assets">
@@ -71,6 +95,20 @@
             <a class="download-asset" data-asset-id="linux-x64-deb" href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest"><span><strong>Deb</strong><small data-asset-meta>x64</small></span><i aria-hidden="true">↓</i></a>
           </div>
         </article>
+      </section>
+
+      <section class="macos-first-open" id="macos-first-open" data-reveal>
+        <div class="macos-first-open__intro">
+          <div class="eyebrow"><i></i><span data-zh="macOS 首次打开" data-en="FIRST LAUNCH ON macOS">macOS 首次打开</span></div>
+          <h2 data-zh="被 macOS 拦截时，按这 3 步打开。" data-en="If macOS blocks CoreRobin, use these three steps.">被 macOS 拦截时，按这 3 步打开。</h2>
+          <p data-zh="CoreRobin 尚未使用 Developer ID 签名或经过 Apple 公证。macOS 会要求你额外确认；“仍要打开”只有在你先尝试启动 CoreRobin 后才会出现。" data-en="CoreRobin is not yet signed with Developer ID or notarized by Apple, so macOS asks for an extra confirmation. Open Anyway appears only after you first try to launch CoreRobin.">CoreRobin 尚未使用 Developer ID 签名或经过 Apple 公证。macOS 会要求你额外确认；“仍要打开”只有在你先尝试启动 CoreRobin 后才会出现。</p>
+        </div>
+        <ol class="macos-first-open__steps">
+          <li><span>01</span><div><strong data-zh="安装到“应用程序”" data-en="Move it to Applications">安装到“应用程序”</strong><p data-zh="打开 DMG，把 CoreRobin.app 拖进“应用程序”文件夹，然后推出磁盘映像。" data-en="Open the DMG, drag CoreRobin.app into Applications, then eject the disk image.">打开 DMG，把 CoreRobin.app 拖进“应用程序”文件夹，然后推出磁盘映像。</p></div></li>
+          <li><span>02</span><div><strong data-zh="先尝试打开一次" data-en="Try opening it once">先尝试打开一次</strong><p data-zh="从“应用程序”启动 CoreRobin。看到“无法验证开发者”之类的提醒后关闭提示，不要直接删除应用。" data-en="Launch CoreRobin from Applications. After macOS shows an unidentified-developer warning, close the alert without deleting the app.">从“应用程序”启动 CoreRobin。看到“无法验证开发者”之类的提醒后关闭提示，不要直接删除应用。</p></div></li>
+          <li><span>03</span><div><strong data-zh="在隐私与安全性中确认" data-en="Confirm in Privacy & Security">在隐私与安全性中确认</strong><p data-zh="打开“系统设置 → 隐私与安全性”，滚动到“安全性”，点击“仍要打开”，再在弹窗中点击“打开”。该按钮通常只在尝试启动后的约一小时内出现；没看到时，请再启动一次 CoreRobin 后立即返回。" data-en="Open System Settings → Privacy & Security, scroll to Security, click Open Anyway, then click Open in the confirmation dialog. The button is normally available for about an hour after a launch attempt; if it is missing, try launching CoreRobin again and return immediately.">打开“系统设置 → 隐私与安全性”，滚动到“安全性”，点击“仍要打开”，再在弹窗中点击“打开”。该按钮通常只在尝试启动后的约一小时内出现；没看到时，请再启动一次 CoreRobin 后立即返回。</p></div></li>
+        </ol>
+        <div class="macos-first-open__notice"><div><strong data-zh="如果提示“CoreRobin.app 已损坏”" data-en="If macOS says CoreRobin.app is damaged">如果提示“CoreRobin.app 已损坏”</strong><p data-zh="这不是普通的未公证提示，也不应通过移除隔离属性强行绕过。请删除旧 DMG 和旧应用，重新下载与芯片匹配的最新版安装包并核对 SHA-256；仍有问题时提交 Issue。" data-en="This is not the normal unnotarized-app warning, and you should not bypass it by removing quarantine attributes. Delete the old DMG and app copy, download the latest installer that matches your chip, verify its SHA-256, and file an issue if the problem remains.">这不是普通的未公证提示，也不应通过移除隔离属性强行绕过。请删除旧 DMG 和旧应用，重新下载与芯片匹配的最新版安装包并核对 SHA-256；仍有问题时提交 Issue。</p></div><div class="macos-first-open__links"><a href="https://support.apple.com/102445" rel="noreferrer" data-zh="查看 Apple 官方说明 ↗" data-en="Read Apple's official guidance ↗">查看 Apple 官方说明 ↗</a><a href="https://github.com/JimmyDaddy/corerobin-monitor/issues/new/choose" rel="noreferrer" data-zh="报告安装问题 ↗" data-en="Report an installation issue ↗">报告安装问题 ↗</a></div></div>
       </section>
 
       <section class="download-verify" data-reveal>
