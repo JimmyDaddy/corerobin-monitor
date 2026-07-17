@@ -37,6 +37,7 @@ const discouragedChineseCopy = [
   "保留为明确的空白",
   "一屏深入",
   "文件声称有多大",
+  "想简单一点，或看得更深，都可以",
 ];
 
 await verifySynchronizedDocs();
