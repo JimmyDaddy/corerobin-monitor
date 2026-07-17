@@ -31,6 +31,7 @@
         <a href="/download/" aria-current="page" data-zh="下载" data-en="Download">下载</a>
         <a href="/guide/" data-zh="使用指南" data-en="Guide">使用指南</a>
         <a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a>
+        <a href="/releases/" data-zh="版本记录" data-en="Releases">版本记录</a>
       </nav>
       <div class="header-actions"><button class="language-toggle" type="button" data-language-toggle aria-label="切换到英文" data-aria-zh="切换到英文" data-aria-en="Switch to Chinese"><span data-language-label>EN</span></button></div>
     </header>
@@ -41,7 +42,7 @@
         <div class="eyebrow"><i></i><span data-zh="官方下载" data-en="OFFICIAL DOWNLOADS">官方下载</span></div>
         <h1 data-zh="选择适合这台电脑的安装包。" data-en="Choose the installer for this computer.">选择适合这台电脑的安装包。</h1>
         <p data-zh="下载页只会识别操作系统，不会替你判断 Mac 芯片或自动下载。请按系统与芯片选择，再查看签名状态和验证说明。" data-en="This page detects only the operating system. It does not choose your Mac chip or download automatically. Select by system and chip, then review signing and verification details.">下载页只会识别操作系统，不会替你判断 Mac 芯片或自动下载。请按系统与芯片选择，再查看签名状态和验证说明。</p>
-        <div class="download-release-meta"><span data-release-version data-zh="正在读取最新版本…" data-en="Reading the latest release…">正在读取最新版本…</span><a href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest" data-release-url data-zh="查看完整 Release" data-en="View full release">查看完整 Release</a></div>
+        <div class="download-release-meta"><span data-release-version data-zh="正在读取最新版本…" data-en="Reading the latest release…">正在读取最新版本…</span><a href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest" data-release-url data-zh="查看完整 Release" data-en="View full release">查看完整 Release</a><a href="/releases/" data-zh="平台覆盖与已知限制" data-en="Platform coverage & limitations">平台覆盖与已知限制</a></div>
       </header>
 
       <section class="download-recommendation" data-platform-recommendation="macos" aria-live="polite" hidden>
@@ -117,8 +118,8 @@
         <p data-zh="Release 提供 SHA-256 校验表、SPDX SBOM 和 Sigstore 签名包。校验表能确认下载文件是否匹配发布内容；Sigstore 可验证校验表来自受信 GitHub Actions。它们不能替代平台签名。" data-en="Each release includes SHA-256 checksums, an SPDX SBOM, and a Sigstore bundle. Checksums confirm a downloaded file matches the release, while Sigstore verifies that the checksum manifest came from trusted GitHub Actions. Neither replaces platform signing.">Release 提供 SHA-256 校验表、SPDX SBOM 和 Sigstore 签名包。校验表能确认下载文件是否匹配发布内容；Sigstore 可验证校验表来自受信 GitHub Actions。它们不能替代平台签名。</p>
         <label class="verification-select"><span data-zh="要验证哪个安装包？" data-en="Which installer do you want to verify?">要验证哪个安装包？</span><select data-verification-select aria-label="选择要验证的安装包" data-aria-zh="选择要验证的安装包" data-aria-en="Choose an installer to verify"><option data-zh="正在读取安装包…" data-en="Reading installers…">正在读取安装包…</option></select></label>
         <div class="verification-grid">
-          <article class="verification-card"><strong data-zh="校验当前选中的安装包" data-en="Verify the selected installer">校验当前选中的安装包</strong><p data-zh="先下载所选安装包和 SHA256SUMS。" data-en="Download the selected installer and SHA256SUMS first.">先下载所选安装包和 SHA256SUMS。</p><pre><code data-release-command="checksum">正在准备命令…</code></pre><button class="button button--ghost button--small" type="button" data-copy data-zh="复制命令" data-en="Copy command">复制命令</button><span class="sr-only" aria-live="polite" data-copy-status></span></article>
-          <article class="verification-card"><strong data-zh="验证校验表的来源" data-en="Verify checksum provenance">验证校验表的来源</strong><p data-zh="需要已安装 <code>cosign</code>。" data-en="Requires <code>cosign</code> to be installed.">需要已安装 <code>cosign</code>。</p><pre><code data-release-command="sigstore">正在准备命令…</code></pre><button class="button button--ghost button--small" type="button" data-copy data-zh="复制命令" data-en="Copy command">复制命令</button><span class="sr-only" aria-live="polite" data-copy-status></span></article>
+          <article class="verification-card"><strong data-zh="校验当前选中的安装包" data-en="Verify the selected installer">校验当前选中的安装包</strong><p data-zh="先下载所选安装包和 SHA256SUMS。" data-en="Download the selected installer and SHA256SUMS first.">先下载所选安装包和 SHA256SUMS。</p><pre tabindex="0" aria-label="SHA-256 校验命令" data-aria-zh="SHA-256 校验命令" data-aria-en="SHA-256 verification command"><code data-release-command="checksum">正在准备命令…</code></pre><button class="button button--ghost button--small" type="button" data-copy data-zh="复制命令" data-en="Copy command">复制命令</button><span class="sr-only" aria-live="polite" data-copy-status></span></article>
+          <article class="verification-card"><strong data-zh="验证校验表的来源" data-en="Verify checksum provenance">验证校验表的来源</strong><p data-zh="需要已安装 <code>cosign</code>。" data-en="Requires <code>cosign</code> to be installed.">需要已安装 <code>cosign</code>。</p><pre tabindex="0" aria-label="Sigstore 验证命令" data-aria-zh="Sigstore 验证命令" data-aria-en="Sigstore verification command"><code data-release-command="sigstore">正在准备命令…</code></pre><button class="button button--ghost button--small" type="button" data-copy data-zh="复制命令" data-en="Copy command">复制命令</button><span class="sr-only" aria-live="polite" data-copy-status></span></article>
         </div>
         <p class="download-evidence" data-release-evidence data-zh="正在读取验证材料…" data-en="Reading verification materials…">正在读取验证材料…</p>
       </section>

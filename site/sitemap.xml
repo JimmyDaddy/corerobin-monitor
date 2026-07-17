@@ -17,6 +17,10 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://monitor-app.corerobin.com/releases/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://monitor-app.corerobin.com/en/</loc>
     <changefreq>weekly</changefreq>
   </url>
@@ -31,5 +35,9 @@
   <url>
     <loc>https://monitor-app.corerobin.com/en/privacy/</loc>
     <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://monitor-app.corerobin.com/en/releases/</loc>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>

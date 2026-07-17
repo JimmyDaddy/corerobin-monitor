@@ -15,6 +15,7 @@
     <a href="https://monitor-app.corerobin.com/download/"><strong>下载 CoreRobin</strong></a>
     · <a href="https://monitor-app.corerobin.com/">产品网站</a>
     · <a href="docs/user-guide.zh-CN.md">中文指南</a>
+    · <a href="https://monitor-app.corerobin.com/releases/">Release Notes</a>
     · <a href="README.en.md">English</a>
     · <a href="https://github.com/JimmyDaddy/corerobin-monitor/issues/new/choose">问题反馈</a>
   </p>
@@ -62,6 +63,7 @@
 - [隐私说明](PRIVACY.md)：本机数据、保留时间、完全磁盘访问权限和清除方式
 - [中文使用指南](docs/user-guide.zh-CN.md) · [English user guide](docs/user-guide.md)
 - [支持](SUPPORT.md)：一般问题与功能建议
+- [Release Notes](https://monitor-app.corerobin.com/releases/)：当前版本变化、平台覆盖与已知限制
 - [安全政策](SECURITY.md)：私密报告安全漏洞
 
 提交公开 Issue 前请隐藏用户名、文件路径、IP 地址、访问令牌和截图中的个人信息。

@@ -13,6 +13,7 @@ const routes = [
   { source: "guide/index.html", zh: "/guide/", en: "/en/guide/" },
   { source: "download/index.html", zh: "/download/", en: "/en/download/" },
   { source: "privacy/index.html", zh: "/privacy/", en: "/en/privacy/" },
+  { source: "releases/index.html", zh: "/releases/", en: "/en/releases/" },
 ];
 const forbiddenPublicReferences = [
   ["CoreRobin", "Internal"].join("-"),
@@ -227,8 +228,8 @@ async function verifyStaticPage(path, route, language, expectsEnglish) {
     .filter((node) => node.tagName === "a")
     .map((node) => attribute(node, "href"));
   const expectedNavLinks = expectsEnglish
-    ? ["/en/", "/en/download/", "/en/guide/", "/en/privacy/"]
-    : ["/", "/download/", "/guide/", "/privacy/"];
+    ? ["/en/", "/en/download/", "/en/guide/", "/en/privacy/", "/en/releases/"]
+    : ["/", "/download/", "/guide/", "/privacy/", "/releases/"];
   if (navLinks.join(",") !== expectedNavLinks.join(",")) {
     throw new Error(`Inconsistent global navigation in ${relative(outputRoot, path)}.`);
   }

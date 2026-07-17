@@ -232,9 +232,10 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
 });
 
 const downloadRoot = document.querySelector("[data-download-root]");
+const releaseRoot = document.querySelector("[data-release-root]");
 
-if (downloadRoot) {
-  recommendPlatform();
+if (downloadRoot || releaseRoot) {
+  if (downloadRoot) recommendPlatform();
   loadReleaseManifest();
 }
 

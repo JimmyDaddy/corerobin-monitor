@@ -15,7 +15,8 @@ body:
     id: version
     attributes:
       label: CoreRobin version / CoreRobin 版本
-      placeholder: e.g. v0.0.3 or the version shown in About
+      description: Copy this from Settings → About & Support. / 请从“设置 → 关于与支持”中复制。
+      placeholder: Version shown in About & Support / “关于与支持”中显示的版本
     validations:
       required: true
   - type: dropdown

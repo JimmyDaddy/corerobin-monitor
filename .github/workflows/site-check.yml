@@ -12,6 +12,8 @@ on:
       - "docs/**"
       - "site/**"
       - "scripts/**"
+      - "tests/site/**"
+      - "playwright.config.mjs"
       - "package.json"
       - "pnpm-lock.yaml"
       - ".github/ISSUE_TEMPLATE/**"
@@ -21,6 +23,8 @@ on:
       - "docs/**"
       - "site/**"
       - "scripts/**"
+      - "tests/site/**"
+      - "playwright.config.mjs"
       - "README*"
       - "PRIVACY*"
       - "SECURITY.md"
@@ -60,3 +64,20 @@ jobs:
 
       - name: Check external links
         run: node scripts/check-external-links.mjs
+
+      - name: Install Chromium for browser checks
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run responsive and accessibility checks
+        run: pnpm site:test
+
+      - name: Upload browser check artifacts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: public-site-browser-checks
+          path: |
+            test-results
+            playwright-report
+          if-no-files-found: ignore
+          retention-days: 14

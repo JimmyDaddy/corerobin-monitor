@@ -4,12 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "site:build": "node scripts/build-site.mjs"
+    "site:build": "node scripts/build-site.mjs",
+    "site:serve": "node scripts/serve-site.mjs",
+    "site:test": "playwright test",
+    "site:check": "pnpm site:build && pnpm site:test"
   },
   "engines": {
     "node": ">=22"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "@playwright/test": "1.59.1",
     "parse5": "7.3.0"
   }
 }
