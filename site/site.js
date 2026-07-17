@@ -7,8 +7,6 @@ const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const guideSelect = document.querySelector("[data-guide-jump]");
-const SITE_LANGUAGE_KEY = "core-robin.site-language";
-const LEGACY_SITE_LANGUAGE_KEY = "status-orbit.site-language";
 
 const robinSvg = `
   <svg viewBox="0 0 220 220" focusable="false">
@@ -78,58 +76,24 @@ function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
-function preferredLanguage() {
-  try {
-    const stored = window.localStorage.getItem(SITE_LANGUAGE_KEY)
-      ?? window.localStorage.getItem(LEGACY_SITE_LANGUAGE_KEY);
-    if (stored) {
-      window.localStorage.setItem(SITE_LANGUAGE_KEY, stored);
-      window.localStorage.removeItem(LEGACY_SITE_LANGUAGE_KEY);
-    }
-    if (stored === "zh" || stored === "en") return stored;
-  } catch {
-    // The site remains usable when browser storage is unavailable.
-  }
-  return navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en";
-}
-
-function setLanguage(language) {
-  const next = language === "en" ? "en" : "zh";
-  root.dataset.language = next;
-  root.lang = next === "zh" ? "zh-CN" : "en";
-  document.querySelectorAll("[data-zh][data-en]").forEach((element) => {
-    element.textContent = element.dataset[next] ?? element.textContent;
-  });
-  document.querySelectorAll("[data-aria-zh][data-aria-en]").forEach((element) => {
-    element.setAttribute("aria-label", element.dataset[`aria${next === "zh" ? "Zh" : "En"}`]);
-  });
-  if (languageLabel) languageLabel.textContent = next === "zh" ? "EN" : "中文";
-  const guidePage = document.body.classList.contains("guide-page");
-  document.title = next === "zh"
-    ? guidePage ? "CoreRobin 使用指南" : "CoreRobin — 电脑变慢，空间不足，原因一眼看清"
-    : guidePage ? "CoreRobin User Guide" : "CoreRobin — Find slowdowns and free up space";
-  try {
-    window.localStorage.setItem(SITE_LANGUAGE_KEY, next);
-  } catch {
-    // Language still applies for the current page.
-  }
-}
-
-setLanguage(preferredLanguage());
-
 languageButton?.addEventListener("click", () => {
-  setLanguage(root.dataset.language === "zh" ? "en" : "zh");
+  const alternateUrl = root.dataset.alternateUrl;
+  if (alternateUrl) window.location.assign(alternateUrl);
 });
 
-function closeNavigation() {
+if (languageLabel) languageLabel.textContent = root.dataset.language === "en" ? "中文" : "EN";
+
+function closeNavigation({ restoreFocus = false } = {}) {
   nav?.classList.remove("is-open");
   navToggle?.setAttribute("aria-expanded", "false");
+  if (restoreFocus) navToggle?.focus();
 }
 
-navToggle?.addEventListener("click", () => {
+navToggle?.addEventListener("click", (event) => {
   const expanded = navToggle.getAttribute("aria-expanded") === "true";
   navToggle.setAttribute("aria-expanded", String(!expanded));
   nav?.classList.toggle("is-open", !expanded);
+  if (!expanded && event.detail === 0) nav?.querySelector("a")?.focus();
 });
 
 nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNavigation));
@@ -138,8 +102,7 @@ window.addEventListener("resize", () => {
 });
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape" || !nav?.classList.contains("is-open")) return;
-  closeNavigation();
-  navToggle?.focus();
+  closeNavigation({ restoreFocus: true });
 });
 
 function updateHeader() {
@@ -251,14 +214,129 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
   button.addEventListener("click", async () => {
     const code = button.parentElement?.querySelector("code")?.textContent ?? "";
     if (!code) return;
+    const isEnglish = root.dataset.language === "en";
+    const status = button.parentElement?.querySelector("[data-copy-status]");
     try {
       await navigator.clipboard.writeText(code);
-      button.textContent = root.dataset.language === "zh" ? "已复制" : "Copied";
+      button.textContent = isEnglish ? "Copied" : "已复制";
+      if (status) status.textContent = isEnglish ? "Command copied." : "命令已复制。";
       window.setTimeout(() => {
-        button.textContent = root.dataset.language === "zh" ? "复制" : "Copy";
+        button.textContent = isEnglish ? "Copy command" : "复制命令";
+        if (status) status.textContent = "";
       }, 1400);
     } catch {
-      button.textContent = root.dataset.language === "zh" ? "复制失败" : "Copy failed";
+      button.textContent = isEnglish ? "Copy failed" : "复制失败";
+      if (status) status.textContent = isEnglish ? "Could not copy the command." : "无法复制命令。";
     }
   });
 });
+
+const downloadRoot = document.querySelector("[data-download-root]");
+
+if (downloadRoot) {
+  loadReleaseManifest();
+}
+
+async function loadReleaseManifest() {
+  try {
+    const response = await fetch("/release-manifest.json", { headers: { Accept: "application/json" } });
+    if (!response.ok) throw new Error(`Release manifest request failed: ${response.status}`);
+    applyReleaseManifest(await response.json());
+  } catch (error) {
+    console.warn("Could not load the CoreRobin release manifest.", error);
+    document.querySelectorAll("[data-release-version]").forEach((element) => {
+      element.textContent = root.dataset.language === "en"
+        ? "Release information is temporarily unavailable."
+        : "暂时无法读取 Release 信息。";
+    });
+  }
+}
+
+function applyReleaseManifest(manifest) {
+  const isEnglish = root.dataset.language === "en";
+  const installerList = manifest.installers ?? manifest.assets ?? [];
+  const assets = new Map(installerList.map((asset) => [asset.id, asset]));
+  const evidence = new Map((manifest.evidence ?? []).map((asset) => [
+    asset.id ?? ({ SHA256SUMS: "sha256sums", "SHA256SUMS.sigstore.json": "sigstore-bundle", "corerobin.spdx.json": "sbom" }[asset.name]),
+    asset,
+  ]));
+  let selectedAsset = assets.get("macos-arm64-dmg") ?? installerList[0];
+
+  document.querySelectorAll("[data-release-version]").forEach((element) => {
+    const published = manifest.publishedAt ? new Intl.DateTimeFormat(isEnglish ? "en" : "zh-CN", {
+      year: "numeric", month: "short", day: "numeric",
+    }).format(new Date(manifest.publishedAt)) : "";
+    element.textContent = `${manifest.tagName ?? manifest.tag}${published ? ` · ${published}` : ""}`;
+  });
+  document.querySelectorAll("[data-release-url]").forEach((element) => {
+    element.href = manifest.releaseUrl;
+  });
+  const verificationSelect = document.querySelector("[data-verification-select]");
+
+  document.querySelectorAll("[data-asset-id]").forEach((link) => {
+    const asset = assets.get(link.dataset.assetId);
+    if (!asset) return;
+    link.href = asset.url;
+    link.setAttribute("download", asset.name);
+    const meta = link.querySelector("[data-asset-meta]");
+    if (meta) meta.textContent = `${asset.format} · ${formatFileSize(asset.size ?? asset.sizeBytes, isEnglish)}`;
+    const choose = () => {
+      selectedAsset = asset;
+      if (verificationSelect instanceof HTMLSelectElement) verificationSelect.value = asset.id;
+      updateVerificationCommands(selectedAsset, evidence, manifest, isEnglish);
+    };
+    link.addEventListener("mouseenter", choose);
+    link.addEventListener("focus", choose);
+  });
+
+  if (verificationSelect instanceof HTMLSelectElement) {
+    verificationSelect.replaceChildren(...installerList.map((asset) => {
+      const option = document.createElement("option");
+      option.value = asset.id;
+      option.textContent = `${asset.platform === "macos" ? "macOS" : asset.platform === "windows" ? "Windows" : "Linux"} · ${asset.architecture} · ${asset.format}`;
+      return option;
+    }));
+    verificationSelect.value = selectedAsset?.id ?? "";
+    verificationSelect.addEventListener("change", () => {
+      selectedAsset = assets.get(verificationSelect.value) ?? selectedAsset;
+      updateVerificationCommands(selectedAsset, evidence, manifest, isEnglish);
+    });
+  }
+
+  updateVerificationCommands(selectedAsset, evidence, manifest, isEnglish);
+  recommendPlatform();
+}
+
+function updateVerificationCommands(asset, evidence, manifest, isEnglish) {
+  if (!asset) return;
+  const sums = evidence.get("sha256sums");
+  const sigstore = evidence.get("sigstore-bundle");
+  const sbom = evidence.get("sbom");
+  const baseCommand = sums
+    ? `curl -LO "${asset.url}"\ncurl -LO "${sums.url}"\ngrep ' ${asset.name}$' ${sums.name} | shasum -a 256 -c -`
+    : "";
+  const provenanceCommand = sigstore && sums
+    ? `curl -LO "${sums.url}"\ncurl -LO "${sigstore.url}"\ncosign verify-blob --bundle ${sigstore.name} --certificate-identity-regexp '^https://github\\.com/.+/.github/workflows/release\\.yml@refs/tags/.+$' --certificate-oidc-issuer https://token.actions.githubusercontent.com ${sums.name}`
+    : "";
+  document.querySelectorAll('[data-release-command="checksum"]').forEach((element) => { element.textContent = baseCommand; });
+  document.querySelectorAll('[data-release-command="sigstore"]').forEach((element) => { element.textContent = provenanceCommand; });
+  document.querySelectorAll("[data-release-evidence]").forEach((element) => {
+    const links = [sums, sbom, sigstore].filter(Boolean).map((item) => `<a href="${item.url}">${item.name}</a>`).join(" · ");
+    element.innerHTML = isEnglish
+      ? `Release ${manifest.tagName ?? manifest.tag}: ${links}`
+      : `Release ${manifest.tagName ?? manifest.tag} 验证材料：${links}`;
+  });
+}
+
+function formatFileSize(bytes, isEnglish) {
+  return new Intl.NumberFormat(isEnglish ? "en" : "zh-CN", {
+    maximumFractionDigits: bytes >= 10_000_000 ? 1 : 0,
+  }).format(bytes / 1_000_000) + " MB";
+}
+
+function recommendPlatform() {
+  const platform = navigator.userAgent.toLowerCase();
+  const target = platform.includes("mac") ? "macos" : platform.includes("win") ? "windows" : platform.includes("linux") ? "linux" : null;
+  if (!target) return;
+  document.querySelector(`[data-download-platform="${target}"]`)?.classList.add("is-recommended");
+}

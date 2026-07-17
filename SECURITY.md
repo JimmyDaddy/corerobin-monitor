@@ -20,3 +20,5 @@ Remove usernames, personal file paths, IP addresses, access tokens, and unrelate
 ## Security boundaries
 
 CoreRobin does not silently elevate privileges, terminate processes, or delete files. Monitoring data and local history remain on the device. File deletion and process-control actions require explicit confirmation and are revalidated immediately before execution.
+
+For local-data retention, Full Disk Access, and data-clearing details, see the [Privacy Notice](PRIVACY.en.md) or [隐私说明](PRIVACY.md).

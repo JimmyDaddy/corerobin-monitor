@@ -6,7 +6,10 @@ on:
       - main
     paths:
       - "site/**"
-      - "scripts/build-site.mjs"
+      - "docs/**"
+      - "scripts/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -32,6 +35,12 @@ jobs:
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 22
+
+      - name: Enable pnpm
+        run: corepack enable
+
+      - name: Install site build dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Build and verify static site
         run: node scripts/build-site.mjs

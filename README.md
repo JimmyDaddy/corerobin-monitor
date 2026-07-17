@@ -4,92 +4,77 @@
   <h1>CoreRobin</h1>
 
   <p><strong>看懂电脑状态，找到问题，安全处理。</strong></p>
-  <p>一个从真实感受出发的桌面状态伙伴，让电脑变慢、风扇变响、空间不足和网络异常不再只是一堆难懂的指标。</p>
+  <p>从真实感受出发的桌面状态伙伴：电脑变慢、风扇变响、空间不足或网络异常时，先给你一个稳定结论和下一步。</p>
 
   <p>
     <a href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest"><img src="https://img.shields.io/github/v/release/JimmyDaddy/corerobin-monitor?display_name=tag&amp;style=flat-square&amp;color=6477ff" alt="Latest release" /></a>
-    <img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-171a21?style=flat-square" alt="Supported platforms" />
     <img src="https://img.shields.io/badge/interface_languages-10-ff766f?style=flat-square" alt="10 interface languages" />
   </p>
 
   <p>
-    <a href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest"><strong>下载最新版本</strong></a>
-    ·
-    <a href="https://monitor-app.corerobin.com/">产品网站</a>
-    ·
-    <a href="docs/user-guide.zh-CN.md">使用指南</a>
-    ·
-    <a href="https://github.com/JimmyDaddy/corerobin-monitor/issues/new/choose">问题反馈</a>
+    <a href="https://monitor-app.corerobin.com/download/"><strong>下载 CoreRobin</strong></a>
+    · <a href="https://monitor-app.corerobin.com/">产品网站</a>
+    · <a href="docs/user-guide.zh-CN.md">中文指南</a>
+    · <a href="README.en.md">English</a>
+    · <a href="https://github.com/JimmyDaddy/corerobin-monitor/issues/new/choose">问题反馈</a>
   </p>
 </div>
+
+<p align="center">
+  <img src="site/assets/corerobin-daily-overview.jpg" width="100%" alt="CoreRobin 日常模式电脑状态总览" />
+</p>
+
+<p align="center"><sub>日常模式 · 先给出稳定结论，再告诉你最值得做的一步</sub></p>
+
+> 截图来自真实产品界面，并使用脱敏演示数据；不包含设备名称、用户名、真实路径或网络身份。
+
+## 从你的感受开始
+
+日常模式把“电脑有点卡”“风扇一直很响”“空间快不够了”这类感受放在前面。短暂波动不会立刻变成待处理问题；恢复后也会继续确认，避免让问题数量在不同窗口之间来回跳变。
+
+- 一眼看到当前是否需要处理
+- 从实际问题进入引导，而不是先理解技术指标
+- 主窗口、状态栏面板和 Robin 伙伴共享同一份结论
+- 结束进程、停用启动项和永久删除前都由你确认
+
+## 需要时，再进入专业模式
+
+专业模式保留实时指标、五分钟趋势、进程树、网络连接、存储分析和历史记录，适合排查持续占用或异常流量。
 
 <p align="center">
   <img src="site/assets/corerobin-professional-overview.jpg" width="100%" alt="CoreRobin 专业模式资源总览与进程详情" />
 </p>
 
-<p align="center"><sub>专业模式 · 在同一屏查看系统状态、资源趋势与进程详情</sub></p>
+## 看清空间，也保留边界
 
-> 截图使用内置演示数据，不包含真实设备名称、用户名、文件路径或网络信息。
+空间清理会扫描系统磁盘的可访问位置，并按真实路径绘制可下钻的扇形图。macOS 可授予完全磁盘访问权限以减少受保护位置的遗漏；不授权时仍可扫描当前可访问区域。扫描只读取文件元数据，不读取文件内容，也不会自动移动或删除任何文件。
 
-## 专业模式，把状态、趋势和进程放在同一屏
+清理目标会先进入清理篮，永久删除前会重新核对路径与变化；主目录、废纸篓本身、链接、特殊文件和其他磁盘上的内容受到保护。
 
-专业模式面向希望直接理解系统行为的用户：先给出稳定的健康判断，同时保留定位问题需要的实时指标、时间趋势与对象详情。你可以从概览继续进入进程、存储、网络、启动项和历史事件，而不必在多套工具之间切换。
+## 下载与验证
 
-- CPU、内存、交换空间、磁盘与网络实时状态
-- 最近 5 分钟的资源趋势与影响最大的应用
-- 进程树、应用详情、活动连接和启动项
-- 磁盘空间、历史事件、桌面提醒与恢复通知
-- 主窗口、状态栏面板和 Robin 小窗口共享的后台状态
+前往[下载页](https://monitor-app.corerobin.com/download/)选择当前系统与芯片对应的安装包。macOS 提供 Apple Silicon 与 Intel DMG；Windows x64 和 Linux x64 目前是早期预览版本。当前安装包尚未配置平台发布签名或 Apple 公证。
 
-<p align="center">
-  <img src="site/assets/corerobin-professional-network.jpg" width="100%" alt="CoreRobin 专业模式网络吞吐趋势与活动连接" />
-</p>
+每个 Release 同时提供 SHA-256 校验表、SPDX SBOM 和校验表的 Sigstore 签名包。下载页提供可复制的校验命令；这些来源完整性记录不能替代平台签名。
 
-<p align="center"><sub>网络诊断 · 实时吞吐、五分钟趋势和活动连接</sub></p>
+## 隐私、支持与安全
 
-## 看清空间去了哪里
+- [隐私说明](PRIVACY.md)：本机数据、保留时间、完全磁盘访问权限和清除方式
+- [中文使用指南](docs/user-guide.zh-CN.md) · [English user guide](docs/user-guide.md)
+- [支持](SUPPORT.md)：一般问题与功能建议
+- [安全政策](SECURITY.md)：私密报告安全漏洞
 
-只读扫描会按真实文件路径整理空间占用，并用可下钻的扇形图展示目录层级。扫描只读取文件名、大小等元数据，不读取文件内容，也不会自动移动或删除任何东西。
+提交公开 Issue 前请隐藏用户名、文件路径、IP 地址、访问令牌和截图中的个人信息。
 
-<p align="center">
-  <img src="site/assets/corerobin-space-sunburst.jpg" width="100%" alt="CoreRobin 空间清理页面的完整扇形图" />
-</p>
+## 本地预览
 
-清理操作始终先加入清理篮，永久删除前还会重新检查目标。如果文件已经变化、目标无法安全确认，或涉及受保护位置，操作会直接停止。
+需要 Node.js 22 或更高版本：
 
-## 普通版，需要时快速看一眼
+```bash
+npm run site:build
+npx serve site-dist
+```
 
-普通版保留同一套监控、诊断与安全边界，但把稳定结论和最值得做的一件事放在前面。想快速确认电脑是否正常时看一眼即可，需要定位具体原因时再切回专业模式。
+## Copyright
 
-<p align="center">
-  <img src="site/assets/corerobin-daily-overview.jpg" width="76%" alt="CoreRobin 普通版电脑状态概览" />
-</p>
-
-<p align="center"><sub>普通版 · 用一个稳定结论说明当前是否需要处理</sub></p>
-
-持续问题会保持稳定身份，短暂波动不会被当成故障。指标恢复后，CoreRobin 还会继续确认并补充恢复记录，让你知道问题是否真的结束。
-
-## 本地优先，操作可控
-
-- 监控、历史和偏好保存在当前设备，不上传或同步
-- 默认不把应用名称写入历史，命令行、用户、路径、文件名和连接地址不会进入历史记录
-- 用户确认执行的退出、重启、清理和启动项操作会记录结果；清理记录只保留数量和释放空间
-- 不会自动结束进程、卸载应用或删除文件
-- 系统关键进程、CoreRobin 自身和受保护目录默认不可操作
-- 桌面提醒只针对持续问题，并设有重复抑制与每日数量上限
-
-## 下载
-
-前往 [GitHub Releases](https://github.com/JimmyDaddy/corerobin-monitor/releases/latest) 获取适合当前系统的版本：
-
-| 平台 | 安装包 |
-| --- | --- |
-| macOS | Apple Silicon 与 Intel `.dmg` |
-| Windows | `.exe` 与 `.msi` |
-| Linux | `.AppImage` 与 `.deb` |
-
-当前发布版本尚未配置平台商业签名或 Apple 公证。Release 同时提供 SHA-256 校验表、SPDX SBOM，以及校验表的 Sigstore 签名包；这些来源完整性记录不能替代平台签名。
-
-## 10 种界面语言
-
-简体中文、繁體中文、English、日本語、Deutsch、Français、Español、Português (Brasil)、한국어、Русский。
+Copyright © 2026 JimmyDaddy. All rights reserved. 除非文件中另有明确说明，本仓库内容与素材未授予复制、修改或再分发许可。

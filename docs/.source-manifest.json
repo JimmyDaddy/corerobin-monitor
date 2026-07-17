@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "source": "Internal documentation source",
+  "generator": "scripts/sync-public-content.mjs",
+  "files": {
+    "docs/user-guide.md": {
+      "sha256": "ba88eff62ee9b40835c68f80b0da4df202b74e44efea5dacad1b9c880ba0e811"
+    },
+    "docs/user-guide.zh-CN.md": {
+      "sha256": "8ca02b5138d3f133f145e1d0f8ea41ec68c678d4b189175f046997e7740f72b8"
+    },
+    "docs/privacy.md": {
+      "sha256": "f68e882dde850288d0ec06dd399b8c68f20aa44b769e193e7f0beba167c9e362"
+    },
+    "docs/privacy.zh-CN.md": {
+      "sha256": "dab303c6bb568f8219ac1cdfbf23d762281b16e2b3394e6f5665edc779cab2f4"
+    },
+    "PRIVACY.en.md": {
+      "sha256": "f68e882dde850288d0ec06dd399b8c68f20aa44b769e193e7f0beba167c9e362"
+    },
+    "PRIVACY.md": {
+      "sha256": "dab303c6bb568f8219ac1cdfbf23d762281b16e2b3394e6f5665edc779cab2f4"
+    }
+  }
+}

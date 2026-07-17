@@ -1,21 +1,26 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-language="zh" data-alternate-url="/en/">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#080d12" />
     <meta name="robots" content="noindex" />
-    <link rel="icon" href="https://monitor-app.corerobin.com/assets/app-icon.png" />
-    <link rel="stylesheet" href="https://monitor-app.corerobin.com/styles.css" />
+    <link rel="icon" href="/assets/app-icon.png" />
+    <link rel="stylesheet" href="/animated-robin.css" />
+    <link rel="stylesheet" href="/styles.css" />
     <title>404 — CoreRobin</title>
   </head>
-  <body>
-    <main class="not-found section-shell">
-      <div class="not-found__robin" aria-hidden="true"><img src="https://monitor-app.corerobin.com/assets/brand-mark.png" alt="" /></div>
+  <body class="not-found-page">
+    <main class="not-found section-shell" id="main-content">
+      <button class="language-toggle not-found__language" type="button" data-language-toggle aria-label="切换到英文">
+        <span data-language-label>EN</span>
+      </button>
+      <div class="not-found__robin" data-robin data-robin-mood="normal" aria-hidden="true"></div>
       <span>404</span>
       <h1>这里没有你要找的页面。</h1>
-      <p>链接可能已经变更。The link may have changed.</p>
-      <a class="button button--primary" href="https://monitor-app.corerobin.com/">回到首页 · Back home</a>
+      <p>链接可能已经变更。你可以回到首页或直接选择安装包。</p>
+      <div class="not-found__actions"><a class="button button--primary" href="/">回到首页</a><a class="button button--ghost" href="/download/">前往下载</a></div>
     </main>
+    <script src="/site.js" defer></script>
   </body>
 </html>

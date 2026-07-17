@@ -8,4 +8,28 @@
     <loc>https://monitor-app.corerobin.com/guide/</loc>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://monitor-app.corerobin.com/download/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://monitor-app.corerobin.com/privacy/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://monitor-app.corerobin.com/en/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://monitor-app.corerobin.com/en/guide/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://monitor-app.corerobin.com/en/download/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://monitor-app.corerobin.com/en/privacy/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>

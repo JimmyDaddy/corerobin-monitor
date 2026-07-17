@@ -15,7 +15,7 @@ body:
     id: version
     attributes:
       label: CoreRobin version / CoreRobin 版本
-      placeholder: e.g. 0.0.2
+      placeholder: e.g. v0.0.3 or the version shown in About
     validations:
       required: true
   - type: dropdown

@@ -1,20 +1,28 @@
 <!doctype html>
-<html lang="zh-CN" data-language="zh">
+<html lang="zh-CN" data-language="zh" data-alternate-url="/en/">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#080d12" />
-    <meta name="description" content="CoreRobin 把 CPU、内存、磁盘、网络和正在运行的应用放进一个清晰的桌面界面，帮你快速找到电脑变慢或空间不足的原因。" />
-    <meta property="og:title" content="CoreRobin — 电脑变慢，空间不足，原因一眼看清" />
-    <meta property="og:description" content="看状态、找原因、清空间。重要操作由你确认，数据留在本机。" />
+    <meta name="description" data-content-zh="CoreRobin 把 CPU、内存、磁盘、网络和正在运行的应用放进一个清晰的桌面界面，帮你快速找到电脑变慢或空间不足的原因。" data-content-en="CoreRobin brings CPU, memory, storage, network, and running apps into one clear desktop view so you can find slowdowns and free up space." content="CoreRobin 把 CPU、内存、磁盘、网络和正在运行的应用放进一个清晰的桌面界面，帮你快速找到电脑变慢或空间不足的原因。" />
+    <meta property="og:title" data-content-zh="CoreRobin — 电脑变慢，空间不足，原因一眼看清" data-content-en="CoreRobin — Find slowdowns and free up space" content="CoreRobin — 电脑变慢，空间不足，原因一眼看清" />
+    <meta property="og:description" data-content-zh="看状态、找原因、清空间。重要操作由你确认，数据留在本机。" data-content-en="See the status, find the cause, and free up space. You confirm every important action; data stays local." content="看状态、找原因、清空间。重要操作由你确认，数据留在本机。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://monitor-app.corerobin.com/" />
-    <meta property="og:image" content="https://monitor-app.corerobin.com/assets/app-icon.png" />
+    <meta property="og:image" content="https://monitor-app.corerobin.com/assets/social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" data-content-zh="CoreRobin：看懂电脑状态，找到问题，安全处理" data-content-en="CoreRobin: Understand your computer, find the cause, and stay in control" content="CoreRobin：看懂电脑状态，找到问题，安全处理" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://monitor-app.corerobin.com/" />
-    <link rel="icon" href="./assets/app-icon.png" />
-    <link rel="stylesheet" href="./animated-robin.css" />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>CoreRobin — 电脑变慢，空间不足，原因一眼看清</title>
+    <link rel="alternate" hreflang="zh-CN" href="https://monitor-app.corerobin.com/" />
+    <link rel="alternate" hreflang="en" href="https://monitor-app.corerobin.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://monitor-app.corerobin.com/" />
+    <link rel="icon" href="/assets/app-icon.png" />
+    <link rel="stylesheet" href="/animated-robin.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CoreRobin","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS, Windows, Linux","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","url":"https://monitor-app.corerobin.com/download/"}}</script>
+    <title data-zh="CoreRobin — 电脑变慢，空间不足，原因一眼看清" data-en="CoreRobin — Find slowdowns and free up space">CoreRobin — 电脑变慢，空间不足，原因一眼看清</title>
   </head>
   <body>
     <a class="skip-link" href="#main-content" data-zh="跳到主要内容" data-en="Skip to main content">跳到主要内容</a>
@@ -23,18 +31,19 @@
 
     <header class="site-header" data-header>
       <a class="brand" href="#main-content" aria-label="CoreRobin home">
-        <span class="brand__mark"><img src="./assets/brand-mark.png" alt="" /></span>
+        <span class="brand__mark"><img src="/assets/brand-mark.png" alt="" /></span>
         <span><strong aria-label="CoreRobin"><span aria-hidden="true">Core<span class="brand-wordmark__r">R<i></i></span>obin</span></strong><small>SYSTEM MONITOR</small></span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false" data-nav-toggle data-aria-zh="打开导航" data-aria-en="Open navigation">
+      <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle data-aria-zh="打开导航" data-aria-en="Open navigation">
         <span></span><span></span>
       </button>
-      <nav class="main-nav" data-nav aria-label="主要导航" data-aria-zh="主要导航" data-aria-en="Main navigation">
+      <nav class="main-nav" id="site-navigation" data-nav aria-label="主要导航" data-aria-zh="主要导航" data-aria-en="Main navigation">
         <a href="#experience" data-zh="看懂电脑状态" data-en="Find the cause">看懂电脑状态</a>
         <a href="#interfaces" data-zh="界面" data-en="Interface">界面</a>
         <a href="#capabilities" data-zh="功能" data-en="Features">功能</a>
         <a href="#safety" data-zh="安全与隐私" data-en="Safety & privacy">安全与隐私</a>
-        <a href="./guide/" data-zh="使用指南" data-en="Guide">使用指南</a>
+        <a href="/download/" data-zh="下载" data-en="Download">下载</a>
+        <a href="/guide/" data-zh="使用指南" data-en="Guide">使用指南</a>
       </nav>
       <div class="header-actions">
         <button class="language-toggle" type="button" data-language-toggle aria-label="切换到英文" data-aria-zh="切换到英文" data-aria-en="Switch to Chinese">
@@ -55,22 +64,22 @@
             CoreRobin 把 CPU、内存、磁盘、网络和正在运行的应用放进一个清晰的界面。电脑变慢、磁盘快满或网络突然繁忙时，帮你更快找到原因。数据留在本机，结束进程和删除文件前都会让你确认。
           </p>
           <div class="hero__actions">
-            <a class="button button--primary" href="https://github.com/JimmyDaddy/corerobin-monitor/releases/latest">
+            <a class="button button--primary" href="/download/">
               <span data-zh="下载 CoreRobin" data-en="Download CoreRobin">下载 CoreRobin</span><span aria-hidden="true">↓</span>
             </a>
-            <a class="button button--ghost" href="./guide/">
+            <a class="button button--ghost" href="/guide/">
               <span data-zh="阅读使用指南" data-en="Read the guide">阅读使用指南</span><span aria-hidden="true">→</span>
             </a>
           </div>
           <div class="hero__trust">
             <span><i class="signal-dot"></i><b data-zh="数据只留在本机" data-en="Data stays on this computer">数据只留在本机</b></span>
-            <span data-zh="已在 macOS 上验证" data-en="Tested on macOS">已在 macOS 上验证</span>
+            <span data-zh="可先扫描可访问区域" data-en="Scan accessible areas first">可先扫描可访问区域</span>
             <span data-zh="支持 10 种界面语言" data-en="10 interface languages">支持 10 种界面语言</span>
           </div>
         </div>
 
         <div class="hero__visual" data-reveal data-delay="120" aria-hidden="true">
-          <div class="brand-emblem" aria-hidden="true"><img src="./assets/brand-mark.png" alt="" /></div>
+          <div class="brand-emblem" aria-hidden="true"><img src="/assets/brand-mark.png" alt="" /></div>
           <div class="product-window">
             <div class="product-window__bar">
               <span class="window-lights"><i></i><i></i><i></i></span>
@@ -79,7 +88,7 @@
             </div>
             <div class="product-window__body">
               <div class="product-rail" aria-hidden="true">
-                <span class="rail-logo"><img src="./assets/brand-mark.png" alt="" /></span>
+                <span class="rail-logo"><img src="/assets/brand-mark.png" alt="" /></span>
                 <i class="is-active"></i><i></i><i></i><i></i><i></i>
               </div>
               <div class="product-content">
@@ -111,13 +120,18 @@
             </div>
           </div>
           <div class="floating-card floating-card--top"><i></i><span><small data-zh="网络" data-en="NETWORK">网络</small><strong>2.4 MB/s</strong></span></div>
-          <div class="floating-card floating-card--bottom"><span class="mini-robin"><img src="./assets/brand-mark.png" alt="" /></span><span><small data-zh="状态检查" data-en="STATUS CHECK">状态检查</small><strong data-zh="运行正常" data-en="Running normally">运行正常</strong></span></div>
+          <div class="floating-card floating-card--bottom"><span class="mini-robin"><img src="/assets/brand-mark.png" alt="" /></span><span><small data-zh="状态检查" data-en="STATUS CHECK">状态检查</small><strong data-zh="运行正常" data-en="Running normally">运行正常</strong></span></div>
         </div>
+      </section>
+
+      <section class="hero-proof section-shell" aria-label="CoreRobin 日常模式真实界面" data-aria-zh="CoreRobin 日常模式真实界面" data-aria-en="CoreRobin Everyday mode interface">
+        <div class="hero-proof__copy" data-reveal><span class="section-index">01</span><span class="eyebrow-text" data-zh="真实产品界面" data-en="REAL PRODUCT INTERFACE">真实产品界面</span><p data-zh="先从电脑现在怎么样开始，而不是一排难懂的指标。" data-en="Start with how the computer is doing, not a wall of metrics.">先从电脑现在怎么样开始，而不是一排难懂的指标。</p></div>
+        <figure class="hero-proof__screen" data-reveal data-delay="80"><img src="/assets/corerobin-daily-overview.jpg" width="1280" height="720" loading="eager" decoding="async" fetchpriority="high" alt="CoreRobin 日常模式电脑状态总览 / Everyday mode computer status overview" /><figcaption data-zh="日常模式 · 稳定结论和一个最值得做的动作" data-en="Everyday mode · A stable conclusion and one useful next action">日常模式 · 稳定结论和一个最值得做的动作</figcaption></figure>
       </section>
 
       <section class="signal-strip" aria-label="页面快捷入口" data-aria-zh="页面快捷入口" data-aria-en="Page shortcuts">
         <div class="signal-strip__hub" aria-hidden="true">
-          <span class="site-robin" data-robin data-robin-mood="normal"><img src="./assets/brand-mark.png" alt="" /></span>
+          <span class="site-robin" data-robin data-robin-mood="normal"><img src="/assets/brand-mark.png" alt="" /></span>
           <small data-zh="探索" data-en="EXPLORE">探索</small>
         </div>
         <a href="#experience"><strong>01</strong><span data-zh="看懂电脑状态" data-en="Find the cause">看懂电脑状态</span><i aria-hidden="true">↘</i></a>
@@ -159,13 +173,13 @@
             <div><span class="section-index">02</span><span class="eyebrow-text" data-zh="两种使用方式，同一个 CoreRobin" data-en="TWO WAYS TO USE COREROBIN">两种使用方式，同一个 CoreRobin</span></div>
             <h2 data-zh="想简单一点，或看得更深，都可以。" data-en="Keep it simple or go deeper when you need to.">想简单一点，或看得更深，都可以。</h2>
           </div>
-          <p data-zh="普通版把结论和下一步放在前面；专业版展开资源趋势、进程和网络细节。两种模式随时切换，不需要重复设置。" data-en="Everyday mode leads with a clear conclusion and next step. Pro mode opens up resource trends, processes, and network details. Switch anytime without setting things up again.">普通版把结论和下一步放在前面；专业版展开资源趋势、进程和网络细节。两种模式随时切换，不需要重复设置。</p>
+          <p data-zh="日常模式把结论和下一步放在前面；专业模式展开资源趋势、进程和网络细节。两种模式随时切换，不需要重复设置。" data-en="Everyday mode leads with a clear conclusion and next step. Professional mode opens up resource trends, processes, and network details. Switch anytime without setting things up again.">日常模式把结论和下一步放在前面；专业模式展开资源趋势、进程和网络细节。两种模式随时切换，不需要重复设置。</p>
         </div>
 
         <article class="mode-showcase mode-showcase--daily" data-reveal>
           <div class="mode-showcase__intro mode-showcase__intro--horizontal">
             <div>
-              <span class="mode-chip mode-chip--daily" data-zh="普通版" data-en="EVERYDAY MODE">普通版</span>
+              <span class="mode-chip mode-chip--daily" data-zh="日常模式" data-en="EVERYDAY MODE">日常模式</span>
               <h3 data-zh="把问题讲清楚，再给出下一步。" data-en="Understand the problem, then take the next step.">把问题讲清楚，再给出下一步。</h3>
               <div class="mode-showcase__features"><span data-zh="清晰结论" data-en="Clear summary">清晰结论</span><span data-zh="问题引导" data-en="Guided help">问题引导</span><span data-zh="稳定恢复" data-en="Stable recovery">稳定恢复</span></div>
             </div>
@@ -174,13 +188,13 @@
           <div class="daily-screen-grid">
             <figure class="screen-card">
               <div class="screen-card__frame">
-                <img src="./assets/corerobin-daily-overview.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="CoreRobin 普通版电脑状态总览 / Everyday mode status overview" />
+                <img src="/assets/corerobin-daily-overview.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="CoreRobin 日常模式电脑状态总览 / Everyday mode status overview" />
               </div>
               <figcaption><span data-zh="电脑状态 · 先看结论和最值得做的事" data-en="Computer status · See the conclusion and next best action">电脑状态 · 先看结论和最值得做的事</span></figcaption>
             </figure>
             <figure class="screen-card">
               <div class="screen-card__frame">
-                <img src="./assets/corerobin-daily-assistant.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="CoreRobin 普通版问题引导界面 / Everyday mode guided help" />
+                <img src="/assets/corerobin-daily-assistant.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="CoreRobin 日常模式问题引导界面 / Everyday mode guided help" />
               </div>
               <figcaption><span data-zh="帮我解决 · 从日常问题进入诊断" data-en="Guided help · Start from an everyday problem">帮我解决 · 从日常问题进入诊断</span></figcaption>
             </figure>
@@ -190,27 +204,27 @@
         <article class="mode-showcase mode-showcase--professional" data-reveal>
           <div class="mode-showcase__intro mode-showcase__intro--horizontal">
             <div>
-              <span class="mode-chip mode-chip--professional" data-zh="专业版" data-en="PRO MODE">专业版</span>
+              <span class="mode-chip mode-chip--professional" data-zh="专业模式" data-en="PROFESSIONAL MODE">专业模式</span>
               <h3 data-zh="趋势、进程与网络，一屏深入。" data-en="Go deeper into trends, processes, and network activity.">趋势、进程与网络，一屏深入。</h3>
             </div>
-            <p data-zh="需要定位具体原因时，专业版同时展示实时指标、五分钟趋势和可操作的详情，适合排查持续占用或异常流量。" data-en="When you need the exact cause, Pro mode combines live metrics, five-minute trends, and actionable detail for sustained load or unusual traffic.">需要定位具体原因时，专业版同时展示实时指标、五分钟趋势和可操作的详情，适合排查持续占用或异常流量。</p>
+            <p data-zh="需要定位具体原因时，专业模式同时展示实时指标、五分钟趋势和可操作的详情，适合排查持续占用或异常流量。" data-en="When you need the exact cause, Professional mode combines live metrics, five-minute trends, and actionable detail for sustained load or unusual traffic.">需要定位具体原因时，专业模式同时展示实时指标、五分钟趋势和可操作的详情，适合排查持续占用或异常流量。</p>
           </div>
           <div class="professional-screen-grid">
             <figure class="screen-card screen-card--professional">
               <div class="screen-card__frame">
-                <img src="./assets/corerobin-professional-overview.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="CoreRobin 专业版资源总览 / Pro mode resource overview" />
+                <img src="/assets/corerobin-professional-overview.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="CoreRobin 专业模式资源总览 / Professional mode resource overview" />
               </div>
               <figcaption><span data-zh="资源总览 · 指标、趋势和进程详情" data-en="Resource overview · Metrics, trends, and process detail">资源总览 · 指标、趋势和进程详情</span></figcaption>
             </figure>
             <figure class="screen-card screen-card--professional">
               <div class="screen-card__frame">
-                <img src="./assets/corerobin-professional-network.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="CoreRobin 专业版网络趋势 / Pro mode network trends" />
+                <img src="/assets/corerobin-professional-network.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="CoreRobin 专业模式网络趋势 / Professional mode network trends" />
               </div>
               <figcaption><span data-zh="网络洞察 · 实时吞吐和活动连接" data-en="Network insight · Live throughput and active connections">网络洞察 · 实时吞吐和活动连接</span></figcaption>
             </figure>
             <figure class="screen-card screen-card--professional screen-card--wide">
               <div class="screen-card__frame">
-                <img src="./assets/corerobin-space-sunburst.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="CoreRobin 专业版完整扇形空间图 / Pro mode full sunburst storage map" />
+                <img src="/assets/corerobin-space-sunburst.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="CoreRobin 专业模式完整扇形空间图 / Professional mode full sunburst storage map" />
               </div>
               <figcaption><span data-zh="空间清理 · 完整扇形图和清理篮" data-en="Space cleanup · Full sunburst map and cleanup basket">空间清理 · 完整扇形图和清理篮</span></figcaption>
             </figure>
@@ -292,14 +306,14 @@
               <li><span>02</span><div><strong data-zh="单击进入，逐层找到大文件" data-en="Click through to find large files">单击进入，逐层找到大文件</strong><small data-zh="直接从扇形图进入文件夹，不必在长列表里来回查找。" data-en="Open folders from the map instead of searching through long lists.">直接从扇形图进入文件夹，不必在长列表里来回查找。</small></div></li>
               <li><span>03</span><div><strong data-zh="拖进清理篮，检查后再删除" data-en="Collect first, review before deleting">拖进清理篮，检查后再删除</strong><small data-zh="收集不会立即删除，名称、位置和大小确认无误后才会继续。" data-en="Collecting changes nothing. Deletion happens only after you review the name, location, and size.">收集不会立即删除，名称、位置和大小确认无误后才会继续。</small></div></li>
             </ul>
-            <a class="text-link" href="./guide/#cleanup"><span data-zh="了解空间清理" data-en="Learn how cleanup works">了解空间清理</span><span>→</span></a>
+            <a class="text-link" href="/guide/#cleanup"><span data-zh="了解空间清理" data-en="Learn how cleanup works">了解空间清理</span><span>→</span></a>
           </div>
         </div>
       </section>
 
       <section class="safety section-shell" id="safety">
         <div class="safety__panel" data-reveal>
-          <div class="safety__robin" aria-hidden="true"><span class="site-robin" data-robin data-robin-mood="normal"><img src="./assets/brand-mark.png" alt="" /></span></div>
+          <div class="safety__robin" aria-hidden="true"><span class="site-robin" data-robin data-robin-mood="normal"><img src="/assets/brand-mark.png" alt="" /></span></div>
           <div class="safety__copy">
             <div><span class="section-index">05</span><span class="eyebrow-text" data-zh="重要操作，由你确认" data-en="YOU STAY IN CONTROL">重要操作，由你确认</span></div>
             <h2 data-zh="结束进程和删除文件，都要经过你的确认。" data-en="Processes are stopped and files are deleted only when you confirm.">结束进程和删除文件，都要经过你的确认。</h2>
@@ -309,7 +323,7 @@
               <li><i>✓</i><span data-zh="不会让你误关系统关键进程或 CoreRobin 本身" data-en="Critical system processes and CoreRobin itself cannot be stopped by mistake">不会让你误关系统关键进程或 CoreRobin 本身</span></li>
               <li><i>✓</i><span data-zh="不会删除主目录、链接、特殊文件或其他磁盘上的内容" data-en="Your home folder, links, special files, and content on other disks are protected">不会删除主目录、链接、特殊文件或其他磁盘上的内容</span></li>
             </ul>
-            <a class="text-link" href="./guide/#safety"><span data-zh="了解这些安全保护" data-en="Learn about these safeguards">了解这些安全保护</span><span>→</span></a>
+            <a class="text-link" href="/privacy/"><span data-zh="了解这些安全保护" data-en="Learn about these safeguards">了解这些安全保护</span><span>→</span></a>
           </div>
         </div>
       </section>
@@ -319,19 +333,19 @@
           <span class="guide-cta__label" data-zh="第一次使用？" data-en="NEW TO COREROBIN?">第一次使用？</span>
           <h2 data-zh="从这里开始，几分钟就够。" data-en="Start here. It only takes a few minutes.">从这里开始，几分钟就够。</h2>
           <p data-zh="使用指南会告诉你每个页面能解决什么问题，以及结束进程、清理文件时需要注意什么。" data-en="The guide explains what each page is for and what to watch for when stopping processes or cleaning files.">使用指南会告诉你每个页面能解决什么问题，以及结束进程、清理文件时需要注意什么。</p>
-          <a class="button button--light" href="./guide/"><span data-zh="打开完整指南" data-en="Open the full guide">打开完整指南</span><span>→</span></a>
-          <div class="guide-cta__mark" aria-hidden="true"><img src="./assets/brand-mark.png" alt="" /></div>
+          <a class="button button--light" href="/guide/"><span data-zh="打开完整指南" data-en="Open the full guide">打开完整指南</span><span>→</span></a>
+          <div class="guide-cta__mark" aria-hidden="true"><img src="/assets/brand-mark.png" alt="" /></div>
         </div>
       </section>
 
     </main>
 
     <footer class="site-footer section-shell">
-      <a class="brand brand--footer" href="#main-content"><span class="brand__mark"><img src="./assets/brand-mark.png" alt="" /></span><span><strong aria-label="CoreRobin"><span aria-hidden="true">Core<span class="brand-wordmark__r">R<i></i></span>obin</span></strong><small>SYSTEM MONITOR</small></span></a>
+      <a class="brand brand--footer" href="#main-content"><span class="brand__mark"><img src="/assets/brand-mark.png" alt="" /></span><span><strong aria-label="CoreRobin"><span aria-hidden="true">Core<span class="brand-wordmark__r">R<i></i></span>obin</span></strong><small>SYSTEM MONITOR</small></span></a>
       <p><span>© </span><span data-year></span><span> CoreRobin.</span> <span data-zh="看清电脑状态，找出变慢和空间不足的原因。" data-en="Find slowdowns and see what is taking up space.">看清电脑状态，找出变慢和空间不足的原因。</span></p>
-      <div><a href="./guide/" data-zh="指南" data-en="Guide">指南</a><a href="https://github.com/JimmyDaddy/corerobin-monitor/blob/main/SECURITY.md" data-zh="安全" data-en="Security">安全</a><a href="https://github.com/JimmyDaddy/corerobin-monitor" rel="noreferrer">GitHub</a></div>
+      <div><a href="/download/" data-zh="下载" data-en="Download">下载</a><a href="/guide/" data-zh="指南" data-en="Guide">指南</a><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a><a href="https://github.com/JimmyDaddy/corerobin-monitor" rel="noreferrer">GitHub</a></div>
     </footer>
 
-    <script src="./site.js" defer></script>
+    <script src="/site.js" defer></script>
   </body>
 </html>

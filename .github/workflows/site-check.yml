@@ -1,11 +1,33 @@
 name: Check public site
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "README*"
+      - "PRIVACY*"
+      - "SECURITY.md"
+      - "SUPPORT.md"
+      - "docs/**"
+      - "site/**"
+      - "scripts/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - ".github/ISSUE_TEMPLATE/**"
+      - ".github/workflows/site-check.yml"
   pull_request:
     paths:
       - "docs/**"
       - "site/**"
-      - "scripts/build-site.mjs"
+      - "scripts/**"
+      - "README*"
+      - "PRIVACY*"
+      - "SECURITY.md"
+      - "SUPPORT.md"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - ".github/ISSUE_TEMPLATE/**"
       - ".github/workflows/site-check.yml"
   workflow_dispatch:
 
@@ -27,5 +49,14 @@ jobs:
         with:
           node-version: 22
 
+      - name: Enable pnpm
+        run: corepack enable
+
+      - name: Install site check dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Build and verify static site
         run: node scripts/build-site.mjs
+
+      - name: Check external links
+        run: node scripts/check-external-links.mjs
