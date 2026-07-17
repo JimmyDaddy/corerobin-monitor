@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="zh-CN" data-language="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d12" />
+    <meta
+      name="description"
+      data-content-zh="Finder 与 CoreRobin 磁盘扫描结果不同，通常来自标称大小和实际占用、硬链接、APFS 克隆、稀疏或压缩文件、云端占位、权限和扫描时间差异。"
+      data-content-en="Finder and CoreRobin disk totals can differ because of logical versus allocated size, hard links, APFS clones, sparse or compressed files, cloud placeholders, permissions, and scan timing."
+      content="Finder 与 CoreRobin 磁盘扫描结果不同，通常来自标称大小和实际占用、硬链接、APFS 克隆、稀疏或压缩文件、云端占位、权限和扫描时间差异。"
+    />
+    <meta
+      property="og:title"
+      data-content-zh="Finder 与磁盘扫描结果为什么不同 — CoreRobin"
+      data-content-en="Why Finder and disk scans show different sizes — CoreRobin"
+      content="Finder 与磁盘扫描结果为什么不同 — CoreRobin"
+    />
+    <meta
+      property="og:description"
+      data-content-zh="两个数字可能在回答不同问题，先分清逻辑大小、实际占用和可用空间。"
+      data-content-en="The numbers may answer different questions: logical size, allocated space, and free space are not interchangeable."
+      content="两个数字可能在回答不同问题，先分清逻辑大小、实际占用和可用空间。"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://monitor-app.corerobin.com/articles/finder-disk-size-difference/"
+    />
+    <meta
+      property="og:image"
+      content="https://monitor-app.corerobin.com/assets/social-card.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      data-content-zh="Finder 与磁盘扫描容量差异说明"
+      data-content-en="Finder and disk scan size differences"
+      content="Finder 与磁盘扫描容量差异说明"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="canonical"
+      href="https://monitor-app.corerobin.com/articles/finder-disk-size-difference/"
+    />
+    <link rel="icon" href="/assets/app-icon.png" />
+    <link rel="stylesheet" href="/animated-robin.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Finder 与磁盘扫描结果为什么不同",
+        "description": "Finder 与磁盘扫描容量差异说明",
+        "datePublished": "2026-07-18",
+        "dateModified": "2026-07-18",
+        "author": { "@type": "Organization", "name": "CoreRobin" },
+        "publisher": { "@type": "Organization", "name": "CoreRobin" },
+        "mainEntityOfPage": "https://monitor-app.corerobin.com/articles/finder-disk-size-difference/",
+        "url": "https://monitor-app.corerobin.com/articles/finder-disk-size-difference/",
+        "inLanguage": "zh-CN"
+      }
+    </script>
+    <title
+      data-zh="Finder 与磁盘扫描结果为什么不同 — CoreRobin"
+      data-en="Why Finder and disk scans show different sizes — CoreRobin"
+    >
+      Finder 与磁盘扫描结果为什么不同 — CoreRobin
+    </title>
+  </head>
+  <body>
+    <a
+      class="skip-link"
+      href="#main-content"
+      data-zh="跳到主要内容"
+      data-en="Skip to main content"
+      >跳到主要内容</a
+    >
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="CoreRobin home"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span
+          ><strong aria-label="CoreRobin"
+            ><span aria-hidden="true"
+              >Core<span class="brand-wordmark__r">R<i></i></span>obin</span
+            ></strong
+          ><small>KNOWLEDGE BASE</small></span
+        ></a
+      ><button
+        class="nav-toggle"
+        type="button"
+        data-aria-zh="打开导航"
+        data-aria-en="Open navigation"
+        aria-label="打开导航"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-nav-toggle
+      >
+        <span></span><span></span>
+      </button>
+      <nav
+        class="main-nav"
+        id="site-navigation"
+        data-nav
+        data-aria-zh="主导航"
+        data-aria-en="Main navigation"
+        aria-label="主导航"
+      >
+        <a href="/" data-zh="产品" data-en="Product">产品</a
+        ><a href="/download/" data-zh="下载" data-en="Download">下载</a
+        ><a href="/guide/" data-zh="指南" data-en="Guide">指南</a
+        ><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a
+        ><a href="/releases/" data-zh="版本" data-en="Releases">版本</a>
+      </nav>
+      <div class="header-actions">
+        <div
+          class="language-picker"
+          data-language-picker
+          data-aria-zh="选择语言"
+          data-aria-en="Choose language"
+        ></div>
+      </div>
+    </header>
+    <main id="main-content" class="article-page">
+      <article>
+        <header class="article-hero section-shell" data-reveal>
+          <nav
+            class="article-breadcrumb"
+            data-aria-zh="面包屑"
+            data-aria-en="Breadcrumb"
+            aria-label="面包屑"
+          >
+            <a
+              href="/articles/"
+              data-zh="Mac 排障知识库"
+              data-en="Mac troubleshooting"
+              >Mac 排障知识库</a
+            ><span>/</span
+            ><span data-zh="容量解释" data-en="Disk usage">容量解释</span>
+          </nav>
+          <div class="article-hero__meta">
+            <span>DISK USAGE</span
+            ><time
+              datetime="2026-07-18"
+              data-zh="更新于 2026 年 7 月 18 日"
+              data-en="Updated July 18, 2026"
+              >更新于 2026 年 7 月 18 日</time
+            ><span data-zh="约 6 分钟" data-en="6 min read">约 6 分钟</span>
+          </div>
+          <h1
+            data-zh="Finder 与磁盘扫描结果为什么不同"
+            data-en="Why Finder and disk scans show different sizes"
+          >
+            Finder 与磁盘扫描结果为什么不同
+          </h1>
+          <p
+            data-zh="多数情况下不是谁算错了，而是数字在回答不同问题：文件声称有多大、实际分配了多少磁盘块、整个磁盘还能写入多少数据，并不是同一个量。"
+            data-en="Usually neither tool is simply wrong. The numbers answer different questions: how much data a file represents, how many disk blocks are allocated, and how much more the volume can store are different measurements."
+          >
+            多数情况下不是谁算错了，而是数字在回答不同问题：文件声称有多大、实际分配了多少磁盘块、整个磁盘还能写入多少数据，并不是同一个量。
+          </p>
+        </header>
+        <div class="article-layout section-shell">
+          <aside class="article-toc" data-reveal>
+            <strong data-zh="这篇文章" data-en="In this guide">这篇文章</strong>
+            <nav>
+              <a href="#quick-answer" data-zh="先说结论" data-en="Quick answer"
+                >先说结论</a
+              ><a
+                href="#three-numbers"
+                data-zh="三个数字"
+                data-en="Three numbers"
+                >三个数字</a
+              ><a href="#reasons" data-zh="常见原因" data-en="Common causes"
+                >常见原因</a
+              ><a
+                href="#corerobin"
+                data-zh="CoreRobin 算法"
+                data-en="CoreRobin method"
+                >CoreRobin 算法</a
+              ><a href="#trust" data-zh="该信哪个" data-en="Which to use"
+                >该信哪个</a
+              >
+            </nav>
+          </aside>
+          <div class="article-content">
+            <section id="quick-answer" data-reveal>
+              <div class="article-answer">
+                <span data-zh="直接答案" data-en="QUICK ANSWER">直接答案</span>
+                <p
+                  data-zh="查看磁盘还能用多少空间，以 macOS 显示的“可用”为准；定位哪些路径实际占用磁盘，用 CoreRobin 的空间地图；查看单个文件的标称内容大小，用 Finder。比较前确保是同一路径、同一时刻，并让扫描完成。"
+                  data-en="Use macOS Available space to learn how much more the disk can hold, CoreRobin's space map to locate path-based allocated usage, and Finder for an individual file's logical content size. Compare the same path at the same time and let the scan finish first."
+                >
+                  查看磁盘还能用多少空间，以 macOS
+                  显示的“可用”为准；定位哪些路径实际占用磁盘，用 CoreRobin
+                  的空间地图；查看单个文件的标称内容大小，用
+                  Finder。比较前确保是同一路径、同一时刻，并让扫描完成。
+                </p>
+              </div>
+            </section>
+            <section id="three-numbers" data-reveal>
+              <h2
+                data-zh="先分清三个数字"
+                data-en="First separate three measurements"
+              >
+                先分清三个数字
+              </h2>
+              <div class="article-signal-grid">
+                <article>
+                  <strong data-zh="逻辑大小" data-en="Logical size"
+                    >逻辑大小</strong
+                  >
+                  <p
+                    data-zh="文件包含的数据长度。稀疏文件可能声称很大，但没有为所有空白区域分配磁盘块。"
+                    data-en="The length of data represented by a file. A sparse file can report a large length without allocating blocks for every empty region."
+                  >
+                    文件包含的数据长度。稀疏文件可能声称很大，但没有为所有空白区域分配磁盘块。
+                  </p>
+                </article>
+                <article>
+                  <strong data-zh="实际占用" data-en="Allocated space"
+                    >实际占用</strong
+                  >
+                  <p
+                    data-zh="文件系统为内容分配的磁盘块。压缩、稀疏和共享数据会让它与逻辑大小不同。"
+                    data-en="Disk blocks allocated by the file system. Compression, sparsity, and shared data can make this differ from logical size."
+                  >
+                    文件系统为内容分配的磁盘块。压缩、稀疏和共享数据会让它与逻辑大小不同。
+                  </p>
+                </article>
+                <article>
+                  <strong
+                    data-zh="磁盘可用空间"
+                    data-en="Available volume space"
+                    >磁盘可用空间</strong
+                  >
+                  <p
+                    data-zh="整个卷当前还能提供的空间，可能包含系统能够按需回收的内容，不能靠把目录大小简单相加得到。"
+                    data-en="Space the whole volume can currently provide, potentially including content the system can reclaim. It is not the sum of folder sizes."
+                  >
+                    整个卷当前还能提供的空间，可能包含系统能够按需回收的内容，不能靠把目录大小简单相加得到。
+                  </p>
+                </article>
+              </div>
+            </section>
+            <section id="reasons" data-reveal>
+              <h2
+                data-zh="最常见的六个差异来源"
+                data-en="Six common sources of differences"
+              >
+                最常见的六个差异来源
+              </h2>
+              <ol class="article-steps">
+                <li>
+                  <span>1</span>
+                  <div>
+                    <h3
+                      data-zh="压缩文件和稀疏文件"
+                      data-en="Compressed and sparse files"
+                    >
+                      压缩文件和稀疏文件
+                    </h3>
+                    <p
+                      data-zh="内容长度和已分配磁盘块不相等。虚拟机磁盘、数据库和某些缓存尤其常见。"
+                      data-en="Content length and allocated blocks differ. Virtual-machine disks, databases, and some caches commonly behave this way."
+                    >
+                      内容长度和已分配磁盘块不相等。虚拟机磁盘、数据库和某些缓存尤其常见。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>2</span>
+                  <div>
+                    <h3
+                      data-zh="硬链接和共享内容"
+                      data-en="Hard links and shared content"
+                    >
+                      硬链接和共享内容
+                    </h3>
+                    <p
+                      data-zh="多个路径可以指向同一份底层数据。把每条路径都完整相加会重复计算，因此扫描器需要识别文件身份。"
+                      data-en="Multiple paths can point to the same underlying data. Adding every path in full double-counts storage, so a scanner must identify the file object."
+                    >
+                      多个路径可以指向同一份底层数据。把每条路径都完整相加会重复计算，因此扫描器需要识别文件身份。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>3</span>
+                  <div>
+                    <h3
+                      data-zh="APFS 克隆、快照和可清理空间"
+                      data-en="APFS clones, snapshots, and reclaimable space"
+                    >
+                      APFS 克隆、快照和可清理空间
+                    </h3>
+                    <p
+                      data-zh="共享磁盘块很难完全归属于某一个路径；快照和系统可回收内容也会影响卷级可用空间，却不一定出现在普通目录遍历里。"
+                      data-en="Shared blocks cannot always be assigned to one path. Snapshots and system-reclaimable content affect volume availability without necessarily appearing in an ordinary directory walk."
+                    >
+                      共享磁盘块很难完全归属于某一个路径；快照和系统可回收内容也会影响卷级可用空间，却不一定出现在普通目录遍历里。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>4</span>
+                  <div>
+                    <h3
+                      data-zh="iCloud 和其他云端占位文件"
+                      data-en="iCloud and other cloud placeholders"
+                    >
+                      iCloud 和其他云端占位文件
+                    </h3>
+                    <p
+                      data-zh="Finder 可以显示云端项目的逻辑大小，但内容可能没有完整下载。CoreRobin 会跳过云文件提供商根目录，避免为了测量而触发大规模下载。"
+                      data-en="Finder can show a cloud item's logical size even when the content is not fully downloaded. CoreRobin skips cloud file-provider roots to avoid triggering large downloads merely to measure them."
+                    >
+                      Finder
+                      可以显示云端项目的逻辑大小，但内容可能没有完整下载。CoreRobin
+                      会跳过云文件提供商根目录，避免为了测量而触发大规模下载。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>5</span>
+                  <div>
+                    <h3
+                      data-zh="权限和不可访问位置"
+                      data-en="Permissions and unreadable locations"
+                    >
+                      权限和不可访问位置
+                    </h3>
+                    <p
+                      data-zh="未授予完整磁盘访问时，邮件、信息和其他应用数据可能无法遍历。CoreRobin 会保留缺口，不把未知内容估算成确定数字。"
+                      data-en="Without Full Disk Access, Mail, Messages, and other app data may be unreadable. CoreRobin preserves the gap instead of turning unknown content into an estimated total."
+                    >
+                      未授予完整磁盘访问时，邮件、信息和其他应用数据可能无法遍历。CoreRobin
+                      会保留缺口，不把未知内容估算成确定数字。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>6</span>
+                  <div>
+                    <h3
+                      data-zh="扫描时文件仍在变化"
+                      data-en="Files change during the scan"
+                    >
+                      扫描时文件仍在变化
+                    </h3>
+                    <p
+                      data-zh="浏览器缓存、日志、下载和虚拟机磁盘可以边扫描边变化。Finder、系统设置和 CoreRobin 如果不是同一时刻取样，结果自然不会完全一致。"
+                      data-en="Browser caches, logs, downloads, and virtual-machine disks can change while being scanned. Finder, System Settings, and CoreRobin will differ if sampled at different times."
+                    >
+                      浏览器缓存、日志、下载和虚拟机磁盘可以边扫描边变化。Finder、系统设置和
+                      CoreRobin 如果不是同一时刻取样，结果自然不会完全一致。
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+            <section id="corerobin" data-reveal>
+              <h2
+                data-zh="CoreRobin 怎样计算"
+                data-en="How CoreRobin calculates usage"
+              >
+                CoreRobin 怎样计算
+              </h2>
+              <ul class="article-checklist">
+                <li
+                  data-zh="在 macOS 和 Linux 上按文件系统报告的已分配块计算实际占用，而不是只用文件长度。"
+                  data-en="On macOS and Linux, it uses file-system allocated blocks rather than only file length."
+                >
+                  在 macOS 和 Linux
+                  上按文件系统报告的已分配块计算实际占用，而不是只用文件长度。
+                </li>
+                <li
+                  data-zh="在同一扫描根内按设备号和文件身份识别硬链接，避免重复计算同一份存储。"
+                  data-en="Within a scan root, it identifies hard links by device and file identity so the same storage is not counted twice."
+                >
+                  在同一扫描根内按设备号和文件身份识别硬链接，避免重复计算同一份存储。
+                </li>
+                <li
+                  data-zh="不跟随符号链接，不跨到其他磁盘，避免循环、越界和把外置盘计入系统盘。"
+                  data-en="It does not follow symbolic links or cross onto another volume, preventing loops, boundary escapes, and external storage from being counted as the system disk."
+                >
+                  不跟随符号链接，不跨到其他磁盘，避免循环、越界和把外置盘计入系统盘。
+                </li>
+                <li
+                  data-zh="扫描结果是完成时的一张快照；删除前会重新检查路径、文件身份和变化，发现不一致就停止。"
+                  data-en="The result is a snapshot at completion. Before deletion, CoreRobin rechecks the path, file identity, and changes, and stops if they no longer match."
+                >
+                  扫描结果是完成时的一张快照；删除前会重新检查路径、文件身份和变化，发现不一致就停止。
+                </li>
+              </ul>
+            </section>
+            <section id="trust" data-reveal>
+              <h2
+                data-zh="到底该信哪个数字"
+                data-en="Which number should you use?"
+              >
+                到底该信哪个数字
+              </h2>
+              <div class="article-use-table">
+                <div>
+                  <strong
+                    data-zh="想知道还能存多少"
+                    data-en="How much more can I store?"
+                    >想知道还能存多少</strong
+                  ><span
+                    data-zh="看 macOS 的可用空间"
+                    data-en="Use macOS available space"
+                    >看 macOS 的可用空间</span
+                  >
+                </div>
+                <div>
+                  <strong
+                    data-zh="想找到占空间的路径"
+                    data-en="Where is storage allocated?"
+                    >想找到占空间的路径</strong
+                  ><span
+                    data-zh="看 CoreRobin 完成后的空间地图"
+                    data-en="Use a completed CoreRobin space map"
+                    >看 CoreRobin 完成后的空间地图</span
+                  >
+                </div>
+                <div>
+                  <strong
+                    data-zh="想知道单个文件内容大小"
+                    data-en="How large is one file's content?"
+                    >想知道单个文件内容大小</strong
+                  ><span
+                    data-zh="看 Finder 的大小信息"
+                    data-en="Use Finder's size information"
+                    >看 Finder 的大小信息</span
+                  >
+                </div>
+                <div>
+                  <strong
+                    data-zh="想解释总数差异"
+                    data-en="Why do totals differ?"
+                    >想解释总数差异</strong
+                  ><span
+                    data-zh="对齐路径、权限和时间，再检查共享或云端内容"
+                    data-en="Align path, access, and time, then inspect shared or cloud content"
+                    >对齐路径、权限和时间，再检查共享或云端内容</span
+                  >
+                </div>
+              </div>
+              <p
+                data-zh="不要为了让两个界面的总数完全相等而删除不认识的文件。清理的目标是找到你理解且确实不需要的内容，并用卷级可用空间验证结果。"
+                data-en="Do not delete unfamiliar files merely to make two totals match. The goal is to find content you understand and no longer need, then verify the outcome using volume-level available space."
+              >
+                不要为了让两个界面的总数完全相等而删除不认识的文件。清理的目标是找到你理解且确实不需要的内容，并用卷级可用空间验证结果。
+              </p>
+              <div class="article-next">
+                <span data-zh="继续处理" data-en="KEEP READING">继续处理</span
+                ><a href="/articles/mac-storage-full/"
+                  ><strong
+                    data-zh="Mac 磁盘空间不足怎么清理"
+                    data-en="How to free storage on a Mac"
+                    >Mac 磁盘空间不足怎么清理</strong
+                  ><span aria-hidden="true">→</span></a
+                >
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer section-shell">
+      <a class="brand brand--footer" href="/"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span><strong>CoreRobin</strong><small>KNOWLEDGE BASE</small></span></a
+      >
+      <p>
+        © <span data-year></span> CoreRobin.
+        <span
+          data-zh="先分清数字在回答什么。"
+          data-en="First ask what the number measures."
+          >先分清数字在回答什么。</span
+        >
+      </p>
+      <div>
+        <a href="/articles/" data-zh="知识库" data-en="Articles">知识库</a
+        ><a href="/download/" data-zh="下载" data-en="Download">下载</a
+        ><a href="/guide/" data-zh="指南" data-en="Guide">指南</a
+        ><a href="https://github.com/JimmyDaddy/corerobin-monitor">GitHub</a>
+      </div>
+    </footer>
+    <script src="/site.js" defer></script>
+  </body>
+</html>

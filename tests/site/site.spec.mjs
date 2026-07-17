@@ -2,9 +2,12 @@ import { readFile } from "node:fs/promises";
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-import { SITE_LOCALES, SITE_ROUTES, localizedRoute } from "../../scripts/site-locales.mjs";
+import { SITE_LOCALES, SITE_ROUTES, localesForRoute, localizedRoute } from "../../scripts/site-locales.mjs";
 
-const localizedRoutes = SITE_ROUTES.flatMap((route) => SITE_LOCALES.map((locale) => localizedRoute(route, locale)));
+const localizedRoutes = SITE_ROUTES.flatMap((route) => localesForRoute(route).map((locale) => ({
+  path: localizedRoute(route, locale),
+  route,
+})));
 const viewports = [
   { name: "mobile", width: 390, height: 844 },
   { name: "tablet", width: 768, height: 1024 },
@@ -12,8 +15,8 @@ const viewports = [
 ];
 
 for (const viewport of viewports) {
-  for (const route of localizedRoutes) {
-    test(`${viewport.name} ${route} renders without horizontal overflow`, async ({ page }, testInfo) => {
+  for (const { path, route } of localizedRoutes) {
+    test(`${viewport.name} ${path} renders without horizontal overflow`, async ({ page }, testInfo) => {
       await page.setViewportSize(viewport);
       await page.addInitScript(() => {
         Object.defineProperty(navigator, "userAgent", {
@@ -22,10 +25,10 @@ for (const viewport of viewports) {
         });
         Object.defineProperty(navigator, "platform", { configurable: true, value: "MacIntel" });
       });
-      await page.goto(route, { waitUntil: "networkidle" });
+      await page.goto(path, { waitUntil: "networkidle" });
       await expect(page.locator("h1")).toBeVisible();
       await expect(page.locator("#site-navigation > a")).toHaveCount(5);
-      await expect(page.locator("[data-language-select] > option")).toHaveCount(SITE_LOCALES.length);
+      await expect(page.locator("[data-language-select] > option")).toHaveCount(localesForRoute(route).length);
       await page.evaluate(() => document.fonts?.ready);
       await page.locator("[data-reveal]").evaluateAll((elements) => {
         for (const element of elements) {
@@ -43,7 +46,7 @@ for (const viewport of viewports) {
       expect(overflow.scrollWidth, JSON.stringify(overflow)).toBeLessThanOrEqual(overflow.clientWidth + 1);
 
       await page.screenshot({
-        path: testInfo.outputPath("screenshots", `${viewport.name}-${routeName(route)}.png`),
+        path: testInfo.outputPath("screenshots", `${viewport.name}-${routeName(path)}.png`),
         fullPage: true,
         animations: "disabled",
       });
@@ -51,10 +54,10 @@ for (const viewport of viewports) {
   }
 }
 
-for (const route of localizedRoutes) {
-  test(`axe accessibility check ${route}`, async ({ page }) => {
+for (const { path } of localizedRoutes) {
+  test(`axe accessibility check ${path}`, async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 1000 });
-    await page.goto(route, { waitUntil: "networkidle" });
+    await page.goto(path, { waitUntil: "networkidle" });
     await page.locator("[data-reveal]").evaluateAll((elements) => {
       for (const element of elements) {
         element.classList.add("is-revealed");
@@ -88,6 +91,33 @@ test("language picker uses the matching static localized route", async ({ page }
   await expect(page.locator("html")).toHaveAttribute("lang", "ja");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://monitor-app.corerobin.com/ja/guide/");
   await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(SITE_LOCALES.length + 1);
+});
+
+test("article language picker offers curated Chinese and English pages", async ({ page }) => {
+  await page.goto("/articles/mac-running-slow/", { waitUntil: "networkidle" });
+  await expect(page.locator("[data-language-select] > option")).toHaveCount(2);
+  await page.locator("[data-language-select]").selectOption("/en/articles/mac-running-slow/");
+  await page.waitForURL("**/en/articles/mac-running-slow/");
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+    "href",
+    "https://monitor-app.corerobin.com/en/articles/mac-running-slow/",
+  );
+  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(3);
+  await expect(page.locator('.article-source a[href*="support.apple.com"]')).toHaveCount(2);
+});
+
+test("knowledge pages expose page-specific structured data", async ({ page }) => {
+  await page.goto("/articles/", { waitUntil: "networkidle" });
+  const collection = await page.locator('script[type="application/ld+json"]').first().textContent();
+  expect(JSON.parse(collection)['@type']).toBe("CollectionPage");
+
+  await page.goto("/articles/mac-storage-full/", { waitUntil: "networkidle" });
+  const article = await page.locator('script[type="application/ld+json"]').first().textContent();
+  const articleData = JSON.parse(article);
+  expect(articleData['@type']).toBe("TechArticle");
+  expect(articleData.headline).toBe("Mac 磁盘空间不足怎么清理");
+  expect(articleData.mainEntityOfPage).toBe("https://monitor-app.corerobin.com/articles/mac-storage-full/");
 });
 
 for (const sample of [

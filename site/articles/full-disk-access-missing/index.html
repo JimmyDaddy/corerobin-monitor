@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-CN" data-language="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d12" />
+    <meta
+      name="description"
+      data-content-zh="macOS 完整磁盘访问列表里没有 CoreRobin 时，先把 CoreRobin.app 安装到“应用程序”并启动，再点击列表下方的 + 手动添加；也可以暂不授权继续扫描。"
+      data-content-en="If CoreRobin is missing from macOS Full Disk Access, install and launch CoreRobin.app from Applications, then add it with the + button—or continue scanning without permission."
+      content="macOS 完整磁盘访问列表里没有 CoreRobin 时，先把 CoreRobin.app 安装到“应用程序”并启动，再点击列表下方的 + 手动添加；也可以暂不授权继续扫描。"
+    />
+    <meta
+      property="og:title"
+      data-content-zh="完整磁盘访问列表里没有 CoreRobin 怎么办"
+      data-content-en="CoreRobin is missing from Full Disk Access"
+      content="完整磁盘访问列表里没有 CoreRobin 怎么办"
+    />
+    <meta
+      property="og:description"
+      data-content-zh="正确安装、手动添加、重新打开；不授权也可以继续扫描可访问区域。"
+      data-content-en="Install correctly, add the app manually, and reopen it—or scan accessible areas without permission."
+      content="正确安装、手动添加、重新打开；不授权也可以继续扫描可访问区域。"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://monitor-app.corerobin.com/articles/full-disk-access-missing/"
+    />
+    <meta
+      property="og:image"
+      content="https://monitor-app.corerobin.com/assets/social-card.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      data-content-zh="CoreRobin 完整磁盘访问指南"
+      data-content-en="CoreRobin Full Disk Access guide"
+      content="CoreRobin 完整磁盘访问指南"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="canonical"
+      href="https://monitor-app.corerobin.com/articles/full-disk-access-missing/"
+    />
+    <link rel="icon" href="/assets/app-icon.png" />
+    <link rel="stylesheet" href="/animated-robin.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "完整磁盘访问列表里没有 CoreRobin 怎么办",
+        "description": "CoreRobin 完整磁盘访问指南",
+        "datePublished": "2026-07-18",
+        "dateModified": "2026-07-18",
+        "author": { "@type": "Organization", "name": "CoreRobin" },
+        "publisher": { "@type": "Organization", "name": "CoreRobin" },
+        "mainEntityOfPage": "https://monitor-app.corerobin.com/articles/full-disk-access-missing/",
+        "url": "https://monitor-app.corerobin.com/articles/full-disk-access-missing/",
+        "inLanguage": "zh-CN"
+      }
+    </script>
+    <title
+      data-zh="完整磁盘访问列表里没有 CoreRobin 怎么办"
+      data-en="CoreRobin is missing from Full Disk Access"
+    >
+      完整磁盘访问列表里没有 CoreRobin 怎么办
+    </title>
+  </head>
+  <body>
+    <a
+      class="skip-link"
+      href="#main-content"
+      data-zh="跳到主要内容"
+      data-en="Skip to main content"
+      >跳到主要内容</a
+    >
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="CoreRobin home"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span
+          ><strong aria-label="CoreRobin"
+            ><span aria-hidden="true"
+              >Core<span class="brand-wordmark__r">R<i></i></span>obin</span
+            ></strong
+          ><small>KNOWLEDGE BASE</small></span
+        ></a
+      ><button
+        class="nav-toggle"
+        type="button"
+        data-aria-zh="打开导航"
+        data-aria-en="Open navigation"
+        aria-label="打开导航"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-nav-toggle
+      >
+        <span></span><span></span>
+      </button>
+      <nav
+        class="main-nav"
+        id="site-navigation"
+        data-nav
+        data-aria-zh="主导航"
+        data-aria-en="Main navigation"
+        aria-label="主导航"
+      >
+        <a href="/" data-zh="产品" data-en="Product">产品</a
+        ><a href="/download/" data-zh="下载" data-en="Download">下载</a
+        ><a href="/guide/" data-zh="指南" data-en="Guide">指南</a
+        ><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a
+        ><a href="/releases/" data-zh="版本" data-en="Releases">版本</a>
+      </nav>
+      <div class="header-actions">
+        <div
+          class="language-picker"
+          data-language-picker
+          data-aria-zh="选择语言"
+          data-aria-en="Choose language"
+        ></div>
+      </div>
+    </header>
+    <main id="main-content" class="article-page">
+      <article>
+        <header class="article-hero section-shell" data-reveal>
+          <nav
+            class="article-breadcrumb"
+            data-aria-zh="面包屑"
+            data-aria-en="Breadcrumb"
+            aria-label="面包屑"
+          >
+            <a
+              href="/articles/"
+              data-zh="Mac 排障知识库"
+              data-en="Mac troubleshooting"
+              >Mac 排障知识库</a
+            ><span>/</span
+            ><span data-zh="权限处理" data-en="Permissions">权限处理</span>
+          </nav>
+          <div class="article-hero__meta">
+            <span>MACOS PRIVACY</span
+            ><time
+              datetime="2026-07-18"
+              data-zh="更新于 2026 年 7 月 18 日"
+              data-en="Updated July 18, 2026"
+              >更新于 2026 年 7 月 18 日</time
+            ><span data-zh="约 5 分钟" data-en="5 min read">约 5 分钟</span>
+          </div>
+          <h1
+            data-zh="完整磁盘访问列表里没有 CoreRobin 怎么办"
+            data-en="CoreRobin is missing from Full Disk Access"
+          >
+            完整磁盘访问列表里没有 CoreRobin 怎么办
+          </h1>
+          <p
+            data-zh="这通常不是权限申请失败。macOS 的列表不一定自动出现应用；把正式应用安装到“应用程序”，然后通过列表下方的 + 选择它即可。你也始终可以暂不授权，只扫描当前可访问区域。"
+            data-en="This usually does not mean the permission request failed. macOS does not always add an app to the list automatically. Install the real app in Applications, then choose it with the + button. You can always decline and scan currently accessible areas."
+          >
+            这通常不是权限申请失败。macOS
+            的列表不一定自动出现应用；把正式应用安装到“应用程序”，然后通过列表下方的
+            + 选择它即可。你也始终可以暂不授权，只扫描当前可访问区域。
+          </p>
+        </header>
+        <div class="article-layout section-shell">
+          <aside class="article-toc" data-reveal>
+            <strong data-zh="这篇文章" data-en="In this guide">这篇文章</strong>
+            <nav>
+              <a href="#quick-answer" data-zh="先说结论" data-en="Quick answer"
+                >先说结论</a
+              ><a href="#steps" data-zh="添加步骤" data-en="Add CoreRobin"
+                >添加步骤</a
+              ><a
+                href="#still-missing"
+                data-zh="仍然没有"
+                data-en="Still missing"
+                >仍然没有</a
+              ><a
+                href="#without-access"
+                data-zh="暂不授权"
+                data-en="Without access"
+                >暂不授权</a
+              ><a href="#privacy" data-zh="权限用途" data-en="What access does"
+                >权限用途</a
+              >
+            </nav>
+          </aside>
+          <div class="article-content">
+            <section id="quick-answer" data-reveal>
+              <div class="article-answer">
+                <span data-zh="直接答案" data-en="QUICK ANSWER">直接答案</span>
+                <p
+                  data-zh="退出 DMG 中的临时应用，把 CoreRobin.app 拖到“应用程序”并从那里启动。进入系统设置 → 隐私与安全性 → 完整磁盘访问，点击列表下方的 +，选择“应用程序”里的 CoreRobin.app，打开开关并按系统提示重新打开应用。"
+                  data-en="Quit the temporary copy in the DMG, drag CoreRobin.app to Applications, and launch it there. Open System Settings → Privacy & Security → Full Disk Access, click + below the list, choose CoreRobin.app in Applications, enable it, and reopen the app when macOS asks."
+                >
+                  退出 DMG 中的临时应用，把 CoreRobin.app
+                  拖到“应用程序”并从那里启动。进入系统设置 → 隐私与安全性 →
+                  完整磁盘访问，点击列表下方的 +，选择“应用程序”里的
+                  CoreRobin.app，打开开关并按系统提示重新打开应用。
+                </p>
+              </div>
+            </section>
+            <section id="steps" data-reveal>
+              <h2 data-zh="按这五步添加" data-en="Add CoreRobin in five steps">
+                按这五步添加
+              </h2>
+              <ol class="article-steps">
+                <li>
+                  <span>1</span>
+                  <div>
+                    <h3
+                      data-zh="确认使用的是已安装应用"
+                      data-en="Use the installed app"
+                    >
+                      确认使用的是已安装应用
+                    </h3>
+                    <p
+                      data-zh="不要直接从下载的 DMG 里长期运行。将 CoreRobin.app 拖到“应用程序”，推出 DMG，再从“应用程序”启动。这样权限会绑定到稳定的应用位置。"
+                      data-en="Do not keep running from the downloaded DMG. Drag CoreRobin.app to Applications, eject the DMG, and launch from Applications so the permission is associated with a stable app location."
+                    >
+                      不要直接从下载的 DMG 里长期运行。将 CoreRobin.app
+                      拖到“应用程序”，推出
+                      DMG，再从“应用程序”启动。这样权限会绑定到稳定的应用位置。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>2</span>
+                  <div>
+                    <h3
+                      data-zh="从 CoreRobin 打开正确设置页"
+                      data-en="Open the correct settings page from CoreRobin"
+                    >
+                      从 CoreRobin 打开正确设置页
+                    </h3>
+                    <p
+                      data-zh="进入空间清理并选择完整扫描。CoreRobin 会说明用途并打开“隐私与安全性 → 完整磁盘访问”。"
+                      data-en="Open Cleanup and choose a complete scan. CoreRobin explains the purpose and opens Privacy & Security → Full Disk Access."
+                    >
+                      进入空间清理并选择完整扫描。CoreRobin
+                      会说明用途并打开“隐私与安全性 → 完整磁盘访问”。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>3</span>
+                  <div>
+                    <h3
+                      data-zh="点击 +，不要等待它自动出现"
+                      data-en="Click + instead of waiting for it to appear"
+                    >
+                      点击 +，不要等待它自动出现
+                    </h3>
+                    <p
+                      data-zh="Apple 的设置页支持通过添加按钮选择应用。点击列表下方的 +，在“应用程序”中选择 CoreRobin.app，再点击“打开”。"
+                      data-en="Apple's settings page lets you choose an app with the Add button. Click + below the list, select CoreRobin.app in Applications, then click Open."
+                    >
+                      Apple 的设置页支持通过添加按钮选择应用。点击列表下方的
+                      +，在“应用程序”中选择 CoreRobin.app，再点击“打开”。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>4</span>
+                  <div>
+                    <h3
+                      data-zh="打开开关并完成系统验证"
+                      data-en="Enable the switch and authenticate"
+                    >
+                      打开开关并完成系统验证
+                    </h3>
+                    <p
+                      data-zh="macOS 可能要求 Touch ID 或管理员密码。若提示退出并重新打开应用，请接受；权限变化通常需要新进程才能完整生效。"
+                      data-en="macOS may require Touch ID or an administrator password. If it asks to quit and reopen the app, accept; the new permission generally needs a new process to take full effect."
+                    >
+                      macOS 可能要求 Touch ID
+                      或管理员密码。若提示退出并重新打开应用，请接受；权限变化通常需要新进程才能完整生效。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>5</span>
+                  <div>
+                    <h3
+                      data-zh="返回清理页面确认状态"
+                      data-en="Return to Cleanup and confirm"
+                    >
+                      返回清理页面确认状态
+                    </h3>
+                    <p
+                      data-zh="重新打开后返回 CoreRobin。应用会重新检查权限并继续；如果仍显示未授权，确认列表中开启的是当前“应用程序”目录里的那一份，而不是旧副本。"
+                      data-en="Return to CoreRobin after reopening. It checks the permission again and continues. If it still says access is missing, make sure the enabled entry is the current copy in Applications, not an older duplicate."
+                    >
+                      重新打开后返回
+                      CoreRobin。应用会重新检查权限并继续；如果仍显示未授权，确认列表中开启的是当前“应用程序”目录里的那一份，而不是旧副本。
+                    </p>
+                  </div>
+                </li>
+              </ol>
+              <p class="article-source">
+                <span
+                  data-zh="Apple 对完整磁盘访问的说明明确写明：可以点击添加按钮、选择应用并打开。"
+                  data-en="Apple's Full Disk Access instructions explicitly say to click the Add button, choose an app, and open it."
+                  >Apple
+                  对完整磁盘访问的说明明确写明：可以点击添加按钮、选择应用并打开。</span
+                >
+                <a
+                  href="https://support.apple.com/guide/mac-help/change-privacy-security-settings-on-mac-mchl211c911f/mac"
+                  rel="noreferrer"
+                  data-zh="查看 Apple 隐私与安全性指南"
+                  data-en="Apple Privacy & Security guide"
+                  >查看 Apple 隐私与安全性指南</a
+                >
+              </p>
+            </section>
+            <section id="still-missing" data-reveal>
+              <h2
+                data-zh="添加后仍然不对，检查这些情况"
+                data-en="If it still does not work, check these cases"
+              >
+                添加后仍然不对，检查这些情况
+              </h2>
+              <ul class="article-checklist">
+                <li
+                  data-zh="“应用程序”中存在多个 CoreRobin 副本，设置里添加的是旧版本或另一个路径。删除不用的副本后重新添加当前应用。"
+                  data-en="There are multiple CoreRobin copies and the list contains an old version or another path. Remove unused copies and add the current app again."
+                >
+                  “应用程序”中存在多个 CoreRobin
+                  副本，设置里添加的是旧版本或另一个路径。删除不用的副本后重新添加当前应用。
+                </li>
+                <li
+                  data-zh="你仍从 DMG、下载目录或开发启动进程运行。退出后只从 /Applications/CoreRobin.app 启动。"
+                  data-en="You are still running from the DMG, Downloads, or a development process. Quit and launch only /Applications/CoreRobin.app."
+                >
+                  你仍从 DMG、下载目录或开发启动进程运行。退出后只从
+                  /Applications/CoreRobin.app 启动。
+                </li>
+                <li
+                  data-zh="开关已打开但应用没有重新启动。完全退出 CoreRobin，而不只是关闭窗口，再重新打开。"
+                  data-en="The switch is on but the app was not restarted. Quit CoreRobin completely—not just its window—then reopen it."
+                >
+                  开关已打开但应用没有重新启动。完全退出
+                  CoreRobin，而不只是关闭窗口，再重新打开。
+                </li>
+                <li
+                  data-zh="macOS 显示“应用已损坏”。这不是完整磁盘访问问题；删除旧应用和旧 DMG，重新下载最新版并核对 SHA-256。"
+                  data-en="macOS says the app is damaged. This is not a Full Disk Access problem; delete the old app and DMG, download the latest release, and verify its SHA-256."
+                >
+                  macOS 显示“应用已损坏”。这不是完整磁盘访问问题；删除旧应用和旧
+                  DMG，重新下载最新版并核对 SHA-256。
+                </li>
+              </ul>
+            </section>
+            <section id="without-access" data-reveal>
+              <h2
+                data-zh="暂不授权也能扫描"
+                data-en="You can scan without granting access"
+              >
+                暂不授权也能扫描
+              </h2>
+              <p
+                data-zh="选择“扫描可访问区域”即可继续。CoreRobin 会扫描当前进程能够读取的位置，并把受保护或无法读取的位置保留为明确的空白，而不是猜测大小。你可以之后再授权并重新扫描。"
+                data-en="Choose Scan accessible areas to continue. CoreRobin scans locations the current process can read and leaves protected or unreadable locations as explicit gaps instead of guessing their size. You can grant access and scan again later."
+              >
+                选择“扫描可访问区域”即可继续。CoreRobin
+                会扫描当前进程能够读取的位置，并把受保护或无法读取的位置保留为明确的空白，而不是猜测大小。你可以之后再授权并重新扫描。
+              </p>
+            </section>
+            <section id="privacy" data-reveal>
+              <h2
+                data-zh="CoreRobin 为什么需要这项权限"
+                data-en="Why CoreRobin uses this permission"
+              >
+                CoreRobin 为什么需要这项权限
+              </h2>
+              <p
+                data-zh="macOS 会保护邮件、信息、Safari、Home、Time Machine 备份和其他应用数据。完整磁盘访问让空间扫描能更完整地读取这些位置的文件元数据。CoreRobin 不读取文件内容，不上传扫描结果，也不会因为获得权限就自动删除任何内容。权限由 macOS 管理，你可以随时在同一设置页关闭。"
+                data-en="macOS protects Mail, Messages, Safari, Home, Time Machine backups, and other app data. Full Disk Access lets the space scan read file metadata in more of those locations. CoreRobin does not read file contents, upload scan results, or automatically delete anything because permission was granted. macOS manages the permission and you can turn it off on the same settings page at any time."
+              >
+                macOS 会保护邮件、信息、Safari、Home、Time Machine
+                备份和其他应用数据。完整磁盘访问让空间扫描能更完整地读取这些位置的文件元数据。CoreRobin
+                不读取文件内容，不上传扫描结果，也不会因为获得权限就自动删除任何内容。权限由
+                macOS 管理，你可以随时在同一设置页关闭。
+              </p>
+              <div class="article-next">
+                <span data-zh="继续了解" data-en="KEEP READING">继续了解</span
+                ><a href="/articles/mac-storage-full/"
+                  ><strong
+                    data-zh="Mac 磁盘空间不足怎么清理"
+                    data-en="How to free storage on a Mac"
+                    >Mac 磁盘空间不足怎么清理</strong
+                  ><span aria-hidden="true">→</span></a
+                >
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer section-shell">
+      <a class="brand brand--footer" href="/"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span><strong>CoreRobin</strong><small>KNOWLEDGE BASE</small></span></a
+      >
+      <p>
+        © <span data-year></span> CoreRobin.
+        <span
+          data-zh="权限可选，用途透明，随时可以撤销。"
+          data-en="Optional permission, clear purpose, reversible at any time."
+          >权限可选，用途透明，随时可以撤销。</span
+        >
+      </p>
+      <div>
+        <a href="/articles/" data-zh="知识库" data-en="Articles">知识库</a
+        ><a href="/guide/" data-zh="指南" data-en="Guide">指南</a
+        ><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a
+        ><a href="https://github.com/JimmyDaddy/corerobin-monitor">GitHub</a>
+      </div>
+    </footer>
+    <script src="/site.js" defer></script>
+  </body>
+</html>

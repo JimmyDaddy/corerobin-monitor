@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="zh-CN" data-language="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d12" />
+    <meta
+      name="description"
+      data-content-zh="CoreRobin Mac 排障知识库：从电脑变慢、磁盘空间不足、完整磁盘访问、CPU 内存温度和 Finder 容量差异开始，按可靠顺序找到原因。"
+      data-content-en="CoreRobin's practical Mac troubleshooting library covers slow Macs, low storage, Full Disk Access, CPU and memory monitoring, temperature, and Finder size differences."
+      content="CoreRobin Mac 排障知识库：从电脑变慢、磁盘空间不足、完整磁盘访问、CPU 内存温度和 Finder 容量差异开始，按可靠顺序找到原因。"
+    />
+    <meta
+      property="og:title"
+      data-content-zh="Mac 排障知识库 — CoreRobin"
+      data-content-en="Mac troubleshooting library — CoreRobin"
+      content="Mac 排障知识库 — CoreRobin"
+    />
+    <meta
+      property="og:description"
+      data-content-zh="不用先懂技术指标，按实际问题一步步找到原因。"
+      data-content-en="Start with the problem you notice and work toward evidence, one step at a time."
+      content="不用先懂技术指标，按实际问题一步步找到原因。"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://monitor-app.corerobin.com/articles/"
+    />
+    <meta
+      property="og:image"
+      content="https://monitor-app.corerobin.com/assets/social-card.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      data-content-zh="CoreRobin Mac 排障知识库"
+      data-content-en="CoreRobin Mac troubleshooting library"
+      content="CoreRobin Mac 排障知识库"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://monitor-app.corerobin.com/articles/" />
+    <link rel="icon" href="/assets/app-icon.png" />
+    <link rel="stylesheet" href="/animated-robin.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Mac 排障知识库",
+        "description": "CoreRobin Mac 排障知识库",
+        "url": "https://monitor-app.corerobin.com/articles/",
+        "inLanguage": "zh-CN",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "CoreRobin",
+          "url": "https://monitor-app.corerobin.com/"
+        }
+      }
+    </script>
+    <title
+      data-zh="Mac 排障知识库 — CoreRobin"
+      data-en="Mac troubleshooting library — CoreRobin"
+    >
+      Mac 排障知识库 — CoreRobin
+    </title>
+  </head>
+  <body>
+    <a
+      class="skip-link"
+      href="#main-content"
+      data-zh="跳到主要内容"
+      data-en="Skip to main content"
+      >跳到主要内容</a
+    >
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="CoreRobin home"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span
+          ><strong aria-label="CoreRobin"
+            ><span aria-hidden="true"
+              >Core<span class="brand-wordmark__r">R<i></i></span>obin</span
+            ></strong
+          ><small>KNOWLEDGE BASE</small></span
+        ></a
+      >
+      <button
+        class="nav-toggle"
+        type="button"
+        data-aria-zh="打开导航"
+        data-aria-en="Open navigation"
+        aria-label="打开导航"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-nav-toggle
+      >
+        <span></span><span></span>
+      </button>
+      <nav
+        class="main-nav"
+        id="site-navigation"
+        data-nav
+        data-aria-zh="主导航"
+        data-aria-en="Main navigation"
+        aria-label="主导航"
+      >
+        <a href="/" data-zh="产品" data-en="Product">产品</a
+        ><a href="/download/" data-zh="下载" data-en="Download">下载</a
+        ><a href="/guide/" data-zh="指南" data-en="Guide">指南</a
+        ><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a
+        ><a href="/releases/" data-zh="版本" data-en="Releases">版本</a>
+      </nav>
+      <div class="header-actions">
+        <div
+          class="language-picker"
+          data-language-picker
+          data-aria-zh="选择语言"
+          data-aria-en="Choose language"
+        ></div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="article-library-hero section-shell" data-reveal>
+        <div>
+          <div class="eyebrow">
+            <i></i
+            ><span data-zh="MAC 排障知识库" data-en="MAC TROUBLESHOOTING"
+              >MAC 排障知识库</span
+            >
+          </div>
+          <h1
+            data-zh="先看见问题，再找到原因。"
+            data-en="Start with the symptom. Find the cause."
+          >
+            先看见问题，再找到原因。
+          </h1>
+          <p
+            data-zh="电脑变慢、空间不足或温度升高时，不必先猜是 CPU、内存还是磁盘。选择你正在遇到的问题，按稳定、可复核的顺序检查。"
+            data-en="When your Mac slows down, runs low on space, or feels hot, you do not need to guess whether CPU, memory, or storage is responsible. Pick the symptom you see and follow a stable, verifiable path."
+          >
+            电脑变慢、空间不足或温度升高时，不必先猜是
+            CPU、内存还是磁盘。选择你正在遇到的问题，按稳定、可复核的顺序检查。
+          </p>
+        </div>
+        <div class="article-library-hero__robin">
+          <span
+            class="site-robin"
+            data-robin
+            data-robin-mood="normal"
+            aria-hidden="true"
+          ></span>
+        </div>
+      </section>
+
+      <section
+        class="article-library section-shell"
+        aria-labelledby="article-library-heading"
+      >
+        <div class="article-library__intro" data-reveal>
+          <span>5 GUIDES</span>
+          <h2
+            id="article-library-heading"
+            data-zh="从你现在最想解决的事开始。"
+            data-en="Start with what you want to fix now."
+          >
+            从你现在最想解决的事开始。
+          </h2>
+        </div>
+        <div class="article-grid">
+          <a
+            class="article-card article-card--featured"
+            href="/articles/mac-running-slow/"
+            data-reveal
+            ><span class="article-card__number">01</span>
+            <div>
+              <small
+                data-zh="性能排查 · 约 8 分钟"
+                data-en="Performance · 8 min"
+                >性能排查 · 约 8 分钟</small
+              >
+              <h3
+                data-zh="Mac 变慢应该怎么排查"
+                data-en="How to troubleshoot a slow Mac"
+              >
+                Mac 变慢应该怎么排查
+              </h3>
+              <p
+                data-zh="先确认问题是否持续，再依次看 CPU、内存压力、磁盘空间和后台活动，避免被一秒钟的尖峰误导。"
+                data-en="Confirm that the slowdown persists, then check CPU, memory pressure, storage, and background activity without overreacting to a one-second spike."
+              >
+                先确认问题是否持续，再依次看
+                CPU、内存压力、磁盘空间和后台活动，避免被一秒钟的尖峰误导。
+              </p>
+            </div>
+            <span aria-hidden="true">→</span></a
+          >
+          <a class="article-card" href="/articles/mac-storage-full/" data-reveal
+            ><span class="article-card__number">02</span>
+            <div>
+              <small data-zh="空间清理 · 约 7 分钟" data-en="Storage · 7 min"
+                >空间清理 · 约 7 分钟</small
+              >
+              <h3
+                data-zh="Mac 磁盘空间不足怎么清理"
+                data-en="How to free storage on a Mac"
+              >
+                Mac 磁盘空间不足怎么清理
+              </h3>
+              <p
+                data-zh="先定位真正占空间的位置，再从可恢复、低风险的内容开始清理。"
+                data-en="Find what is actually using space, then start with recoverable, low-risk items."
+              >
+                先定位真正占空间的位置，再从可恢复、低风险的内容开始清理。
+              </p>
+            </div>
+            <span aria-hidden="true">→</span></a
+          >
+          <a
+            class="article-card"
+            href="/articles/full-disk-access-missing/"
+            data-reveal
+            ><span class="article-card__number">03</span>
+            <div>
+              <small
+                data-zh="权限处理 · 约 5 分钟"
+                data-en="Permissions · 5 min"
+                >权限处理 · 约 5 分钟</small
+              >
+              <h3
+                data-zh="完整磁盘访问列表里没有 CoreRobin 怎么办"
+                data-en="CoreRobin is missing from Full Disk Access"
+              >
+                完整磁盘访问列表里没有 CoreRobin 怎么办
+              </h3>
+              <p
+                data-zh="把应用安装到“应用程序”，通过 + 手动添加；也可以暂不授权继续扫描。"
+                data-en="Install the app in Applications and add it with the + button, or continue scanning without granting access."
+              >
+                把应用安装到“应用程序”，通过 +
+                手动添加；也可以暂不授权继续扫描。
+              </p>
+            </div>
+            <span aria-hidden="true">→</span></a
+          >
+          <a
+            class="article-card"
+            href="/articles/mac-cpu-memory-temperature/"
+            data-reveal
+            ><span class="article-card__number">04</span>
+            <div>
+              <small data-zh="指标理解 · 约 7 分钟" data-en="Metrics · 7 min"
+                >指标理解 · 约 7 分钟</small
+              >
+              <h3
+                data-zh="Mac CPU、内存和温度如何监控"
+                data-en="How to monitor Mac CPU, memory, and temperature"
+              >
+                Mac CPU、内存和温度如何监控
+              </h3>
+              <p
+                data-zh="看趋势和持续时间，而不是把单个数字直接当成问题。"
+                data-en="Use trends and duration instead of treating one number as a diagnosis."
+              >
+                看趋势和持续时间，而不是把单个数字直接当成问题。
+              </p>
+            </div>
+            <span aria-hidden="true">→</span></a
+          >
+          <a
+            class="article-card"
+            href="/articles/finder-disk-size-difference/"
+            data-reveal
+            ><span class="article-card__number">05</span>
+            <div>
+              <small data-zh="容量解释 · 约 6 分钟" data-en="Disk usage · 6 min"
+                >容量解释 · 约 6 分钟</small
+              >
+              <h3
+                data-zh="Finder 与磁盘扫描结果为什么不同"
+                data-en="Why Finder and disk scans show different sizes"
+              >
+                Finder 与磁盘扫描结果为什么不同
+              </h3>
+              <p
+                data-zh="标称大小、实际占用、硬链接、云端文件和扫描时点都会改变结果。"
+                data-en="Logical size, allocated space, hard links, cloud files, and scan timing can all change the result."
+              >
+                标称大小、实际占用、硬链接、云端文件和扫描时点都会改变结果。
+              </p>
+            </div>
+            <span aria-hidden="true">→</span></a
+          >
+        </div>
+      </section>
+
+      <section class="article-library-note section-shell" data-reveal>
+        <div>
+          <strong
+            data-zh="这些文章不会替你做危险操作。"
+            data-en="These guides do not make risky decisions for you."
+            >这些文章不会替你做危险操作。</strong
+          >
+          <p
+            data-zh="CoreRobin 只整理证据和下一步。结束进程、移动或删除文件仍需你确认；扫描读取名称、大小和位置等元数据，不读取文件内容。"
+            data-en="CoreRobin organizes evidence and next steps. Stopping a process, moving a file, or deleting anything still requires your confirmation; scans read metadata such as names, sizes, and locations, not file contents."
+          >
+            CoreRobin
+            只整理证据和下一步。结束进程、移动或删除文件仍需你确认；扫描读取名称、大小和位置等元数据，不读取文件内容。
+          </p>
+        </div>
+        <a class="button button--primary" href="/download/"
+          ><span data-zh="下载 CoreRobin" data-en="Download CoreRobin"
+            >下载 CoreRobin</span
+          ><span aria-hidden="true">↓</span></a
+        >
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <a class="brand brand--footer" href="/"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span
+          ><strong aria-label="CoreRobin"
+            ><span aria-hidden="true"
+              >Core<span class="brand-wordmark__r">R<i></i></span>obin</span
+            ></strong
+          ><small>KNOWLEDGE BASE</small></span
+        ></a
+      >
+      <p>
+        © <span data-year></span> CoreRobin.
+        <span
+          data-zh="看清电脑状态，找到可靠的下一步。"
+          data-en="Understand your Mac and choose a reliable next step."
+          >看清电脑状态，找到可靠的下一步。</span
+        >
+      </p>
+      <div>
+        <a href="/download/" data-zh="下载" data-en="Download">下载</a
+        ><a href="/guide/" data-zh="指南" data-en="Guide">指南</a
+        ><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a
+        ><a href="https://github.com/JimmyDaddy/corerobin-monitor">GitHub</a>
+      </div>
+    </footer>
+    <script src="/site.js" defer></script>
+  </body>
+</html>

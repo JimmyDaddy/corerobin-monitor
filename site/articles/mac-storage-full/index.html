@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="zh-CN" data-language="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d12" />
+    <meta
+      name="description"
+      data-content-zh="Mac 磁盘空间不足时，先确认剩余空间和最大占用位置，再从下载、旧安装包、不用的应用和废纸篓等可复核内容开始安全清理。"
+      data-content-en="When Mac storage is low, confirm free space and the largest locations, then safely clean downloads, old installers, unused apps, Trash, and other reviewable items."
+      content="Mac 磁盘空间不足时，先确认剩余空间和最大占用位置，再从下载、旧安装包、不用的应用和废纸篓等可复核内容开始安全清理。"
+    />
+    <meta
+      property="og:title"
+      data-content-zh="Mac 磁盘空间不足怎么清理 — CoreRobin"
+      data-content-en="How to free storage on a Mac — CoreRobin"
+      content="Mac 磁盘空间不足怎么清理 — CoreRobin"
+    />
+    <meta
+      property="og:description"
+      data-content-zh="先定位、再确认、最后清理，不靠一键删除未知内容。"
+      data-content-en="Locate, review, then clean—without one-click deletion of unknown files."
+      content="先定位、再确认、最后清理，不靠一键删除未知内容。"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://monitor-app.corerobin.com/articles/mac-storage-full/"
+    />
+    <meta
+      property="og:image"
+      content="https://monitor-app.corerobin.com/assets/social-card.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      data-content-zh="Mac 磁盘空间清理指南"
+      data-content-en="Mac storage cleanup guide"
+      content="Mac 磁盘空间清理指南"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="canonical"
+      href="https://monitor-app.corerobin.com/articles/mac-storage-full/"
+    />
+    <link rel="icon" href="/assets/app-icon.png" />
+    <link rel="stylesheet" href="/animated-robin.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Mac 磁盘空间不足怎么清理",
+        "description": "Mac 磁盘空间清理指南",
+        "datePublished": "2026-07-18",
+        "dateModified": "2026-07-18",
+        "author": { "@type": "Organization", "name": "CoreRobin" },
+        "publisher": { "@type": "Organization", "name": "CoreRobin" },
+        "mainEntityOfPage": "https://monitor-app.corerobin.com/articles/mac-storage-full/",
+        "url": "https://monitor-app.corerobin.com/articles/mac-storage-full/",
+        "inLanguage": "zh-CN"
+      }
+    </script>
+    <title
+      data-zh="Mac 磁盘空间不足怎么清理 — CoreRobin"
+      data-en="How to free storage on a Mac — CoreRobin"
+    >
+      Mac 磁盘空间不足怎么清理 — CoreRobin
+    </title>
+  </head>
+  <body>
+    <a
+      class="skip-link"
+      href="#main-content"
+      data-zh="跳到主要内容"
+      data-en="Skip to main content"
+      >跳到主要内容</a
+    >
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="CoreRobin home"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span
+          ><strong aria-label="CoreRobin"
+            ><span aria-hidden="true"
+              >Core<span class="brand-wordmark__r">R<i></i></span>obin</span
+            ></strong
+          ><small>KNOWLEDGE BASE</small></span
+        ></a
+      ><button
+        class="nav-toggle"
+        type="button"
+        data-aria-zh="打开导航"
+        data-aria-en="Open navigation"
+        aria-label="打开导航"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-nav-toggle
+      >
+        <span></span><span></span>
+      </button>
+      <nav
+        class="main-nav"
+        id="site-navigation"
+        data-nav
+        data-aria-zh="主导航"
+        data-aria-en="Main navigation"
+        aria-label="主导航"
+      >
+        <a href="/" data-zh="产品" data-en="Product">产品</a
+        ><a href="/download/" data-zh="下载" data-en="Download">下载</a
+        ><a href="/guide/" data-zh="指南" data-en="Guide">指南</a
+        ><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a
+        ><a href="/releases/" data-zh="版本" data-en="Releases">版本</a>
+      </nav>
+      <div class="header-actions">
+        <div
+          class="language-picker"
+          data-language-picker
+          data-aria-zh="选择语言"
+          data-aria-en="Choose language"
+        ></div>
+      </div>
+    </header>
+    <main id="main-content" class="article-page">
+      <article>
+        <header class="article-hero section-shell" data-reveal>
+          <nav
+            class="article-breadcrumb"
+            data-aria-zh="面包屑"
+            data-aria-en="Breadcrumb"
+            aria-label="面包屑"
+          >
+            <a
+              href="/articles/"
+              data-zh="Mac 排障知识库"
+              data-en="Mac troubleshooting"
+              >Mac 排障知识库</a
+            ><span>/</span
+            ><span data-zh="空间清理" data-en="Storage">空间清理</span>
+          </nav>
+          <div class="article-hero__meta">
+            <span>MAC STORAGE</span
+            ><time
+              datetime="2026-07-18"
+              data-zh="更新于 2026 年 7 月 18 日"
+              data-en="Updated July 18, 2026"
+              >更新于 2026 年 7 月 18 日</time
+            ><span data-zh="约 7 分钟" data-en="7 min read">约 7 分钟</span>
+          </div>
+          <h1
+            data-zh="Mac 磁盘空间不足怎么清理"
+            data-en="How to free storage on a Mac"
+          >
+            Mac 磁盘空间不足怎么清理
+          </h1>
+          <p
+            data-zh="安全清理不是先按“全部删除”，而是先确认哪个位置真的占空间，再从可以解释、可以恢复、与你无关的内容开始。系统目录和不认识的缓存不应该成为第一目标。"
+            data-en="Safe cleanup does not begin with Delete all. First find which locations truly use space, then start with items you understand, can recover, and no longer need. System folders and unfamiliar caches should not be your first targets."
+          >
+            安全清理不是先按“全部删除”，而是先确认哪个位置真的占空间，再从可以解释、可以恢复、与你无关的内容开始。系统目录和不认识的缓存不应该成为第一目标。
+          </p>
+        </header>
+        <div class="article-layout section-shell">
+          <aside class="article-toc" data-reveal>
+            <strong data-zh="这篇文章" data-en="In this guide">这篇文章</strong>
+            <nav>
+              <a href="#quick-answer" data-zh="先说结论" data-en="Quick answer"
+                >先说结论</a
+              ><a href="#check-space" data-zh="确认空间" data-en="Confirm space"
+                >确认空间</a
+              ><a href="#safe-order" data-zh="清理顺序" data-en="Cleanup order"
+                >清理顺序</a
+              ><a href="#avoid" data-zh="不要这样做" data-en="What to avoid"
+                >不要这样做</a
+              ><a href="#verify" data-zh="验证结果" data-en="Verify the result"
+                >验证结果</a
+              >
+            </nav>
+          </aside>
+          <div class="article-content">
+            <section id="quick-answer" data-reveal>
+              <div class="article-answer">
+                <span data-zh="直接答案" data-en="QUICK ANSWER">直接答案</span>
+                <p
+                  data-zh="先打开系统设置 → 通用 → 存储空间确认启动磁盘状态，再扫描实际路径。依次检查下载目录、旧 DMG/ZIP、很久不用的应用、大型视频或虚拟机、设备备份和废纸篓；每一项先预览路径和用途，再移动或删除。"
+                  data-en="Open System Settings → General → Storage to confirm startup-disk status, then scan real paths. Review Downloads, old DMG or ZIP files, unused apps, large video or virtual-machine files, device backups, and Trash—in that order. Preview each path and its purpose before moving or deleting it."
+                >
+                  先打开系统设置 → 通用 →
+                  存储空间确认启动磁盘状态，再扫描实际路径。依次检查下载目录、旧
+                  DMG/ZIP、很久不用的应用、大型视频或虚拟机、设备备份和废纸篓；每一项先预览路径和用途，再移动或删除。
+                </p>
+              </div>
+            </section>
+            <section id="check-space" data-reveal>
+              <h2
+                data-zh="先确认两个不同的问题"
+                data-en="Separate two different questions"
+              >
+                先确认两个不同的问题
+              </h2>
+              <div class="article-signal-grid">
+                <article>
+                  <strong
+                    data-zh="磁盘还剩多少空间"
+                    data-en="How much space is free"
+                    >磁盘还剩多少空间</strong
+                  >
+                  <p
+                    data-zh="以 macOS 系统设置中的磁盘可用空间为准。这里回答“还能不能写入更多数据”，也会包含系统可清理空间的动态影响。"
+                    data-en="Use macOS Storage settings for available disk space. This answers whether more data can be written and reflects the system's dynamic reclaimable space."
+                  >
+                    以 macOS
+                    系统设置中的磁盘可用空间为准。这里回答“还能不能写入更多数据”，也会包含系统可清理空间的动态影响。
+                  </p>
+                </article>
+                <article>
+                  <strong
+                    data-zh="哪些路径占用了空间"
+                    data-en="Which paths use the space"
+                    >哪些路径占用了空间</strong
+                  >
+                  <p
+                    data-zh="路径扫描回答“内容在哪里”。CoreRobin 按文件实际占用聚合目录，方便定位，但它不会等同于系统设置的类别统计。"
+                    data-en="A path scan answers where content lives. CoreRobin aggregates directories by allocated file space for investigation; it is not the same as macOS category totals."
+                  >
+                    路径扫描回答“内容在哪里”。CoreRobin
+                    按文件实际占用聚合目录，方便定位，但它不会等同于系统设置的类别统计。
+                  </p>
+                </article>
+              </div>
+              <p class="article-source">
+                <span
+                  data-zh="Apple 建议从系统设置的存储空间分类开始，并明确指出“系统数据”是未归入其他类别的 Apple 与第三方文件总类。"
+                  data-en="Apple recommends starting with the Storage categories in System Settings and notes that System Data is a general category for Apple and third-party files not assigned elsewhere."
+                  >Apple
+                  建议从系统设置的存储空间分类开始，并明确指出“系统数据”是未归入其他类别的
+                  Apple 与第三方文件总类。</span
+                >
+                <a
+                  href="https://support.apple.com/102624"
+                  rel="noreferrer"
+                  data-zh="查看 Apple 存储空间指南"
+                  data-en="Apple storage guide"
+                  >查看 Apple 存储空间指南</a
+                >
+              </p>
+            </section>
+            <section id="safe-order" data-reveal>
+              <h2
+                data-zh="按风险从低到高处理"
+                data-en="Clean from lower risk to higher risk"
+              >
+                按风险从低到高处理
+              </h2>
+              <ol class="article-steps">
+                <li>
+                  <span>1</span>
+                  <div>
+                    <h3
+                      data-zh="清理明确可重新下载的文件"
+                      data-en="Remove files you can clearly download again"
+                    >
+                      清理明确可重新下载的文件
+                    </h3>
+                    <p
+                      data-zh="旧安装包、重复压缩包、已经完成用途的导出文件通常最容易判断。先打开或在 Finder 中定位，确认不是唯一副本。"
+                      data-en="Old installers, duplicate archives, and completed exports are usually easiest to judge. Reveal them in Finder and confirm they are not the only copy."
+                    >
+                      旧安装包、重复压缩包、已经完成用途的导出文件通常最容易判断。先打开或在
+                      Finder 中定位，确认不是唯一副本。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>2</span>
+                  <div>
+                    <h3
+                      data-zh="卸载不再使用的应用"
+                      data-en="Uninstall apps you no longer use"
+                    >
+                      卸载不再使用的应用
+                    </h3>
+                    <p
+                      data-zh="优先使用应用自己的卸载方式；仅把应用图标移到废纸篓不一定清除它创建的所有数据。不要删除仍被项目、插件或自动化依赖的工具。"
+                      data-en="Prefer the app's own uninstall method. Moving an app icon to Trash may not remove all data it created. Do not remove tools still required by projects, plug-ins, or automation."
+                    >
+                      优先使用应用自己的卸载方式；仅把应用图标移到废纸篓不一定清除它创建的所有数据。不要删除仍被项目、插件或自动化依赖的工具。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>3</span>
+                  <div>
+                    <h3
+                      data-zh="处理大型个人内容"
+                      data-en="Review large personal content"
+                    >
+                      处理大型个人内容
+                    </h3>
+                    <p
+                      data-zh="视频、照片库、虚拟机和开发构建可能很大。需要保留时，先复制到可靠的外置磁盘并验证能打开，再删除本机副本。云端占位文件不等于已经完整存储在本机。"
+                      data-en="Videos, photo libraries, virtual machines, and build outputs can be large. If they must be kept, copy them to reliable external storage and verify they open before deleting the local copy. A cloud placeholder is not the same as a complete local file."
+                    >
+                      视频、照片库、虚拟机和开发构建可能很大。需要保留时，先复制到可靠的外置磁盘并验证能打开，再删除本机副本。云端占位文件不等于已经完整存储在本机。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>4</span>
+                  <div>
+                    <h3
+                      data-zh="最后清空废纸篓并等待系统更新"
+                      data-en="Empty Trash last and let totals refresh"
+                    >
+                      最后清空废纸篓并等待系统更新
+                    </h3>
+                    <p
+                      data-zh="移入废纸篓并不会立刻释放空间。确认没有误删后再清空；系统设置和扫描统计可能需要一点时间重新计算。"
+                      data-en="Moving a file to Trash does not immediately free its space. Empty Trash only after checking for mistakes, then allow time for Storage settings and scans to recalculate."
+                    >
+                      移入废纸篓并不会立刻释放空间。确认没有误删后再清空；系统设置和扫描统计可能需要一点时间重新计算。
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+            <section id="avoid" data-reveal>
+              <h2
+                data-zh="不要用这些方式“腾空间”"
+                data-en="Avoid these cleanup shortcuts"
+              >
+                不要用这些方式“腾空间”
+              </h2>
+              <ul class="article-checklist article-checklist--warning">
+                <li
+                  data-zh="不要按搜索结果中的命令批量删除 /System、/Library 或 ~/Library 下不认识的内容。"
+                  data-en="Do not use copied commands to bulk-delete unfamiliar content under /System, /Library, or ~/Library."
+                >
+                  不要按搜索结果中的命令批量删除 /System、/Library 或 ~/Library
+                  下不认识的内容。
+                </li>
+                <li
+                  data-zh="不要把“缓存”一律当垃圾；很多缓存会重建，删除后可能暂时更慢或重新下载大量数据。"
+                  data-en="Do not treat every cache as junk; many caches rebuild, temporarily slowing the Mac or downloading data again."
+                >
+                  不要把“缓存”一律当垃圾；很多缓存会重建，删除后可能暂时更慢或重新下载大量数据。
+                </li>
+                <li
+                  data-zh="不要删除不理解的 APFS 快照、交换文件或系统数据来追求类别数字归零。"
+                  data-en="Do not remove unfamiliar APFS snapshots, swap files, or System Data merely to make a category reach zero."
+                >
+                  不要删除不理解的 APFS
+                  快照、交换文件或系统数据来追求类别数字归零。
+                </li>
+                <li
+                  data-zh="不要在扫描仍进行时根据未完成的局部数字做大规模删除决定。"
+                  data-en="Do not make a large deletion decision from partial numbers while a scan is still running."
+                >
+                  不要在扫描仍进行时根据未完成的局部数字做大规模删除决定。
+                </li>
+              </ul>
+            </section>
+            <section id="verify" data-reveal>
+              <h2
+                data-zh="用 CoreRobin 安全复核"
+                data-en="Review safely with CoreRobin"
+              >
+                用 CoreRobin 安全复核
+              </h2>
+              <p
+                data-zh="空间地图首先扫描当前可访问区域。完整磁盘访问可以减少受保护位置的空白，但不是继续扫描的前提。扫描只读取名称、大小、位置和时间等元数据；删除前会重新核对目标并再次要求确认。清理后重新扫描，并用 macOS 的可用空间确认实际效果。"
+                data-en="The space map starts with locations currently accessible. Full Disk Access can reduce gaps in protected locations, but it is not required to continue. Scans read metadata such as names, sizes, locations, and dates; CoreRobin rechecks the target and asks again before deletion. After cleanup, scan again and confirm the result with macOS available space."
+              >
+                空间地图首先扫描当前可访问区域。完整磁盘访问可以减少受保护位置的空白，但不是继续扫描的前提。扫描只读取名称、大小、位置和时间等元数据；删除前会重新核对目标并再次要求确认。清理后重新扫描，并用
+                macOS 的可用空间确认实际效果。
+              </p>
+              <div class="article-next">
+                <span data-zh="继续了解" data-en="KEEP READING">继续了解</span
+                ><a href="/articles/finder-disk-size-difference/"
+                  ><strong
+                    data-zh="Finder 与磁盘扫描结果为什么不同"
+                    data-en="Why Finder and disk scans show different sizes"
+                    >Finder 与磁盘扫描结果为什么不同</strong
+                  ><span aria-hidden="true">→</span></a
+                >
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer section-shell">
+      <a class="brand brand--footer" href="/"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span><strong>CoreRobin</strong><small>KNOWLEDGE BASE</small></span></a
+      >
+      <p>
+        © <span data-year></span> CoreRobin.
+        <span
+          data-zh="先定位，再确认，最后清理。"
+          data-en="Locate, review, then clean."
+          >先定位，再确认，最后清理。</span
+        >
+      </p>
+      <div>
+        <a href="/articles/" data-zh="知识库" data-en="Articles">知识库</a
+        ><a href="/download/" data-zh="下载" data-en="Download">下载</a
+        ><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a
+        ><a href="https://github.com/JimmyDaddy/corerobin-monitor">GitHub</a>
+      </div>
+    </footer>
+    <script src="/site.js" defer></script>
+  </body>
+</html>

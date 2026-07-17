@@ -9,6 +9,7 @@
   <p>
     <a href="https://monitor-app.corerobin.com/en/download/"><strong>Download CoreRobin</strong></a>
     · <a href="https://monitor-app.corerobin.com/en/">Website</a>
+    · <a href="https://monitor-app.corerobin.com/en/articles/">Mac troubleshooting</a>
     · <a href="docs/user-guide.md">User guide</a>
     · <a href="https://monitor-app.corerobin.com/en/releases/">Release Notes</a>
     · <a href="README.md">简体中文</a>
@@ -53,6 +54,7 @@ Each release includes SHA-256 checksums, an SPDX SBOM, and a Sigstore bundle for
 ## Privacy, support, and security
 
 - [Privacy notice](PRIVACY.en.md): local data, retention, Full Disk Access, and clearing data
+- [Mac troubleshooting library](https://monitor-app.corerobin.com/en/articles/): slow Macs, low storage, Full Disk Access, and metrics
 - [User guide](docs/user-guide.md) · [中文使用指南](docs/user-guide.zh-CN.md)
 - [Support](SUPPORT.md): general questions and feature requests
 - [Release Notes](https://monitor-app.corerobin.com/en/releases/): version changes, platform coverage, and known limitations

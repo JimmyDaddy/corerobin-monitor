@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="zh-CN" data-language="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d12" />
+    <meta
+      name="description"
+      data-content-zh="Mac 变慢时不要先猜原因：用 5 到 10 分钟依次检查持续时间、CPU、内存压力、磁盘空间和后台活动，找到可复核的证据。"
+      data-content-en="When your Mac feels slow, spend 5 to 10 minutes checking duration, CPU, memory pressure, storage, and background activity in a reliable order."
+      content="Mac 变慢时不要先猜原因：用 5 到 10 分钟依次检查持续时间、CPU、内存压力、磁盘空间和后台活动，找到可复核的证据。"
+    />
+    <meta
+      property="og:title"
+      data-content-zh="Mac 变慢应该怎么排查 — CoreRobin"
+      data-content-en="How to troubleshoot a slow Mac — CoreRobin"
+      content="Mac 变慢应该怎么排查 — CoreRobin"
+    />
+    <meta
+      property="og:description"
+      data-content-zh="从症状开始，用持续趋势而不是瞬时尖峰判断原因。"
+      data-content-en="Start with the symptom and use sustained trends instead of one-second spikes."
+      content="从症状开始，用持续趋势而不是瞬时尖峰判断原因。"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://monitor-app.corerobin.com/articles/mac-running-slow/"
+    />
+    <meta
+      property="og:image"
+      content="https://monitor-app.corerobin.com/assets/social-card.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      data-content-zh="Mac 变慢排查指南"
+      data-content-en="Slow Mac troubleshooting guide"
+      content="Mac 变慢排查指南"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="canonical"
+      href="https://monitor-app.corerobin.com/articles/mac-running-slow/"
+    />
+    <link rel="icon" href="/assets/app-icon.png" />
+    <link rel="stylesheet" href="/animated-robin.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Mac 变慢应该怎么排查",
+        "description": "Mac 变慢排查指南",
+        "datePublished": "2026-07-18",
+        "dateModified": "2026-07-18",
+        "author": { "@type": "Organization", "name": "CoreRobin" },
+        "publisher": { "@type": "Organization", "name": "CoreRobin" },
+        "mainEntityOfPage": "https://monitor-app.corerobin.com/articles/mac-running-slow/",
+        "url": "https://monitor-app.corerobin.com/articles/mac-running-slow/",
+        "inLanguage": "zh-CN"
+      }
+    </script>
+    <title
+      data-zh="Mac 变慢应该怎么排查 — CoreRobin"
+      data-en="How to troubleshoot a slow Mac — CoreRobin"
+    >
+      Mac 变慢应该怎么排查 — CoreRobin
+    </title>
+  </head>
+  <body>
+    <a
+      class="skip-link"
+      href="#main-content"
+      data-zh="跳到主要内容"
+      data-en="Skip to main content"
+      >跳到主要内容</a
+    >
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="CoreRobin home"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span
+          ><strong aria-label="CoreRobin"
+            ><span aria-hidden="true"
+              >Core<span class="brand-wordmark__r">R<i></i></span>obin</span
+            ></strong
+          ><small>KNOWLEDGE BASE</small></span
+        ></a
+      ><button
+        class="nav-toggle"
+        type="button"
+        data-aria-zh="打开导航"
+        data-aria-en="Open navigation"
+        aria-label="打开导航"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-nav-toggle
+      >
+        <span></span><span></span>
+      </button>
+      <nav
+        class="main-nav"
+        id="site-navigation"
+        data-nav
+        data-aria-zh="主导航"
+        data-aria-en="Main navigation"
+        aria-label="主导航"
+      >
+        <a href="/" data-zh="产品" data-en="Product">产品</a
+        ><a href="/download/" data-zh="下载" data-en="Download">下载</a
+        ><a href="/guide/" data-zh="指南" data-en="Guide">指南</a
+        ><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a
+        ><a href="/releases/" data-zh="版本" data-en="Releases">版本</a>
+      </nav>
+      <div class="header-actions">
+        <div
+          class="language-picker"
+          data-language-picker
+          data-aria-zh="选择语言"
+          data-aria-en="Choose language"
+        ></div>
+      </div>
+    </header>
+    <main id="main-content" class="article-page">
+      <article>
+        <header class="article-hero section-shell" data-reveal>
+          <nav
+            class="article-breadcrumb"
+            data-aria-zh="面包屑"
+            data-aria-en="Breadcrumb"
+            aria-label="面包屑"
+          >
+            <a
+              href="/articles/"
+              data-zh="Mac 排障知识库"
+              data-en="Mac troubleshooting"
+              >Mac 排障知识库</a
+            ><span>/</span
+            ><span data-zh="性能排查" data-en="Performance">性能排查</span>
+          </nav>
+          <div class="article-hero__meta">
+            <span>MAC PERFORMANCE</span
+            ><time
+              datetime="2026-07-18"
+              data-zh="更新于 2026 年 7 月 18 日"
+              data-en="Updated July 18, 2026"
+              >更新于 2026 年 7 月 18 日</time
+            ><span data-zh="约 8 分钟" data-en="8 min read">约 8 分钟</span>
+          </div>
+          <h1
+            data-zh="Mac 变慢应该怎么排查"
+            data-en="How to troubleshoot a slow Mac"
+          >
+            Mac 变慢应该怎么排查
+          </h1>
+          <p
+            data-zh="先判断变慢是否持续，再依次检查 CPU、内存压力、磁盘空间和后台活动。单个瞬时高值不等于故障，稳定出现并且能和你的感受对应，才值得处理。"
+            data-en="First confirm that the slowdown persists, then check CPU, memory pressure, storage, and background activity. A momentary high reading is not a fault; act when the pattern is sustained and matches what you experience."
+          >
+            先判断变慢是否持续，再依次检查
+            CPU、内存压力、磁盘空间和后台活动。单个瞬时高值不等于故障，稳定出现并且能和你的感受对应，才值得处理。
+          </p>
+        </header>
+        <div class="article-layout section-shell">
+          <aside class="article-toc" data-reveal>
+            <strong data-zh="这篇文章" data-en="In this guide">这篇文章</strong>
+            <nav>
+              <a href="#quick-answer" data-zh="先说结论" data-en="Quick answer"
+                >先说结论</a
+              ><a href="#check-order" data-zh="排查顺序" data-en="Check order"
+                >排查顺序</a
+              ><a
+                href="#read-signals"
+                data-zh="怎么看指标"
+                data-en="Read the signals"
+                >怎么看指标</a
+              ><a
+                href="#safe-actions"
+                data-zh="可以做什么"
+                data-en="Safe actions"
+                >可以做什么</a
+              ><a
+                href="#need-help"
+                data-zh="何时继续排查"
+                data-en="When to go further"
+                >何时继续排查</a
+              >
+            </nav>
+          </aside>
+          <div class="article-content">
+            <section id="quick-answer" data-reveal>
+              <div class="article-answer">
+                <span data-zh="直接答案" data-en="QUICK ANSWER">直接答案</span>
+                <p
+                  data-zh="让 Mac 保持在出现卡顿的场景中观察 5 到 10 分钟。如果同一个应用持续占用 CPU、内存压力持续变黄或变红、启动磁盘空间很少，或磁盘读写长期繁忙，再进入对应处理；如果数值很快恢复，先记录而不是立刻结束进程。"
+                  data-en="Observe the Mac for 5 to 10 minutes while the slowdown is happening. Investigate when the same app keeps using CPU, memory pressure stays yellow or red, startup-disk space is low, or disk activity remains busy. If the numbers recover quickly, record the event instead of immediately quitting a process."
+                >
+                  让 Mac 保持在出现卡顿的场景中观察 5 到 10
+                  分钟。如果同一个应用持续占用
+                  CPU、内存压力持续变黄或变红、启动磁盘空间很少，或磁盘读写长期繁忙，再进入对应处理；如果数值很快恢复，先记录而不是立刻结束进程。
+                </p>
+              </div>
+            </section>
+            <section id="check-order" data-reveal>
+              <h2 data-zh="按这个顺序排查" data-en="Check in this order">
+                按这个顺序排查
+              </h2>
+              <ol class="article-steps">
+                <li>
+                  <span>1</span>
+                  <div>
+                    <h3
+                      data-zh="确认问题真的在发生"
+                      data-en="Confirm the slowdown is happening"
+                    >
+                      确认问题真的在发生
+                    </h3>
+                    <p
+                      data-zh="记下开始时间、正在使用的应用和具体表现：输入延迟、切换窗口卡顿、彩球、风扇持续加速，还是某个任务本来就在做大量计算。完成索引、照片分析、系统更新后自动恢复的短期变慢，不应和持续故障混在一起。"
+                      data-en="Note when it started, which apps were open, and what you saw: typing delay, slow window switching, a beachball, sustained fan activity, or an intentionally heavy task. A temporary slowdown during indexing, photo analysis, or an update is different from a persistent problem."
+                    >
+                      记下开始时间、正在使用的应用和具体表现：输入延迟、切换窗口卡顿、彩球、风扇持续加速，还是某个任务本来就在做大量计算。完成索引、照片分析、系统更新后自动恢复的短期变慢，不应和持续故障混在一起。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>2</span>
+                  <div>
+                    <h3
+                      data-zh="看 CPU 是否持续被同一来源占用"
+                      data-en="See whether one source keeps using CPU"
+                    >
+                      看 CPU 是否持续被同一来源占用
+                    </h3>
+                    <p
+                      data-zh="一次尖峰可能只是打开应用或渲染页面。连续几分钟位于前列、并且卡顿同步出现，才形成有用证据。先保存工作，再优先从应用自己的退出方式结束；不要因为名称陌生就结束系统进程。"
+                      data-en="A spike may only be an app launch or page render. A process that remains near the top for several minutes while the slowdown continues is useful evidence. Save your work and quit through the app first; do not stop a system process merely because its name is unfamiliar."
+                    >
+                      一次尖峰可能只是打开应用或渲染页面。连续几分钟位于前列、并且卡顿同步出现，才形成有用证据。先保存工作，再优先从应用自己的退出方式结束；不要因为名称陌生就结束系统进程。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>3</span>
+                  <div>
+                    <h3
+                      data-zh="看内存压力，不只看已用百分比"
+                      data-en="Use memory pressure, not only percent used"
+                    >
+                      看内存压力，不只看已用百分比
+                    </h3>
+                    <p
+                      data-zh="macOS 会主动利用空闲内存做缓存，因此“用了很多内存”不一定是问题。更值得关注的是内存压力是否持续升高、交换空间是否增长，以及某个应用的占用是否不断增加。"
+                      data-en="macOS uses otherwise idle memory for caching, so high used memory is not automatically a problem. Watch whether memory pressure stays elevated, swap keeps growing, and one app's usage continuously increases."
+                    >
+                      macOS
+                      会主动利用空闲内存做缓存，因此“用了很多内存”不一定是问题。更值得关注的是内存压力是否持续升高、交换空间是否增长，以及某个应用的占用是否不断增加。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>4</span>
+                  <div>
+                    <h3
+                      data-zh="确认启动磁盘还有可用空间"
+                      data-en="Check free space on the startup disk"
+                    >
+                      确认启动磁盘还有可用空间
+                    </h3>
+                    <p
+                      data-zh="空间很少时，系统更新、缓存、交换空间和应用临时文件都会更难工作。先看系统设置 → 通用 → 存储空间，再定位大文件、下载内容、旧安装包和不用的应用。"
+                      data-en="When free space is scarce, updates, caches, swap, and app temporary files have less room to work. Check System Settings → General → Storage, then look for large files, downloads, old installers, and unused apps."
+                    >
+                      空间很少时，系统更新、缓存、交换空间和应用临时文件都会更难工作。先看系统设置
+                      → 通用 →
+                      存储空间，再定位大文件、下载内容、旧安装包和不用的应用。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span>5</span>
+                  <div>
+                    <h3
+                      data-zh="重启后复现，再检查登录项和更新"
+                      data-en="Reproduce after restart, then check login items and updates"
+                    >
+                      重启后复现，再检查登录项和更新
+                    </h3>
+                    <p
+                      data-zh="重启能结束遗留任务，但不是诊断结论。若问题重启后仍出现，记录复现步骤，检查最近新增的登录项、扩展和应用更新，再逐个验证。"
+                      data-en="A restart clears stale work but is not a diagnosis. If the problem returns, record the reproduction steps and review recently added login items, extensions, and app updates one at a time."
+                    >
+                      重启能结束遗留任务，但不是诊断结论。若问题重启后仍出现，记录复现步骤，检查最近新增的登录项、扩展和应用更新，再逐个验证。
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+            <section id="read-signals" data-reveal>
+              <h2 data-zh="用 CoreRobin 怎么看" data-en="How to use CoreRobin">
+                用 CoreRobin 怎么看
+              </h2>
+              <div class="article-signal-grid">
+                <article>
+                  <strong data-zh="日常模式" data-en="Everyday mode"
+                    >日常模式</strong
+                  >
+                  <p
+                    data-zh="先运行“检查一下”。结论只有在信号持续并达到稳定条件时才出现，不会把每秒变化的指标直接变成待办。"
+                    data-en="Run Check now first. A finding appears only after the signal persists and meets stable conditions, rather than turning every changing metric into a task."
+                  >
+                    先运行“检查一下”。结论只有在信号持续并达到稳定条件时才出现，不会把每秒变化的指标直接变成待办。
+                  </p>
+                </article>
+                <article>
+                  <strong data-zh="专业模式" data-en="Professional mode"
+                    >专业模式</strong
+                  >
+                  <p
+                    data-zh="需要证据时再查看进程树、CPU、内存、磁盘读写和趋势。用搜索和稳定排序确认是不是同一来源持续出现。"
+                    data-en="Open process trees, CPU, memory, disk activity, and trends when you need evidence. Search and stable sorting help confirm whether the same source persists."
+                  >
+                    需要证据时再查看进程树、CPU、内存、磁盘读写和趋势。用搜索和稳定排序确认是不是同一来源持续出现。
+                  </p>
+                </article>
+              </div>
+              <p class="article-source">
+                <span
+                  data-zh="Apple 的“活动监视器”同样区分 CPU 的系统、用户和空闲活动，并把内存压力、交换空间和缓存一起用于判断。"
+                  data-en="Apple's Activity Monitor also separates system, user, and idle CPU activity and uses memory pressure, swap, and cache together when interpreting memory."
+                  >Apple 的“活动监视器”同样区分 CPU
+                  的系统、用户和空闲活动，并把内存压力、交换空间和缓存一起用于判断。</span
+                >
+                <a
+                  href="https://support.apple.com/guide/activity-monitor/view-cpu-activity-actmntr43452/mac"
+                  rel="noreferrer"
+                  data-zh="查看 Apple CPU 指南"
+                  data-en="Apple CPU guide"
+                  >查看 Apple CPU 指南</a
+                >
+                ·
+                <a
+                  href="https://support.apple.com/guide/activity-monitor/view-memory-usage-actmntr1004/mac"
+                  rel="noreferrer"
+                  data-zh="查看 Apple 内存指南"
+                  data-en="Apple memory guide"
+                  >查看 Apple 内存指南</a
+                >
+              </p>
+            </section>
+            <section id="safe-actions" data-reveal>
+              <h2
+                data-zh="优先做可逆的处理"
+                data-en="Prefer reversible actions"
+              >
+                优先做可逆的处理
+              </h2>
+              <ul class="article-checklist">
+                <li
+                  data-zh="保存工作，从应用自身正常退出，再观察问题是否消失。"
+                  data-en="Save your work, quit the app normally, and see whether the problem clears."
+                >
+                  保存工作，从应用自身正常退出，再观察问题是否消失。
+                </li>
+                <li
+                  data-zh="关闭不需要的高负载标签页、虚拟机、开发构建或同步任务。"
+                  data-en="Close unneeded heavy tabs, virtual machines, builds, or sync tasks."
+                >
+                  关闭不需要的高负载标签页、虚拟机、开发构建或同步任务。
+                </li>
+                <li
+                  data-zh="释放启动磁盘空间，但不要随意删除系统目录或不认识的缓存。"
+                  data-en="Free startup-disk space without deleting system folders or unfamiliar caches at random."
+                >
+                  释放启动磁盘空间，但不要随意删除系统目录或不认识的缓存。
+                </li>
+                <li
+                  data-zh="对没有响应的第三方应用，核对名称和路径后再结束；CoreRobin 会在执行前再次确认。"
+                  data-en="For an unresponsive third-party app, verify its name and path before stopping it; CoreRobin asks for confirmation before acting."
+                >
+                  对没有响应的第三方应用，核对名称和路径后再结束；CoreRobin
+                  会在执行前再次确认。
+                </li>
+              </ul>
+            </section>
+            <section id="need-help" data-reveal>
+              <h2
+                data-zh="这些情况需要继续排查"
+                data-en="When to investigate further"
+              >
+                这些情况需要继续排查
+              </h2>
+              <p
+                data-zh="如果卡顿在重启后稳定复现、伴随意外重启或画面异常、所有应用都受影响，或者安全模式下仍然出现，就不要只结束某个进程。先备份重要数据，安装可用的 macOS 更新，并使用 Apple Diagnostics 或联系 Apple 支持排除硬件问题。"
+                data-en="If the slowdown reliably returns after restart, comes with unexpected restarts or display corruption, affects every app, or persists in safe mode, do not focus on one process alone. Back up important data, install available macOS updates, and use Apple Diagnostics or Apple Support to rule out hardware issues."
+              >
+                如果卡顿在重启后稳定复现、伴随意外重启或画面异常、所有应用都受影响，或者安全模式下仍然出现，就不要只结束某个进程。先备份重要数据，安装可用的
+                macOS 更新，并使用 Apple Diagnostics 或联系 Apple
+                支持排除硬件问题。
+              </p>
+              <div class="article-next">
+                <span data-zh="下一篇" data-en="NEXT GUIDE">下一篇</span
+                ><a href="/articles/mac-cpu-memory-temperature/"
+                  ><strong
+                    data-zh="Mac CPU、内存和温度如何监控"
+                    data-en="How to monitor Mac CPU, memory, and temperature"
+                    >Mac CPU、内存和温度如何监控</strong
+                  ><span aria-hidden="true">→</span></a
+                >
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer section-shell">
+      <a class="brand brand--footer" href="/"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span><strong>CoreRobin</strong><small>KNOWLEDGE BASE</small></span></a
+      >
+      <p>
+        © <span data-year></span> CoreRobin.
+        <span
+          data-zh="从真实感受开始，找到可靠证据。"
+          data-en="Start with what you notice and find reliable evidence."
+          >从真实感受开始，找到可靠证据。</span
+        >
+      </p>
+      <div>
+        <a href="/articles/" data-zh="知识库" data-en="Articles">知识库</a
+        ><a href="/download/" data-zh="下载" data-en="Download">下载</a
+        ><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a
+        ><a href="https://github.com/JimmyDaddy/corerobin-monitor">GitHub</a>
+      </div>
+    </footer>
+    <script src="/site.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="zh-CN" data-language="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d12" />
+    <meta
+      name="description"
+      data-content-zh="正确监控 Mac CPU、内存和温度：关注持续趋势、内存压力、交换空间与实际体验，并理解温度为什么可能显示不可用。"
+      data-content-en="Monitor Mac CPU, memory, and temperature correctly by using sustained trends, memory pressure, swap, and real symptoms—and understand why temperature may be unavailable."
+      content="正确监控 Mac CPU、内存和温度：关注持续趋势、内存压力、交换空间与实际体验，并理解温度为什么可能显示不可用。"
+    />
+    <meta
+      property="og:title"
+      data-content-zh="Mac CPU、内存和温度如何监控 — CoreRobin"
+      data-content-en="How to monitor Mac CPU, memory, and temperature — CoreRobin"
+      content="Mac CPU、内存和温度如何监控 — CoreRobin"
+    />
+    <meta
+      property="og:description"
+      data-content-zh="指标要结合持续时间、趋势和实际感受，单个数字不是诊断。"
+      data-content-en="Combine metrics with duration, trends, and symptoms; one number is not a diagnosis."
+      content="指标要结合持续时间、趋势和实际感受，单个数字不是诊断。"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://monitor-app.corerobin.com/articles/mac-cpu-memory-temperature/"
+    />
+    <meta
+      property="og:image"
+      content="https://monitor-app.corerobin.com/assets/social-card.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      data-content-zh="Mac CPU 内存温度监控指南"
+      data-content-en="Mac CPU memory and temperature monitoring guide"
+      content="Mac CPU 内存温度监控指南"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="canonical"
+      href="https://monitor-app.corerobin.com/articles/mac-cpu-memory-temperature/"
+    />
+    <link rel="icon" href="/assets/app-icon.png" />
+    <link rel="stylesheet" href="/animated-robin.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Mac CPU、内存和温度如何监控",
+        "description": "Mac CPU 内存温度监控指南",
+        "datePublished": "2026-07-18",
+        "dateModified": "2026-07-18",
+        "author": { "@type": "Organization", "name": "CoreRobin" },
+        "publisher": { "@type": "Organization", "name": "CoreRobin" },
+        "mainEntityOfPage": "https://monitor-app.corerobin.com/articles/mac-cpu-memory-temperature/",
+        "url": "https://monitor-app.corerobin.com/articles/mac-cpu-memory-temperature/",
+        "inLanguage": "zh-CN"
+      }
+    </script>
+    <title
+      data-zh="Mac CPU、内存和温度如何监控 — CoreRobin"
+      data-en="How to monitor Mac CPU, memory, and temperature — CoreRobin"
+    >
+      Mac CPU、内存和温度如何监控 — CoreRobin
+    </title>
+  </head>
+  <body>
+    <a
+      class="skip-link"
+      href="#main-content"
+      data-zh="跳到主要内容"
+      data-en="Skip to main content"
+      >跳到主要内容</a
+    >
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="CoreRobin home"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span
+          ><strong aria-label="CoreRobin"
+            ><span aria-hidden="true"
+              >Core<span class="brand-wordmark__r">R<i></i></span>obin</span
+            ></strong
+          ><small>KNOWLEDGE BASE</small></span
+        ></a
+      ><button
+        class="nav-toggle"
+        type="button"
+        data-aria-zh="打开导航"
+        data-aria-en="Open navigation"
+        aria-label="打开导航"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-nav-toggle
+      >
+        <span></span><span></span>
+      </button>
+      <nav
+        class="main-nav"
+        id="site-navigation"
+        data-nav
+        data-aria-zh="主导航"
+        data-aria-en="Main navigation"
+        aria-label="主导航"
+      >
+        <a href="/" data-zh="产品" data-en="Product">产品</a
+        ><a href="/download/" data-zh="下载" data-en="Download">下载</a
+        ><a href="/guide/" data-zh="指南" data-en="Guide">指南</a
+        ><a href="/privacy/" data-zh="隐私" data-en="Privacy">隐私</a
+        ><a href="/releases/" data-zh="版本" data-en="Releases">版本</a>
+      </nav>
+      <div class="header-actions">
+        <div
+          class="language-picker"
+          data-language-picker
+          data-aria-zh="选择语言"
+          data-aria-en="Choose language"
+        ></div>
+      </div>
+    </header>
+    <main id="main-content" class="article-page">
+      <article>
+        <header class="article-hero section-shell" data-reveal>
+          <nav
+            class="article-breadcrumb"
+            data-aria-zh="面包屑"
+            data-aria-en="Breadcrumb"
+            aria-label="面包屑"
+          >
+            <a
+              href="/articles/"
+              data-zh="Mac 排障知识库"
+              data-en="Mac troubleshooting"
+              >Mac 排障知识库</a
+            ><span>/</span
+            ><span data-zh="指标理解" data-en="Metrics">指标理解</span>
+          </nav>
+          <div class="article-hero__meta">
+            <span>MAC METRICS</span
+            ><time
+              datetime="2026-07-18"
+              data-zh="更新于 2026 年 7 月 18 日"
+              data-en="Updated July 18, 2026"
+              >更新于 2026 年 7 月 18 日</time
+            ><span data-zh="约 7 分钟" data-en="7 min read">约 7 分钟</span>
+          </div>
+          <h1
+            data-zh="Mac CPU、内存和温度如何监控"
+            data-en="How to monitor Mac CPU, memory, and temperature"
+          >
+            Mac CPU、内存和温度如何监控
+          </h1>
+          <p
+            data-zh="先看趋势和持续时间，再看哪个应用或任务与它同步。CPU 高、内存使用多或机身发热都可能是正常工作；只有稳定信号、实际影响和可复核来源同时出现，才值得采取动作。"
+            data-en="Start with trends and duration, then identify the app or task moving with them. High CPU, used memory, or a warm enclosure can all be normal work. Act when a sustained signal, real impact, and a verifiable source appear together."
+          >
+            先看趋势和持续时间，再看哪个应用或任务与它同步。CPU
+            高、内存使用多或机身发热都可能是正常工作；只有稳定信号、实际影响和可复核来源同时出现，才值得采取动作。
+          </p>
+        </header>
+        <div class="article-layout section-shell">
+          <aside class="article-toc" data-reveal>
+            <strong data-zh="这篇文章" data-en="In this guide">这篇文章</strong>
+            <nav>
+              <a href="#quick-answer" data-zh="先说结论" data-en="Quick answer"
+                >先说结论</a
+              ><a href="#cpu" data-zh="CPU" data-en="CPU">CPU</a
+              ><a href="#memory" data-zh="内存" data-en="Memory">内存</a
+              ><a href="#temperature" data-zh="温度" data-en="Temperature"
+                >温度</a
+              ><a href="#sampling" data-zh="采样方式" data-en="Sampling"
+                >采样方式</a
+              >
+            </nav>
+          </aside>
+          <div class="article-content">
+            <section id="quick-answer" data-reveal>
+              <div class="article-answer">
+                <span data-zh="直接答案" data-en="QUICK ANSWER">直接答案</span>
+                <p
+                  data-zh="日常查看用“平衡”采样即可：观察 5 到 10 分钟趋势。CPU 看是否持续繁忙以及哪个进程同步出现；内存重点看压力和交换空间，不只看使用百分比；温度只能作为辅助信号，显示不可用时不要猜测，也不代表硬件异常。"
+                  data-en="Balanced sampling is enough for routine monitoring. Watch 5 to 10 minute trends. For CPU, look for sustained activity and a matching process. For memory, prioritize pressure and swap over percent used. Treat temperature as supporting evidence; unavailable does not imply a hardware fault and should not be guessed."
+                >
+                  日常查看用“平衡”采样即可：观察 5 到 10 分钟趋势。CPU
+                  看是否持续繁忙以及哪个进程同步出现；内存重点看压力和交换空间，不只看使用百分比；温度只能作为辅助信号，显示不可用时不要猜测，也不代表硬件异常。
+                </p>
+              </div>
+            </section>
+            <section id="cpu" data-reveal>
+              <h2
+                data-zh="CPU：区分尖峰和持续繁忙"
+                data-en="CPU: separate spikes from sustained work"
+              >
+                CPU：区分尖峰和持续繁忙
+              </h2>
+              <p
+                data-zh="打开应用、编译项目、导出视频或加载复杂网页时，CPU 短暂升高很正常。更有意义的是同一应用连续多次采样都在前列，并且卡顿、耗电或风扇变化与它同时出现。先确认任务是否预期，再决定等待、正常退出还是进一步处理。"
+                data-en="CPU can rise normally while opening an app, compiling, exporting video, or loading a complex page. The stronger signal is the same app remaining near the top across multiple samples while slowdown, power use, or fan behavior changes with it. First decide whether the work is expected, then wait, quit normally, or investigate."
+              >
+                打开应用、编译项目、导出视频或加载复杂网页时，CPU
+                短暂升高很正常。更有意义的是同一应用连续多次采样都在前列，并且卡顿、耗电或风扇变化与它同时出现。先确认任务是否预期，再决定等待、正常退出还是进一步处理。
+              </p>
+              <div class="article-metric">
+                <span>CPU</span>
+                <div>
+                  <strong data-zh="看什么" data-en="Watch">看什么</strong>
+                  <p
+                    data-zh="持续时间、趋势、前列进程、任务是否符合预期。"
+                    data-en="Duration, trend, top process, and whether the task is expected."
+                  >
+                    持续时间、趋势、前列进程、任务是否符合预期。
+                  </p>
+                </div>
+                <div>
+                  <strong data-zh="不要做什么" data-en="Avoid"
+                    >不要做什么</strong
+                  >
+                  <p
+                    data-zh="因为一次 100% 或名称陌生就结束系统进程。"
+                    data-en="Do not stop a system process because of one high reading or an unfamiliar name."
+                  >
+                    因为一次 100% 或名称陌生就结束系统进程。
+                  </p>
+                </div>
+              </div>
+              <p class="article-source">
+                <span
+                  data-zh="Apple 的活动监视器会分别显示系统、用户和空闲 CPU，并提供当前与历史视图。"
+                  data-en="Apple's Activity Monitor separates system, user, and idle CPU and offers current and historical views."
+                  >Apple 的活动监视器会分别显示系统、用户和空闲
+                  CPU，并提供当前与历史视图。</span
+                >
+                <a
+                  href="https://support.apple.com/guide/activity-monitor/view-cpu-activity-actmntr43452/mac"
+                  rel="noreferrer"
+                  data-zh="查看 Apple CPU 指南"
+                  data-en="Apple CPU guide"
+                  >查看 Apple CPU 指南</a
+                >
+              </p>
+            </section>
+            <section id="memory" data-reveal>
+              <h2
+                data-zh="内存：高使用率不一定是问题"
+                data-en="Memory: high usage is not automatically bad"
+              >
+                内存：高使用率不一定是问题
+              </h2>
+              <p
+                data-zh="macOS 会把空闲内存用于文件缓存，并在需要时压缩内存。判断是否真的紧张，应结合内存压力、交换空间、压缩内存和应用变化：绿色且操作流畅时，即使已用比例较高也通常无需清理；压力持续变黄或变红、交换不断增长并伴随卡顿时，再找持续增长的应用。"
+                data-en="macOS uses idle memory for file cache and compresses memory when needed. Judge real pressure using memory pressure, swap, compressed memory, and app changes. If pressure is green and the Mac is responsive, a high used percentage usually needs no cleanup. If pressure remains yellow or red, swap keeps growing, and the Mac slows down, identify the app that keeps growing."
+              >
+                macOS
+                会把空闲内存用于文件缓存，并在需要时压缩内存。判断是否真的紧张，应结合内存压力、交换空间、压缩内存和应用变化：绿色且操作流畅时，即使已用比例较高也通常无需清理；压力持续变黄或变红、交换不断增长并伴随卡顿时，再找持续增长的应用。
+              </p>
+              <div class="article-metric">
+                <span>RAM</span>
+                <div>
+                  <strong data-zh="看什么" data-en="Watch">看什么</strong>
+                  <p
+                    data-zh="内存压力、交换空间、占用是否持续增长、实际卡顿。"
+                    data-en="Memory pressure, swap, continued growth, and real slowdown."
+                  >
+                    内存压力、交换空间、占用是否持续增长、实际卡顿。
+                  </p>
+                </div>
+                <div>
+                  <strong data-zh="不要做什么" data-en="Avoid"
+                    >不要做什么</strong
+                  >
+                  <p
+                    data-zh="把缓存内存当浪费，频繁使用所谓“内存清理”。"
+                    data-en="Do not treat cache as waste or repeatedly run memory cleaners."
+                  >
+                    把缓存内存当浪费，频繁使用所谓“内存清理”。
+                  </p>
+                </div>
+              </div>
+              <p class="article-source">
+                <span
+                  data-zh="Apple 明确说明内存压力综合空闲内存、交换、常驻内存和文件缓存。"
+                  data-en="Apple states that memory pressure incorporates free memory, swap, wired memory, and file cache."
+                  >Apple 明确说明内存压力综合空闲内存、交换、常驻内存和文件缓存。</span
+                >
+                <a
+                  href="https://support.apple.com/guide/activity-monitor/view-memory-usage-actmntr1004/mac"
+                  rel="noreferrer"
+                  data-zh="查看 Apple 内存指南"
+                  data-en="Apple memory guide"
+                  >查看 Apple 内存指南</a
+                >
+              </p>
+            </section>
+            <section id="temperature" data-reveal>
+              <h2
+                data-zh="温度：辅助判断，不是单独结论"
+                data-en="Temperature: supporting evidence, not a diagnosis"
+              >
+                温度：辅助判断，不是单独结论
+              </h2>
+              <p
+                data-zh="CoreRobin 在 macOS 上读取硬件提供的传感器数据。Apple Silicon 不同代际的传感器键、运行架构和系统版本可能不同，因此温度可能显示“等待首个样本”“此设备不支持”或“读取失败”。不可用只表示当前无法得到可信读数，不应补一个估算值。"
+                data-en="On macOS, CoreRobin reads sensor data exposed by the hardware. Sensor keys, runtime architecture, and system versions differ across Apple silicon generations, so temperature may show waiting for first sample, unsupported, or read failed. Unavailable only means there is no trustworthy reading now; CoreRobin does not invent an estimate."
+              >
+                CoreRobin 在 macOS 上读取硬件提供的传感器数据。Apple Silicon
+                不同代际的传感器键、运行架构和系统版本可能不同，因此温度可能显示“等待首个样本”“此设备不支持”或“读取失败”。不可用只表示当前无法得到可信读数，不应补一个估算值。
+              </p>
+              <ul class="article-checklist">
+                <li
+                  data-zh="Apple Silicon Mac 优先安装 aarch64 原生包；Intel 包通过 Rosetta 运行时，部分传感器可能不可用。"
+                  data-en="On Apple silicon, prefer the native aarch64 build; some sensors may be unavailable when the Intel build runs through Rosetta."
+                >
+                  Apple Silicon Mac 优先安装 aarch64 原生包；Intel 包通过
+                  Rosetta 运行时，部分传感器可能不可用。
+                </li>
+                <li
+                  data-zh="结合 CPU 趋势、风扇、耗电、性能下降和最后成功采样时间判断，不用单个温度值制造警报。"
+                  data-en="Combine temperature with CPU trends, fan behavior, battery use, performance impact, and the last successful sample instead of creating an alert from one value."
+                >
+                  结合 CPU
+                  趋势、风扇、耗电、性能下降和最后成功采样时间判断，不用单个温度值制造警报。
+                </li>
+                <li
+                  data-zh="如果机身异常烫、频繁关机或有电池鼓包迹象，应停止高负载工作并联系 Apple 或授权服务商。"
+                  data-en="If the enclosure is abnormally hot, the Mac shuts down repeatedly, or the battery appears swollen, stop heavy work and contact Apple or an authorized provider."
+                >
+                  如果机身异常烫、频繁关机或有电池鼓包迹象，应停止高负载工作并联系
+                  Apple 或授权服务商。
+                </li>
+              </ul>
+            </section>
+            <section id="sampling" data-reveal>
+              <h2
+                data-zh="选择合适的采样方式"
+                data-en="Choose an appropriate sampling mode"
+              >
+                选择合适的采样方式
+              </h2>
+              <div class="article-signal-grid">
+                <article>
+                  <strong data-zh="低功耗" data-en="Low power">低功耗</strong>
+                  <p
+                    data-zh="适合长时间后台观察，变化更平缓，不用于捕捉极短尖峰。"
+                    data-en="For long background observation with smoother changes, not very short spikes."
+                  >
+                    适合长时间后台观察，变化更平缓，不用于捕捉极短尖峰。
+                  </p>
+                </article>
+                <article>
+                  <strong data-zh="平衡" data-en="Balanced">平衡</strong>
+                  <p
+                    data-zh="日常推荐，在响应速度与后台开销之间取平衡。"
+                    data-en="Recommended for everyday use, balancing responsiveness and background cost."
+                  >
+                    日常推荐，在响应速度与后台开销之间取平衡。
+                  </p>
+                </article>
+                <article>
+                  <strong data-zh="实时" data-en="Real-time">实时</strong>
+                  <p
+                    data-zh="只在短时间复现问题时使用；更频繁采样本身也会增加开销。"
+                    data-en="Use briefly while reproducing a problem; more frequent sampling also adds overhead."
+                  >
+                    只在短时间复现问题时使用；更频繁采样本身也会增加开销。
+                  </p>
+                </article>
+              </div>
+              <div class="article-next">
+                <span data-zh="继续排查" data-en="KEEP READING">继续排查</span
+                ><a href="/articles/mac-running-slow/"
+                  ><strong
+                    data-zh="Mac 变慢应该怎么排查"
+                    data-en="How to troubleshoot a slow Mac"
+                    >Mac 变慢应该怎么排查</strong
+                  ><span aria-hidden="true">→</span></a
+                >
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer section-shell">
+      <a class="brand brand--footer" href="/"
+        ><span class="brand__mark"
+          ><img src="/assets/brand-mark.png" alt="" /></span
+        ><span><strong>CoreRobin</strong><small>KNOWLEDGE BASE</small></span></a
+      >
+      <p>
+        © <span data-year></span> CoreRobin.
+        <span
+          data-zh="看趋势，不被瞬时数字牵着走。"
+          data-en="Use trends, not one-second numbers."
+          >看趋势，不被瞬时数字牵着走。</span
+        >
+      </p>
+      <div>
+        <a href="/articles/" data-zh="知识库" data-en="Articles">知识库</a
+        ><a href="/download/" data-zh="下载" data-en="Download">下载</a
+        ><a href="/guide/" data-zh="指南" data-en="Guide">指南</a
+        ><a href="https://github.com/JimmyDaddy/corerobin-monitor">GitHub</a>
+      </div>
+    </footer>
+    <script src="/site.js" defer></script>
+  </body>
+</html>
