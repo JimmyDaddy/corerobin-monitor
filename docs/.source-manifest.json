@@ -4,22 +4,22 @@
   "generator": "scripts/sync-public-content.mjs",
   "files": {
     "docs/user-guide.md": {
-      "sha256": "6cc08e1eb066c458fa22eb028961a1208fa60a0f154db199e4339e27de9c0093"
+      "sha256": "90cb4de0815b88e6d06b0be2628410d26654760d56e030a5614e8398eee651b7"
     },
     "docs/user-guide.zh-CN.md": {
-      "sha256": "abe30f21ce2aa1f51370f3717195906d0369e291662bc6c1bbc57c339e8f4c15"
+      "sha256": "102df3671754db735c49f4dd0fb092594fca5fe40bb96b6f202f5235c3aa118b"
     },
     "docs/privacy.md": {
-      "sha256": "10c5451cc6ac4ee12b6de4af28b13a0aa2f87bf9afc4ad3116d923865b017ae9"
+      "sha256": "50c0198c5675bfd48b9ad217fae906c5d649b010bd0fc450383ed4bff261dbcf"
     },
     "docs/privacy.zh-CN.md": {
-      "sha256": "7f4c7edfdb84351e79ded6a11c828fca7a487a5f67904f78d303209aeafb5d4c"
+      "sha256": "3fddf42122e04f883e6d384b2095a6d034a48632e9c840125c00db297b407c13"
     },
     "PRIVACY.en.md": {
-      "sha256": "10c5451cc6ac4ee12b6de4af28b13a0aa2f87bf9afc4ad3116d923865b017ae9"
+      "sha256": "50c0198c5675bfd48b9ad217fae906c5d649b010bd0fc450383ed4bff261dbcf"
     },
     "PRIVACY.md": {
-      "sha256": "7f4c7edfdb84351e79ded6a11c828fca7a487a5f67904f78d303209aeafb5d4c"
+      "sha256": "3fddf42122e04f883e6d384b2095a6d034a48632e9c840125c00db297b407c13"
     }
   }
 }
