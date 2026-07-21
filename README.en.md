@@ -12,15 +12,17 @@
     · <a href="https://monitor-app.corerobin.com/en/articles/">Troubleshooting library</a>
     · <a href="docs/user-guide.md">User guide</a>
     · <a href="https://monitor-app.corerobin.com/en/releases/">Release Notes</a>
-    · <a href="README.md">简体中文</a>
+    · <a href="README.zh-CN.md">简体中文</a>
   </p>
 </div>
 
 <p align="center">
-  <img src="site/assets/corerobin-daily-overview.jpg" width="100%" alt="CoreRobin Everyday mode computer status overview" />
+  <img src="site/assets/corerobin-daily-overview-en.png" width="100%" alt="CoreRobin Everyday mode computer status overview" />
 </p>
 
 <p align="center"><sub>Everyday mode · A stable conclusion and the next best action</sub></p>
+
+> Screenshots come from the real English product interface and use sanitized demo data. They contain no device name, username, real path, or network identity.
 
 ## Start with what you notice
 
@@ -30,26 +32,27 @@ Everyday mode turns a slow computer, persistent fan noise, low storage, or a net
 - Start from a real problem instead of technical terminology
 - Main window, menu bar panel, and Robin companion share one conclusion
 - You confirm every process stop, startup change, and permanent deletion
+- The app inventory uses localized names and real icons, with Complete Uninstall on macOS
 
 ## Go deeper when you need evidence
 
-Professional mode keeps live metrics, five-minute trends, process trees, network connections, storage analysis, and history for sustained load or unusual traffic.
+Professional mode keeps live metrics, five-minute trends, process trees, network connections, storage analysis, and history. Network Quality samples automatically and shows recent 15-minute latency, jitter, and loss trends for sustained load, unusual traffic, or intermittent network trouble.
 
 <p align="center">
-  <img src="site/assets/corerobin-professional-overview.jpg" width="100%" alt="CoreRobin Professional mode resource overview and process details" />
+  <img src="site/assets/corerobin-professional-overview-en.png" width="100%" alt="CoreRobin Professional mode resource overview and process details" />
 </p>
 
 ## See where space goes, with clear boundaries
 
 Cleanup maps accessible locations on the system disk by real path. On macOS, Full Disk Access can reduce protected-location gaps; you can still scan accessible areas without it. A scan reads metadata, not file contents, and never moves or deletes files automatically.
 
-Items go to a cleanup basket first. CoreRobin rechecks them before permanent deletion and protects the home folder, Trash itself, links, special files, and other disks.
+Items go to a cleanup basket first. Moving to Trash is the recoverable default; direct deletion is rechecked and confirmed separately. CoreRobin protects the home folder, Trash itself, links, special files, and other disks.
 
 ## Download and verify
 
-Use the [download page](https://monitor-app.corerobin.com/en/download/) to choose an installer for your system and chip. macOS has Apple Silicon and Intel DMGs; Windows x64 and Linux x64 are early previews. Current installers do not have platform signing or Apple notarization.
+Use the [download page](https://monitor-app.corerobin.com/en/download/) to choose an installer for your system and chip. Current macOS DMGs are Developer ID signed, Apple-notarized, and stapled. Apple Silicon is hardware-tested; Intel passes automated validation but still awaits separate hardware acceptance. Windows x64 and Linux x64 remain early previews without platform signing.
 
-Each release includes SHA-256 checksums, an SPDX SBOM, and a Sigstore bundle for the checksum manifest. The download page has copyable verification commands. These source-integrity records do not replace platform signing.
+Each release includes SHA-256 checksums, an SPDX SBOM, and a Sigstore bundle for the checksum manifest. The download page has copyable verification commands that supplement platform signing and verify the published files.
 
 ## Privacy, support, and security
 

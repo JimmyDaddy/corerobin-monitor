@@ -103,6 +103,22 @@ test("language picker uses the matching static localized route", async ({ page }
   await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(SITE_LOCALES.length + 1);
 });
 
+test("product screenshots match the page language", async ({ page }) => {
+  await page.goto("/", { waitUntil: "networkidle" });
+  await expect(page.locator('.hero-proof__screen img')).toHaveAttribute(
+    "src",
+    "/assets/corerobin-daily-overview.jpg",
+  );
+
+  for (const path of ["/en/", "/zh-hant/", "/ja/"]) {
+    await page.goto(path, { waitUntil: "networkidle" });
+    await expect(page.locator('.hero-proof__screen img')).toHaveAttribute(
+      "src",
+      "/assets/corerobin-daily-overview-en.png",
+    );
+  }
+});
+
 test("article language picker offers curated Chinese and English pages", async ({ page }) => {
   await page.goto("/articles/mac-running-slow/", { waitUntil: "networkidle" });
   await expect(page.locator("[data-language-select] > option")).toHaveCount(2);

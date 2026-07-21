@@ -25,7 +25,7 @@
       "platform": "macos",
       "architecture": "Intel",
       "format": "DMG",
-      "status": "tested"
+      "status": "limited"
     },
     {
       "name": "CoreRobin_0.1.9_x64-setup.exe",
