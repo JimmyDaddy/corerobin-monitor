@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "tagName": "v0.0.4",
-  "name": "CoreRobin v0.0.4",
-  "publishedAt": "2026-07-17T03:56:51Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.0.4",
+  "tagName": "v0.1.9",
+  "name": "CoreRobin v0.1.9",
+  "publishedAt": "2026-07-21T07:04:07Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.9",
   "installers": [
     {
-      "name": "CoreRobin_0.0.4_aarch64.dmg",
-      "size": 4446815,
-      "sha256": "5bbce008036d46b9068aed1827570d2ccf9e3cce89fbdb1c4d2a886a7c927a87",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.0.4/CoreRobin_0.0.4_aarch64.dmg",
+      "name": "CoreRobin_0.1.9_aarch64.dmg",
+      "size": 6267745,
+      "sha256": "751fb72842d1cfb7d302f3b6b2c63fe5dc2c84a5cde57817d2669864406f9b5f",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.9/CoreRobin_0.1.9_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.0.4_x64.dmg",
-      "size": 4742812,
-      "sha256": "c7ea982254ecfc70e5df10ecefb601f97b1edaedd20693575b08a3ece3e9dfd5",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.0.4/CoreRobin_0.0.4_x64.dmg",
+      "name": "CoreRobin_0.1.9_x64.dmg",
+      "size": 6695991,
+      "sha256": "a089855b9b29109b9fb2f7df221f9a2e420cfe31130019519e40b06ab74f4676",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.9/CoreRobin_0.1.9_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.0.4_x64-setup.exe",
-      "size": 3103331,
-      "sha256": "e63a4e969e2c9a3a23d6d5028159cedde70739044f262be75949c4cb749abe04",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.0.4/CoreRobin_0.0.4_x64-setup.exe",
+      "name": "CoreRobin_0.1.9_x64-setup.exe",
+      "size": 4363171,
+      "sha256": "77cc5b81737fd0ba331c02f84671fdee26ab2ac6aa0e1f4d3cd5e180f8707ab2",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.9/CoreRobin_0.1.9_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.0.4_x64_en-US.msi",
-      "size": 4399104,
-      "sha256": "adf50992a5665c34b95b0942b2979e14866c0b1acb6d79a72e35c07c1f37efa6",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.0.4/CoreRobin_0.0.4_x64_en-US.msi",
+      "name": "CoreRobin_0.1.9_x64_en-US.msi",
+      "size": 6074368,
+      "sha256": "735aa4a77ad0b12902a0628ce4bc3531da5511da75966273c65c2c2b5d386a27",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.9/CoreRobin_0.1.9_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.0.4_amd64.AppImage",
-      "size": 83175928,
-      "sha256": "bc00658f8acc3bc707210a9e73006ac7fc45bafc857174868b3534734e3c0cee",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.0.4/CoreRobin_0.0.4_amd64.AppImage",
+      "name": "CoreRobin_0.1.9_amd64.AppImage",
+      "size": 84916728,
+      "sha256": "4933bfb148bc2eab492f4eac1c11bef568640889408707170f6988967bba5409",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.9/CoreRobin_0.1.9_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.0.4_amd64.deb",
-      "size": 5710610,
-      "sha256": "01b7064a641d94a9d4e2acfe004eebd842be961dbb9e2c68f5e6b89952bf3a7a",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.0.4/CoreRobin_0.0.4_amd64.deb",
+      "name": "CoreRobin_0.1.9_amd64.deb",
+      "size": 7631780,
+      "sha256": "f924b7228d6950bfc9ca0440f41c6b100ab948d751a316dd7d1e3edc14c3ef31",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.9/CoreRobin_0.1.9_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -75,18 +75,18 @@
   "evidence": [
     {
       "name": "corerobin.spdx.json",
-      "size": 4932,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.0.4/corerobin.spdx.json"
+      "size": 4771,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.9/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
-      "size": 950,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.0.4/SHA256SUMS"
+      "size": 1334,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.9/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10515,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.0.4/SHA256SUMS.sigstore.json"
+      "size": 10743,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.9/SHA256SUMS.sigstore.json"
     }
   ]
 }
