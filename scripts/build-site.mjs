@@ -162,6 +162,7 @@ function localizeHtml(html, route, locale, catalog, releaseManifest) {
     localizeNodeText(node, locale, catalog);
     localizeNodeAttribute(node, "content", "data-content-zh", "data-content-en", locale, catalog);
     localizeNodeAttribute(node, "aria-label", "data-aria-zh", "data-aria-en", locale, catalog);
+    localizeProductScreenshot(node, locale);
 
     if (node.tagName === "a") {
       const href = attribute(node, "href");
@@ -198,6 +199,13 @@ function localizeNodeAttribute(node, target, chineseName, englishName, locale, c
   const chinese = attribute(node, chineseName);
   if (!english && !chinese) return;
   setAttribute(node, target, translate(english, chinese, locale, catalog));
+}
+
+function localizeProductScreenshot(node, locale) {
+  const english = attribute(node, "data-src-en");
+  const chinese = attribute(node, "data-src-zh");
+  if (!english && !chinese) return;
+  setAttribute(node, "src", locale.code === "zh-CN" ? chinese || english : english || chinese);
 }
 
 function translate(english, chinese, locale, catalog) {
@@ -426,7 +434,7 @@ async function verifyStaticPage(path, route, locale) {
   if (alternateValues.get("x-default") !== localizedUrl(route, DEFAULT_SITE_LOCALE)) {
     throw new Error(`Missing x-default hreflang in ${relative(outputRoot, path)}.`);
   }
-  if (/data-(?:content-|aria-)?(?:zh|en)=/.test(html)) {
+  if (/data-(?:(?:content|aria|src)-)?(?:zh|en)=/.test(html)) {
     throw new Error(`Generated page still exposes source localization attributes: ${relative(outputRoot, path)}.`);
   }
   const globalNav = nodes.find((node) => node.tagName === "nav" && attribute(node, "id") === "site-navigation");
@@ -509,7 +517,7 @@ function removeAttribute(node, name) {
 
 function removeLocalizationAttributes(node) {
   if (node?.attrs) {
-    node.attrs = node.attrs.filter(({ name }) => !/^data-(?:content-|aria-)?(?:zh|en)$/.test(name));
+    node.attrs = node.attrs.filter(({ name }) => !/^data-(?:(?:content|aria|src)-)?(?:zh|en)$/.test(name));
   }
 }
 
