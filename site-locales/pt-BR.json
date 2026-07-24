@@ -364,6 +364,11 @@
     "YOU STAY IN CONTROL": "VOCÊ PERMANECE NO CONTROLE",
     "Your data": "Seus dados",
     "Your data stays local; you control permissions and every destructive action.": "Seus dados permanecem locais; você controla as permissões e todas as ações destrutivas.",
-    "Your home folder, links, special files, and content on other disks are protected": "Sua pasta pessoal, links, arquivos especiais e conteúdo de outros discos estão protegidos"
+    "Your home folder, links, special files, and content on other disks are protected": "Sua pasta pessoal, links, arquivos especiais e conteúdo de outros discos estão protegidos",
+    "Faster cleanup and clearer app removal": "Limpeza mais rápida e remoção de apps mais clara",
+    "Cleanup confirmations no longer expire after 60 seconds. Switching between Trash and permanent deletion reuses verified file details while every path is still checked again before execution.": "As confirmações de limpeza não expiram mais após 60 segundos. Alternar entre a Lixeira e a exclusão permanente reutiliza os detalhes já verificados, mas cada caminho ainda é conferido novamente antes da execução.",
+    "Smaller objects can now be expanded and reviewed. Large-folder details captured during the full scan and later folder expansions are cached, shown immediately on return, and refreshed in the background only when the path changes. Saved cleanup scans now restore correctly across the frontend and backend cache.": "Objetos menores agora podem ser expandidos e revisados. Os detalhes de pastas grandes capturados durante a verificação completa e em expansões posteriores ficam em cache, aparecem imediatamente ao retornar e só são atualizados em segundo plano quando o caminho muda. As verificações salvas também são restauradas corretamente entre os caches do frontend e do backend.",
+    "macOS apps without a verifiable Bundle ID can still be removed safely as an exact app-bundle-only operation. Removed apps stay visible with clear Trash or permanent-deletion status instead of forcing another full inventory scan.": "Apps do macOS sem um Bundle ID verificável ainda podem ser removidos com segurança, atuando apenas sobre o pacote exato do app. Apps removidos continuam visíveis com um estado claro de Lixeira ou exclusão permanente, sem forçar uma nova verificação de todo o inventário.",
+    "Clicking the macOS Dock icon now reopens the main window after it has been closed.": "Clicar no ícone do macOS no Dock agora reabre a janela principal depois que ela foi fechada."
   }
 }

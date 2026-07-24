@@ -364,6 +364,11 @@
     "YOU STAY IN CONTROL": "重要操作，由你確認",
     "Your data": "你的數據",
     "Your data stays local; you control permissions and every destructive action.": "你的資料留在本機；權限和刪除操作始終由你控制。",
-    "Your home folder, links, special files, and content on other disks are protected": "不會刪除主目錄、連結、特殊檔案或其他磁碟上的內容"
+    "Your home folder, links, special files, and content on other disks are protected": "不會刪除主目錄、連結、特殊檔案或其他磁碟上的內容",
+    "Faster cleanup and clearer app removal": "更快的清理與更清楚的 App 移除",
+    "Cleanup confirmations no longer expire after 60 seconds. Switching between Trash and permanent deletion reuses verified file details while every path is still checked again before execution.": "清理確認不再於 60 秒後失效。在垃圾桶與永久刪除之間切換會重用已驗證的檔案資訊，同時仍會在執行前再次檢查每個路徑。",
+    "Smaller objects can now be expanded and reviewed. Large-folder details captured during the full scan and later folder expansions are cached, shown immediately on return, and refreshed in the background only when the path changes. Saved cleanup scans now restore correctly across the frontend and backend cache.": "現在可展開並檢查較小的物件。完整掃描期間擷取的大型資料夾明細與稍後展開的資料夾會被快取，返回時立即顯示，只有路徑變更時才在背景重新整理。儲存的清理掃描現在也能在前後端快取之間正確還原。",
+    "macOS apps without a verifiable Bundle ID can still be removed safely as an exact app-bundle-only operation. Removed apps stay visible with clear Trash or permanent-deletion status instead of forcing another full inventory scan.": "沒有可驗證 Bundle ID 的 macOS App 仍可安全地僅移除確切的 App 套件。已移除的 App 會繼續顯示清楚的垃圾桶或永久刪除狀態，不會強制重新掃描完整清單。",
+    "Clicking the macOS Dock icon now reopens the main window after it has been closed.": "關閉主視窗後，點按 macOS Dock 圖示現在會重新開啟主視窗。"
   }
 }

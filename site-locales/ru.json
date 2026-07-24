@@ -364,6 +364,11 @@
     "YOU STAY IN CONTROL": "ВЫ ОСТАЕТЕ КОНТРОЛЬ",
     "Your data": "Ваши данные",
     "Your data stays local; you control permissions and every destructive action.": "Ваши данные остаются локальными; вы контролируете разрешения и каждое деструктивное действие.",
-    "Your home folder, links, special files, and content on other disks are protected": "Ваша домашняя папка, ссылки, специальные файлы и контент на других дисках защищены"
+    "Your home folder, links, special files, and content on other disks are protected": "Ваша домашняя папка, ссылки, специальные файлы и контент на других дисках защищены",
+    "Faster cleanup and clearer app removal": "Более быстрая очистка и понятное удаление приложений",
+    "Cleanup confirmations no longer expire after 60 seconds. Switching between Trash and permanent deletion reuses verified file details while every path is still checked again before execution.": "Подтверждение очистки больше не истекает через 60 секунд. При переключении между Корзиной и безвозвратным удалением используются уже проверенные сведения о файлах, но каждый путь всё равно повторно проверяется перед выполнением.",
+    "Smaller objects can now be expanded and reviewed. Large-folder details captured during the full scan and later folder expansions are cached, shown immediately on return, and refreshed in the background only when the path changes. Saved cleanup scans now restore correctly across the frontend and backend cache.": "Небольшие объекты теперь можно раскрывать и проверять. Данные о крупных папках, собранные при полном сканировании и последующем раскрытии, кэшируются, сразу показываются при возврате и обновляются в фоне только при изменении пути. Сохранённые результаты очистки также корректно восстанавливаются между кэшами интерфейса и серверной части.",
+    "macOS apps without a verifiable Bundle ID can still be removed safely as an exact app-bundle-only operation. Removed apps stay visible with clear Trash or permanent-deletion status instead of forcing another full inventory scan.": "Приложения macOS без проверяемого Bundle ID по-прежнему можно безопасно удалить, затронув только точно проверенный пакет приложения. Удалённые приложения остаются в списке с понятным статусом Корзины или безвозвратного удаления, без повторного полного сканирования.",
+    "Clicking the macOS Dock icon now reopens the main window after it has been closed.": "Щелчок по значку macOS в Dock теперь снова открывает главное окно после его закрытия."
   }
 }

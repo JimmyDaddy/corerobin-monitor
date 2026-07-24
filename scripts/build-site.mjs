@@ -43,6 +43,7 @@ const discouragedChineseCopy = [
 await verifySynchronizedDocs();
 const releaseManifest = await verifyReleaseManifest();
 const sourcePages = await loadSourcePages();
+verifyReleaseNotesMatchManifest(sourcePages, releaseManifest);
 verifyChineseCopy(sourcePages);
 const requiredTranslations = collectRequiredTranslations(sourcePages);
 const catalogs = await loadTranslationCatalogs(requiredTranslations);
@@ -71,6 +72,21 @@ async function loadSourcePages() {
     route.source,
     await readFile(join(sourceRoot, route.source), "utf8"),
   ])));
+}
+
+function verifyReleaseNotesMatchManifest(sourcePages, releaseManifest) {
+  const document = parse(sourcePages.get("releases/index.html"));
+  const latestTimeline = collectNodes(document).find((node) => (
+    node.tagName === "section" && hasToken(attribute(node, "class"), "release-timeline")
+  ));
+  const latestHeading = collectNodes(latestTimeline).find((node) => node.tagName === "h2");
+  const latestVersion = textContent(latestHeading).trim();
+
+  if (latestVersion !== releaseManifest.tagName) {
+    throw new Error(
+      `Release notes latest entry ${latestVersion || "(missing)"} does not match release manifest ${releaseManifest.tagName}.`,
+    );
+  }
 }
 
 function verifyChineseCopy(sourcePages) {
