@@ -364,6 +364,11 @@
     "YOU STAY IN CONTROL": "自分でコントロールできる",
     "Your data": "あなたのデータ",
     "Your data stays local; you control permissions and every destructive action.": "データはローカルに残ります。権限とあらゆる破壊的なアクションはあなたが制御します。",
-    "Your home folder, links, special files, and content on other disks are protected": "ホーム フォルダ、リンク、特殊ファイル、他のディスク上のコンテンツは保護されます"
+    "Your home folder, links, special files, and content on other disks are protected": "ホーム フォルダ、リンク、特殊ファイル、他のディスク上のコンテンツは保護されます",
+    "Faster cleanup and clearer app removal": "より速いクリーンアップと分かりやすいアプリ削除",
+    "Cleanup confirmations no longer expire after 60 seconds. Switching between Trash and permanent deletion reuses verified file details while every path is still checked again before execution.": "クリーンアップの確認は 60 秒後に期限切れにならなくなりました。ゴミ箱への移動と完全削除を切り替えても検証済みのファイル情報を再利用し、実行前には各パスを改めて確認します。",
+    "Smaller objects can now be expanded and reviewed. Large-folder details captured during the full scan and later folder expansions are cached, shown immediately on return, and refreshed in the background only when the path changes. Saved cleanup scans now restore correctly across the frontend and backend cache.": "小さなオブジェクトを展開して確認できるようになりました。完全スキャン中に取得した大きなフォルダの詳細と、その後に展開したフォルダはキャッシュされ、再表示時にすぐ表示されます。パスが変わった場合のみバックグラウンドで更新されます。保存済みのクリーンアップスキャンも、フロントエンドとバックエンドのキャッシュ間で正しく復元されます。",
+    "macOS apps without a verifiable Bundle ID can still be removed safely as an exact app-bundle-only operation. Removed apps stay visible with clear Trash or permanent-deletion status instead of forcing another full inventory scan.": "検証可能な Bundle ID がない macOS アプリでも、対象のアプリバンドルだけを安全に削除できます。削除したアプリはゴミ箱または完全削除の状態を明示したまま一覧に残り、アプリ一覧全体を再スキャンしません。",
+    "Clicking the macOS Dock icon now reopens the main window after it has been closed.": "メインウインドウを閉じた後でも、macOS の Dock アイコンをクリックすると再び開くようになりました。"
   }
 }
