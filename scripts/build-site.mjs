@@ -43,10 +43,10 @@ const discouragedChineseCopy = [
 await verifySynchronizedDocs();
 const releaseManifest = await verifyReleaseManifest();
 const sourcePages = await loadSourcePages();
-verifyReleaseNotesMatchManifest(sourcePages, releaseManifest);
 verifyChineseCopy(sourcePages);
 const requiredTranslations = collectRequiredTranslations(sourcePages);
-const catalogs = await loadTranslationCatalogs(requiredTranslations);
+const releaseTranslations = collectReleaseTranslations(releaseManifest);
+const catalogs = await loadTranslationCatalogs(requiredTranslations, releaseTranslations);
 
 await rm(outputRoot, { recursive: true, force: true });
 await cp(sourceRoot, outputRoot, { recursive: true });
@@ -74,21 +74,6 @@ async function loadSourcePages() {
   ])));
 }
 
-function verifyReleaseNotesMatchManifest(sourcePages, releaseManifest) {
-  const document = parse(sourcePages.get("releases/index.html"));
-  const latestTimeline = collectNodes(document).find((node) => (
-    node.tagName === "section" && hasToken(attribute(node, "class"), "release-timeline")
-  ));
-  const latestHeading = collectNodes(latestTimeline).find((node) => node.tagName === "h2");
-  const latestVersion = textContent(latestHeading).trim();
-
-  if (latestVersion !== releaseManifest.tagName) {
-    throw new Error(
-      `Release notes latest entry ${latestVersion || "(missing)"} does not match release manifest ${releaseManifest.tagName}.`,
-    );
-  }
-}
-
 function verifyChineseCopy(sourcePages) {
   for (const [source, html] of sourcePages) {
     for (const phrase of discouragedChineseCopy) {
@@ -113,8 +98,18 @@ function collectRequiredTranslations(sourcePages) {
   return [...required].sort((left, right) => left.localeCompare(right, "en"));
 }
 
-async function loadTranslationCatalogs(requiredTranslations) {
+function collectReleaseTranslations(releaseManifest) {
+  const translations = new Set(["VERSION HISTORY"]);
+  for (const release of releaseManifest.releaseHistory) {
+    translations.add(release.title.en);
+    for (const item of release.items) translations.add(item.en);
+  }
+  return [...translations].sort((left, right) => left.localeCompare(right, "en"));
+}
+
+async function loadTranslationCatalogs(requiredTranslations, optionalTranslations = []) {
   const catalogs = new Map();
+  const knownTranslations = new Set([...requiredTranslations, ...optionalTranslations]);
   for (const locale of SITE_LOCALES.filter(({ code }) => !["zh-CN", "en"].includes(code))) {
     const path = join(localeRoot, `${locale.code}.json`);
     let catalog;
@@ -127,13 +122,16 @@ async function loadTranslationCatalogs(requiredTranslations) {
       throw new Error(`Invalid site translation catalog header: site-locales/${locale.code}.json`);
     }
     const missing = requiredTranslations.filter((source) => !String(catalog.translations[source] ?? "").trim());
-    const stale = Object.keys(catalog.translations).filter((source) => !requiredTranslations.includes(source));
+    const stale = Object.keys(catalog.translations).filter((source) => !knownTranslations.has(source));
     if (missing.length > 0 || stale.length > 0) {
       throw new Error(
         `Translation catalog ${locale.code} is out of sync: ${missing.length} missing, ${stale.length} stale.`,
       );
     }
     for (const source of requiredTranslations) verifyMarkupContract(source, catalog.translations[source], locale.code);
+    for (const source of optionalTranslations) {
+      if (catalog.translations[source]) verifyMarkupContract(source, catalog.translations[source], locale.code);
+    }
     catalogs.set(locale.code, catalog.translations);
   }
   return catalogs;
@@ -166,6 +164,13 @@ async function generateLocalizedPages(sourcePages, catalogs, releaseManifest) {
 
 function localizeHtml(html, route, locale, catalog, releaseManifest) {
   const document = parse(html);
+  const releaseHistoryRoot = collectNodes(document).find((node) => hasAttribute(node, "data-release-history"));
+  if (route.path === "/releases/" && !releaseHistoryRoot) {
+    throw new Error("Release page is missing its data-release-history container.");
+  }
+  if (releaseHistoryRoot) {
+    replaceChildren(releaseHistoryRoot, releaseHistoryMarkup(releaseManifest.releaseHistory, locale, catalog));
+  }
   const nodes = collectNodes(document);
   const htmlNode = nodes.find((node) => node.tagName === "html");
   const head = nodes.find((node) => node.tagName === "head");
@@ -201,6 +206,26 @@ function localizeHtml(html, route, locale, catalog, releaseManifest) {
   updateStructuredData(nodes, route, locale, releaseManifest);
 
   return serialize(document);
+}
+
+function releaseHistoryMarkup(releases, locale, catalog) {
+  return releases.map((release, index) => {
+    const headingId = index === 0
+      ? "release-history-heading"
+      : `release-history-${release.tagName.slice(1).replaceAll(".", "")}-heading`;
+    const date = release.publishedAt.slice(0, 10);
+    const title = translateReleaseText(release.title.en, release.title["zh-CN"], locale, catalog);
+    const items = release.items.map((item) => (
+      `<li>${escapeHtml(translateReleaseText(item.en, item["zh-CN"], locale, catalog))}</li>`
+    )).join("");
+    return `<section class="release-timeline" data-reveal aria-labelledby="${headingId}"><div class="release-timeline__heading"><div><div class="eyebrow"><i></i><span>${escapeHtml(translateReleaseText("VERSION HISTORY", "版本历史", locale, catalog))}</span></div><h2 id="${headingId}">${escapeHtml(release.tagName)}</h2></div><time datetime="${date}">${date}</time></div><article><h3>${escapeHtml(title)}</h3><ul>${items}</ul></article></section>`;
+  }).join("");
+}
+
+function translateReleaseText(english, chinese, locale, catalog) {
+  if (locale.code === "zh-CN") return chinese || english;
+  if (locale.code === "en") return english || chinese;
+  return normalizeLocalizedText(locale.code, catalog?.[english] || english || chinese);
 }
 
 function localizeNodeText(node, locale, catalog) {
@@ -342,6 +367,7 @@ async function verifySynchronizedDocs() {
 
 async function verifyReleaseManifest() {
   const manifest = JSON.parse(await readFile(join(sourceRoot, "release-manifest.json"), "utf8"));
+  if (manifest.schemaVersion !== 2) throw new Error("Release manifest requires schemaVersion 2.");
   const expectedIds = [
     "macos-arm64-dmg", "macos-x64-dmg", "windows-x64-exe",
     "windows-x64-msi", "linux-x64-appimage", "linux-x64-deb",
@@ -362,6 +388,30 @@ async function verifyReleaseManifest() {
   for (const asset of evidence) {
     if (!Number.isFinite(asset.size) || asset.size <= 0 || !isReleaseAssetUrl(asset.url, manifest.tagName)) {
       throw new Error(`Invalid release verification entry: ${asset.name}`);
+    }
+  }
+  if (!Array.isArray(manifest.releaseHistory) || manifest.releaseHistory.length === 0) {
+    throw new Error("Release manifest requires non-empty releaseHistory.");
+  }
+  if (manifest.releaseHistory[0]?.tagName !== manifest.tagName) {
+    throw new Error("Release manifest history must start with the current tagName.");
+  }
+  const seenTags = new Set();
+  for (const release of manifest.releaseHistory) {
+    if (!/^v\d+\.\d+\.\d+$/.test(release.tagName ?? "") || seenTags.has(release.tagName)) {
+      throw new Error(`Invalid or duplicate release history tag: ${release.tagName ?? "(missing)"}`);
+    }
+    seenTags.add(release.tagName);
+    if (Number.isNaN(Date.parse(release.publishedAt ?? ""))) {
+      throw new Error(`Invalid release history date: ${release.tagName}`);
+    }
+    if (!String(release.title?.["zh-CN"] ?? "").trim() || !String(release.title?.en ?? "").trim()) {
+      throw new Error(`Release history title requires zh-CN and en: ${release.tagName}`);
+    }
+    if (!Array.isArray(release.items) || release.items.length === 0 || release.items.some((item) => (
+      !String(item?.["zh-CN"] ?? "").trim() || !String(item?.en ?? "").trim()
+    ))) {
+      throw new Error(`Release history items require zh-CN and en: ${release.tagName}`);
     }
   }
   return manifest;

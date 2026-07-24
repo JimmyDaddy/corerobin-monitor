@@ -107,10 +107,12 @@ test("release history starts with the current release manifest", async ({ page }
   const manifest = JSON.parse(
     await readFile(new URL("../../site/release-manifest.json", import.meta.url), "utf8"),
   );
+  expect(manifest.schemaVersion).toBe(2);
 
-  for (const path of ["/releases/", "/en/releases/"]) {
+  for (const path of ["/releases/", "/en/releases/", "/ja/releases/"]) {
     await page.goto(path, { waitUntil: "networkidle" });
     await expect(page.locator(".release-timeline h2").first()).toHaveText(manifest.tagName);
+    await expect(page.locator(".release-timeline")).toHaveCount(manifest.releaseHistory.length);
   }
 });
 

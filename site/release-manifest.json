@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "tagName": "v0.1.10",
   "name": "CoreRobin v0.1.10",
   "publishedAt": "2026-07-24T06:20:33Z",
@@ -87,6 +87,108 @@
       "name": "SHA256SUMS.sigstore.json",
       "size": 10951,
       "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.10/SHA256SUMS.sigstore.json"
+    }
+  ],
+  "releaseHistory": [
+    {
+      "tagName": "v0.1.10",
+      "publishedAt": "2026-07-24T06:20:33Z",
+      "title": {
+        "zh-CN": "更快的清理与更清楚的应用卸载",
+        "en": "Faster cleanup and clearer app removal"
+      },
+      "items": [
+        {
+          "zh-CN": "清理确认不再在 60 秒后失效；在废纸篓与永久删除之间切换会复用已核对的信息，同时仍在执行前再次检查每个路径。",
+          "en": "Cleanup confirmations no longer expire after 60 seconds. Switching between Trash and permanent deletion reuses verified file details while every path is still checked again before execution."
+        },
+        {
+          "zh-CN": "“较小对象”现在可以展开并逐项检查；完整扫描和后续展开得到的大目录明细会被缓存，再次进入时立即显示，仅在路径变化后后台刷新。前后端缓存版本也已对齐，保存的扫描结果可以正常恢复。",
+          "en": "Smaller objects can now be expanded and reviewed. Large-folder details captured during the full scan and later folder expansions are cached, shown immediately on return, and refreshed in the background only when the path changes. Saved cleanup scans now restore correctly across the frontend and backend cache."
+        },
+        {
+          "zh-CN": "没有可验证 Bundle ID 的 macOS 应用也可以只卸载经过验证的应用本体；已移除应用会保留在列表中并显示废纸篓或永久删除状态，不再强制重扫完整应用清单。",
+          "en": "macOS apps without a verifiable Bundle ID can still be removed safely as an exact app-bundle-only operation. Removed apps stay visible with clear Trash or permanent-deletion status instead of forcing another full inventory scan."
+        },
+        {
+          "zh-CN": "关闭主窗口后，点击 macOS Dock 图标现在会重新打开主窗口。",
+          "en": "Clicking the macOS Dock icon now reopens the main window after it has been closed."
+        }
+      ]
+    },
+    {
+      "tagName": "v0.1.9",
+      "publishedAt": "2026-07-21T00:00:00Z",
+      "title": {
+        "zh-CN": "网络趋势与日常体验完善",
+        "en": "Network trends and everyday polish"
+      },
+      "items": [
+        {
+          "zh-CN": "打开网络质量页会自动检查，页面停留期间每 30 秒采样，展示最近 15 分钟的延迟、抖动和丢包趋势。",
+          "en": "Network quality checks automatically when the page opens and samples every 30 seconds while it remains visible, showing recent 15-minute latency, jitter, and loss trends."
+        },
+        {
+          "zh-CN": "首次扫描前，清理页会展示只读范围和明确的开始按钮。移到废纸篓仍是可恢复的默认方式，直接删除需要单独确认。",
+          "en": "Before the first scan, Cleanup shows its read-only scope and a clear start button. Moving to Trash remains the recoverable default, with a separate confirmation for direct deletion."
+        },
+        {
+          "zh-CN": "设置现在使用一致的卡片布局与控件。专业模式默认选择有用的进程，应用关注规则也改用统一的应用、指标、阈值和持续时间字段。",
+          "en": "Settings now uses consistent card layouts and controls. Professional mode selects a useful process by default, and app watch rules use styled app, metric, threshold, and duration fields."
+        },
+        {
+          "zh-CN": "macOS DMG 已使用 Developer ID 签名、经过 Apple 公证、装订票据并通过 Gatekeeper 校验。Apple Silicon 已完成实机验证；Intel 已通过自动校验，但仍待独立实机验收。",
+          "en": "macOS DMGs are Developer ID signed, Apple-notarized, stapled, and Gatekeeper-validated. Apple Silicon is hardware-tested; Intel has passed automated validation but awaits separate hardware acceptance."
+        }
+      ]
+    },
+    {
+      "tagName": "v0.1.8",
+      "publishedAt": "2026-07-20T00:00:00Z",
+      "title": {
+        "zh-CN": "彻底卸载与真实应用身份",
+        "en": "Complete uninstall and authentic app identity"
+      },
+      "items": [
+        {
+          "zh-CN": "应用成为两种模式中的一级入口，显示本地化名称和真实图标，复用缓存清单，并在 macOS 上提供逐路径复核的彻底卸载助手。",
+          "en": "Apps is a top-level entry in both modes. It shows localized app names and real icons, reuses a cached inventory, and opens the Complete Uninstall Assistant for path-by-path review on macOS."
+        }
+      ]
+    },
+    {
+      "tagName": "v0.0.4",
+      "publishedAt": "2026-07-17T00:00:00Z",
+      "title": {
+        "zh-CN": "安装可靠性与空间扫描体验修复",
+        "en": "Install reliability and space-scan experience fixes"
+      },
+      "items": [
+        {
+          "zh-CN": "修复 Apple Silicon DMG 中应用包签名不完整、可能被 macOS 判定为已损坏的问题。",
+          "en": "Fixed an incomplete app-bundle signature in the Apple Silicon DMG that could make macOS report the app as damaged."
+        },
+        {
+          "zh-CN": "发布前会重新挂载 DMG，检查应用签名、资源封装和目标架构。",
+          "en": "Release validation now remounts the DMG and checks its complete signature, resource seal, and target architecture."
+        },
+        {
+          "zh-CN": "恢复空间扫描的彩色轨道、扫描扇区、呼吸光晕与节点脉冲。",
+          "en": "Restored colored tracks, scan sectors, breathing glow, and node pulses during a space scan."
+        },
+        {
+          "zh-CN": "修正状态栏缩略面板的高度，并让较小屏幕可以滚动查看完整内容。",
+          "en": "Adjusted the menu bar panel height and added small-screen scrolling fallback."
+        },
+        {
+          "zh-CN": "Apple Silicon Mac 临时运行 Intel 包时也能读取电池健康度；如需读取温度，仍建议使用原生包。",
+          "en": "Apple Silicon Macs can recover battery health even when temporarily running the Intel package; the native package remains recommended for temperature readings."
+        },
+        {
+          "zh-CN": "下载页现在会分别说明操作系统推荐和 Mac 芯片选择，也区分“无法验证开发者”与“应用已损坏”两类提示。",
+          "en": "The download page now separates OS recommendation from Mac chip choice and explains both macOS launch-warning cases."
+        }
+      ]
     }
   ]
 }
