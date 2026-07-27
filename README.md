@@ -37,22 +37,35 @@ Everyday mode turns a slow computer, persistent fan noise, low storage, or a net
 - See whether anything needs attention at a glance
 - Start from a real problem instead of technical terminology
 - Main window, menu bar panel, and Robin companion share one conclusion
+- Everyday/Professional mode stays in one fixed sidebar control
 - You confirm every process stop, startup change, and permanent deletion
 - The app inventory uses localized names and real icons, with Complete Uninstall on macOS
 
 ## Go deeper when you need evidence
 
-Professional mode keeps live metrics, five-minute trends, process trees, network connections, storage analysis, and history. Network Quality samples automatically and shows recent 15-minute latency, jitter, and loss trends for sustained load, unusual traffic, or intermittent network trouble.
+Professional mode keeps live metrics, five-minute trends, process trees, network connections, storage analysis, and history. Network Quality samples automatically, separates local route, DNS, IPv4, IPv6, internet, and service health, and shows a recent 15-minute latency, jitter, and connection-failure trend.
 
 <p align="center">
   <img src="site/assets/corerobin-professional-overview-en.png" width="100%" alt="CoreRobin Professional mode resource overview and process details" />
+</p>
+
+<p align="center">
+  <img src="site/assets/corerobin-professional-network-en.png" width="100%" alt="CoreRobin layered network quality diagnostics and trend" />
 </p>
 
 ## See where space goes, with clear boundaries
 
 Cleanup maps accessible locations on the system disk by real path. On macOS, Full Disk Access can reduce protected-location gaps; you can still scan accessible areas without it. A scan reads metadata, not file contents, and never moves or deletes files automatically.
 
-Items go to a cleanup basket first. Moving to Trash is the recoverable default; direct deletion is rechecked and confirmed separately. CoreRobin protects the home folder, Trash itself, links, special files, and other disks.
+Items go to a cleanup basket first. Moving to Trash is the recoverable default; direct deletion is confirmed separately. Execution processes existing confirmed targets, skips items already gone, and reports inaccessible objects without blocking unrelated work. CoreRobin protects directory roots, links, special files, other users’ data, and other disks while allowing current-user-owned children of approved temporary locations.
+
+## Updates, removable storage, and local data controls
+
+About & Support checks, downloads, and installs signed stable updates in the app. Removable volumes can be safely ejected from Storage. The Data & privacy center explains resource history, optional connection history, and local caches, with one clear-all action.
+
+<p align="center">
+  <img src="site/assets/corerobin-data-privacy-en.png" width="100%" alt="CoreRobin Data and privacy center" />
+</p>
 
 ## Download and verify
 
