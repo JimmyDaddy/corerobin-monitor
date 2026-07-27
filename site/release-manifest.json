@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.11",
-  "name": "CoreRobin v0.1.11",
-  "publishedAt": "2026-07-27T13:14:47Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.11",
+  "tagName": "v0.1.12",
+  "name": "CoreRobin v0.1.12",
+  "publishedAt": "2026-07-27T22:45:16Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.12",
   "installers": [
     {
-      "name": "CoreRobin_0.1.11_aarch64.dmg",
-      "size": 6302710,
-      "sha256": "b7671ce18c99b88580fb150f3e48b101951e233d7ca60d1cebc8f84185fbe96e",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_aarch64.dmg",
+      "name": "CoreRobin_0.1.12_aarch64.dmg",
+      "size": 6357635,
+      "sha256": "08c65844e2647afa96b4784633b3ed4c49a6041ee8d23674ed4949ae0e3270b1",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.12/CoreRobin_0.1.12_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.11_x64.dmg",
-      "size": 6743798,
-      "sha256": "faeddfab6077c20ab17ec1d1a52de48ec51c67f769afcad11803373ae8e8931d",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_x64.dmg",
+      "name": "CoreRobin_0.1.12_x64.dmg",
+      "size": 6790975,
+      "sha256": "56656b9c1bf6ff8311d58e6c4821d3c300a669d43ee9f8a5f6513a4eea2e25aa",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.12/CoreRobin_0.1.12_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.11_x64-setup.exe",
-      "size": 4400271,
-      "sha256": "dac876da3bde6021dd857689e4c126b335670ad375be6acd6851cb518bdd3041",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_x64-setup.exe",
+      "name": "CoreRobin_0.1.12_x64-setup.exe",
+      "size": 4436959,
+      "sha256": "4946198d610dfd33267392abdd4f2781aa9cf541653d0e81eba61bf7d7862beb",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.12/CoreRobin_0.1.12_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.11_x64_en-US.msi",
-      "size": 6127616,
-      "sha256": "ff59682e68e088cb84bbc0711f9e98b93828a79032b108dfb4a533be8d0a8692",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_x64_en-US.msi",
+      "name": "CoreRobin_0.1.12_x64_en-US.msi",
+      "size": 6180864,
+      "sha256": "b2a2999f392c7908e3da758501667068aed96d800c4feb736a65507b42ddba8f",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.12/CoreRobin_0.1.12_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.11_amd64.AppImage",
-      "size": 84949496,
-      "sha256": "aada8a680e3d509b7b535b989166f06d38d176f939ddfd31c171d345f80d106a",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_amd64.AppImage",
+      "name": "CoreRobin_0.1.12_amd64.AppImage",
+      "size": 84986360,
+      "sha256": "801327e21d422f50d470537dff9343f2e0c1092a983e02e68424353741cc796f",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.12/CoreRobin_0.1.12_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.11_amd64.deb",
-      "size": 7658270,
-      "sha256": "b88c38d6fdd83ae37906398b47c5afe41efe204e843343453edd76d7cd7e5646",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_amd64.deb",
+      "name": "CoreRobin_0.1.12_amd64.deb",
+      "size": 7724070,
+      "sha256": "0ab3bf4b409531a40e68a8fc134a8664c1b548d77045dbead6fda6c5ecd793b1",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.12/CoreRobin_0.1.12_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,54 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.12/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.12/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10955,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/SHA256SUMS.sigstore.json"
+      "size": 11047,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.12/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.12",
+      "publishedAt": "2026-07-27T22:45:16Z",
+      "title": {
+        "zh-CN": "更完整的桌面监控与更顺畅的系统操作",
+        "en": "More complete desktop monitoring and smoother system actions"
+      },
+      "items": [
+        {
+          "zh-CN": "新增数据与隐私中心和交互式首次使用引导，集中说明本机数据、历史记录、通知与系统权限，并提供对应管理入口。",
+          "en": "A new Data & Privacy Center and interactive onboarding explain local data, history, notifications, and system permissions with direct management actions."
+        },
+        {
+          "zh-CN": "网络质量诊断扩展为六阶段检查和最近 15 分钟趋势，可区分 DNS、IPv4/IPv6、联网探测与多目标连接状态，并展示延迟、抖动和异常变化。",
+          "en": "Network quality now provides a six-stage diagnosis and a 15-minute trend across DNS, IPv4/IPv6, connectivity probes, multiple targets, latency, jitter, and anomalies."
+        },
+        {
+          "zh-CN": "应用关注规则新增跨页面历史时间线；系统监控、提醒和更新状态在主窗口、日常模式与状态栏界面之间保持一致。",
+          "en": "Application watch rules gain a persistent history timeline, while monitoring, alerts, and update state remain consistent across the main window, Daily mode, and the menu bar."
+        },
+        {
+          "zh-CN": "日常/专业模式切换移到稳定位置，日常概览补充粗略磁盘空间；可移除卷可以直接弹出，进程操作和文件路径操作也更加紧凑可靠。",
+          "en": "Daily and Professional switching now stays in a stable location, Daily overview includes disk usage, removable volumes can be ejected directly, and process and path actions are more compact and reliable."
+        },
+        {
+          "zh-CN": "空间清理复用已扫描目录明细和缓存，缺失项目不会阻止其余内容；受控临时目录中的当前用户普通文件可以清理，同时继续保护敏感位置。",
+          "en": "Cleanup reuses scanned folder details and cache, skips missing items without blocking the rest, and allows ordinary user-owned content in approved temporary locations while protecting sensitive boundaries."
+        },
+        {
+          "zh-CN": "更新 10 种应用语言及中英文用户指南和隐私说明，并改善通知权限、系统设置和操作失败后的恢复入口。",
+          "en": "All 10 app languages plus the English and Chinese guides and privacy documentation are updated, with clearer recovery paths for permission, settings, and action failures."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.11",
       "publishedAt": "2026-07-27T13:14:47Z",
