@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.10",
-  "name": "CoreRobin v0.1.10",
-  "publishedAt": "2026-07-24T06:20:33Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.10",
+  "tagName": "v0.1.11",
+  "name": "CoreRobin v0.1.11",
+  "publishedAt": "2026-07-27T13:14:47Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.11",
   "installers": [
     {
-      "name": "CoreRobin_0.1.10_aarch64.dmg",
-      "size": 6280715,
-      "sha256": "e69da32de48a5ed9b4cb4531255304831c0dff3dbf2571bb8d4173061f01994e",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.10/CoreRobin_0.1.10_aarch64.dmg",
+      "name": "CoreRobin_0.1.11_aarch64.dmg",
+      "size": 6302710,
+      "sha256": "b7671ce18c99b88580fb150f3e48b101951e233d7ca60d1cebc8f84185fbe96e",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.10_x64.dmg",
-      "size": 6731977,
-      "sha256": "acc9d547ae3bb5dbf870db005c79cb57648ac9dc8311e67b93baa45e6d3910d7",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.10/CoreRobin_0.1.10_x64.dmg",
+      "name": "CoreRobin_0.1.11_x64.dmg",
+      "size": 6743798,
+      "sha256": "faeddfab6077c20ab17ec1d1a52de48ec51c67f769afcad11803373ae8e8931d",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.10_x64-setup.exe",
-      "size": 4399465,
-      "sha256": "da82b62656392461b82321ea02f03781b2d5a7ed763b36b1b091b452b0a89f32",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.10/CoreRobin_0.1.10_x64-setup.exe",
+      "name": "CoreRobin_0.1.11_x64-setup.exe",
+      "size": 4400271,
+      "sha256": "dac876da3bde6021dd857689e4c126b335670ad375be6acd6851cb518bdd3041",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.10_x64_en-US.msi",
+      "name": "CoreRobin_0.1.11_x64_en-US.msi",
       "size": 6127616,
-      "sha256": "2f0aff7e313e9a8cf7950ed22212affe6b735a4a0abaa57e69e2a8e69315763c",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.10/CoreRobin_0.1.10_x64_en-US.msi",
+      "sha256": "ff59682e68e088cb84bbc0711f9e98b93828a79032b108dfb4a533be8d0a8692",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.10_amd64.AppImage",
-      "size": 84941304,
-      "sha256": "e46b3f3e9676d15662fce0bece19ab1dc0ee6c88f30a8910e5c10d6921a8d0b8",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.10/CoreRobin_0.1.10_amd64.AppImage",
+      "name": "CoreRobin_0.1.11_amd64.AppImage",
+      "size": 84949496,
+      "sha256": "aada8a680e3d509b7b535b989166f06d38d176f939ddfd31c171d345f80d106a",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.10_amd64.deb",
-      "size": 7660222,
-      "sha256": "c13476473c2b026e5ace7de740ad3a6d8d57fe2300e29852bb9a4192a610dba5",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.10/CoreRobin_0.1.10_amd64.deb",
+      "name": "CoreRobin_0.1.11_amd64.deb",
+      "size": 7658270,
+      "sha256": "b88c38d6fdd83ae37906398b47c5afe41efe204e843343453edd76d7cd7e5646",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/CoreRobin_0.1.11_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,50 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.10/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.10/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10951,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.10/SHA256SUMS.sigstore.json"
+      "size": 10955,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.11/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.11",
+      "publishedAt": "2026-07-27T13:14:47Z",
+      "title": {
+        "zh-CN": "更顺畅的清理与可靠的后台监控",
+        "en": "Smoother cleanup and reliable background monitoring"
+      },
+      "items": [
+        {
+          "zh-CN": "清理篮不再重复核对整批路径：存在的内容会继续处理，已经不存在或暂时不可访问的内容会跳过并在结果中说明，不会阻止其他项目。",
+          "en": "Cleanup no longer revalidates the entire basket. Available items continue to be processed, while missing or temporarily unavailable items are skipped and reported without blocking the rest."
+        },
+        {
+          "zh-CN": "关闭主窗口后，系统资源采样、提醒规则、历史快照与网络连接历史会继续运行；重新打开窗口时可以看到连续数据。",
+          "en": "System sampling, alert rules, history snapshots, and network connection history now keep running after the main window is closed, preserving continuity when it is reopened."
+        },
+        {
+          "zh-CN": "文件洞察扫描会跨页面继续执行并保留进度；空间清理结果可直接进入对应路径、查看大文件或加入清理篮，减少重复扫描和绕路操作。",
+          "en": "File insight scans now continue across navigation and preserve progress. Cleanup results can open the matching path, show large files, or add items to the basket directly."
+        },
+        {
+          "zh-CN": "精简废纸篓、永久删除、进程和启动项操作的确认流程；永久删除仍保留不可恢复确认，其他可恢复操作不再重复确认。",
+          "en": "Confirmation flows for Trash, permanent deletion, processes, and startup items are shorter. Irreversible deletion keeps its explicit safeguard, while recoverable actions avoid duplicate prompts."
+        },
+        {
+          "zh-CN": "设置、网络质量和日常模式经过重新整理，并加入每日缓存的更新检查、跨页面会话数据以及更明确的失败恢复入口。",
+          "en": "Settings, network quality, and Daily mode are reorganized with a daily cached update check, session data that survives navigation, and clearer recovery actions."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.10",
       "publishedAt": "2026-07-24T06:20:33Z",
