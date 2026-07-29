@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.15",
-  "name": "CoreRobin v0.1.15",
-  "publishedAt": "2026-07-29T14:27:28Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.15",
+  "tagName": "v0.1.16",
+  "name": "CoreRobin v0.1.16",
+  "publishedAt": "2026-07-29T22:29:21Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.16",
   "installers": [
     {
-      "name": "CoreRobin_0.1.15_aarch64.dmg",
-      "size": 6884549,
-      "sha256": "7011fdc76da32fa74cfb45b21ce34d53e08c36493ee7e65174e6f3e71b481567",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.15/CoreRobin_0.1.15_aarch64.dmg",
+      "name": "CoreRobin_0.1.16_aarch64.dmg",
+      "size": 6891075,
+      "sha256": "7312e83f9ea87309259b7fc492f8710a6d4e9165e57e38f30094e00358db642f",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.15_x64.dmg",
-      "size": 7366529,
-      "sha256": "950fb964989557e08c1729ce7050861d5059a3216e9779ea6d8cb0ffa00b44bd",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.15/CoreRobin_0.1.15_x64.dmg",
+      "name": "CoreRobin_0.1.16_x64.dmg",
+      "size": 7372115,
+      "sha256": "d70d31d3284c8cd85350a2690238b60e2f8e12b2f7d0ee3e805f932be4c945c1",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.15_x64-setup.exe",
-      "size": 4815326,
-      "sha256": "88d6db9e4fd0aca5e22513574580d3e9a805894d3763b02eff105a09ba7ff8d7",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.15/CoreRobin_0.1.15_x64-setup.exe",
+      "name": "CoreRobin_0.1.16_x64-setup.exe",
+      "size": 4821732,
+      "sha256": "965b34c3e199c64d43b1f7632e8860e0db80ccfb1f31da82a9996a6555bfbd6c",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.15_x64_en-US.msi",
-      "size": 6672384,
-      "sha256": "e8079b602b92955c98b9b7230e73b9c8e6ab57cde084135073acf79d1161a30a",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.15/CoreRobin_0.1.15_x64_en-US.msi",
+      "name": "CoreRobin_0.1.16_x64_en-US.msi",
+      "size": 6684672,
+      "sha256": "33cab9264f861f05bc666630052b2a360ef4fb7507ab22ff81fca4c64597458e",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.15_amd64.AppImage",
-      "size": 85445112,
-      "sha256": "23d5b80b73c68a0c1e8526dc12c79aeaf222b9bf3a7ee97b079f8ae505f63dff",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.15/CoreRobin_0.1.15_amd64.AppImage",
+      "name": "CoreRobin_0.1.16_amd64.AppImage",
+      "size": 85449208,
+      "sha256": "fd94350511217dd93548c977e830866e44f8659e5aba8c7b72c2981afe2cbd1f",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.15_amd64.deb",
-      "size": 8242190,
-      "sha256": "b56b1339949fd8b54cc0bd47f9a8dc37a92182aaf1e801f2f7db704222ff7d5c",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.15/CoreRobin_0.1.15_amd64.deb",
+      "name": "CoreRobin_0.1.16_amd64.deb",
+      "size": 8252248,
+      "sha256": "5eeb146dbea5dd6fd0c406ebd177b733016322c50d80ab9ad8b9e9524cfc32b0",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,50 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.15/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.15/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10743,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.15/SHA256SUMS.sigstore.json"
+      "size": 10615,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.16",
+      "publishedAt": "2026-07-29T22:29:21Z",
+      "title": {
+        "zh-CN": "主动更新、今日回顾与更可靠的发布收尾",
+        "en": "Proactive updates, daily review, and resilient release finalization"
+      },
+      "items": [
+        {
+          "zh-CN": "新版本会通过非阻塞卡片提示，可立即更新、24 小时后提醒或仅跳过当前版本，并在安装后直接重启。",
+          "en": "New releases now appear in a non-blocking card with options to update now, remind in 24 hours, or skip only that version, followed by an in-app restart."
+        },
+        {
+          "zh-CN": "日常模式新增“今日回顾”，汇总当天事件、恢复、网络异常与操作结果，并只在证据充分时描述观察到的变化。",
+          "en": "Everyday mode gains a Today review that summarizes incidents, recoveries, network events, and action results while reporting observed changes only when evidence is sufficient."
+        },
+        {
+          "zh-CN": "Robin 现在可以双击或通过菜单打开主窗口，自动休眠建议中的阻止应用也可直接点击查看对应进程。",
+          "en": "Robin can now open the main window by double-click or menu, and apps blocking automatic sleep can be opened directly in the process view."
+        },
+        {
+          "zh-CN": "专业模式品牌和技术信息文案更加清晰，并完成全部 10 种界面语言、用户指南和发布验收内容同步。",
+          "en": "Professional-mode branding and technical labels are clearer, with all 10 interface languages, user guides, and release checks updated together."
+        },
+        {
+          "zh-CN": "修复 Linux glib 中危安全告警，并为 Apple 公证 webhook 增加持久重试和定时状态核对，降低人工 Finalize 依赖。",
+          "en": "The Linux glib medium-severity advisory is patched, while persistent webhook retries and scheduled notarization reconciliation reduce reliance on manual Finalize runs."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.15",
       "publishedAt": "2026-07-29T14:27:28Z",
