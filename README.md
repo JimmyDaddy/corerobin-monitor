@@ -43,7 +43,7 @@ Everyday mode turns a slow computer, persistent fan noise, low storage, or a net
 
 ## Go deeper when you need evidence
 
-Professional mode keeps live metrics, five-minute trends, process trees, network connections, storage analysis, and history. Network Quality samples automatically, separates local route, DNS, IPv4, IPv6, internet, and service health, and shows a recent 15-minute latency, jitter, and connection-failure trend.
+Professional mode keeps live metrics, five-minute trends, process trees, network connections, storage analysis, and history. Network Quality samples multiple targets automatically, separates local route, DNS, IPv4, IPv6, internet, and service health, and labels TCP probe failures accurately. The live 15-minute trend needs no setup; optional local five-minute aggregates extend the view to 1 or 24 hours.
 
 <p align="center">
   <img src="site/assets/corerobin-professional-overview-en.png" width="100%" alt="CoreRobin Professional mode resource overview and process details" />
@@ -61,7 +61,7 @@ Items go to a cleanup basket first. Moving to Trash is the recoverable default; 
 
 ## Updates, removable storage, and local data controls
 
-About & Support checks, downloads, and installs signed stable updates in the app. Removable volumes can be safely ejected from Storage. The Data & privacy center explains resource history, optional connection history, and local caches, with one clear-all action.
+About & Support checks, downloads, and installs signed stable updates in the app while showing release notes, the last check, and any failure. Removable volumes can be safely ejected from Storage. The Data & privacy center shows the size, item count, last update, and retention for each local dataset, and lets you clear one category or everything with an explicit result.
 
 <p align="center">
   <img src="site/assets/corerobin-data-privacy-en.png" width="100%" alt="CoreRobin Data and privacy center" />
