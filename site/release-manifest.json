@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.13",
-  "name": "CoreRobin v0.1.13",
-  "publishedAt": "2026-07-28T16:37:58Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.13",
+  "tagName": "v0.1.14",
+  "name": "CoreRobin v0.1.14",
+  "publishedAt": "2026-07-29T06:32:55Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.14",
   "installers": [
     {
-      "name": "CoreRobin_0.1.13_aarch64.dmg",
-      "size": 6719163,
-      "sha256": "e1685035b692f252e8a6da7f5a1ad6976f0c4c79ee36f6078b829f9a274c6b3d",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.13/CoreRobin_0.1.13_aarch64.dmg",
+      "name": "CoreRobin_0.1.14_aarch64.dmg",
+      "size": 6724622,
+      "sha256": "6741301b602c595643a26b2a85100bb7ac3f3172f2e819c3896263b154b51893",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.14/CoreRobin_0.1.14_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.13_x64.dmg",
-      "size": 7198686,
-      "sha256": "b7aea237d54b2ed2b7d6534ddb912cb7dfe0e6d485a42e04448477aa030bd764",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.13/CoreRobin_0.1.13_x64.dmg",
+      "name": "CoreRobin_0.1.14_x64.dmg",
+      "size": 7191860,
+      "sha256": "e1f107f18967bdf280249f36658e691275ee87db5ecf4345010ad3250a5a3430",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.14/CoreRobin_0.1.14_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.13_x64-setup.exe",
-      "size": 4685157,
-      "sha256": "2e40b34f7518f494332dc284ced466f977efb2b59f05b7862a124c6d8c8257f6",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.13/CoreRobin_0.1.13_x64-setup.exe",
+      "name": "CoreRobin_0.1.14_x64-setup.exe",
+      "size": 4705176,
+      "sha256": "34ae16ad82089d50bcfdb56d1b547da95e47da04417390761c10b1c027cf81bb",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.14/CoreRobin_0.1.14_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.13_x64_en-US.msi",
-      "size": 6529024,
-      "sha256": "fca2f5a4adf0f5114931d28e30a14de67dc8a34cec95d9f9da5b2f3003c396d7",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.13/CoreRobin_0.1.13_x64_en-US.msi",
+      "name": "CoreRobin_0.1.14_x64_en-US.msi",
+      "size": 6537216,
+      "sha256": "139a7ccd653219170ad40e03551f18cb397d436cfe252450e32ac3208d251ee9",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.14/CoreRobin_0.1.14_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.13_amd64.AppImage",
-      "size": 85322232,
-      "sha256": "cf55d82410b306fada2f4e33ce50a11357b2b7fe258d30acfe97dc86f72224fb",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.13/CoreRobin_0.1.13_amd64.AppImage",
+      "name": "CoreRobin_0.1.14_amd64.AppImage",
+      "size": 85342712,
+      "sha256": "bd4f2aaba91e4740241bed802272fe7acdd365cc73d358b8472483b8f29af32d",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.14/CoreRobin_0.1.14_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.13_amd64.deb",
-      "size": 8112740,
-      "sha256": "7de8a4bfb01696dcb8c29fa2ea8895ccdf1005a6af551d1eca9880d21971b4a6",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.13/CoreRobin_0.1.13_amd64.deb",
+      "name": "CoreRobin_0.1.14_amd64.deb",
+      "size": 8133158,
+      "sha256": "377392cff7200e70079b8569a26d17521d74f32b756f3c06039652f8913e93eb",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.14/CoreRobin_0.1.14_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,46 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.13/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.14/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.13/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.14/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10659,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.13/SHA256SUMS.sigstore.json"
+      "size": 10715,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.14/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.14",
+      "publishedAt": "2026-07-29T06:32:55Z",
+      "title": {
+        "zh-CN": "更顺畅的空间清理与应用内更新",
+        "en": "Smoother cleanup and in-app updates"
+      },
+      "items": [
+        {
+          "zh-CN": "扇形空间图检测到内容变化后，可以只刷新当前文件夹，无需重新扫描整个磁盘。",
+          "en": "When disk-map contents change, CoreRobin can refresh only the current folder instead of rescanning the entire disk."
+        },
+        {
+          "zh-CN": "清理篮采用更直观的检查与删除文案；更新安装完成后可以直接重新启动 CoreRobin。",
+          "en": "Cleanup actions now use clearer review and delete wording, and CoreRobin can restart directly after an update is installed."
+        },
+        {
+          "zh-CN": "普通应用数据、隐藏配置目录和用户明确选择的同磁盘目录可以进入检查与清理流程，不再被一概拦截。",
+          "en": "Ordinary app data, hidden configuration folders, and explicitly selected same-disk folders can now enter the review and cleanup workflow instead of being blocked wholesale."
+        },
+        {
+          "zh-CN": "凭据、系统根目录、其他用户数据、符号链接和跨文件系统边界继续受到保护，并同步更新 10 种界面语言和中英文文档。",
+          "en": "Credentials, system roots, other users' data, symlinks, and filesystem boundaries remain protected, with all 10 interface languages and English/Chinese documentation updated accordingly."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.13",
       "publishedAt": "2026-07-28T16:37:58Z",
