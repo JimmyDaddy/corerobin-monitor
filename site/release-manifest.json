@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.16",
-  "name": "CoreRobin v0.1.16",
-  "publishedAt": "2026-07-29T22:29:21Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.16",
+  "tagName": "v0.1.17",
+  "name": "CoreRobin v0.1.17",
+  "publishedAt": "2026-07-30T04:01:42Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.17",
   "installers": [
     {
-      "name": "CoreRobin_0.1.16_aarch64.dmg",
-      "size": 6891075,
-      "sha256": "7312e83f9ea87309259b7fc492f8710a6d4e9165e57e38f30094e00358db642f",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_aarch64.dmg",
+      "name": "CoreRobin_0.1.17_aarch64.dmg",
+      "size": 6890514,
+      "sha256": "79fac5f5976726e1d2938c7487070b0a16fe4ecd5b434a287f335be9543ce92c",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.17/CoreRobin_0.1.17_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.16_x64.dmg",
-      "size": 7372115,
-      "sha256": "d70d31d3284c8cd85350a2690238b60e2f8e12b2f7d0ee3e805f932be4c945c1",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_x64.dmg",
+      "name": "CoreRobin_0.1.17_x64.dmg",
+      "size": 7367556,
+      "sha256": "e9c409fb9900293196fb9228c5add7f77f8793398c979355969dd202717a4f85",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.17/CoreRobin_0.1.17_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.16_x64-setup.exe",
-      "size": 4821732,
-      "sha256": "965b34c3e199c64d43b1f7632e8860e0db80ccfb1f31da82a9996a6555bfbd6c",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_x64-setup.exe",
+      "name": "CoreRobin_0.1.17_x64-setup.exe",
+      "size": 4816990,
+      "sha256": "5a4072b7c8a6b47fae7de737d640c6d3297dd47de41741392e5eb14ad19fa0a0",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.17/CoreRobin_0.1.17_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.16_x64_en-US.msi",
-      "size": 6684672,
-      "sha256": "33cab9264f861f05bc666630052b2a360ef4fb7507ab22ff81fca4c64597458e",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_x64_en-US.msi",
+      "name": "CoreRobin_0.1.17_x64_en-US.msi",
+      "size": 6676480,
+      "sha256": "b8c69602f6b6a724274c971ce0f47766083ec3e27c8e3586fc020a7052921351",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.17/CoreRobin_0.1.17_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.16_amd64.AppImage",
-      "size": 85449208,
-      "sha256": "fd94350511217dd93548c977e830866e44f8659e5aba8c7b72c2981afe2cbd1f",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_amd64.AppImage",
+      "name": "CoreRobin_0.1.17_amd64.AppImage",
+      "size": 85453304,
+      "sha256": "7ee0db742abf1c7169093e7355ce00ee222ee8501a05d80ce89e215d58cec94c",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.17/CoreRobin_0.1.17_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.16_amd64.deb",
-      "size": 8252248,
-      "sha256": "5eeb146dbea5dd6fd0c406ebd177b733016322c50d80ab9ad8b9e9524cfc32b0",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/CoreRobin_0.1.16_amd64.deb",
+      "name": "CoreRobin_0.1.17_amd64.deb",
+      "size": 8250960,
+      "sha256": "1db048fbff8848cacd2696672555b8845831a43d208c7636d2937dcd5d430bac",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.17/CoreRobin_0.1.17_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,50 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.17/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.17/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10615,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.16/SHA256SUMS.sigstore.json"
+      "size": 10611,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.17/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.17",
+      "publishedAt": "2026-07-30T04:01:42Z",
+      "title": {
+        "zh-CN": "更顺畅的操作确认与状态反馈",
+        "en": "Smoother confirmations and clearer progress feedback"
+      },
+      "items": [
+        {
+          "zh-CN": "启动项和进程操作不再因确认窗口停留较久而要求重新开始；最终确认时会自动刷新当前操作状态。",
+          "en": "Startup-item and process actions no longer force you to start over after leaving a confirmation open; the action state is refreshed automatically when you confirm."
+        },
+        {
+          "zh-CN": "日常与专业模式切换会保持当前位置，当前模式不会重复触发跳转；界面、语言和外观设置也集中到同一入口。",
+          "en": "Switching between Everyday and Professional modes now preserves your context, while interface, language, and appearance settings are grouped in one place."
+        },
+        {
+          "zh-CN": "检查更新、下载、安装、扫描和重新载入等进行中状态现在使用统一的动态反馈，更新完成提示也会自动收起。",
+          "en": "Update checks, downloads, installation, scans, and reloads now use consistent animated progress feedback, and completed-update notices collapse automatically."
+        },
+        {
+          "zh-CN": "启动影响空状态可直接启用登录时启动，进程、网络和应用说明也改为更容易理解的表达。",
+          "en": "The startup-impact empty state can now enable launch at login directly, and process, network, and application explanations use clearer language."
+        },
+        {
+          "zh-CN": "精简重复的采样说明，并改善历史与设备状态区域的间距、高度和内容布局。",
+          "en": "Redundant sampling labels have been removed, with improved spacing, sizing, and content layout across history and device-status sections."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.16",
       "publishedAt": "2026-07-29T22:29:21Z",
