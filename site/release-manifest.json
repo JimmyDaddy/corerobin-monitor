@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.18",
-  "name": "CoreRobin v0.1.18",
-  "publishedAt": "2026-07-30T10:54:40Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.18",
+  "tagName": "v0.1.19",
+  "name": "CoreRobin v0.1.19",
+  "publishedAt": "2026-07-30T16:29:11Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.19",
   "installers": [
     {
-      "name": "CoreRobin_0.1.18_aarch64.dmg",
-      "size": 7049732,
-      "sha256": "9482c4777853fe8e441ed3e937a1271d7edfb4a378a06e8f755426af2e3db973",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.18/CoreRobin_0.1.18_aarch64.dmg",
+      "name": "CoreRobin_0.1.19_aarch64.dmg",
+      "size": 7055819,
+      "sha256": "fcb6a6f5dfb86306e8aaf40fc4da806489a1aa725321f6575b7d6d9c1a85ac6a",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.18_x64.dmg",
-      "size": 7525534,
-      "sha256": "31f15a13a26d91c87e93ad3acb4245b6dd47e6d01991a4d7c484377f25428fc6",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.18/CoreRobin_0.1.18_x64.dmg",
+      "name": "CoreRobin_0.1.19_x64.dmg",
+      "size": 7550262,
+      "sha256": "1bb92eda6512bd987478e6d9142bc165e08f77cfebcacc35e316bebf1a381783",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.18_x64-setup.exe",
-      "size": 4936363,
-      "sha256": "489cd3bbc9100df6cf02b4633ef75d5f923d29cb9588ab52fa1a59d035276d64",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.18/CoreRobin_0.1.18_x64-setup.exe",
+      "name": "CoreRobin_0.1.19_x64-setup.exe",
+      "size": 4927796,
+      "sha256": "037dcd16b147fc3e5469d7727c3fd6a0a3a16bfe95dc221855383f51adfe3211",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.18_x64_en-US.msi",
-      "size": 6852608,
-      "sha256": "ea43b8cd87db4c2d89481015717ad427224dfc158b659d3043a5d1ea85c50993",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.18/CoreRobin_0.1.18_x64_en-US.msi",
+      "name": "CoreRobin_0.1.19_x64_en-US.msi",
+      "size": 6844416,
+      "sha256": "d7efaccace35e12c1626b4cf1755a6583fa27a7fa305ace81910846f35a39eba",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.18_amd64.AppImage",
-      "size": 85596664,
-      "sha256": "e25f05e4b3524fc76e37de9e1480e80ba4b9234218a39e1cda3448646be2b3c6",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.18/CoreRobin_0.1.18_amd64.AppImage",
+      "name": "CoreRobin_0.1.19_amd64.AppImage",
+      "size": 85633528,
+      "sha256": "68216954dd601e6f55a3ebdeaa1b5e1703a08621971c26e5c9202723588e2fdf",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.18_amd64.deb",
-      "size": 8427684,
-      "sha256": "e574034bca28a7a6c6c363eb610d8e7603d9852a0304c151a4e38337c1b292f0",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.18/CoreRobin_0.1.18_amd64.deb",
+      "name": "CoreRobin_0.1.19_amd64.deb",
+      "size": 8447356,
+      "sha256": "c7991f2a2a4e1996c8226d9af9e6db4e1a37ae6b3da759ac20be9ebab2e86c2f",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,34 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.18/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.18/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10611,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.18/SHA256SUMS.sigstore.json"
+      "size": 10659,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.19",
+      "publishedAt": "2026-07-30T16:29:11Z",
+      "title": {
+        "zh-CN": "更可靠的长时间空间扫描",
+        "en": "More reliable long-running space scans"
+      },
+      "items": [
+        {
+          "zh-CN": "空间扫描在个别文件夹长时间无响应时会自动恢复并继续检查其他内容，保留已经完成的进度；无需一直停留在应用前台或手动重新扫描，恢复过程中仍可随时停止。",
+          "en": "Space scans now recover automatically when an individual folder remains unresponsive, keep completed progress, and continue checking other content; you no longer need to keep CoreRobin in the foreground or restart the scan manually, and can still stop at any time."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.18",
       "publishedAt": "2026-07-30T10:54:40Z",
