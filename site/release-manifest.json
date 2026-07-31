@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.19",
-  "name": "CoreRobin v0.1.19",
-  "publishedAt": "2026-07-30T16:29:11Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.19",
+  "tagName": "v0.1.20",
+  "name": "CoreRobin v0.1.20",
+  "publishedAt": "2026-07-31T03:13:11Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.20",
   "installers": [
     {
-      "name": "CoreRobin_0.1.19_aarch64.dmg",
-      "size": 7055819,
-      "sha256": "fcb6a6f5dfb86306e8aaf40fc4da806489a1aa725321f6575b7d6d9c1a85ac6a",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_aarch64.dmg",
+      "name": "CoreRobin_0.1.20_aarch64.dmg",
+      "size": 7125213,
+      "sha256": "9fedde0a3edfcaf59f5aa0797d30c48cd06273ffd97dd660c7924e9513690cc2",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.20/CoreRobin_0.1.20_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.19_x64.dmg",
-      "size": 7550262,
-      "sha256": "1bb92eda6512bd987478e6d9142bc165e08f77cfebcacc35e316bebf1a381783",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_x64.dmg",
+      "name": "CoreRobin_0.1.20_x64.dmg",
+      "size": 7598320,
+      "sha256": "85eeef37ee1b11c81a2b29ec3d3bb4748f2de8e0661950d5982b0394cf6da57a",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.20/CoreRobin_0.1.20_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.19_x64-setup.exe",
-      "size": 4927796,
-      "sha256": "037dcd16b147fc3e5469d7727c3fd6a0a3a16bfe95dc221855383f51adfe3211",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_x64-setup.exe",
+      "name": "CoreRobin_0.1.20_x64-setup.exe",
+      "size": 4955827,
+      "sha256": "d426403bae96e244b676470f8369799987fd837beb2d328d209abe42e00a7202",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.20/CoreRobin_0.1.20_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.19_x64_en-US.msi",
-      "size": 6844416,
-      "sha256": "d7efaccace35e12c1626b4cf1755a6583fa27a7fa305ace81910846f35a39eba",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_x64_en-US.msi",
+      "name": "CoreRobin_0.1.20_x64_en-US.msi",
+      "size": 6889472,
+      "sha256": "a68474fa4cbf3fe80de1d3cc99e0f9e0b323ccf44d78f7d46bd19ae4bde8af68",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.20/CoreRobin_0.1.20_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.19_amd64.AppImage",
-      "size": 85633528,
-      "sha256": "68216954dd601e6f55a3ebdeaa1b5e1703a08621971c26e5c9202723588e2fdf",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_amd64.AppImage",
+      "name": "CoreRobin_0.1.20_amd64.AppImage",
+      "size": 85666296,
+      "sha256": "968f909c6fd63d0b7dd414d0a5d1486afb5de40254a36133de60a9787d4f16b3",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.20/CoreRobin_0.1.20_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.19_amd64.deb",
-      "size": 8447356,
-      "sha256": "c7991f2a2a4e1996c8226d9af9e6db4e1a37ae6b3da759ac20be9ebab2e86c2f",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/CoreRobin_0.1.19_amd64.deb",
+      "name": "CoreRobin_0.1.20_amd64.deb",
+      "size": 8490562,
+      "sha256": "407a7b33c3783b031eb0ef0bafe5c4fb6d4e092ef3626d1393070ce433548213",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.20/CoreRobin_0.1.20_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,42 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.20/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.20/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10659,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.19/SHA256SUMS.sigstore.json"
+      "size": 10855,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.20/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.20",
+      "publishedAt": "2026-07-31T03:13:11Z",
+      "title": {
+        "zh-CN": "更稳定的后台更新与更顺手的进程和空间操作",
+        "en": "More reliable background updates and smoother process and storage workflows"
+      },
+      "items": [
+        {
+          "zh-CN": "进程页新增端口搜索与实时排序开关；关闭实时排序后，列表会保持单次排序结果，查看或操作进程时不再因采样更新不断跳动。",
+          "en": "The process page now supports port search and a live sorting toggle. With live sorting off, the list keeps its one-time order so rows no longer jump while you inspect or manage a process."
+        },
+        {
+          "zh-CN": "空间清理统一了结果卡片宽度和间距，路径支持逐级点击返回；存储页的最高占用可直接进入清理，长期未使用应用则集中到应用页查看。",
+          "en": "Space cleanup now uses consistent result-card sizing and spacing, with clickable path segments for moving back through folders. The highest-storage item opens cleanup directly, while long-unused apps are now grouped in the Applications area."
+        },
+        {
+          "zh-CN": "应用更新在隐藏主窗口或重新载入界面后会继续下载、校验和安装；重新打开会接回同一进度，传输失败时可直接重试。",
+          "en": "App updates now keep downloading, verifying, and installing when the main window is hidden or reloaded. Reopening the window reconnects to the same progress, and failed transfers can be retried directly."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.19",
       "publishedAt": "2026-07-30T16:29:11Z",
