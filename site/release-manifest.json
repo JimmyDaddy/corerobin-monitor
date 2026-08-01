@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.22",
-  "name": "CoreRobin v0.1.22",
-  "publishedAt": "2026-07-31T17:34:16Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.22",
+  "tagName": "v0.1.23",
+  "name": "CoreRobin v0.1.23",
+  "publishedAt": "2026-08-01T13:55:43Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.23",
   "installers": [
     {
-      "name": "CoreRobin_0.1.22_aarch64.dmg",
-      "size": 8124372,
-      "sha256": "f90bb8ce20437ec147c653b0f577b826286a77cf0f749827fd1ac466c55f42b4",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.22/CoreRobin_0.1.22_aarch64.dmg",
+      "name": "CoreRobin_0.1.23_aarch64.dmg",
+      "size": 8155472,
+      "sha256": "c9066fa82673a4f8bac22dd278f96aca882c5701f4f50282abe4d5affa018350",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.23/CoreRobin_0.1.23_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.22_x64.dmg",
-      "size": 8721168,
-      "sha256": "028f4f567d5c70f521c880f859e39c3efa60875d8cbd31c95cf6cdec88ea5cfe",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.22/CoreRobin_0.1.22_x64.dmg",
+      "name": "CoreRobin_0.1.23_x64.dmg",
+      "size": 8741780,
+      "sha256": "e8f6e2d63513e6def30f9d05daa954f311e03f0e06e974328d126a34dd46a23e",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.23/CoreRobin_0.1.23_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.22_x64-setup.exe",
-      "size": 5821089,
-      "sha256": "634857a79831e5fe11acd6f16ecc8b061388e992b301a641ffdc9f2d0f727976",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.22/CoreRobin_0.1.22_x64-setup.exe",
+      "name": "CoreRobin_0.1.23_x64-setup.exe",
+      "size": 5829921,
+      "sha256": "9af66f6601fc9a911edc167259efdfdd5a4fe998ddaa79a999dfb968eddabe19",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.23/CoreRobin_0.1.23_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.22_x64_en-US.msi",
-      "size": 7958528,
-      "sha256": "cd95444ee42a5a62477a0f681c72e8f85fd7befa0b31155acc986fb9a0a9a9c2",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.22/CoreRobin_0.1.22_x64_en-US.msi",
+      "name": "CoreRobin_0.1.23_x64_en-US.msi",
+      "size": 7974912,
+      "sha256": "1e5b7b5acac0cfd0ae9e02609aa6ee401b1342a5499d16f8996bea1d4c4d8ad7",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.23/CoreRobin_0.1.23_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.22_amd64.AppImage",
-      "size": 86768120,
-      "sha256": "9c4ad6f7126e4587c5853c86497fddba31d1924fb4a2b008dd62b8cccc8eaafd",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.22/CoreRobin_0.1.22_amd64.AppImage",
+      "name": "CoreRobin_0.1.23_amd64.AppImage",
+      "size": 86821368,
+      "sha256": "cda5de89cf7adb5bd3bec44a69291a076a816b64da2a265afc7a29eb27fa7c9c",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.23/CoreRobin_0.1.23_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.22_amd64.deb",
-      "size": 9696978,
-      "sha256": "0732ea24558e758aa0785b2247ae71b9b5cfbbb5ad06384c1dc3cdfee175a4d5",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.22/CoreRobin_0.1.22_amd64.deb",
+      "name": "CoreRobin_0.1.23_amd64.deb",
+      "size": 9727780,
+      "sha256": "4bfef8a6aa2ed06bd39ba37affb39cb11631cdbccab1e679849864822831ce01",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.23/CoreRobin_0.1.23_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,42 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.22/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.23/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.22/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.23/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10647,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.22/SHA256SUMS.sigstore.json"
+      "size": 10523,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.23/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.23",
+      "publishedAt": "2026-08-01T13:55:43Z",
+      "title": {
+        "zh-CN": "更稳定的完整扫描目录浏览",
+        "en": "More reliable Full Scan navigation"
+      },
+      "items": [
+        {
+          "zh-CN": "修复完整扫描内容较多时，Users 等重要顶层文件夹偶尔无法打开或被归入“较小对象”的问题；这些目录现在会始终保留并可继续逐层浏览。",
+          "en": "Fixed an issue where important top-level folders such as Users could become unavailable or be grouped under Smaller items in large Full Scan results. These folders now remain directly accessible for continued navigation."
+        },
+        {
+          "zh-CN": "扫描在后台完成后，重新进入空间清理页面会自动加载最新结果，不再停留在空状态或要求重复扫描。",
+          "en": "When a scan finishes in the background, reopening Space Cleanup now loads the latest result automatically instead of showing an empty state or requiring another scan."
+        },
+        {
+          "zh-CN": "更新扫描结果时会保留最近一份可用结果；如果新结果暂时不可用，目录浏览仍可继续，不再突然提示目录索引缺失。",
+          "en": "CoreRobin now keeps the most recent usable scan while results are updated, so folder navigation can continue if a newer result is temporarily unavailable instead of failing with a missing-index message."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.22",
       "publishedAt": "2026-07-31T17:34:16Z",
