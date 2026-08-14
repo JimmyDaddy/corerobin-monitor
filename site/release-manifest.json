@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.25",
-  "name": "CoreRobin v0.1.25",
-  "publishedAt": "2026-08-07T01:57:21Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.25",
+  "tagName": "v0.1.26",
+  "name": "CoreRobin v0.1.26",
+  "publishedAt": "2026-08-14T18:18:49Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.26",
   "installers": [
     {
-      "name": "CoreRobin_0.1.25_aarch64.dmg",
-      "size": 8232200,
-      "sha256": "269ea37e2fbfeeea380d8b5d3821ab0a1ef7d06278bd99a5558222b4b90834d7",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.25/CoreRobin_0.1.25_aarch64.dmg",
+      "name": "CoreRobin_0.1.26_aarch64.dmg",
+      "size": 8265637,
+      "sha256": "d701bab13e7ac7474cf67be9a45ece86d5c3dcc92f236ffaae05c61c07514476",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.26/CoreRobin_0.1.26_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.25_x64.dmg",
-      "size": 8848670,
-      "sha256": "306e06b1fb1f16efb6e0ca577fd1ef1c13faa26a97b1238720955446dfb9bec8",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.25/CoreRobin_0.1.25_x64.dmg",
+      "name": "CoreRobin_0.1.26_x64.dmg",
+      "size": 8862841,
+      "sha256": "b5ac43625982bcad2d5ac84485d0f30ec4cdceff5111fed8373a3ccdee045c28",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.26/CoreRobin_0.1.26_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.25_x64-setup.exe",
-      "size": 5894771,
-      "sha256": "7f3fff531dad23a4cae49221b190ae7c4ecee5e8eca554a3fbb17dfcfdea3b9f",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.25/CoreRobin_0.1.25_x64-setup.exe",
+      "name": "CoreRobin_0.1.26_x64-setup.exe",
+      "size": 5927431,
+      "sha256": "53062c4f48668fa145c2b935c28290a51a00ab44b5fa6aa025dbb0f07c6d0369",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.26/CoreRobin_0.1.26_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.25_x64_en-US.msi",
-      "size": 8077312,
-      "sha256": "6776e6984a9053a95188b451b0bc64f2f0cceb7c19daaa13ba3987a398028753",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.25/CoreRobin_0.1.25_x64_en-US.msi",
+      "name": "CoreRobin_0.1.26_x64_en-US.msi",
+      "size": 8105984,
+      "sha256": "5b433d8244c069010b486f61c446919ad3702cc945ccab5113abe8f66b2ff48c",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.26/CoreRobin_0.1.26_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.25_amd64.AppImage",
-      "size": 86903288,
-      "sha256": "d15971de0031ce99f709f681a25805789eb7aa2be23eb3b5c2f28ea32ceaf038",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.25/CoreRobin_0.1.25_amd64.AppImage",
+      "name": "CoreRobin_0.1.26_amd64.AppImage",
+      "size": 86899192,
+      "sha256": "1e2e7e1db699db55423221f092957c89722fb24a53607ae5fc30f106072332b4",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.26/CoreRobin_0.1.26_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.25_amd64.deb",
-      "size": 9833782,
-      "sha256": "fb4a35337d21725b2e9d3c5d75cfcbf12b23c056ddb5084653789e08658af91b",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.25/CoreRobin_0.1.25_amd64.deb",
+      "name": "CoreRobin_0.1.26_amd64.deb",
+      "size": 9816976,
+      "sha256": "a4222c1dfa53b5655e65366a6667fb2be118412cd23b02ff10224416525677c7",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.26/CoreRobin_0.1.26_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,58 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.25/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.26/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.25/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.26/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10759,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.25/SHA256SUMS.sigstore.json"
+      "size": 10803,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.26/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.26",
+      "publishedAt": "2026-08-14T18:18:49Z",
+      "title": {
+        "zh-CN": "应用中心与更可靠的后台任务",
+        "en": "Application Center and more reliable background tasks"
+      },
+      "items": [
+        {
+          "zh-CN": "磁盘扫描完成后，扫描范围内的所有可读文件夹都会保存在本机索引中；连续打开深层目录、应用包和系统目录时不再临时追加扫描，也不会因为刷新其他文件夹而丢失已经可以浏览的层级。",
+          "en": "After a disk scan completes, every readable folder in the scanned area is kept in the local index. You can open deep folders, app bundles and system directories without extra scans, and refreshing another folder no longer discards levels that were already available."
+        },
+        {
+          "zh-CN": "清理结果新增扇形图与可搜索列表两种浏览方式；列表支持按名称或大小排序、分页和多选加入清理篮。",
+          "en": "Cleanup results now offer both a radial map and a searchable list; the list supports sorting by name or size, pagination and adding multiple items to the cleanup basket."
+        },
+        {
+          "zh-CN": "应用入口整合为应用中心，可在当前影响、历史归因、启动项与网络关联、卸载管理之间直接切换。",
+          "en": "Application tools are now combined in the Application Center, where you can switch directly between current impact, historical attribution, startup and network relationships, and uninstall management."
+        },
+        {
+          "zh-CN": "顶栏新增任务中心，集中显示空间扫描、文件夹刷新、文件检查、启动项读取和应用更新的进度、失败、取消与重试操作。",
+          "en": "A new task center in the top bar keeps disk scans, folder refreshes, file checks, startup inventory and app updates visible in one place, including progress, failures, cancellation and retry actions."
+        },
+        {
+          "zh-CN": "启动项按责任应用归组并区分登录、后台、停用与系统项目；操作只在最终确认时复核当前目标，完成后可直接撤销。",
+          "en": "Startup items are grouped by their responsible app and separated into login, background, disabled and system items. The selected target is rechecked only at final confirmation, and completed changes can be undone directly."
+        },
+        {
+          "zh-CN": "修复后台运行时历史首批数据可能被覆盖、更新检查重试中断、采样失联后不恢复，以及通知权限重新开启后已有异常不再提醒的问题。",
+          "en": "Fixed cases where the first batch of history could be overwritten in the background, update retries could stop, sampling would not recover after losing contact, and existing issues would not be reported after notifications were re-enabled."
+        },
+        {
+          "zh-CN": "进程详情刷新失败时保留上一次可用信息，并提供就地重试，不再清空整个详情面板。",
+          "en": "When process details fail to refresh, the last available information now remains visible with an inline retry instead of clearing the entire details panel."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.25",
       "publishedAt": "2026-08-07T01:57:21Z",
