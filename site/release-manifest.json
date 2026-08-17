@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.27",
-  "name": "CoreRobin v0.1.27",
-  "publishedAt": "2026-08-15T15:03:37Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.27",
+  "tagName": "v0.1.28",
+  "name": "CoreRobin v0.1.28",
+  "publishedAt": "2026-08-17T07:29:56Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.28",
   "installers": [
     {
-      "name": "CoreRobin_0.1.27_aarch64.dmg",
-      "size": 8229237,
-      "sha256": "c693e385edb7a5e6d7e83b44dce4c0d0b14cd1601ae4918b028458f12f610a8b",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.27/CoreRobin_0.1.27_aarch64.dmg",
+      "name": "CoreRobin_0.1.28_aarch64.dmg",
+      "size": 8224636,
+      "sha256": "9e083924202c1e6393063f6f13ed0e49a4d9724aa74c2b5268cd73483e2358fc",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.27_x64.dmg",
-      "size": 8815859,
-      "sha256": "cbd62eacd345a44051b1e3dcf0790cc84091b32d9f900830065da070d20478f6",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.27/CoreRobin_0.1.27_x64.dmg",
+      "name": "CoreRobin_0.1.28_x64.dmg",
+      "size": 8806860,
+      "sha256": "710fbc491257bd396ba031f76b5f88c892994670f78f490b090185bc09be71e0",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.27_x64-setup.exe",
-      "size": 5896845,
-      "sha256": "d2c4fb539f7f6aa11e8ae9728b973b2a0fb1ee5b757cb9d5ab28bf90af5d0644",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.27/CoreRobin_0.1.27_x64-setup.exe",
+      "name": "CoreRobin_0.1.28_x64-setup.exe",
+      "size": 5908178,
+      "sha256": "272394bab8a27fe5d60b54a4059185e8267f034a4dc615f6bb02f2443c72b9a2",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.27_x64_en-US.msi",
-      "size": 8048640,
-      "sha256": "991b687d58fe304063f77c16fdb0734393869016b5b81bb43f8f37e60e18b8b0",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.27/CoreRobin_0.1.27_x64_en-US.msi",
+      "name": "CoreRobin_0.1.28_x64_en-US.msi",
+      "size": 8052736,
+      "sha256": "cbaf262d818e868638b07e81f7db1fe9b182fc9c941ca83ea3cc99fe31cca26e",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.27_amd64.AppImage",
-      "size": 86878712,
-      "sha256": "24bdcfb8594490855b09a16179acbcbd4f9f8394cb519e5b1065cf51ec10f1aa",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.27/CoreRobin_0.1.27_amd64.AppImage",
+      "name": "CoreRobin_0.1.28_amd64.AppImage",
+      "size": 86866424,
+      "sha256": "6c16286715986bc969283560f04f5df88555e827ec8218955578b6b0169f46f7",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.27_amd64.deb",
-      "size": 9805916,
-      "sha256": "16f07e8ee1ea61e56615938237b9636d9e7126016db827677fbd9407a2766ab7",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.27/CoreRobin_0.1.27_amd64.deb",
+      "name": "CoreRobin_0.1.28_amd64.deb",
+      "size": 9795590,
+      "sha256": "ffb25d0415265ec366e2e00501467ce7efbcacd1be08f5dea08d77ed8c2d19d5",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,34 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.27/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.27/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10663,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.27/SHA256SUMS.sigstore.json"
+      "size": 10859,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.28",
+      "publishedAt": "2026-08-17T07:29:56Z",
+      "title": {
+        "zh-CN": "更可靠的长时间空间扫描",
+        "en": "More reliable long-running space scans"
+      },
+      "items": [
+        {
+          "zh-CN": "修复完整磁盘扫描在文件较多、整理空间地图耗时较长时被误判为异常文件夹并中断的问题；扫描完成文件读取后会明确显示正在整理空间地图，期间仍可取消，并能在切换页面或重新打开窗口后继续显示正确状态。",
+          "en": "Fixed full-disk scans being interrupted when large file sets made space-map finalization look like an unresponsive folder. CoreRobin now clearly shows when it is organizing the space map, keeps the task cancellable, and restores the correct state after navigating away or reopening the window."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.27",
       "publishedAt": "2026-08-15T15:03:37Z",
