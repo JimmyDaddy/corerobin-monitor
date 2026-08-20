@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.28",
-  "name": "CoreRobin v0.1.28",
-  "publishedAt": "2026-08-17T07:29:56Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.28",
+  "tagName": "v0.1.29",
+  "name": "CoreRobin v0.1.29",
+  "publishedAt": "2026-08-20T00:14:20Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.29",
   "installers": [
     {
-      "name": "CoreRobin_0.1.28_aarch64.dmg",
-      "size": 8224636,
-      "sha256": "9e083924202c1e6393063f6f13ed0e49a4d9724aa74c2b5268cd73483e2358fc",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_aarch64.dmg",
+      "name": "CoreRobin_0.1.29_aarch64.dmg",
+      "size": 8227439,
+      "sha256": "4e0ed9417661ffc944b8d8582b7cc3d8dec95cc586701a932ee481eb7262f94a",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.29/CoreRobin_0.1.29_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.28_x64.dmg",
-      "size": 8806860,
-      "sha256": "710fbc491257bd396ba031f76b5f88c892994670f78f490b090185bc09be71e0",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_x64.dmg",
+      "name": "CoreRobin_0.1.29_x64.dmg",
+      "size": 8802270,
+      "sha256": "3b9aea627996494dae5718d6a7bc8071001d2bbb8509979852900a926c6f9b9f",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.29/CoreRobin_0.1.29_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.28_x64-setup.exe",
-      "size": 5908178,
-      "sha256": "272394bab8a27fe5d60b54a4059185e8267f034a4dc615f6bb02f2443c72b9a2",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_x64-setup.exe",
+      "name": "CoreRobin_0.1.29_x64-setup.exe",
+      "size": 5895888,
+      "sha256": "e29ba980618cdf42491bd7e161a9a59af0005394f4a48862244de1ab7c996291",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.29/CoreRobin_0.1.29_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.28_x64_en-US.msi",
-      "size": 8052736,
-      "sha256": "cbaf262d818e868638b07e81f7db1fe9b182fc9c941ca83ea3cc99fe31cca26e",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_x64_en-US.msi",
+      "name": "CoreRobin_0.1.29_x64_en-US.msi",
+      "size": 8093696,
+      "sha256": "dc8677076c1c71b4a6da9941aec06c805b1268187f789e65ea7a117c29bcf41c",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.29/CoreRobin_0.1.29_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.28_amd64.AppImage",
-      "size": 86866424,
-      "sha256": "6c16286715986bc969283560f04f5df88555e827ec8218955578b6b0169f46f7",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_amd64.AppImage",
+      "name": "CoreRobin_0.1.29_amd64.AppImage",
+      "size": 86907384,
+      "sha256": "2c087caf5d02d8659de4ada77a983fb6e59de296dc9d9ecdac289056dffa1912",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.29/CoreRobin_0.1.29_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.28_amd64.deb",
-      "size": 9795590,
-      "sha256": "ffb25d0415265ec366e2e00501467ce7efbcacd1be08f5dea08d77ed8c2d19d5",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/CoreRobin_0.1.28_amd64.deb",
+      "name": "CoreRobin_0.1.29_amd64.deb",
+      "size": 9832342,
+      "sha256": "648ef4fdef0770fbdbd8c5fc92f02e4a7b5f89f7b424cc465ed09a5d0bcb4e18",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.29/CoreRobin_0.1.29_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,38 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.29/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.29/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10859,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.28/SHA256SUMS.sigstore.json"
+      "size": 11139,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.29/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.29",
+      "publishedAt": "2026-08-20T00:14:20Z",
+      "title": {
+        "zh-CN": "空间扫描结果更可靠",
+        "en": "More reliable space scan results"
+      },
+      "items": [
+        {
+          "zh-CN": "修复完整磁盘扫描在文件读取已经结束后，仍可能被误判为根目录长时间无进展并显示无法继续跳过异常文件夹的问题；空间地图整理期间会保持正确状态，不再错误中断。",
+          "en": "Fixed full-disk scans being incorrectly interrupted after file traversal had already finished, sometimes reporting that CoreRobin could not skip an unresponsive folder. Space-map preparation now remains in the correct state until results are ready."
+        },
+        {
+          "zh-CN": "扫描结果现在会优先完成并展示，本地索引占用整理改到后台进行；大型或长期使用的扫描索引不再拖延结果出现。",
+          "en": "Scan results now finish and appear before local index storage is tidied in the background, so large or long-lived scan indexes no longer delay the result view."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.28",
       "publishedAt": "2026-08-17T07:29:56Z",
