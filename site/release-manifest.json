@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.30",
-  "name": "CoreRobin v0.1.30",
-  "publishedAt": "2026-08-29T13:52:12Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.30",
+  "tagName": "v0.1.31",
+  "name": "CoreRobin v0.1.31",
+  "publishedAt": "2026-09-05T08:38:47Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.31",
   "installers": [
     {
-      "name": "CoreRobin_0.1.30_aarch64.dmg",
-      "size": 8244533,
-      "sha256": "b4920cf96087ee0a0badd323cee293b798533529470fe331749613f1396f1f65",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.30/CoreRobin_0.1.30_aarch64.dmg",
+      "name": "CoreRobin_0.1.31_aarch64.dmg",
+      "size": 11930462,
+      "sha256": "cc0cd164c221ad030fb0dc2954fe5a0f759daacc0fa4701eeacf19f34712ce90",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.31/CoreRobin_0.1.31_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.30_x64.dmg",
-      "size": 8818604,
-      "sha256": "a59605866a1d0a06216b94855a31e49dadf965dae0a25926ddddfe5eae0dc860",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.30/CoreRobin_0.1.30_x64.dmg",
+      "name": "CoreRobin_0.1.31_x64.dmg",
+      "size": 12644625,
+      "sha256": "b61695d932b9a8431d9887abb01518f57217a6d465d9d8b86e2982cb58f59047",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.31/CoreRobin_0.1.31_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.30_x64-setup.exe",
-      "size": 5919918,
-      "sha256": "207a057969dc66b806df9bcf8a5233bff4b2fc32f916d6a9ded7a557e4fdc5fb",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.30/CoreRobin_0.1.30_x64-setup.exe",
+      "name": "CoreRobin_0.1.31_x64-setup.exe",
+      "size": 9334071,
+      "sha256": "4a3f4b3af8cd97a169a0e7bc7b2294d530804ee03bb0d3384cf8b2f7f1f0e321",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.31/CoreRobin_0.1.31_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.30_x64_en-US.msi",
-      "size": 8110080,
-      "sha256": "78c22fac525666ab2e5a984eb5eff86977175f3c44b0f3547b28ad70002e812a",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.30/CoreRobin_0.1.30_x64_en-US.msi",
+      "name": "CoreRobin_0.1.31_x64_en-US.msi",
+      "size": 11788288,
+      "sha256": "08bb4cead81006bf66370b69d12e3f9b9af423798b0d2f82ef61ab671878ec6c",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.31/CoreRobin_0.1.31_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.30_amd64.AppImage",
-      "size": 86899192,
-      "sha256": "3c6d68f9d2d186ba8992b78a13060a0e2fc2e7b9c85ad570d9dc37e2e315a7c5",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.30/CoreRobin_0.1.30_amd64.AppImage",
+      "name": "CoreRobin_0.1.31_amd64.AppImage",
+      "size": 90552824,
+      "sha256": "e8e6f99ab649560d4695ccb0dd001d0d49ec549305555f575acc4789ae1c5dd0",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.31/CoreRobin_0.1.31_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.30_amd64.deb",
-      "size": 9835412,
-      "sha256": "65fc9a92e44e0135249c6e543a81e053ab67b7ed7a6835eda242d82b1f0b805c",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.30/CoreRobin_0.1.30_amd64.deb",
+      "name": "CoreRobin_0.1.31_amd64.deb",
+      "size": 13644474,
+      "sha256": "37e5bbcd0891cc9edef3259dc156607cb5ddd14f78008facd510560e1fa9b90b",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.31/CoreRobin_0.1.31_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,34 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.30/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.31/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.30/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.31/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10951,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.30/SHA256SUMS.sigstore.json"
+      "size": 10947,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.31/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.31",
+      "publishedAt": "2026-09-05T08:38:47Z",
+      "title": {
+        "zh-CN": "工具箱新增屏幕吸管取色",
+        "en": "Add a screen eyedropper to the Toolbox"
+      },
+      "items": [
+        {
+          "zh-CN": "视觉取色器新增“从屏幕取色”，在 macOS 10.15 及更高版本中可以直接从屏幕任意位置取色，并将结果同步到 HEX、RGB、HSL、HSV 和 OKLCH 格式。",
+          "en": "The visual color picker now includes a screen eyedropper on macOS 10.15 and later. Pick a color from anywhere on the screen and keep HEX, RGB, HSL, HSV, and OKLCH outputs in sync."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.30",
       "publishedAt": "2026-08-29T13:52:12Z",
