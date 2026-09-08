@@ -57,6 +57,7 @@
           <a href="#settings"><span>09</span><span data-zh="设置" data-en="Settings">设置</span></a>
           <a href="#safety"><span>10</span><span data-zh="安全与隐私" data-en="Safety & privacy">安全与隐私</span></a>
           <a href="#troubleshooting"><span>11</span><span data-zh="常见问题" data-en="Troubleshooting">常见问题</span></a>
+          <a href="#ai-assistant"><span>12</span><span data-zh="AI 助手与能力中心" data-en="AI assistant &amp; capability center">AI 助手与能力中心</span></a>
         </nav>
       </aside>
 
@@ -74,6 +75,7 @@
           <option value="#settings" data-zh="09 设置" data-en="09 Settings">09 设置</option>
           <option value="#safety" data-zh="10 安全与隐私" data-en="10 Safety & privacy">10 安全与隐私</option>
           <option value="#troubleshooting" data-zh="11 常见问题" data-en="11 Troubleshooting">11 常见问题</option>
+          <option value="#ai-assistant" data-zh="AI 助手与能力中心" data-en="AI assistant &amp; capability center">AI 助手与能力中心</option>
         </select>
       </div>
 
@@ -171,7 +173,7 @@
             <div><strong data-zh="结束进程" data-en="Stopping a process">结束进程</strong><span data-zh="应用会在最后一步要求确认，并再次核对目标。CoreRobin 会阻止你结束系统关键进程或 CoreRobin 自身。" data-en="The app asks for confirmation and checks the target again. Critical system processes and CoreRobin itself cannot be stopped by mistake.">应用会在最后一步要求确认，并再次核对目标。CoreRobin 会阻止你结束系统关键进程或 CoreRobin 自身。</span></div>
             <div><strong data-zh="永久删除" data-en="Permanent deletion">永久删除</strong><span data-zh="只处理你个人文件夹或明确允许的临时目录边界内、属于当前用户的普通文件和文件夹。目录根本身、废纸篓、链接、其他用户与其他磁盘仍受保护。" data-en="Only current-user-owned regular files and folders inside your home or explicitly approved temporary-directory boundaries can be removed. The roots themselves, Trash, links, other users, and other disks remain protected.">只处理你个人文件夹或明确允许的临时目录边界内、属于当前用户的普通文件和文件夹。目录根本身、废纸篓、链接、其他用户与其他磁盘仍受保护。</span></div>
             <div><strong data-zh="系统权限" data-en="System permissions">系统权限</strong><span data-zh="CoreRobin 不会自动申请更高权限。看不到某些信息时，页面会直接说明。" data-en="CoreRobin does not elevate itself automatically. When the system hides information, the page tells you.">CoreRobin 不会自动申请更高权限。看不到某些信息时，页面会直接说明。</span></div>
-            <div><strong data-zh="你的数据" data-en="Your data">你的数据</strong><span data-zh="监控结果、扫描信息、进程记录、历史和连接信息只保存在这台电脑上，不会上传或同步。隐私中心会显示每类数据的大小、条目数、更新时间和保留期限，并支持分类清除。普通扫描只读取元数据；主动重复文件检查会在本机读取候选内容计算哈希。" data-en="Monitoring, file, process, history, and connection data stay on this computer and are not uploaded or synced. The privacy center shows size, item count, last update, and retention for each category and can clear them separately. Normal scans read metadata only; explicit duplicate checks read candidates locally to calculate hashes.">监控结果、扫描信息、进程记录、历史和连接信息只保存在这台电脑上，不会上传或同步。隐私中心会显示每类数据的大小、条目数、更新时间和保留期限，并支持分类清除。普通扫描只读取元数据；主动重复文件检查会在本机读取候选内容计算哈希。</span><a class="text-link text-link--inline" href="/privacy/" data-zh="阅读隐私说明" data-en="Read the privacy notice">阅读隐私说明</a></div>
+            <div><strong data-zh="你的数据" data-en="Your data">你的数据</strong><span data-zh="监控数据默认在本机处理。AI 请求会将消息、所附历史、所选上下文及允许的任务结果发送给配置的模型服务。请核对该服务的隐私与计费政策；本机地址不保证离线处理。" data-en="Monitoring stays local by default. AI requests send messages, included history, selected context, and allowed task results to your configured model service. Check its privacy and billing policies; a local address does not guarantee offline processing.">监控数据默认在本机处理。AI 请求会将消息、所附历史、所选上下文及允许的任务结果发送给配置的模型服务。请核对该服务的隐私与计费政策；本机地址不保证离线处理。</span><a class="text-link text-link--inline" href="/privacy/" data-zh="阅读隐私说明" data-en="Read the privacy notice">阅读隐私说明</a></div>
           </div>
         </section>
 
@@ -189,6 +191,13 @@
             <details><summary data-zh="如何清空历史或完整卸载？" data-en="How do I clear history or uninstall completely?">如何清空历史或完整卸载？</summary><p data-zh="可以在“关于与支持”清除全部本机数据，也可分别清除历史与扫描。卸载前先在设置中关闭登录后启动，macOS 用户撤销完全磁盘访问权限，再从状态栏退出并确认 CoreRobin 进程已停止。各平台残留位置见隐私说明。" data-en="Clear all local data from About & Support, or clear history and scans separately. Before uninstalling, turn off launch after sign-in, revoke Full Disk Access on macOS, then quit from the menu bar and confirm that the CoreRobin process has stopped. See the Privacy Notice for per-platform leftover locations.">可以在“关于与支持”清除全部本机数据，也可分别清除历史与扫描。卸载前先在设置中关闭登录后启动，macOS 用户撤销完全磁盘访问权限，再从状态栏退出并确认 CoreRobin 进程已停止。各平台残留位置见隐私说明。</p></details>
           </div>
           <div class="guide-help"><div><strong data-zh="还是遇到了问题？" data-en="Still having trouble?">还是遇到了问题？</strong><p data-zh="先在“关于与支持”复制版本和诊断摘要，预览并隐藏隐私信息，再在 GitHub 写清楚刚才做了什么以及看到的错误。安全问题请使用私密漏洞报告。" data-en="Copy the version and diagnostic summary from About & Support, preview and redact it, then tell us what you were doing and what you saw. Use private vulnerability reporting for security issues.">先在“关于与支持”复制版本和诊断摘要，预览并隐藏隐私信息，再在 GitHub 写清楚刚才做了什么以及看到的错误。安全问题请使用私密漏洞报告。</p></div><div class="guide-help__actions"><a class="button button--primary" href="https://github.com/JimmyDaddy/corerobin-monitor/issues/new/choose" rel="noreferrer"><span data-zh="提交问题" data-en="Report a problem">提交问题</span><span>↗</span></a><a class="text-link" href="/releases/" data-zh="查看版本记录" data-en="Read Release Notes">查看版本记录</a><a class="text-link" href="https://github.com/JimmyDaddy/corerobin-monitor/security/advisories/new" data-zh="私密安全报告" data-en="Private security report">私密安全报告</a></div></div>
+        </section>
+        <section class="guide-section" id="ai-assistant" data-reveal>
+          <span class="guide-section__number">12</span><h2 data-zh="AI 助手与能力中心" data-en="AI assistant &amp; capability center">AI 助手与能力中心</h2>
+          <p data-zh="在设置中启用 AI，添加服务和模型，再按需选择设备上下文。发送前可预览接收方、证据和所附历史。模型回复可能有误，请核对实际结果。" data-en="Enable AI in settings, add your provider and model, then choose device context as needed. Preview the recipient, evidence, and included history before sending. Model replies can be wrong; check the actual results.">在设置中启用 AI，添加服务和模型，再按需选择设备上下文。发送前可预览接收方、证据和所附历史。模型回复可能有误，请核对实际结果。</p><p data-zh="设备、进程、网络和磁盘检查会展示实际结果。" data-en="Device, process, network, and disk checks show their actual results.">设备、进程、网络和磁盘检查会展示实际结果。</p><p data-zh="结束进程或把文件移到废纸篓前，先复核目标并确认。" data-en="Review targets before stopping a process or moving files to Trash.">结束进程或把文件移到废纸篓前，先复核目标并确认。</p>
+          <div class="guide-callout guide-callout--info"><strong data-zh="模型由你选择，分享内容由你决定。" data-en="Your model. Your choice of context.">模型由你选择，分享内容由你决定。</strong><span data-zh="监控数据默认在本机处理。AI 请求会将消息、所附历史、所选上下文及允许的任务结果发送给配置的模型服务。请核对该服务的隐私与计费政策；本机地址不保证离线处理。" data-en="Monitoring stays local by default. AI requests send messages, included history, selected context, and allowed task results to your configured model service. Check its privacy and billing policies; a local address does not guarantee offline processing.">监控数据默认在本机处理。AI 请求会将消息、所附历史、所选上下文及允许的任务结果发送给配置的模型服务。请核对该服务的隐私与计费政策；本机地址不保证离线处理。</span></div>
+          <h3 id="capability-center" data-zh="能力中心" data-en="Capability center">能力中心</h3><p data-zh="直接使用清理、进程、网络和历史工具。本地输入和操作结果不会自动发送给模型。" data-en="Run cleanup, process, network, and history tools directly. Local inputs and results are not automatically sent to a model.">直接使用清理、进程、网络和历史工具。本地输入和操作结果不会自动发送给模型。</p>
+          <p data-zh="对话保存在本机，可随时删除。清空对话会保留连接和凭据，也不会删除服务商收到的副本。保存的凭据使用系统凭据存储；临时凭据保留到应用退出。删除连接可移除其凭据。" data-en="Conversations are saved locally and can be deleted. Clearing chats keeps connections and credentials, and does not erase provider copies. Saved credentials use the OS credential store; temporary credentials last until app exit. Delete a connection to remove its credential.">对话保存在本机，可随时删除。清空对话会保留连接和凭据，也不会删除服务商收到的副本。保存的凭据使用系统凭据存储；临时凭据保留到应用退出。删除连接可移除其凭据。</p>
         </section>
       </article>
     </main>

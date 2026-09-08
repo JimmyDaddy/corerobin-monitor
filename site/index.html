@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#080d12" />
     <meta name="description" data-content-zh="CoreRobin 把 CPU、内存、磁盘、网络和正在运行的应用放进一个清晰的桌面界面，帮你快速找到电脑变慢或空间不足的原因。" data-content-en="CoreRobin brings CPU, memory, storage, network, and running apps into one clear desktop view so you can find slowdowns and free up space." content="CoreRobin 把 CPU、内存、磁盘、网络和正在运行的应用放进一个清晰的桌面界面，帮你快速找到电脑变慢或空间不足的原因。" />
     <meta property="og:title" data-content-zh="CoreRobin — 排查电脑变慢与磁盘空间不足" data-content-en="CoreRobin — Find slowdowns and free up space" content="CoreRobin — 排查电脑变慢与磁盘空间不足" />
-    <meta property="og:description" data-content-zh="看状态、找原因、清空间。重要操作由你确认，数据留在本机。" data-content-en="See the status, find the cause, and free up space. You confirm every important action; data stays local." content="看状态、找原因、清空间。重要操作由你确认，数据留在本机。" />
+    <meta property="og:description" data-content-zh="本机监控，自主选择 AI 分享内容。" data-content-en="Local monitoring. AI sharing you control." content="本机监控，自主选择 AI 分享内容。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://monitor-app.corerobin.com/" />
     <meta property="og:image" content="https://monitor-app.corerobin.com/assets/social-card.png" />
@@ -236,6 +236,30 @@
         <p class="showcase-privacy" data-reveal><i></i><span data-zh="全部截图来自真实产品界面，并使用脱敏演示数据；不包含设备型号、用户名、真实路径或网络身份。" data-en="All screenshots come from the real product interface and use sanitized demo data. No device model, username, real path, or network identity is shown.">全部截图来自真实产品界面，并使用脱敏演示数据；不包含设备型号、用户名、真实路径或网络身份。</span></p>
       </section>
 
+
+      <section class="ai-showcase section-shell" id="ai-assistant" aria-labelledby="ai-heading">
+        <div class="ai-showcase__intro" data-reveal>
+          <span class="eyebrow-text" data-zh="AI 助手与能力中心" data-en="AI assistant &amp; capability center">AI 助手与能力中心</span>
+          <h2 id="ai-heading" data-zh="问问 Robin，下一步更清楚。" data-en="Ask Robin. See what happens next.">问问 Robin，下一步更清楚。</h2>
+          <p data-zh="连接自己的本地或云端模型，询问电脑状态、查看检查过程，并在执行操作前确认。" data-en="Connect your own local or cloud model. Ask about your computer, follow the checks, and review actions before they run.">连接自己的本地或云端模型，询问电脑状态、查看检查过程，并在执行操作前确认。</p>
+          <a class="button button--primary" href="/guide/#ai-assistant" data-zh="配置你的 AI 助手" data-en="Set up your assistant">配置你的 AI 助手</a>
+          <small class="ai-showcase__privacy" data-zh="模型由你选择，分享内容由你决定。" data-en="Your model. Your choice of context.">模型由你选择，分享内容由你决定。</small>
+        </div>
+        <figure class="ai-flow" data-reveal>
+          <figcaption data-zh="使用流程示意" data-en="Example workflow">使用流程示意</figcaption>
+          <ol>
+            <li><span class="ai-flow__step" aria-hidden="true">01</span><div><h3 data-zh="说说你遇到的问题" data-en="Ask a question">说说你遇到的问题</h3><p class="ai-flow__question" data-zh="为什么电脑变慢了？" data-en="Why is my computer slow?">为什么电脑变慢了？</p></div></li>
+            <li><span class="ai-flow__step" aria-hidden="true">02</span><div><h3 data-zh="查看检查结果" data-en="Inspect the results">查看检查结果</h3><p data-zh="设备、进程、网络和磁盘检查会展示实际结果。" data-en="Device, process, network, and disk checks show their actual results.">设备、进程、网络和磁盘检查会展示实际结果。</p></div></li>
+            <li><span class="ai-flow__step" aria-hidden="true">03</span><div><h3 data-zh="确认后再操作" data-en="Confirm the action">确认后再操作</h3><p data-zh="结束进程或把文件移到废纸篓前，先复核目标并确认。" data-en="Review targets before stopping a process or moving files to Trash.">结束进程或把文件移到废纸篓前，先复核目标并确认。</p></div></li>
+          </ol>
+        </figure>
+        <div class="ai-showcase__capabilities" data-reveal>
+          <span class="ai-showcase__icon" aria-hidden="true">↗</span>
+          <div><h3 data-zh="能力中心" data-en="Capability center">能力中心</h3><p data-zh="直接使用清理、进程、网络和历史工具。本地输入和操作结果不会自动发送给模型。" data-en="Run cleanup, process, network, and history tools directly. Local inputs and results are not automatically sent to a model.">直接使用清理、进程、网络和历史工具。本地输入和操作结果不会自动发送给模型。</p></div>
+          <a class="text-link" href="/guide/#capability-center" data-zh="能力中心" data-en="Capability center">能力中心</a>
+        </div>
+      </section>
+
       <section class="capabilities section-shell" id="capabilities">
         <div class="section-heading section-heading--split" data-reveal>
           <div>
@@ -325,7 +349,7 @@
             <h2 data-zh="结束进程和删除文件，都要经过你的确认。" data-en="Processes are stopped and files are deleted only when you confirm.">结束进程和删除文件，都要经过你的确认。</h2>
             <p data-zh="CoreRobin 不会自动结束进程或删除文件。如果进程已经退出，或文件在扫描后发生变化，CoreRobin 会取消这次操作。" data-en="CoreRobin never stops processes or deletes files automatically. If a process has exited or a file has changed since the scan, the action stops.">CoreRobin 不会自动结束进程或删除文件。如果进程已经退出，或文件在扫描后发生变化，CoreRobin 会取消这次操作。</p>
             <ul>
-              <li><i>✓</i><span data-zh="监控和历史数据只留在这台电脑上" data-en="Monitoring and history data stay on this computer">监控和历史数据只留在这台电脑上</span></li>
+              <li><i>✓</i><span data-zh="本机监控，自主选择 AI 分享内容。" data-en="Local monitoring. AI sharing you control.">本机监控，自主选择 AI 分享内容。</span></li>
               <li><i>✓</i><span data-zh="系统关键进程和 CoreRobin 自身受到保护" data-en="Critical system processes and CoreRobin itself cannot be stopped by mistake">系统关键进程和 CoreRobin 自身受到保护</span></li>
               <li><i>✓</i><span data-zh="不会删除主目录、链接、特殊文件或其他磁盘上的内容" data-en="Your home folder, links, special files, and content on other disks are protected">不会删除主目录、链接、特殊文件或其他磁盘上的内容</span></li>
             </ul>

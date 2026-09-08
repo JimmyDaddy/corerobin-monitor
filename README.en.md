@@ -24,6 +24,12 @@
 
 > Screenshots come from the real English product interface and use sanitized demo data. They contain no device name, username, real path, or network identity.
 
+## AI assistant and capability center
+
+Connect your own Ollama, local, or cloud model service, ask Robin about your computer, and follow actual check results step by step. Choose device context and preview outgoing content before sending; process stops and moves to Trash still require confirmation. The capability center also provides cleanup, process, network, and history tools you can run directly, without automatically sending local inputs or results to a model.
+
+See the [AI assistant guide](docs/user-guide.md#ai-assistant) and [model-service privacy notice](docs/privacy.md#ai-assistant-and-model-services).
+
 ## Start with what you notice
 
 Everyday mode turns a slow computer, persistent fan noise, low storage, or a network concern into one stable conclusion and a useful next step. Brief spikes do not immediately become issues, and recovery is confirmed before an incident disappears.
