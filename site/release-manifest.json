@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.32",
-  "name": "CoreRobin v0.1.32",
-  "publishedAt": "2026-09-08T12:34:28Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.32",
+  "tagName": "v0.1.33",
+  "name": "CoreRobin v0.1.33",
+  "publishedAt": "2026-09-09T01:00:08Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.33",
   "installers": [
     {
-      "name": "CoreRobin_0.1.32_aarch64.dmg",
-      "size": 13253509,
-      "sha256": "72fdfc5ffcf7af74ab3dc47564217334347aeb2ef41138a71659fac9a7353a1f",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.32/CoreRobin_0.1.32_aarch64.dmg",
+      "name": "CoreRobin_0.1.33_aarch64.dmg",
+      "size": 13273777,
+      "sha256": "0d41d5cc269ca3bede8c7ebe4454e6bd729ee4642eaf01321906931590ab1087",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.32_x64.dmg",
-      "size": 14012934,
-      "sha256": "bc0f0f648c552cc0b12647bf33187f8a172753b784645b3a750d63e935dbcbc9",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.32/CoreRobin_0.1.32_x64.dmg",
+      "name": "CoreRobin_0.1.33_x64.dmg",
+      "size": 14042741,
+      "sha256": "5cefe9c3c01eee36895a81c43acece18871a8245a83ab83df0351a1d76ecf6e1",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.32_x64-setup.exe",
-      "size": 10260714,
-      "sha256": "d3a4426fc9a2d69ed10106c6f50e4292e89c5261470703b429210ff829261722",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.32/CoreRobin_0.1.32_x64-setup.exe",
+      "name": "CoreRobin_0.1.33_x64-setup.exe",
+      "size": 10302794,
+      "sha256": "75f0502a3cfa0e94847d6ef7c7a327e44e0d3bfc1a3fc5f8c3dccf8fcb4d2953",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.32_x64_en-US.msi",
-      "size": 13135872,
-      "sha256": "4a078d38536064be1c6b5afe187e1159c744c030b830b5f5c22458c411562436",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.32/CoreRobin_0.1.32_x64_en-US.msi",
+      "name": "CoreRobin_0.1.33_x64_en-US.msi",
+      "size": 13164544,
+      "sha256": "5dcddce8ae144b4e214a019d074b9a6a4cbff8053eb3b52f32cb3b5b60b39423",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.32_amd64.AppImage",
-      "size": 94222840,
-      "sha256": "dde397303aae995b82b7699ff4a6b8675637f90ed91daa36079dfcc0ec0a16db",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.32/CoreRobin_0.1.32_amd64.AppImage",
+      "name": "CoreRobin_0.1.33_amd64.AppImage",
+      "size": 94259704,
+      "sha256": "1f15dbab848e33d5ff7b52a76cf1b8ace8ab45834c1a413e95946d31354cf5f2",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.32_amd64.deb",
-      "size": 15670262,
-      "sha256": "7f1f4db743b3dbfd2eeb72fd93f26119a00a6f753d969eaabe7f69da80cad99b",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.32/CoreRobin_0.1.32_amd64.deb",
+      "name": "CoreRobin_0.1.33_amd64.deb",
+      "size": 15701034,
+      "sha256": "2daa0c51f3a04e896fa35ac70e425546fcb17e17abedba9704a651dffdea257a",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,46 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.32/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.32/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10811,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.32/SHA256SUMS.sigstore.json"
+      "size": 10855,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.33",
+      "publishedAt": "2026-09-09T01:00:08Z",
+      "title": {
+        "zh-CN": "更清晰的 AI 回复与更可靠的本地操作",
+        "en": "Clearer AI replies and more reliable local actions"
+      },
+      "items": [
+        {
+          "zh-CN": "AI 回复现在会正确显示标题、粗体、列表、表格和代码块，长内容也更容易阅读。",
+          "en": "AI replies now render headings, emphasis, lists, tables, and code blocks correctly, making long answers easier to read."
+        },
+        {
+          "zh-CN": "磁盘分析结果新增目录占用分布图，可以直接点击扇区或勾选目录来选择要清理的项目。",
+          "en": "Disk analysis results now include a directory usage chart, so you can select cleanup items by clicking a slice or checking a directory."
+        },
+        {
+          "zh-CN": "清理确认会重新核对当前选中的路径；某个项目被替换、删除或变成不安全链接时会单独跳过，其他项目仍可继续处理。",
+          "en": "Cleanup confirmation rechecks the selected paths. If one item was replaced, removed, or became an unsafe link, it is skipped individually while other selected items can still proceed."
+        },
+        {
+          "zh-CN": "设置、进程、能力和工具页面的控件样式更加统一，在较窄窗口和嵌入式操作表单中也能保持清晰布局。",
+          "en": "Controls are now more consistent across settings, processes, capabilities, and tools, with clearer layouts in narrow windows and embedded operation forms."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.32",
       "publishedAt": "2026-09-08T12:34:28Z",
