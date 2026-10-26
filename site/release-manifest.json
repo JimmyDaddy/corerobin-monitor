@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.33",
-  "name": "CoreRobin v0.1.33",
-  "publishedAt": "2026-09-09T01:00:08Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.33",
+  "tagName": "v0.1.34",
+  "name": "CoreRobin v0.1.34",
+  "publishedAt": "2026-10-26T22:53:33Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.34",
   "installers": [
     {
-      "name": "CoreRobin_0.1.33_aarch64.dmg",
-      "size": 13273777,
-      "sha256": "0d41d5cc269ca3bede8c7ebe4454e6bd729ee4642eaf01321906931590ab1087",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_aarch64.dmg",
+      "name": "CoreRobin_0.1.34_aarch64.dmg",
+      "size": 13321008,
+      "sha256": "52e8081eb03d09509ecd161044562cbf5ca8a0b2997b776fbcf55052d3fcd9b0",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.34/CoreRobin_0.1.34_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.33_x64.dmg",
-      "size": 14042741,
-      "sha256": "5cefe9c3c01eee36895a81c43acece18871a8245a83ab83df0351a1d76ecf6e1",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_x64.dmg",
+      "name": "CoreRobin_0.1.34_x64.dmg",
+      "size": 14140941,
+      "sha256": "249b863b9061d9338e59094c1da37bfab21b863f327493af13fc93fa005e4bb2",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.34/CoreRobin_0.1.34_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.33_x64-setup.exe",
-      "size": 10302794,
-      "sha256": "75f0502a3cfa0e94847d6ef7c7a327e44e0d3bfc1a3fc5f8c3dccf8fcb4d2953",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_x64-setup.exe",
+      "name": "CoreRobin_0.1.34_x64-setup.exe",
+      "size": 10345409,
+      "sha256": "309574459f9e3a41f5640ab75084f2555c49f29357607e88ff4bff5ef69e687c",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.34/CoreRobin_0.1.34_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.33_x64_en-US.msi",
-      "size": 13164544,
-      "sha256": "5dcddce8ae144b4e214a019d074b9a6a4cbff8053eb3b52f32cb3b5b60b39423",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_x64_en-US.msi",
+      "name": "CoreRobin_0.1.34_x64_en-US.msi",
+      "size": 13217792,
+      "sha256": "f1ec50f162f989453346599722fce57c76330c7e3a05d82f08977647d7bb9313",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.34/CoreRobin_0.1.34_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.33_amd64.AppImage",
-      "size": 94259704,
-      "sha256": "1f15dbab848e33d5ff7b52a76cf1b8ace8ab45834c1a413e95946d31354cf5f2",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_amd64.AppImage",
+      "name": "CoreRobin_0.1.34_amd64.AppImage",
+      "size": 94931448,
+      "sha256": "a29841bc42b23b76504ab846639cf91a7e54e23027a574fc511d2caf25697562",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.34/CoreRobin_0.1.34_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.33_amd64.deb",
-      "size": 15701034,
-      "sha256": "2daa0c51f3a04e896fa35ac70e425546fcb17e17abedba9704a651dffdea257a",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/CoreRobin_0.1.33_amd64.deb",
+      "name": "CoreRobin_0.1.34_amd64.deb",
+      "size": 15758290,
+      "sha256": "ba46154001d3d9c400ca749607732cce54f044f16d83dc06c201d53df4fdcbb3",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.34/CoreRobin_0.1.34_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,62 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.34/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.34/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10855,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.33/SHA256SUMS.sigstore.json"
+      "size": 11003,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.34/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.34",
+      "publishedAt": "2026-10-26T22:53:33Z",
+      "title": {
+        "zh-CN": "边扫描边浏览，更流畅的空间清理体验",
+        "en": "Browse while scanning, with smoother disk cleanup"
+      },
+      "items": [
+        {
+          "zh-CN": "磁盘扫描现在会逐步显示已完成的空间分布，等待完整结果时也能浏览已扫描内容；停止扫描后仍可查看本次已完成的部分。",
+          "en": "Disk scans now reveal completed portions of the usage map as they progress. You can browse scanned content before the full result is ready and retain partial results after stopping."
+        },
+        {
+          "zh-CN": "改善大量文件扫描、扫描恢复和结果整理时长时间无进展的问题，减少未变化结果的重复读取，局部刷新时继续保留其他目录。",
+          "en": "Improved long pauses during large scans, recovery, and result preparation, with fewer repeated reads of unchanged results and other folders preserved during targeted refreshes."
+        },
+        {
+          "zh-CN": "扫描过程与原有扇形空间图融为一体，动效可稳定续播，完成后平滑进入结果；浏览目录时保持当前位置和清理篮。",
+          "en": "Scanning blends into the existing sunburst map with animations that resume consistently and transition smoothly into results, while preserving your folder position and cleanup basket."
+        },
+        {
+          "zh-CN": "重新整理磁盘扫描页面的导航与操作，在较窄窗口中也能切换空间图和列表、搜索与排序，并保留拖拽加入清理篮及删除动效。",
+          "en": "Disk scan navigation and actions are easier to use in narrower windows, including map/list switching, search, and sorting, with drag-to-basket interactions and deletion animations retained."
+        },
+        {
+          "zh-CN": "快速清理可展开查看来源与大小，并选择需要保留的位置；废纸篓默认不选，确认前会明确显示清理范围与预计释放空间。",
+          "en": "Quick Cleanup now lets you inspect sources and sizes and choose locations to keep. Trash is unchecked by default, and confirmation clearly shows the selected scope and estimated space savings."
+        },
+        {
+          "zh-CN": "首页优先展示当前问题与处理入口，跨天仍在持续的问题不会再被误报为已经恢复。",
+          "en": "The home page prioritizes current problems and relevant actions, and ongoing issues that cross midnight are no longer incorrectly reported as resolved."
+        },
+        {
+          "zh-CN": "应用中心在较长列表中保持浏览顺序，应用与后台任务的关联更准确，进程详情中的运行时间和状态会及时更新。",
+          "en": "The application center keeps long lists stable while browsing, improves app-to-background-task associations, and refreshes runtime and status in process details."
+        },
+        {
+          "zh-CN": "可以查看阻止休眠的任务、原因与电源状态，并暂时忽略计划中的任务提醒；工具箱优先展示可用、收藏和最近使用的工具，功能限制说明更清楚。",
+          "en": "Inspect tasks preventing sleep, their reasons, and power status, and temporarily dismiss reminders for planned tasks. The toolbox prioritizes available, favorite, and recently used tools with clearer explanations of limitations."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.33",
       "publishedAt": "2026-09-09T01:00:08Z",
