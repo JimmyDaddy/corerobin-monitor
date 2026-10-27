@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.35",
-  "name": "CoreRobin v0.1.35",
-  "publishedAt": "2026-10-27T01:16:18Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.35",
+  "tagName": "v0.1.36",
+  "name": "CoreRobin v0.1.36",
+  "publishedAt": "2026-10-27T03:39:22Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.36",
   "installers": [
     {
-      "name": "CoreRobin_0.1.35_aarch64.dmg",
-      "size": 13324652,
-      "sha256": "97b61dd49680758fac3478c773adf9806ec238325da4fb6f11e81d79e8bbb517",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.35/CoreRobin_0.1.35_aarch64.dmg",
+      "name": "CoreRobin_0.1.36_aarch64.dmg",
+      "size": 13321103,
+      "sha256": "9bebfdd2b70cda77fb0e825ebd4a79545212a412fdfc6d7cf4bccbc171269113",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.35_x64.dmg",
-      "size": 14136406,
-      "sha256": "b47a4d05c41c2e832fa9de9679b5528aa1bfac65030f91faa107e0ae50e7d11a",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.35/CoreRobin_0.1.35_x64.dmg",
+      "name": "CoreRobin_0.1.36_x64.dmg",
+      "size": 14135539,
+      "sha256": "33973cf9cb35748e7efc26d836bdc69f831ffd9bffcad9463eb8fa69a4659afa",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.35_x64-setup.exe",
-      "size": 10350348,
-      "sha256": "3e28288a2f04bab9fd0764a5ea33f079cddbd739ba31e592a88ee94426c4cdaa",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.35/CoreRobin_0.1.35_x64-setup.exe",
+      "name": "CoreRobin_0.1.36_x64-setup.exe",
+      "size": 10346864,
+      "sha256": "13a083e9bdc8f63df71dbec58b90a909c29b9adaca334c0d50fe248dc2f017fb",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.35_x64_en-US.msi",
-      "size": 13230080,
-      "sha256": "94eae0c1fe54cd662d1294913b63350fbef7bb59aa1518e8738194d77e7d80c5",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.35/CoreRobin_0.1.35_x64_en-US.msi",
+      "name": "CoreRobin_0.1.36_x64_en-US.msi",
+      "size": 13221888,
+      "sha256": "dc43388c976a7ffe50fc3569cac006f721a62ab977e07f8cccbfcc484ad3a53b",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.35_amd64.AppImage",
-      "size": 94939640,
-      "sha256": "3937abcb397f682b9ff404c41f1b74c9a8f759518f1f0388d004371fb632e7a3",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.35/CoreRobin_0.1.35_amd64.AppImage",
+      "name": "CoreRobin_0.1.36_amd64.AppImage",
+      "size": 94919160,
+      "sha256": "3b3f366414e52a60542feee7b0c82175de9c399b1e60c0f8d8fd6a27bb3f4f74",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.35_amd64.deb",
-      "size": 15760442,
-      "sha256": "ad66d0d03ef943dcd9609e34f564fce80bca4448be91b76e26b6233ff1ab3c74",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.35/CoreRobin_0.1.35_amd64.deb",
+      "name": "CoreRobin_0.1.36_amd64.deb",
+      "size": 15757208,
+      "sha256": "8c434c1dceb5b0663927e3e4862d8829d8e0a3a4738bf843d6dbc279c23707ee",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,42 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.35/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.35/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10827,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.35/SHA256SUMS.sigstore.json"
+      "size": 10863,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.36",
+      "publishedAt": "2026-10-27T03:39:22Z",
+      "title": {
+        "zh-CN": "更协调的磁盘扫描动效",
+        "en": "Coherent disk scan animations"
+      },
+      "items": [
+        {
+          "zh-CN": "重做磁盘扫描光效，内外扫描光点保持对齐，中心按钮不再遮住内圈光点；更新结果、切换目录与调整窗口时仍保持协调。",
+          "en": "Redesigned disk scan effects keep the inner and outer scan lights aligned, with the inner light fully visible around the center button, even as results update, folders change, or the window is resized."
+        },
+        {
+          "zh-CN": "新发现的空间占用会在对应扇区亮起，扫描完成后光效收束为静态结果，继续使用左侧饼图和右侧目录浏览。",
+          "en": "Newly discovered space lights up its corresponding chart sectors. When scanning finishes, the effects settle into a static result with the pie chart on the left and folder browsing on the right."
+        },
+        {
+          "zh-CN": "改善持续扫描时的动效流畅度；暂停、读取停滞、隐藏窗口或启用减少动态效果时，停止持续播放扫描光效。",
+          "en": "Improved animation smoothness during ongoing scans. Continuous scan effects stop when scanning pauses or stalls, the window is hidden, or reduced motion is enabled."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.35",
       "publishedAt": "2026-10-27T01:16:18Z",
