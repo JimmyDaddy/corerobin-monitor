@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "tagName": "v0.1.36",
-  "name": "CoreRobin v0.1.36",
-  "publishedAt": "2026-10-27T03:39:22Z",
-  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.36",
+  "tagName": "v0.1.37",
+  "name": "CoreRobin v0.1.37",
+  "publishedAt": "2026-10-28T15:07:41Z",
+  "releaseUrl": "https://github.com/JimmyDaddy/corerobin-monitor/releases/tag/v0.1.37",
   "installers": [
     {
-      "name": "CoreRobin_0.1.36_aarch64.dmg",
-      "size": 13321103,
-      "sha256": "9bebfdd2b70cda77fb0e825ebd4a79545212a412fdfc6d7cf4bccbc171269113",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_aarch64.dmg",
+      "name": "CoreRobin_0.1.37_aarch64.dmg",
+      "size": 13317369,
+      "sha256": "cf6467d8526eed80584961ed701dfae6ded96c809be6eddb05eda1f9e55bfca9",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.37/CoreRobin_0.1.37_aarch64.dmg",
       "id": "macos-arm64-dmg",
       "platform": "macos",
       "architecture": "Apple Silicon",
@@ -17,10 +17,10 @@
       "status": "tested"
     },
     {
-      "name": "CoreRobin_0.1.36_x64.dmg",
-      "size": 14135539,
-      "sha256": "33973cf9cb35748e7efc26d836bdc69f831ffd9bffcad9463eb8fa69a4659afa",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_x64.dmg",
+      "name": "CoreRobin_0.1.37_x64.dmg",
+      "size": 14139899,
+      "sha256": "4973617365c61d64bbed5a4591aa05557474e871f56d667ff288dfc2ad8615d7",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.37/CoreRobin_0.1.37_x64.dmg",
       "id": "macos-x64-dmg",
       "platform": "macos",
       "architecture": "Intel",
@@ -28,10 +28,10 @@
       "status": "limited"
     },
     {
-      "name": "CoreRobin_0.1.36_x64-setup.exe",
-      "size": 10346864,
-      "sha256": "13a083e9bdc8f63df71dbec58b90a909c29b9adaca334c0d50fe248dc2f017fb",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_x64-setup.exe",
+      "name": "CoreRobin_0.1.37_x64-setup.exe",
+      "size": 10352682,
+      "sha256": "f84da7754909f9e18f3db433a7c3cfbf32c8d60104abb307a09b3869606758e2",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.37/CoreRobin_0.1.37_x64-setup.exe",
       "id": "windows-x64-exe",
       "platform": "windows",
       "architecture": "x64",
@@ -39,10 +39,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.36_x64_en-US.msi",
-      "size": 13221888,
-      "sha256": "dc43388c976a7ffe50fc3569cac006f721a62ab977e07f8cccbfcc484ad3a53b",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_x64_en-US.msi",
+      "name": "CoreRobin_0.1.37_x64_en-US.msi",
+      "size": 13225984,
+      "sha256": "2f3e8c3c968ee5ab23f3e20bbf75e6477847c8dcac173d32bc1f1076e1e7a28b",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.37/CoreRobin_0.1.37_x64_en-US.msi",
       "id": "windows-x64-msi",
       "platform": "windows",
       "architecture": "x64",
@@ -50,10 +50,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.36_amd64.AppImage",
-      "size": 94919160,
-      "sha256": "3b3f366414e52a60542feee7b0c82175de9c399b1e60c0f8d8fd6a27bb3f4f74",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_amd64.AppImage",
+      "name": "CoreRobin_0.1.37_amd64.AppImage",
+      "size": 94927352,
+      "sha256": "cc58b9f6bcf725bf06e1e6430504832c106e905a32921166a9b0ec9587c61bc1",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.37/CoreRobin_0.1.37_amd64.AppImage",
       "id": "linux-x64-appimage",
       "platform": "linux",
       "architecture": "x64",
@@ -61,10 +61,10 @@
       "status": "preview"
     },
     {
-      "name": "CoreRobin_0.1.36_amd64.deb",
-      "size": 15757208,
-      "sha256": "8c434c1dceb5b0663927e3e4862d8829d8e0a3a4738bf843d6dbc279c23707ee",
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/CoreRobin_0.1.36_amd64.deb",
+      "name": "CoreRobin_0.1.37_amd64.deb",
+      "size": 15758636,
+      "sha256": "969a3739e5e87417495afcf696e9edaf55269f1787bdd543af3ea6c80ffad13f",
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.37/CoreRobin_0.1.37_amd64.deb",
       "id": "linux-x64-deb",
       "platform": "linux",
       "architecture": "x64",
@@ -76,20 +76,38 @@
     {
       "name": "corerobin.spdx.json",
       "size": 4791,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/corerobin.spdx.json"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.37/corerobin.spdx.json"
     },
     {
       "name": "SHA256SUMS",
       "size": 1346,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/SHA256SUMS"
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.37/SHA256SUMS"
     },
     {
       "name": "SHA256SUMS.sigstore.json",
-      "size": 10863,
-      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.36/SHA256SUMS.sigstore.json"
+      "size": 10767,
+      "url": "https://github.com/JimmyDaddy/corerobin-monitor/releases/download/v0.1.37/SHA256SUMS.sigstore.json"
     }
   ],
   "releaseHistory": [
+    {
+      "tagName": "v0.1.37",
+      "publishedAt": "2026-10-28T15:07:41Z",
+      "title": {
+        "zh-CN": "更有层次的磁盘扫描光效",
+        "en": "Richer disk scan lighting"
+      },
+      "items": [
+        {
+          "zh-CN": "同心扫描增加蓝紫光晕、渐变拖尾和扇区受光，内外光点继续同步，扫描完成后平滑收束。",
+          "en": "Concentric scans gain blue-violet glow, gradient trails and illuminated sector edges. Inner and outer lights stay synchronized, then settle smoothly when scanning finishes."
+        },
+        {
+          "zh-CN": "移除空间图下方重复的未完成提示，扫描状态统一在顶部进度区显示，让结果区域更简洁。",
+          "en": "Removed the duplicate partial-scan caption below the space chart. Scan status stays in the progress area above, keeping results uncluttered."
+        }
+      ]
+    },
     {
       "tagName": "v0.1.36",
       "publishedAt": "2026-10-27T03:39:22Z",
